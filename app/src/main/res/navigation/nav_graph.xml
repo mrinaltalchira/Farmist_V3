@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_nav_home_to_myFarm_Fragment"
             app:destination="@id/myFarm_Fragment" />
+        <action
+            android:id="@+id/action_nav_home_to_upcomingAction"
+            app:destination="@id/upcomingAction" />
     </fragment>
     <fragment
         android:id="@+id/nav_alerts"
@@ -94,6 +97,15 @@
         <action
             android:id="@+id/action_myFarm_Fragment_to_addFarmDetails"
             app:destination="@id/addFarmDetails" />
+        <action
+            android:id="@+id/action_myFarm_Fragment_to_fragment_editFarmDetails"
+            app:destination="@id/fragment_editFarmDetails" />
+        <action
+            android:id="@+id/action_myFarm_Fragment_to_fragment_Farm_Info"
+            app:destination="@id/fragment_Farm_Info" />
+        <action
+            android:id="@+id/action_myFarm_Fragment_self"
+            app:destination="@id/myFarm_Fragment" />
     </fragment>
     <fragment
         android:id="@+id/crops_Fragment"
@@ -224,6 +236,32 @@
         <action
             android:id="@+id/action_selectCropCategory_to_activity_Crop_Details_Fragment"
             app:destination="@id/activity_Crop_Details_Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/upcomingAction"
+        android:name="com.android.farmist.fragments.UpcomingAction"
+        android:label="UpcomingAction" />
+
+    <fragment
+        android:id="@+id/fragment_editFarmDetails"
+        android:name="com.android.farmist.fragments.Fragment_editFarmDetails"
+        android:label="Fragment_editFarmDetails" >
+        <action
+            android:id="@+id/action_fragment_editFarmDetails_to_myFarm_Fragment"
+            app:destination="@id/myFarm_Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_Farm_Info"
+        android:name="com.android.farmist.fragments.Fragment_Farm_Info"
+        android:label="Fragment_Farm_Info" >
+        <action
+            android:id="@+id/action_fragment_Farm_Info_to_myFarm_Fragment"
+            app:destination="@id/myFarm_Fragment" />
+        <action
+            android:id="@+id/action_fragment_Farm_Info_to_fragment_editFarmDetails"
+            app:destination="@id/fragment_editFarmDetails" />
     </fragment>
 
 </navigation>

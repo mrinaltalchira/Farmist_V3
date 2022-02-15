@@ -51,3 +51,23 @@ class Api_Controller {
     }
 
 }
+class Api_Controller_Location {
+    var URL =
+        "https://api.weatherapi.com/v1/forecast.json?key=13497f7823f3433ebb161306220202&q=B-16 Mahalaxmi Nagar " +
+                "World Trade Park, D-Block, Malviya Nagar, Jaipur, Rajasthan 302017, India&days=3&aqi=no&alerts=no"
+    var API = "13497f7823f3433ebb161306220202"
+
+    var retrofit: Retrofit
+
+    init {
+        retrofit = Retrofit.Builder()
+            .baseUrl("https://api.weatherapi.com/v1/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
+
+    fun getInstacne_Location(): ApiInterface {
+        return retrofit.create(ApiInterface::class.java)
+
+    }
+}

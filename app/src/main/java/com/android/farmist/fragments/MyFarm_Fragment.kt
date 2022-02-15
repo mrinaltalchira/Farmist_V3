@@ -1,25 +1,32 @@
 package com.android.farmist.fragments
 
+import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.content.Context
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RadioButton
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.farmist.R
+import com.android.farmist.adapter.MyFarmsAdapter
 import com.android.farmist.api.Api_Controller
 import com.android.farmist.databinding.FragmentMyFarmBinding
-import com.android.farmist.model.getFarm.GetFarmForSpinner
-import com.android.farmist.model.getFarms
-import com.android.farmist.model.signUp.signUpModel
+import com.android.farmist.model.adapterGetFarm.AdeptDataResponce
+import com.android.farmist.model.setFarm.DeleteFarmRespo
+import com.android.farmist.util.progressbars
 import kotlinx.android.synthetic.main.activity_add_crop_details.*
 import kotlinx.android.synthetic.main.adaapter_exp_income_tracker.*
+import kotlinx.android.synthetic.main.adapter_my_farms.*
+import kotlinx.android.synthetic.main.fragment_my_farm_.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,15 +34,31 @@ import retrofit2.Response
 
 class MyFarm_Fragment : Fragment() {
 
-    private lateinit var binding:FragmentMyFarmBinding
-    lateinit var message:String
-
+    private lateinit var binding: FragmentMyFarmBinding
+    lateinit var userId: String
+    lateinit var adap: MyFarmsAdapter
+    lateinit var progress: progressbars
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(layoutInflater,R.layout.fragment_my_farm_,container,false)
+
+        binding =
+            DataBindingUtil.inflate(layoutInflater, R.layout.fragment_my_farm_, container, false)
+        progress = progressbars(requireActivity())
+
+
+        getFarmss()
+
+        binding.refresh.setOnRefreshListener {
+            Handler().postDelayed(Runnable {
+
+                binding.refresh.isRefreshing = false
+            }, 3000)
+            getFarmssagain()
+
+        }
 
 
         return binding.root
@@ -44,33 +67,78 @@ class MyFarm_Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         binding.tvAddNewFarm.setOnClickListener {
-                findNavController().navigate(R.id.action_myFarm_Fragment_to_addFarmDetails,null)
+            findNavController().navigate(R.id.action_myFarm_Fragment_to_addFarmDetails, null)
         }
 
         super.onViewCreated(view, savedInstanceState)
 
-        getFarmss()
     }
 
     private fun getFarmss() {
+        progress.showDialog()
         val preferences =
             requireActivity().getSharedPreferences("userMassage", Context.MODE_PRIVATE)
-        message = preferences.getString("message", "").toString()
-        Toast.makeText(requireContext(), "id:${message.toString()}", Toast.LENGTH_SHORT).show()
+        userId = preferences.getString("message", "").toString()
 
-        val call: Call<getFarms>
-        call = Api_Controller().getInstacne().getFarm(message)
-        call.enqueue(object :Callback<getFarms>{
-            override fun onResponse(call: Call<getFarms>, response: Response<getFarms>) {
-                val responseStr=response.body()
-                Toast.makeText(requireContext(), "data${responseStr.toString()}", Toast.LENGTH_SHORT).show()
+        var call: Call<AdeptDataResponce> = Api_Controller().getInstacne().getFarmsForAdaper(userId)
+        call.enqueue(object : Callback<AdeptDataResponce> {
+            @SuppressLint("NotifyDataSetChanged")
+            override fun onResponse(
+                call: Call<AdeptDataResponce>,
+                response: Response<AdeptDataResponce>
+            ) {
+                var respo = response.body()
+                if (respo != null) {
+                    adap = MyFarmsAdapter(context!!, respo.farms)
+                    Log.d("dataFarm", userId)
+                    adap.notifyDataSetChanged()
+                    recyclerview_myfarm.adapter = adap
+                    recyclerview_myfarm.layoutManager = LinearLayoutManager(requireActivity())
+                    progress.hidediloag()
+
+                }
+
             }
 
-            override fun onFailure(call: Call<getFarms>, t: Throwable) {
-
-                Log.d("ErrorFarm",t.toString())
+            override fun onFailure(call: Call<AdeptDataResponce>, t: Throwable) {
+                Toast.makeText(activity?.applicationContext!!, "$t", Toast.LENGTH_SHORT).show()
+                progress.hidediloag()
             }
         })
+
     }
+
+
+    private fun getFarmssagain() {
+
+        val preferences =
+            requireActivity().getSharedPreferences("userMassage", Context.MODE_PRIVATE)
+        userId = preferences.getString("message", "").toString()
+
+        var call: Call<AdeptDataResponce> = Api_Controller().getInstacne().getFarmsForAdaper(userId)
+        call.enqueue(object : Callback<AdeptDataResponce> {
+            @SuppressLint("NotifyDataSetChanged")
+            override fun onResponse(
+                call: Call<AdeptDataResponce>,
+                response: Response<AdeptDataResponce>
+            ) {
+                var respo = response.body()
+                if (respo != null) {
+                    adap = MyFarmsAdapter(context!!, respo.farms)
+                    adap.notifyDataSetChanged()
+                    Log.d("dataFarm", userId)
+                    recyclerview_myfarm.adapter = adap
+                    recyclerview_myfarm.layoutManager = LinearLayoutManager(requireActivity())
+                }
+
+            }
+
+            override fun onFailure(call: Call<AdeptDataResponce>, t: Throwable) {
+                Toast.makeText(activity?.applicationContext!!, "$t", Toast.LENGTH_SHORT).show()
+            }
+        })
+
+    }
+
 
 }

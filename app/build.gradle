@@ -76,6 +76,9 @@ dependencies {
    // implementation "androidx.core:core-ktx:+"
     //implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    //location code by mrinal
+    implementation 'com.google.android.gms:play-services-location:19.0.1'
+
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
 
     implementation 'io.reactivex.rxjava3:rxjava:3.0.4'

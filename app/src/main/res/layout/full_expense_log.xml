@@ -20,21 +20,21 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginRight="@dimen/_10sdp"
-                android:layout_gravity="center"
                 android:orientation="horizontal">
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Full Expense Log"
-                    android:textStyle="normal"
-                    android:textSize="@dimen/_14sdp"
-                    android:textColor="@color/black"
                     android:drawableLeft="@drawable/back"
-                    android:drawablePadding="@dimen/_10sdp" />
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:text="Full Expense Log"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="normal" />
 
 
             </RelativeLayout>
@@ -57,8 +57,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:layout_marginTop="@dimen/_10sdp">
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp">
 
 
                     <de.hdodenhof.circleimageview.CircleImageView
@@ -71,26 +71,26 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Harvested"
                         android:layout_alignParentEnd="true"
-                        android:textStyle="normal"
-                        android:textSize="@dimen/_14sdp"
-                        android:textColor="@color/white"
                         android:background="@drawable/harvested_btn_background"
-                        android:padding="@dimen/_5sdp" />
+                        android:padding="@dimen/_5sdp"
+                        android:text="Harvested"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
 
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_5sdp"
-                        android:layout_toRightOf="@+id/img">
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_toRightOf="@+id/img"
+                        android:orientation="vertical">
 
 
                         <TextView
-                            android:id="@+id/tv_exp_log_name"
+                            android:id="@+id/tv_exp_log_cropName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Sunflower"
@@ -98,15 +98,30 @@
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/tv_exp_log_acers"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="48 Acres"
-                            android:textColor="@color/brown_light"
-                            android:textSize="@dimen/_14sdp"
-                            android:textStyle="normal" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
 
+                            <TextView
+                                android:id="@+id/tv_exp_log_area"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="48 Acres"
+                                android:textColor="@color/brown_light"
+                                android:textSize="@dimen/_14sdp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_exp_log_areatype"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="48 Acres"
+                                android:textColor="@color/brown_light"
+                                android:textSize="@dimen/_14sdp"
+                                android:textStyle="normal" />
+
+                        </LinearLayout>
                     </LinearLayout>
 
 
@@ -116,10 +131,10 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardElevation="@dimen/_5sdp"
-                    android:layout_marginTop="@dimen/_15sdp"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp">
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_5sdp">
 
                     <LinearLayout
                         android:layout_width="@dimen/_2sdp"
@@ -129,11 +144,11 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
                         android:layout_marginStart="@dimen/_8sdp"
-                        android:layout_marginEnd="@dimen/_8sdp">
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:orientation="vertical">
 
 
                         <RelativeLayout
@@ -142,19 +157,21 @@
 
 
                             <TextView
+                                android:id="@+id/tv_exp_log_dateSeeds"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="21st Jan 2021"
-                                android:textStyle="normal"
+                                android:textColor="@color/brown_light"
                                 android:textSize="@dimen/_12sdp"
-                                android:textColor="@color/brown_light" />
+                                android:textStyle="normal" />
 
                             <ImageView
+                                android:id="@+id/tv_exp_log_deleteSeeds"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
                                 android:src="@drawable/ic_delete"
-                                app:tint="@color/green_selected"
-                                android:layout_alignParentEnd="true" />
+                                app:tint="@color/green_selected" />
 
 
                         </RelativeLayout>
@@ -166,21 +183,24 @@
                             android:layout_marginTop="@dimen/_3sdp">
 
                             <TextView
+                                android:id="@+id/tv_exp_log_nameSeeds"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Seeds"
-                                android:textStyle="bold"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
-                                android:textColor="@color/black" />
+                                android:textStyle="bold" />
 
                             <TextView
+
+                                android:id="@+id/tv_exp_log_priceSeeds"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="25,000"
-                                android:textStyle="bold"
                                 android:layout_alignParentEnd="true"
+                                android:text="0"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
-                                android:textColor="@color/black" />
+                                android:textStyle="bold" />
 
 
                         </RelativeLayout>
@@ -192,10 +212,10 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardElevation="@dimen/_5sdp"
-                    android:layout_marginTop="@dimen/_15sdp"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp">
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_5sdp">
 
                     <LinearLayout
                         android:layout_width="@dimen/_2sdp"
@@ -205,11 +225,11 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
                         android:layout_marginStart="@dimen/_8sdp"
-                        android:layout_marginEnd="@dimen/_8sdp">
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:orientation="vertical">
 
 
                         <RelativeLayout
@@ -218,19 +238,21 @@
 
 
                             <TextView
+                                android:id="@+id/tv_exp_log_dateFertilizer"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="21st Jan 2021"
-                                android:textStyle="normal"
+                                android:textColor="@color/brown_light"
                                 android:textSize="@dimen/_12sdp"
-                                android:textColor="@color/brown_light" />
+                                android:textStyle="normal" />
 
                             <ImageView
+                                android:id="@+id/tv_exp_log_DeleteFer"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
                                 android:src="@drawable/ic_delete"
-                                app:tint="@color/green_selected"
-                                android:layout_alignParentEnd="true" />
+                                app:tint="@color/green_selected" />
 
 
                         </RelativeLayout>
@@ -242,21 +264,23 @@
                             android:layout_marginTop="@dimen/_3sdp">
 
                             <TextView
+                                android:id="@+id/tv_exp_log_nameFerti"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Seeds"
-                                android:textStyle="bold"
+                                android:text="Fertilizer"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
-                                android:textColor="@color/black" />
+                                android:textStyle="bold" />
 
                             <TextView
+                                android:id="@+id/tv_exp_log_priceFerti"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="25,000"
-                                android:textStyle="bold"
                                 android:layout_alignParentEnd="true"
+                                android:text="0"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
-                                android:textColor="@color/black" />
+                                android:textStyle="bold" />
 
 
                         </RelativeLayout>
@@ -268,10 +292,10 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardElevation="@dimen/_5sdp"
-                    android:layout_marginTop="@dimen/_15sdp"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp">
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_5sdp">
 
                     <LinearLayout
                         android:layout_width="@dimen/_2sdp"
@@ -281,11 +305,11 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
                         android:layout_marginStart="@dimen/_8sdp"
-                        android:layout_marginEnd="@dimen/_8sdp">
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:orientation="vertical">
 
 
                         <RelativeLayout
@@ -294,19 +318,21 @@
 
 
                             <TextView
+                                android:id="@+id/tv_exp_log_dateLabout"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="21st Jan 2021"
-                                android:textStyle="normal"
+                                android:textColor="@color/brown_light"
                                 android:textSize="@dimen/_12sdp"
-                                android:textColor="@color/brown_light" />
+                                android:textStyle="normal" />
 
                             <ImageView
+                                android:id="@+id/tv_exp_log_deleteLabour"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
                                 android:src="@drawable/ic_delete"
-                                app:tint="@color/green_selected"
-                                android:layout_alignParentEnd="true" />
+                                app:tint="@color/green_selected" />
 
 
                         </RelativeLayout>
@@ -318,21 +344,23 @@
                             android:layout_marginTop="@dimen/_3sdp">
 
                             <TextView
+                                android:id="@+id/tv_exp_log_nameLabour"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Seeds"
-                                android:textStyle="bold"
+                                android:text="Labour"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
-                                android:textColor="@color/black" />
+                                android:textStyle="bold" />
 
                             <TextView
+                                android:id="@+id/tv_exp_log_priceLabour"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="25,000"
-                                android:textStyle="bold"
                                 android:layout_alignParentEnd="true"
+                                android:text="0"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
-                                android:textColor="@color/black" />
+                                android:textStyle="bold" />
 
 
                         </RelativeLayout>
@@ -344,10 +372,10 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardElevation="@dimen/_5sdp"
-                    android:layout_marginTop="@dimen/_15sdp"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp">
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_5sdp">
 
                     <LinearLayout
                         android:layout_width="@dimen/_2sdp"
@@ -357,11 +385,11 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
                         android:layout_marginStart="@dimen/_8sdp"
-                        android:layout_marginEnd="@dimen/_8sdp">
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:orientation="vertical">
 
 
                         <RelativeLayout
@@ -370,19 +398,21 @@
 
 
                             <TextView
+                                android:id="@+id/tv_exp_log_dateTractor"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="21st Jan 2021"
-                                android:textStyle="normal"
+                                android:textColor="@color/brown_light"
                                 android:textSize="@dimen/_12sdp"
-                                android:textColor="@color/brown_light" />
+                                android:textStyle="normal" />
 
                             <ImageView
+                                android:id="@+id/tv_exp_log_DeleteTractor"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
                                 android:src="@drawable/ic_delete"
-                                app:tint="@color/green_selected"
-                                android:layout_alignParentEnd="true" />
+                                app:tint="@color/green_selected" />
 
 
                         </RelativeLayout>
@@ -394,21 +424,24 @@
                             android:layout_marginTop="@dimen/_3sdp">
 
                             <TextView
+
+                                android:id="@+id/tv_exp_log_nameTractor"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Seeds"
-                                android:textStyle="bold"
+                                android:text="Tractor"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
-                                android:textColor="@color/black" />
+                                android:textStyle="bold" />
 
                             <TextView
+                                android:id="@+id/tv_exp_log_priceTractor"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="25,000"
-                                android:textStyle="bold"
                                 android:layout_alignParentEnd="true"
+                                android:text="0"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
-                                android:textColor="@color/black" />
+                                android:textStyle="bold" />
 
 
                         </RelativeLayout>
@@ -420,10 +453,10 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardElevation="@dimen/_5sdp"
-                    android:layout_marginTop="@dimen/_15sdp"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp">
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_5sdp">
 
                     <LinearLayout
                         android:layout_width="@dimen/_2sdp"
@@ -433,11 +466,11 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
                         android:layout_marginStart="@dimen/_8sdp"
-                        android:layout_marginEnd="@dimen/_8sdp">
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:orientation="vertical">
 
 
                         <RelativeLayout
@@ -446,19 +479,21 @@
 
 
                             <TextView
+                                android:id="@+id/tv_exp_log_dateSubsidy"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="21st Jan 2021"
-                                android:textStyle="normal"
+                                android:textColor="@color/brown_light"
                                 android:textSize="@dimen/_12sdp"
-                                android:textColor="@color/brown_light" />
+                                android:textStyle="normal" />
 
                             <ImageView
+                                android:id="@+id/tv_exp_log_deleteSubsidy"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
                                 android:src="@drawable/ic_delete"
-                                app:tint="@color/green_selected"
-                                android:layout_alignParentEnd="true" />
+                                app:tint="@color/green_selected" />
 
 
                         </RelativeLayout>
@@ -470,21 +505,24 @@
                             android:layout_marginTop="@dimen/_3sdp">
 
                             <TextView
+
+                                android:id="@+id/tv_exp_log_nameSubsidy"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Seeds"
-                                android:textStyle="bold"
+                                android:text="Subsidy"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
-                                android:textColor="@color/black" />
+                                android:textStyle="bold" />
 
                             <TextView
+                                android:id="@+id/tv_exp_log_pricesubsidy"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="25,000"
-                                android:textStyle="bold"
                                 android:layout_alignParentEnd="true"
+                                android:text="0"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
-                                android:textColor="@color/black" />
+                                android:textStyle="bold" />
 
 
                         </RelativeLayout>
@@ -497,10 +535,10 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardElevation="@dimen/_5sdp"
-                    android:layout_marginTop="@dimen/_15sdp"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp">
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_5sdp">
 
                     <LinearLayout
                         android:layout_width="@dimen/_2sdp"
@@ -510,11 +548,11 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
                         android:layout_marginStart="@dimen/_8sdp"
-                        android:layout_marginEnd="@dimen/_8sdp">
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:orientation="vertical">
 
 
                         <RelativeLayout
@@ -523,19 +561,21 @@
 
 
                             <TextView
+                                android:id="@+id/tv_exp_log_dateIncome"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="21st Jan 2021"
-                                android:textStyle="normal"
+                                android:textColor="@color/brown_light"
                                 android:textSize="@dimen/_12sdp"
-                                android:textColor="@color/brown_light" />
+                                android:textStyle="normal" />
 
                             <ImageView
+                                android:id="@+id/tv_exp_log_deleteIncome"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
                                 android:src="@drawable/ic_delete"
-                                app:tint="@color/green_selected"
-                                android:layout_alignParentEnd="true" />
+                                app:tint="@color/green_selected" />
 
 
                         </RelativeLayout>
@@ -547,21 +587,24 @@
                             android:layout_marginTop="@dimen/_3sdp">
 
                             <TextView
+
+                                android:id="@+id/tv_exp_log_nameIncome"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Seeds"
-                                android:textStyle="bold"
+                                android:text="Income(Harvest)"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
-                                android:textColor="@color/black" />
+                                android:textStyle="bold" />
 
                             <TextView
+                                android:id="@+id/tv_exp_log_priceIncome"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="25,000"
-                                android:textStyle="bold"
                                 android:layout_alignParentEnd="true"
+                                android:text="0"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
-                                android:textColor="@color/black" />
+                                android:textStyle="bold" />
 
 
                         </RelativeLayout>
@@ -573,11 +616,11 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardElevation="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
 
                     android:layout_marginTop="@dimen/_15sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp">
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_5sdp">
 
                     <LinearLayout
                         android:layout_width="@dimen/_2sdp"
@@ -587,11 +630,11 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
                         android:layout_marginStart="@dimen/_8sdp"
-                        android:layout_marginEnd="@dimen/_8sdp">
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:orientation="vertical">
 
 
                         <RelativeLayout
@@ -600,21 +643,23 @@
                             android:layout_marginTop="@dimen/_3sdp">
 
                             <TextView
+                                android:id="@+id/tv_exp_log_total"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Total"
-                                android:textStyle="bold"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/_16sdp"
-                                android:textColor="@color/black" />
+                                android:textStyle="bold" />
 
                             <TextView
+                                android:id="@+id/tv_exp_log_TotalPrice"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="25,000"
-                                android:textStyle="bold"
                                 android:layout_alignParentEnd="true"
+                                android:text="0"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/_16sdp"
-                                android:textColor="@color/black" />
+                                android:textStyle="bold" />
 
 
                         </RelativeLayout>
@@ -628,16 +673,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
-                    android:layout_marginTop="@dimen/_15sdp"
                     android:orientation="horizontal">
 
-
-                    <ImageView
-                        android:layout_width="@dimen/_120sdp"
-                        android:layout_height="@dimen/_120sdp"
-                        android:src="@drawable/chart" />
+                    <lecho.lib.hellocharts.view.PieChartView
+                        android:id="@+id/pieChart"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp" />
 
 
                     <LinearLayout
@@ -657,12 +703,13 @@
                                 android:id="@+id/llgraphseeds"
                                 android:layout_width="@dimen/_8sdp"
                                 android:layout_height="@dimen/_8sdp"
-                                android:orientation="horizontal"
                                 android:layout_centerVertical="true"
-                                android:background="@color/graph_blue" />
+                                android:background="@color/graph_blue"
+                                android:orientation="horizontal" />
 
 
                             <TextView
+                                android:id="@+id/tv_exp_logChart_Seeds"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
@@ -687,12 +734,13 @@
                                 android:id="@+id/llgraphFertilizer"
                                 android:layout_width="@dimen/_8sdp"
                                 android:layout_height="@dimen/_8sdp"
-                                android:orientation="horizontal"
                                 android:layout_centerVertical="true"
-                                android:background="@color/graph_pink" />
+                                android:background="@color/graph_pink"
+                                android:orientation="horizontal" />
 
 
                             <TextView
+                                android:id="@+id/tv_exp_logChart_Fertilizer"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerVertical="true"
@@ -717,21 +765,22 @@
                                 android:id="@+id/llgraphLabour"
                                 android:layout_width="@dimen/_8sdp"
                                 android:layout_height="@dimen/_8sdp"
-                                android:orientation="horizontal"
                                 android:layout_centerVertical="true"
-                                android:background="@color/graph_green" />
+                                android:background="@color/graph_green"
+                                android:orientation="horizontal" />
 
 
                             <TextView
+                                android:id="@+id/tv_exp_logChart_labour"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_10sdp"
                                 android:layout_toEndOf="@+id/llgraphLabour"
                                 android:text="Labour"
-                                android:textStyle="normal"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
-                                android:layout_centerVertical="true"
-                                android:layout_marginStart="@dimen/_10sdp" />
+                                android:textStyle="normal" />
 
 
                         </RelativeLayout>
@@ -747,21 +796,22 @@
                                 android:id="@+id/llgraphTractor"
                                 android:layout_width="@dimen/_8sdp"
                                 android:layout_height="@dimen/_8sdp"
-                                android:orientation="horizontal"
                                 android:layout_centerVertical="true"
-                                android:background="@color/graph_yellow" />
+                                android:background="@color/graph_yellow"
+                                android:orientation="horizontal" />
 
 
                             <TextView
+                                android:id="@+id/tv_exp_logChart_Tractor"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_10sdp"
                                 android:layout_toEndOf="@+id/llgraphTractor"
                                 android:text="Tractor"
-                                android:textStyle="normal"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
-                                android:layout_centerVertical="true"
-                                android:layout_marginStart="@dimen/_10sdp" />
+                                android:textStyle="normal" />
 
 
                         </RelativeLayout>
@@ -776,21 +826,22 @@
                                 android:id="@+id/llgraphIncome"
                                 android:layout_width="@dimen/_8sdp"
                                 android:layout_height="@dimen/_8sdp"
-                                android:orientation="horizontal"
                                 android:layout_centerVertical="true"
-                                android:background="@color/graph_red" />
+                                android:background="@color/graph_red"
+                                android:orientation="horizontal" />
 
 
                             <TextView
+                                android:id="@+id/tv_exp_logChart_income"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_10sdp"
                                 android:layout_toEndOf="@+id/llgraphIncome"
                                 android:text="Income"
-                                android:textStyle="normal"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
-                                android:layout_centerVertical="true"
-                                android:layout_marginStart="@dimen/_10sdp" />
+                                android:textStyle="normal" />
 
 
                         </RelativeLayout>
@@ -806,21 +857,22 @@
                                 android:id="@+id/llgraphSubsidy"
                                 android:layout_width="@dimen/_8sdp"
                                 android:layout_height="@dimen/_8sdp"
-                                android:orientation="horizontal"
                                 android:layout_centerVertical="true"
-                                android:background="@color/graph_skyblue" />
+                                android:background="@color/graph_skyblue"
+                                android:orientation="horizontal" />
 
 
                             <TextView
+                                android:id="@+id/tv_exp_logChart_subsidy"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_10sdp"
                                 android:layout_toEndOf="@+id/llgraphSubsidy"
                                 android:text="Subsidy"
-                                android:textStyle="normal"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
-                                android:layout_centerVertical="true"
-                                android:layout_marginStart="@dimen/_10sdp" />
+                                android:textStyle="normal" />
 
 
                         </RelativeLayout>

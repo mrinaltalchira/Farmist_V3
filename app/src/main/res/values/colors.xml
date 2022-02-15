@@ -20,4 +20,5 @@
     <color name="graph_green">#A6E77E</color>
     <color name="graph_yellow">#FFD65B</color>
     <color name="graph_skyblue">#78E3EA</color>
+    <color name="transe">#00000000</color>
 </resources>

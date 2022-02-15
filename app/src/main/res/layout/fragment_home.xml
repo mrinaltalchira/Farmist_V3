@@ -351,8 +351,8 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/weather_background"
                         android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@drawable/weather_background"
                         app:cardCornerRadius="@dimen/_5sdp">
 
                         <RelativeLayout
@@ -376,20 +376,23 @@
                                 android:id="@+id/rlweather"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/_15sdp"
+                                android:layout_marginStart="@dimen/_7sdp"
                                 android:layout_marginTop="@dimen/_10sdp">
 
                                 <ImageView
-                                    android:id="@+id/ivweather"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:id="@+id/ivweather1"
+                                    android:layout_width="@dimen/_54sdp"
+                                    android:layout_height="@dimen/_50sdp"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="15dp"
                                     android:scaleType="fitXY"
                                     android:src="@drawable/ic__weather" />
 
                                 <TextView
+                                    android:id="@+id/tv_todayTemp1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_below="@+id/ivweather"
+                                    android:layout_below="@+id/ivweather1"
                                     android:layout_centerInParent="true"
                                     android:layout_marginStart="@dimen/_15sdp"
                                     android:text="43°"
@@ -400,20 +403,18 @@
 
                             </RelativeLayout>
 
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/tvnextforecast"
-                                android:layout_marginStart="@dimen/_15sdp"
-                                android:layout_marginTop="@dimen/_15sdp"
+                                android:layout_marginTop="10dp"
                                 android:layout_toEndOf="@+id/rlweather"
                                 android:orientation="horizontal"
                                 android:weightSum="3">
 
 
                                 <RelativeLayout
-                                    android:layout_width="0dp"
+                                    android:layout_width="1dp"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:layout_weight="1"
@@ -421,26 +422,37 @@
 
 
                                     <TextView
-                                        android:id="@+id/tvmon"
+                                        android:id="@+id/tv_day_date1"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_alignParentEnd="true"
+                                        android:gravity="center"
                                         android:text="MON"
                                         android:textColor="@color/white"
                                         android:textSize="@dimen/_10sdp"
                                         android:textStyle="normal" />
 
                                     <ImageView
-                                        android:id="@+id/ivmonweather"
-                                        android:layout_width="@dimen/_20sdp"
-                                        android:layout_height="@dimen/_20sdp"
-                                        android:layout_below="@id/tvmon"
+                                        android:id="@+id/ivday1weather"
+                                        android:layout_width="@dimen/_32sdp"
+                                        android:layout_height="@dimen/_32sdp"
+                                        android:layout_below="@id/tv_day_date1"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="15dp"
                                         android:scaleType="fitXY"
                                         android:src="@drawable/ic__weather" />
 
                                     <TextView
+                                        android:id="@+id/tv_todayTempday1"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_below="@+id/ivmonweather"
+                                        android:layout_below="@+id/ivday1weather"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_alignParentEnd="true"
+                                        android:gravity="center"
                                         android:text="43°"
                                         android:textColor="@color/white"
                                         android:textSize="@dimen/_10sdp"
@@ -461,31 +473,43 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="@dimen/_10sdp"
-                                    android:layout_weight="0.7"
+                                    android:layout_weight="1"
                                     android:gravity="center">
 
 
                                     <TextView
-                                        android:id="@+id/tvtue"
+
+                                        android:id="@+id/tv_day_date2"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_alignParentEnd="true"
+                                        android:gravity="center"
                                         android:text="MON"
                                         android:textColor="@color/white"
                                         android:textSize="@dimen/_10sdp"
                                         android:textStyle="normal" />
 
                                     <ImageView
-                                        android:id="@+id/ivtueweather"
-                                        android:layout_width="@dimen/_20sdp"
-                                        android:layout_height="@dimen/_20sdp"
-                                        android:layout_below="@id/tvtue"
+                                        android:id="@+id/ivtueweatherday2"
+                                        android:layout_width="@dimen/_32sdp"
+                                        android:layout_height="@dimen/_32sdp"
+                                        android:layout_below="@id/tv_day_date2"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="15dp"
                                         android:scaleType="fitXY"
                                         android:src="@drawable/ic__weather" />
 
                                     <TextView
+                                        android:id="@+id/tv_temp2"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_below="@+id/ivtueweather"
+                                        android:layout_below="@+id/ivtueweatherday2"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_alignParentEnd="true"
+                                        android:gravity="center"
                                         android:text="43°"
                                         android:textColor="@color/white"
                                         android:textSize="@dimen/_10sdp"
@@ -506,31 +530,44 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="@dimen/_10sdp"
-                                    android:layout_weight="0.7"
+                                    android:layout_weight="1"
                                     android:gravity="center">
 
 
                                     <TextView
-                                        android:id="@+id/tvwed"
+                                        android:id="@+id/tv_day_date3"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_alignParentEnd="true"
+                                        android:gravity="center"
                                         android:text="MON"
                                         android:textColor="@color/white"
                                         android:textSize="@dimen/_10sdp"
                                         android:textStyle="normal" />
 
                                     <ImageView
-                                        android:id="@+id/ivwedweather"
-                                        android:layout_width="@dimen/_20sdp"
-                                        android:layout_height="@dimen/_20sdp"
-                                        android:layout_below="@id/tvwed"
+                                        android:id="@+id/ivwedweatherday3"
+                                        android:layout_width="@dimen/_32sdp"
+                                        android:layout_height="@dimen/_32sdp"
+                                        android:layout_below="@id/tv_day_date3"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="15dp"
                                         android:scaleType="fitXY"
                                         android:src="@drawable/ic__weather" />
 
                                     <TextView
+                                        android:id="@+id/tv_temp3"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_below="@+id/ivwedweather"
+                                        android:layout_below="@+id/ivwedweatherday3"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginEnd="15dp"
+                                        android:gravity="center"
                                         android:text="43°"
                                         android:textColor="@color/white"
                                         android:textSize="@dimen/_10sdp"
@@ -547,7 +584,6 @@
 
 
                     </RelativeLayout>
-
 
                     <RelativeLayout
                         android:layout_width="match_parent"

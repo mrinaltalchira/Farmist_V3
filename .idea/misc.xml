@@ -17,6 +17,7 @@
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/activity_signup_second.xml" value="0.209375" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/activity_splash.xml" value="0.209375" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/adaapter_exp_income_tracker.xml" value="0.18611111111111112" />
+        <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/adapt_file_for_upcomimg_action.xml" value="0.16962025316455695" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/adapter_alerts_news.xml" value="0.1" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/adapter_announcement_all.xml" value="0.209375" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/adapter_exp_log.xml" value="0.209375" />
@@ -33,21 +34,27 @@
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/announcement_details.xml" value="0.209375" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/choose_language.xml" value="0.209375" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/crop_prices.xml" value="0.209375" />
+        <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/customedialoug.xml" value="0.5" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/expense_tracker.xml" value="0.22588235294117648" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/farmer_app.xml" value="0.209375" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/fertilizer_info.xml" value="0.209375" />
+        <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/fragment__farm__info.xml" value="0.1717948717948718" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/fragment_account.xml" value="0.1" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/fragment_alerts.xml" value="0.209375" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/fragment_crop_info_.xml" value="0.33" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/fragment_crops.xml" value="0.209375" />
+        <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/fragment_edit_farm_details.xml" value="0.1717948717948718" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/fragment_expensess__income_tracker.xml" value="0.209375" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/fragment_harvested__crop__info.xml" value="0.209375" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/fragment_home.xml" value="0.209375" />
+        <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/fragment_my_farm_.xml" value="0.1717948717948718" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/fragment_news__announcement_all_.xml" value="0.33" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/fragment_news_all.xml" value="0.209375" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/fragment_prices.xml" value="0.209375" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/fragment_select_crop_category.xml" value="0.209375" />
+        <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/fragment_upcoming_action.xml" value="0.16962025316455695" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/full_exp_log.xml" value="0.209375" />
+        <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/full_expense_log.xml" value="0.1717948717948718" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/loans_subsidies_info.xml" value="0.209375" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/news_details.xml" value="0.209375" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/layout/personal_information.xml" value="0.209375" />

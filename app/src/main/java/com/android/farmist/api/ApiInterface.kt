@@ -4,6 +4,8 @@ import com.android.farmist.model.CropPriceResponse.getCropPrice
 import com.android.farmist.model.ExpensesIncomeTrackerResponse.*
 import com.android.farmist.model.ExpensesIncomeTrackerResponse.ExpensesTrackerResponse.GetExpensesTracker
 import com.android.farmist.model.ExpensesIncomeTrackerResponse.ExpensesTrackerResponse.GetPiChartResponse
+import com.android.farmist.model.FullExpenseLog.Pie
+import com.android.farmist.model.FullExpenseLog.Root
 import com.android.farmist.model.adapterGetFarm.AdeptDataResponce
 import com.android.farmist.model.addCropResponse.AddCropResponse
 import com.android.farmist.model.alertsResponse.GetGovtScheme
@@ -15,12 +17,16 @@ import com.android.farmist.model.getFarmForSpinnner.FarmsSpinner
 import com.android.farmist.model.getFarms
 import com.android.farmist.model.getSowedCrop.GetSowedCrop
 import com.android.farmist.model.getUserInfo.getUserModel
+import com.android.farmist.model.location.Report
 import com.android.farmist.model.profileImgResponse.GetUserImagResponse
 import com.android.farmist.model.profileImgResponse.SetProfileResponse
 import com.android.farmist.model.profileImgResponse.getProfileResoponse
 import com.android.farmist.model.selectCategoryResponse.GetFruitsList
 import com.android.farmist.model.selectCategoryResponse.GetVagList
+import com.android.farmist.model.setFarm.DeleteFarmRespo
+import com.android.farmist.model.setFarm.GetFarmEditResponce
 import com.android.farmist.model.setFarm.setFarm
+import com.android.farmist.model.setFarm.updateDataRespo
 import com.android.farmist.model.signUp.signUpModel
 import io.reactivex.rxjava3.core.Observable
 import okhttp3.MultipartBody
@@ -139,6 +145,55 @@ interface ApiInterface {
         @Part("sowedDate") sowedDate: RequestBody,
 
     ): Call<AddCropResponse>
+
+
+
+    // mrinal code marge //
+
+
+    @GET("farms")
+    fun getFarmsForAdaper(@Query("userId") userId: String): Call<AdeptDataResponce>
+
+
+    @DELETE("farm/delete/{id}")
+    fun deleteFarm(@Path("id") id: String): Call<DeleteFarmRespo>
+
+
+    @Multipart
+    @PUT("farm/update/{id}")
+    fun updateFarm(
+        @Path("id") id: String,
+        @Part image: MultipartBody.Part,
+        @Part("image") desc: RequestBody,
+        @Part("name") name: RequestBody,
+        @Part("area") area: RequestBody,
+        @Part("areaType") areaType: RequestBody,
+        @Part("tehsil") tehsil: RequestBody,
+        @Part("surveyNum") surveyNum: RequestBody
+    ): Call<updateDataRespo>
+
+
+    @GET("farm/details/{id}")
+    fun getFarmForEdit(
+        @Path("id") userId: String
+    ): Call<GetFarmEditResponce>
+
+    @GET("forecast.json")
+    fun getTemp(
+        @Query("key") key: String,
+        @Query("q") q: String,
+        @Query("days") days: String
+    ): Call<Report>
+
+    @GET("expense/get/full-log")
+    fun fullExpenceLogData(
+        @Query("cropId") cropId: String
+    ): Call<Root>
+
+    @GET("expense/chart")
+    fun getPie(
+        @Query("cropId") cropId: String
+    ): Call<Pie>
 
     //get sowed crop
     @GET("crops")
