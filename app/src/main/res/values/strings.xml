@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Farmist</string>
+    <string name="english">English</string>
+    <string name="hindi">Hindi</string>
+    <string name="telegu">Telegu</string>
+    <string name="kannada">Kannada</string>
+    <string name="login">Login</string>
+    <string name="enter_your_mobile_number_and_we_will_send_the_verification_code">Enter your mobile number and we will send the verification code</string>
+    <string name="don_t_have_account">Don’t have account?</string>
+    <string name="sign_up">Sign up</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sharedtext">shareImg</string>
+    <string-array name="Languages">
+        <item>Java</item>
+        <item>Kotlin</item>
+        <item>Swift</item>
+        <item>Python</item>
+        <item>Scala</item>
+        <item>Perl</item>
+    </string-array>
+</resources>

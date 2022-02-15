@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.android.farmist.fragments.Home_Fragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_expensess_Income_tracker"
+            app:destination="@id/expensess_Income_tracker" />
+        <action
+            android:id="@+id/action_nav_home_to_crops_Fragment"
+            app:destination="@id/crops_Fragment" />
+        <action
+            android:id="@+id/action_nav_home_to_loan_Subsidies_Fragment"
+            app:destination="@id/loan_Subsidies_Fragment" />
+        <action
+            android:id="@+id/action_nav_home_to_fragment_Farm_States"
+            app:destination="@id/fragment_Farm_States" />
+        <action
+            android:id="@+id/action_nav_home_to_newsDetail_Fragment"
+            app:destination="@id/newsDetail_Fragment" />
+        <action
+            android:id="@+id/action_nav_home_to_marketPriceFragment"
+            app:destination="@id/marketPriceFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_news_Announcement_all_Fragment"
+            app:destination="@id/news_Announcement_all_Fragment" />
+        <action
+            android:id="@+id/action_nav_home_to_myFarm_Fragment"
+            app:destination="@id/myFarm_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_alerts"
+        android:name="com.android.farmist.fragments.Alerts_Fragment"
+        android:label="Categroies"
+        tools:layout="@layout/fragment_alerts" >
+        <action
+            android:id="@+id/action_nav_alerts_to_newsDetail_Fragment"
+            app:destination="@id/newsDetail_Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_prices"
+        android:name="com.android.farmist.fragments.Prices_Fragment"
+        android:label="Favorite"
+        tools:layout="@layout/fragment_prices" >
+        <action
+            android:id="@+id/action_nav_prices_to_marketPriceFragment"
+            app:destination="@id/marketPriceFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_account"
+        android:name="com.android.farmist.fragments.Account_Fragment"
+        android:label="Histoory"
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_nav_account_to_personal_Information_Fragment"
+            app:destination="@id/personal_Information_Fragment" />
+        <action
+            android:id="@+id/action_nav_account_to_choose_Language_Fragment"
+            app:destination="@id/choose_Language_Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/expensess_Income_tracker"
+        android:name="com.android.farmist.fragments.Expensess_Income_tracker"
+        android:label="Expensess_Income_tracker"
+        tools:layout="@layout/fragment_expensess__income_tracker">
+        <action
+            android:id="@+id/action_expensess_Income_tracker_to_expenses_Tracker_Fragment"
+            app:destination="@id/expenses_Tracker_Fragment" />
+        <action
+            android:id="@+id/action_expensess_Income_tracker_to_add_Subsidy_Fragment"
+            app:destination="@id/add_Subsidy_Fragment" />
+        <action
+            android:id="@+id/action_expensess_Income_tracker_to_add_Income_Fragment"
+            app:destination="@id/add_Income_Fragment" />
+        <action
+            android:id="@+id/action_expensess_Income_tracker_to_add_Expenses_Fragment"
+            app:destination="@id/add_Expenses_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myFarm_Fragment"
+        android:name="com.android.farmist.fragments.MyFarm_Fragment"
+        android:label="MyFarm_Fragment"
+        tools:layout="@layout/fragment_my_farm_">
+        <action
+            android:id="@+id/action_myFarm_Fragment_to_addFarmDetails"
+            app:destination="@id/addFarmDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/crops_Fragment"
+        android:name="com.android.farmist.fragments.Crops_Fragment"
+        android:label="Crops_Fragment"
+        tools:layout="@layout/fragment_crops">
+        <action
+            android:id="@+id/action_crops_Fragment_to_activity_Crop_Details_Fragment"
+            app:destination="@id/activity_Crop_Details_Fragment" />
+        <action
+            android:id="@+id/action_crops_Fragment_to_activity_Crop_Details_Fragment2"
+            app:destination="@id/activity_Crop_Details_Fragment" />
+        <action
+            android:id="@+id/action_crops_Fragment_to_crop_info_Fragment"
+            app:destination="@id/crop_info_Fragment" />
+        <action
+            android:id="@+id/action_crops_Fragment_to_selectCropCategory"
+            app:destination="@id/selectCropCategory" />
+    </fragment>
+    <fragment
+        android:id="@+id/loan_Subsidies_Fragment"
+        android:name="com.android.farmist.fragments.Loan_Subsidies_Fragment"
+        android:label="Loan_Subsidies_Fragment"
+        tools:layout="@layout/loans_subsidies_info"/>
+    <fragment
+        android:id="@+id/fragment_Farm_States"
+        android:name="com.android.farmist.fragments.Fragment_Farm_States"
+        android:label="Fragment_Farm_States"
+        tools:layout="@layout/farm_status"/>
+    <fragment
+        android:id="@+id/newsDetail_Fragment"
+        android:name="com.android.farmist.fragments.NewsDetail_Fragment"
+        android:label="NewsDetail_Fragment"
+        tools:layout="@layout/news_details"/>
+    <fragment
+        android:id="@+id/marketPriceFragment"
+        android:name="com.android.farmist.fragments.MarketPriceFragment"
+        android:label="MarketPriceFragment"
+        tools:layout="@layout/fragment_market_price"/>
+    <fragment
+        android:id="@+id/news_Announcement_all_Fragment"
+        android:name="com.android.farmist.fragments.News_Announcement_all_Fragment"
+        android:label="News_Announcement_all_Fragment"
+        tools:layout="@layout/fragment_news__announcement_all_"/>
+    <fragment
+        android:id="@+id/expenses_Tracker_Fragment"
+        android:name="com.android.farmist.fragments.Expenses_Tracker_Fragment"
+        android:label="Expenses_Tracker_Fragment"
+        tools:layout="@layout/expense_tracker">
+        <action
+            android:id="@+id/action_expenses_Tracker_Fragment_to_full_Expenses_Log_Fragment"
+            app:destination="@id/full_Expenses_Log_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/full_Expenses_Log_Fragment"
+        android:name="com.android.farmist.fragments.Full_Expenses_Log_Fragment"
+        android:label="Full_Expenses_Log_Fragment"
+        tools:layout="@layout/full_expense_log"/>
+    <fragment
+        android:id="@+id/personal_Information_Fragment"
+        android:name="com.android.farmist.fragments.Personal_Information_Fragment"
+        android:label="Personal_Information_Fragment"
+        tools:layout="@layout/personal_information"/>
+    <fragment
+        android:id="@+id/choose_Language_Fragment"
+        android:name="com.android.farmist.fragments.Choose_Language_Fragment"
+        android:label="Choose_Language_Fragment"
+        tools:layout="@layout/choose_language"/>
+    <fragment
+        android:id="@+id/add_Subsidy_Fragment"
+        android:name="com.android.farmist.fragments.Add_Subsidy_Fragment"
+        android:label="Add_Subsidy_Fragment"
+        tools:layout="@layout/add_subsidy">
+        <action
+            android:id="@+id/action_add_Subsidy_Fragment_to_expensess_Income_tracker"
+            app:destination="@id/expensess_Income_tracker" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_Income_Fragment"
+        android:name="com.android.farmist.fragments.Add_Income_Fragment"
+        android:label="Add_Income_Fragment"
+        tools:layout="@layout/add_income">
+        <action
+            android:id="@+id/action_add_Income_Fragment_to_expensess_Income_tracker"
+            app:destination="@id/expensess_Income_tracker" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_Expenses_Fragment"
+        android:name="com.android.farmist.fragments.Add_Expenses_Fragment"
+        android:label="Add_Expenses_Fragment"
+        tools:layout="@layout/add_expenses">
+        <action
+            android:id="@+id/action_add_Expenses_Fragment_to_expensess_Income_tracker"
+            app:destination="@id/expensess_Income_tracker" />
+    </fragment>
+    <fragment
+        android:id="@+id/activity_Crop_Details_Fragment"
+        android:name="com.android.farmist.fragments.Activity_Crop_Details_Fragment"
+        android:label="Activity_Crop_Details_Fragment"
+        tools:layout="@layout/activity_add_crop_details">
+        <action
+            android:id="@+id/action_activity_Crop_Details_Fragment_to_addFarmDetails"
+            app:destination="@id/addFarmDetails" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/add_Farm_Details_Fragment"
+        android:name="com.android.farmist.fragments.Add_Farm_Details_Fragment"
+        android:label="Add_Farm_Details_Fragment"
+        tools:layout="@layout/add_farm_detail"/>
+    <activity
+        android:id="@+id/addFarmDetails"
+        android:name="com.android.farmist.AddFarmDetails"
+        android:label="AddFarmDetails"
+        tools:layout="@layout/add_farm_detail"/>
+    <fragment
+        android:id="@+id/crop_info_Fragment"
+        android:name="com.android.farmist.fragments.Crop_info_Fragment"
+        android:label="fragment_crop_info_"
+        tools:layout="@layout/fragment_crop_info_"
+
+        />
+    <fragment
+        android:id="@+id/selectCropCategory"
+        android:name="com.android.farmist.SelectCropCategory"
+        android:label="fragment_select_crop_category"
+        tools:layout="@layout/fragment_select_crop_category" >
+        <action
+            android:id="@+id/action_selectCropCategory_to_activity_Crop_Details_Fragment"
+            app:destination="@id/activity_Crop_Details_Fragment" />
+    </fragment>
+
+</navigation>

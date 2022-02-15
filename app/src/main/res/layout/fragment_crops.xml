@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".fragments.Crops_Fragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_48sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/back"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:text="My Crops"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="normal" />
+
+
+                <TextView
+                    android:id="@+id/tvaddnewcrop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="Add new crops"
+                    android:textColor="@color/green_selected"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/_10sdp"
+            app:tabGravity="fill"
+            app:tabIndicatorAnimationDuration="@integer/config_navAnimTime"
+            app:tabIndicatorColor="@color/green_selected"
+            app:tabMode="fixed"
+            app:tabTextColor="@color/green_selected"
+            app:tabIndicatorFullWidth="false" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/tabViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+    </LinearLayout>
+</layout>

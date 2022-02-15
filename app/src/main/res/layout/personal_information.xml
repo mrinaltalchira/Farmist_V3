@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_48sdp"
+            android:elevation="@dimen/_5sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Personal Information"
+                    android:textStyle="normal"
+                    android:textSize="@dimen/_14sdp"
+                    android:textColor="@color/black"
+                    android:drawableLeft="@drawable/back"
+                    android:drawablePadding="@dimen/_10sdp" />
+
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:scrollbars="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:textColor="@color/light_grey"
+                    android:textSize="@dimen/_12sdp" />
+
+
+                <EditText
+                    android:id="@+id/userName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/loan_form_background"
+                    android:padding="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:hint=""
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_5sdp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone number"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_12sdp" />
+
+
+                <EditText
+                    android:id="@+id/userPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/loan_form_background"
+                    android:padding="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:text=""
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:maxLength="10"
+                    />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pincode"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_12sdp" />
+
+
+                <EditText
+                    android:id="@+id/userPincode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/loan_form_background"
+                    android:padding="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:text=""
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_5sdp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Village"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_12sdp" />
+
+
+                <EditText
+                    android:id="@+id/userVillage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/loan_form_background"
+                    android:padding="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:text=""
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_5sdp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tehsil"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_12sdp" />
+
+
+                <EditText
+                    android:id="@+id/userTehsil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/loan_form_background"
+                    android:padding="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:text=""
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_5sdp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="District"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_12sdp" />
+
+
+                <EditText
+                    android:id="@+id/userDistrict"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/loan_form_background"
+                    android:padding="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:text=""
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_5sdp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Number of accers"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_12sdp" />
+
+
+                <EditText
+                    android:id="@+id/userNoAcres"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/loan_form_background"
+                    android:padding="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:text=""
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_5sdp" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/saveBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:padding="@dimen/_12sdp"
+                    android:text="Save Profile"
+                    android:textSize="@dimen/_14sdp"
+                    android:textColor="@color/white"
+                    android:textStyle="normal"
+                    android:textAllCaps="false"
+                    android:layout_marginBottom="@dimen/_30sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:background="@drawable/login_btn_background" />
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+</layout>

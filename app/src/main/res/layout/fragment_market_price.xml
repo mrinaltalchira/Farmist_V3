@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".fragments.MarketPriceFragment">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                android:elevation="@dimen/_5sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Market Price"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/_14sdp"
+                        android:textColor="@color/black"
+                        android:drawableLeft="@drawable/back"
+                        android:drawablePadding="@dimen/_10sdp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp">
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivdp"
+                        android:layout_width="@dimen/_65sdp"
+                        android:layout_height="@dimen/_65sdp"
+                        android:src="@drawable/home_farm" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SunFlower"
+                        android:textSize="@dimen/_14sdp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_toEndOf="@+id/ivdp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_10sdp" />
+
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Current Market Price"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs. 100/kg"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textStyle="normal"
+                    android:textColor="@color/light_grey"
+                    android:textSize="@dimen/_14sdp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Market Price Trend"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp" />
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/graph"
+                    android:scaleType="fitXY"
+                    android:layout_marginTop="@dimen/_15sdp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

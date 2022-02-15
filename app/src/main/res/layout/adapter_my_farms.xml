@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/_5sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:elevation="@dimen/_5sdp">
+
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+
+
+
+
+       <ImageView
+           android:id="@+id/img_adapt_MyFarm"
+           android:layout_width="match_parent"
+           android:layout_height="@dimen/_120sdp"
+           android:src="@drawable/home_farm"
+           android:scaleType="fitXY"/>
+
+
+       <TextView
+           android:id="@+id/tv_name_adapt_MyFarm"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="@dimen/_10sdp"
+           android:textColor="@color/black"
+           android:text="Priez Field"
+           android:textSize="@dimen/_16sdp"
+           android:textStyle="bold"
+           android:layout_marginStart="@dimen/_5sdp"/>
+
+
+       <TextView
+           android:id="@+id/tv_tehsil_adapt_MyFarm"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textColor="@color/brown_light"
+           android:text="Germany"
+           android:textSize="@dimen/_12sdp"
+           android:layout_marginStart="@dimen/_5sdp"/>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+>
+    <TextView
+           android:id="@+id/tv_area_adapt_MyFarm"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textColor="@color/brown_light"
+           android:text="28 acres"
+           android:textSize="@dimen/_12sdp"
+           android:layout_marginStart="@dimen/_5sdp"/>
+
+       <TextView
+           android:id="@+id/tv_areaType_adapt_MyFarm"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textColor="@color/brown_light"
+           android:text="28 acres"
+           android:textSize="@dimen/_12sdp"
+           android:layout_marginStart="@dimen/_5sdp"/>
+   </LinearLayout>
+
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:weightSum="2"
+           android:layout_marginTop="@dimen/_10sdp"
+           android:background="@color/green_selected">
+
+
+
+
+           <TextView
+               android:id="@+id/btn_edit_adapt_MyFarm"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:text="Edit"
+               android:textStyle="normal"
+               android:gravity="center"
+               android:layout_marginTop="@dimen/_3sdp"
+               android:layout_marginBottom="@dimen/_3sdp"
+               android:textSize="@dimen/_14sdp"
+               android:textColor="@color/white"/>
+
+
+
+           <TextView
+               android:id="@+id/btn_delete_adapt_MyFarm"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:text="Delete"
+               android:gravity="center"
+               android:textStyle="normal"
+               android:layout_marginTop="@dimen/_3sdp"
+               android:layout_marginBottom="@dimen/_3sdp"
+               android:textSize="@dimen/_14sdp"
+               android:textColor="@color/white"/>
+
+
+
+
+       </LinearLayout>
+
+
+
+   </LinearLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:background="@drawable/loan_form_background"
+        android:orientation="vertical"
+
+
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_3sdp"
+        android:layout_marginEnd="@dimen/_3sdp"
+
+        >
+
+
+
+        <ImageView
+            android:id="@+id/ivSelectCropCategory"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_noun_fruits_2103787"
+            android:layout_centerInParent="true"
+
+            />
+
+
+        <TextView
+            android:id="@+id/TvtittleSelectCrop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivSelectCropCategory"
+            android:layout_centerHorizontal="true"
+
+            android:text="Corn"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8sdp"
+            android:textStyle="normal" />
+
+
+    </RelativeLayout>
+
+
+</layout>

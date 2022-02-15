@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_130sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_1sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_5sdp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_90sdp"
+                        android:src="@drawable/carrot"
+                        android:scaleType="fitXY" />
+
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Corn"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_14sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rs. 100"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/_12sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:textColor="@color/brown_light" />
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!--  <androidx.cardview.widget.CardView
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  app:cardCornerRadius="@dimen/_5sdp"
+                  app:cardElevation="@dimen/_5sdp"
+                  android:layout_marginEnd="@dimen/_5sdp"
+                  android:layout_weight="1">
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginBottom="@dimen/_5sdp"
+                      android:orientation="vertical">
+
+                      <ImageView
+                          android:layout_width="match_parent"
+                          android:layout_height="@dimen/_90sdp"
+                          android:src="@drawable/carrot"
+                          android:scaleType="fitXY"/>
+
+
+                      <TextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="Corn"
+                          android:textStyle="bold"
+                          android:textSize="@dimen/_14sdp"
+                          android:layout_marginStart="@dimen/_5sdp"
+                          android:layout_marginTop="@dimen/_5sdp"
+                          android:textColor="@color/black"/>
+
+                      <TextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="Rs. 100"
+                          android:textStyle="normal"
+                          android:textSize="@dimen/_12sdp"
+                          android:layout_marginStart="@dimen/_5sdp"
+                          android:textColor="@color/brown_light"/>
+
+
+                  </LinearLayout>
+
+
+
+              </androidx.cardview.widget.CardView>-->
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

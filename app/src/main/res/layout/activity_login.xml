@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.LoginActivity">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bottom_img"
+            android:scaleType="fitXY"
+            android:layout_alignParentBottom="true" />
+
+
+        <ImageView
+            android:id="@+id/leaf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/leaf"
+            android:layout_alignParentEnd="true" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_below="@+id/leaf">
+
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/leaf"
+                android:layout_gravity="center_horizontal" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_18sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_your_mobile_number_and_we_will_send_the_verification_code"
+                android:textColor="@color/light_grey"
+                android:textStyle="normal"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textSize="@dimen/_14sdp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone number"
+                android:textColor="@color/light_grey"
+                android:textStyle="normal"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:textSize="@dimen/_14sdp" />
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_1sdp"
+                android:layout_marginEnd="@dimen/_1sdp"
+                app:cardCornerRadius="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp">
+
+                <EditText
+                    android:id="@+id/et_mobilenumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:hint="9988556655"
+                    android:maxLength="10"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:textSize="@dimen/_16sdp"
+                    android:padding="@dimen/_12sdp" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnloginnext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:padding="@dimen/_10sdp"
+                android:text="Next"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/white"
+                android:textStyle="normal"
+                android:textAllCaps="false"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:background="@drawable/login_btn_background" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="normal"
+                    android:text="@string/don_t_have_account" />
+
+
+                <TextView
+                    android:id="@+id/tvsignup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold"
+                    android:textColor="@color/green_selected"
+                    android:text="@string/sign_up" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>

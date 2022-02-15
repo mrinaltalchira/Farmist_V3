@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp"
+            android:orientation="vertical"
+            android:background="@color/green_selected">
+
+            <TextView
+                android:id="@+id/backbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:drawableLeft="@drawable/back"
+                android:drawablePadding="@dimen/_10sdp"
+                android:drawableTint="@color/white"
+                android:text="Add crop details"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp" />
+
+            <RelativeLayout
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/add_crop_background"
+                android:layout_below="@id/backbtn"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/crop_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Orange"
+                    android:textColor="@color/green_selected"
+                    android:textSize="@dimen/_14sdp" />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/layout_background"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_100sdp">
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:orientation="vertical">
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img_add_crop"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:src="@drawable/cow"
+                        android:layout_gravity="center_horizontal" />
+
+
+                    <TextView
+                        android:id="@+id/addphoto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add photo"
+                        android:textColor="@color/green_selected"
+                        android:textSize="@dimen/_12sdp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_3sdp" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Choose Farm"
+                            android:textColor="@color/grey"
+                            android:textStyle="normal"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <TextView
+                            android:id="@+id/tvaddnewfarm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:text="Add new farm"
+                            android:textColor="@color/green_selected"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="normal" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/loan_form_background"
+                        android:orientation="vertical">
+
+
+                        <Spinner
+                            android:padding="5dp"
+                            android:id="@+id/tv_spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@null"
+                            android:layout_gravity="center"
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+
+                            android:spinnerMode="dropdown"
+                           />
+
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sowed Area"
+                        android:textColor="@color/light_grey"
+                        android:textStyle="normal"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:weightSum="3"
+                        android:orientation="horizontal">
+
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.8">
+
+
+                            <ImageView
+                                android:id="@+id/decriment"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/minus_circle" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/loan_form_background"
+                            android:layout_weight="1.6"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginStart="@dimen/_20sdp">
+
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/et_counterValue_AddCrop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:background="@null"
+                                android:focusable="true"
+                                android:hint="0"
+                                android:inputType="number"
+                                android:padding="@dimen/_12sdp"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp"
+                                android:textStyle="normal" />
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.8">
+
+
+                            <ImageView
+                                android:id="@+id/incriment"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/plus_circle" />
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="9"
+                        >
+
+                        <RadioGroup
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:id="@+id/rg_radiogroup_AddCrop"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="9"
+                            >
+
+                            <RadioButton
+                                android:id="@+id/r_b_Acers_addCrop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Acers"
+                                android:layout_weight="3"
+                                android:textSize="@dimen/_14sdp"
+                                />
+
+                            <RadioButton
+                                android:id="@+id/r_b_Guntas_addCrop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Guntas"
+                                android:layout_weight="3"
+                                android:textSize="@dimen/_14sdp"
+                                />
+
+                            <RadioButton
+                                android:id="@+id/r_b_Bhigas_addCrop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bhigas"
+                                android:layout_weight="3.33"
+                                android:textSize="@dimen/_14sdp"/>
+
+                        </RadioGroup>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sowed Date"
+                        android:textColor="@color/light_grey"
+                        android:textStyle="normal"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <RelativeLayout
+                        android:id="@+id/calenderLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/loan_form_background"
+                        android:orientation="vertical">
+
+
+                        <EditText
+                            android:id="@+id/et_date_AddCrop"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_toLeftOf="@+id/iv_calender_addCrop"
+                            android:background="@null"
+                            android:clickable="true"
+                            android:cursorVisible="false"
+                            android:focusable="false"
+                            android:hint="12-12-2000"
+                            android:maxLength="10"
+                            android:maxLines="1"
+                            android:padding="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/iv_calender_addCrop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:src="@drawable/ic_calendar" />
+
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:background="@drawable/loan_form_background"
+                        android:orientation="vertical">
+
+
+                    </LinearLayout>
+
+
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_save_addCrop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:padding="@dimen/_10sdp"
+                        android:text="Save"
+                        android:textSize="@dimen/_14sdp"
+                        android:textColor="@color/white"
+                        android:textStyle="normal"
+                        android:textAllCaps="false"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:background="@drawable/login_btn_background"
+                        />
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

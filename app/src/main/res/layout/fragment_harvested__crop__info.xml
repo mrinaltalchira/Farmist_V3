@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/_10sdp"
+    tools:context=".fragments.Crop_info_Fragment">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_160sdp"
+                android:background="@drawable/bottm_round_background"
+                android:layout_marginBottom="@dimen/_10sdp">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/cow"
+                    android:scaleType="fitXY"/>
+
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/back"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:tint="@color/white" />
+
+
+                <TextView
+                    android:id="@+id/tvdelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delete"
+                    android:textSize="@dimen/_14sdp"
+                    android:textColor="@color/white"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:drawableTop="@drawable/ic_delete"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit"
+                    android:textSize="@dimen/_14sdp"
+                    android:textColor="@color/white"
+                    android:layout_toStartOf="@+id/tvdelete"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:drawableTop="@drawable/ic_edit"/>
+
+
+
+                <TextView
+                    android:id="@+id/tvacers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="48 Acers"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/_5sdp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Red Chillies"
+                    android:textSize="@dimen/_14sdp"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_above="@+id/tvacers" />
+
+
+
+            </RelativeLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:weightSum="3">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:weightSum="1">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+
+
+                        <ImageView
+                            android:id="@+id/sowedcircle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic__circle_point"/>
+
+
+
+
+
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/light_grey"
+                        android:layout_centerVertical="true" />
+
+
+
+
+
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:weightSum="1"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic__circle_point"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/light_grey"
+                        android:layout_gravity="center"/>
+
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:weightSum="1"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic__circle_point"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/light_grey"
+                        android:layout_gravity="center"/>
+
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic__circle_point"/>
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:weightSum="3">
+
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:weightSum="1"
+                    android:orientation="horizontal">
+
+
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Add fertilizer 26 Feb"
+                        android:layout_weight="0.9" />
+
+
+
+
+
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:weightSum="1"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Add fertilizer 26 Feb"
+                        android:layout_weight="0.9" />
+
+
+
+
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:weightSum="1"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Add fertilizer 26 Mar"
+                        android:layout_weight="0.9" />
+
+
+
+
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Harvest 26 April"
+                        android:layout_weight="0.9" />
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:weightSum="1">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Crop Yield"
+                        android:textSize="@dimen/_16sdp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1.2 kg/acre"
+                        android:textSize="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:textColor="@color/light_grey"
+                        android:textStyle="normal"/>
+
+
+
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Crop Sold"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/_16sdp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rs.100"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:textColor="@color/light_grey"
+                        android:textStyle="normal"/>
+
+
+
+
+                </LinearLayout>
+
+
+
+
+
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="Profit &amp; Loss"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp"/>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:weightSum="1">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:background="@drawable/profit_background"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_16sdp"
+                        android:textColor="@color/white"
+                        android:textStyle="normal"
+                        android:text="Rs. 1,000"
+                        android:layout_gravity="center_horizontal"
+                        android:drawableLeft="@drawable/ic_profit"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_16sdp"
+                        android:textColor="@color/white"
+                        android:textStyle="normal"
+                        android:text="Profit"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_3sdp"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:background="@drawable/loss_background"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_16sdp"
+                        android:textColor="@color/white"
+                        android:textStyle="normal"
+                        android:text="Rs. 1,000"
+                        android:layout_gravity="center_horizontal"
+                        android:drawableLeft="@drawable/ic_loose"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_16sdp"
+                        android:textColor="@color/white"
+                        android:textStyle="normal"
+                        android:text="Loos"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_3sdp"/>
+
+
+
+
+
+                </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expense Chart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View full log"
+                    android:textStyle="normal"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/green_selected"
+                    android:textSize="@dimen/_14sdp"/>
+
+
+
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+
+
+                <ImageView
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_120sdp"
+                    android:src="@drawable/chart"/>
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_50sdp"
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp">
+
+
+                        <LinearLayout
+                            android:id="@+id/llgraphseeds"
+                            android:layout_width="@dimen/_8sdp"
+                            android:layout_height="@dimen/_8sdp"
+                            android:orientation="horizontal"
+                            android:layout_centerVertical="true"
+                            android:background="@color/graph_blue"/>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_toEndOf="@+id/llgraphseeds"
+                            android:text="Seeds"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="normal" />
+
+
+                    </RelativeLayout>
+
+
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp">
+
+
+                        <LinearLayout
+                            android:id="@+id/llgraphFertilizer"
+                            android:layout_width="@dimen/_8sdp"
+                            android:layout_height="@dimen/_8sdp"
+                            android:orientation="horizontal"
+                            android:layout_centerVertical="true"
+                            android:background="@color/graph_pink"/>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_toEndOf="@+id/llgraphFertilizer"
+                            android:text="Fertilizer"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="normal" />
+
+
+                    </RelativeLayout>
+
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp">
+
+
+                        <LinearLayout
+                            android:id="@+id/llgraphLabour"
+                            android:layout_width="@dimen/_8sdp"
+                            android:layout_height="@dimen/_8sdp"
+                            android:orientation="horizontal"
+                            android:layout_centerVertical="true"
+                            android:background="@color/graph_green"/>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/llgraphLabour"
+                            android:text="Labour"
+                            android:textStyle="normal"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_10sdp"/>
+
+
+                    </RelativeLayout>
+
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp">
+
+
+                        <LinearLayout
+                            android:id="@+id/llgraphTractor"
+                            android:layout_width="@dimen/_8sdp"
+                            android:layout_height="@dimen/_8sdp"
+                            android:orientation="horizontal"
+                            android:layout_centerVertical="true"
+                            android:background="@color/graph_yellow"/>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/llgraphTractor"
+                            android:text="Tractor"
+                            android:textStyle="normal"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_10sdp"/>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp">
+
+
+                        <LinearLayout
+                            android:id="@+id/llgraphIncome"
+                            android:layout_width="@dimen/_8sdp"
+                            android:layout_height="@dimen/_8sdp"
+                            android:orientation="horizontal"
+                            android:layout_centerVertical="true"
+                            android:background="@color/graph_red"/>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/llgraphIncome"
+                            android:text="Income"
+                            android:textStyle="normal"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_10sdp"/>
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp">
+
+
+                        <LinearLayout
+                            android:id="@+id/llgraphSubsidy"
+                            android:layout_width="@dimen/_8sdp"
+                            android:layout_height="@dimen/_8sdp"
+                            android:orientation="horizontal"
+                            android:layout_centerVertical="true"
+                            android:background="@color/graph_skyblue"/>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/llgraphSubsidy"
+                            android:text="Subsidy"
+                            android:textStyle="normal"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_10sdp"/>
+
+
+                    </RelativeLayout>
+
+
+
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fertilizer Info"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View more"
+                    android:textStyle="normal"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/green_selected"
+                    android:textSize="@dimen/_14sdp"/>
+
+
+
+
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Lorem ipsum set amet dorem"
+                android:textColor="@color/light_grey"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"/>
+
+
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pest Info"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View more"
+                    android:textStyle="normal"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/green_selected"
+                    android:textSize="@dimen/_14sdp"/>
+
+
+
+
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Lorem ipsum set amet dorem"
+                android:textColor="@color/light_grey"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"/>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Insecticides Info"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View more"
+                    android:textStyle="normal"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/green_selected"
+                    android:textSize="@dimen/_14sdp"/>
+
+
+
+
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Lorem ipsum set amet dorem"
+                android:textColor="@color/light_grey"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"/>
+
+
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+
+
+</LinearLayout>

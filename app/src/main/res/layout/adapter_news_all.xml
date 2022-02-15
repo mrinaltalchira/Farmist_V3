@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:cardElevation="@dimen/_5sdp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/cow" />
+
+
+            <TextView
+                android:id="@+id/tvnewsdes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="Punjab Farmers end protest after hike"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tvnewsdes"
+                android:text="10 minutes ago"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+
+                />
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

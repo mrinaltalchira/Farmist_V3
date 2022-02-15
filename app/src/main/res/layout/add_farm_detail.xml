@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:background="@color/green_selected"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:drawableLeft="@drawable/back"
+                android:drawablePadding="@dimen/_10sdp"
+                android:drawableTint="@color/white"
+                android:text="Add farm details"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:background="@drawable/layout_background"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img_add_Farm"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:src="@drawable/cow" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:text="Change photo"
+                        android:textColor="@color/green_selected"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:text="Name"
+                        android:textColor="@color/light_grey"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/loan_form_background"
+                        android:orientation="vertical">
+
+
+                        <EditText
+                            android:id="@+id/tv_name_addFarm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@null"
+                            android:hint="Micel"
+                            android:inputType="text"
+                            android:maxLength="10"
+                            android:maxLines="1"
+                            android:padding="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="normal" />
+
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:text="Area"
+                        android:textColor="@color/light_grey"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/loan_form_background"
+                        android:orientation="vertical">
+
+
+                        <EditText
+                            android:id="@+id/tv_area_addFarm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@null"
+                            android:hint="200"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            android:maxLines="1"
+                            android:padding="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="normal" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                       android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:weightSum="9"
+                        >
+
+                        <RadioGroup
+                            android:id="@+id/rg_radiogroup_AddFarm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="9"
+                            >
+
+                            <RadioButton
+                                android:id="@+id/r_b_Acers_addFarm"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Acers"
+                                android:layout_weight="3"
+                                android:textSize="@dimen/_14sdp"
+
+                                />
+
+                            <RadioButton
+                                android:id="@+id/r_b_Guntas_addFarm"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Guntas"
+                                android:layout_weight="3"
+                                android:textSize="@dimen/_14sdp"
+                                />
+
+                            <RadioButton
+                                android:id="@+id/r_b_Bhigas_addFarm"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bhigas"
+                                android:layout_weight="3.33"
+                                android:textSize="@dimen/_14sdp"/>
+
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <!--                    <LinearLayout-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginStart="@dimen/_10sdp"-->
+                    <!--                        android:layout_marginTop="@dimen/_10sdp"-->
+                    <!--                        android:layout_marginEnd="@dimen/_10sdp"-->
+                    <!--                        android:orientation="horizontal"-->
+                    <!--                        android:weightSum="3">-->
+
+                    <!--                        <RadioGroup-->
+                    <!--                            android:id="@+id/rg_Selectedoption_AddFarm"-->
+                    <!--                            android:layout_width="match_parent"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:orientation="horizontal"-->
+                    <!--                            android:weightSum="3"-->
+                    <!--                            android:checked="false">-->
+
+                    <!--                            <RelativeLayout-->
+                    <!--                                android:layout_width="0dp"-->
+                    <!--                                android:layout_height="wrap_content"-->
+                    <!--                                android:layout_weight="1">-->
+
+                    <!--                                <RadioButton-->
+                    <!--                                    android:id="@+id/r_b_Acers_addFarm"-->
+                    <!--                                    android:layout_width="wrap_content"-->
+                    <!--                                    android:layout_height="wrap_content"-->
+                    <!--                                    android:layout_alignParentStart="true"-->
+                    <!--                                    android:text="Acers"-->
+                    <!--                                    android:textSize="@dimen/_14sdp"-->
+
+                    <!--                                    />-->
+
+                    <!--                            </RelativeLayout>-->
+
+
+                    <!--                            <RelativeLayout-->
+                    <!--                                android:layout_width="0dp"-->
+                    <!--                                android:layout_height="wrap_content"-->
+                    <!--                                android:layout_weight="1">-->
+
+
+                    <!--                                <RadioButton-->
+                    <!--                                    android:id="@+id/r_b_Guntas_addFarm"-->
+                    <!--                                    android:layout_width="wrap_content"-->
+                    <!--                                    android:layout_height="wrap_content"-->
+                    <!--                                    android:layout_centerInParent="true"-->
+                    <!--                                    android:text="Guntas"-->
+                    <!--                                    android:textSize="@dimen/_14sdp" />-->
+                    <!--                            </RelativeLayout>-->
+
+                    <!--                            <RelativeLayout-->
+                    <!--                                android:layout_width="0dp"-->
+                    <!--                                android:layout_height="wrap_content"-->
+                    <!--                                android:layout_weight="1">-->
+
+                    <!--                                <RadioButton-->
+                    <!--                                    android:id="@+id/r_b_Bigha_addFarm"-->
+                    <!--                                    android:layout_width="wrap_content"-->
+                    <!--                                    android:layout_height="wrap_content"-->
+                    <!--                                    android:layout_alignParentEnd="true"-->
+                    <!--                                    android:layout_weight="1"-->
+                    <!--                                    android:text="Bhigas"-->
+                    <!--                                    android:textSize="@dimen/_14sdp" />-->
+
+                    <!--                            </RelativeLayout>-->
+                    <!--                        </RadioGroup>-->
+                    <!--                    </LinearLayout>-->
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:text="Tehsil"
+                        android:textColor="@color/light_grey"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/loan_form_background"
+                        android:orientation="vertical">
+
+
+                        <EditText
+                            android:id="@+id/tv_tehsil_addFarm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@null"
+                            android:hint="Karol"
+                            android:inputType="text"
+                            android:maxLength="10"
+                            android:maxLines="1"
+                            android:padding="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="normal" />
+
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:text="Survey Number"
+                        android:textColor="@color/light_grey"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/loan_form_background"
+                        android:orientation="vertical">
+
+
+                        <EditText
+                            android:id="@+id/tv_Survey_num_addFarm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@null"
+                            android:hint="788965"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            android:maxLines="1"
+                            android:padding="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="normal" />
+
+
+                    </LinearLayout>
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_save_addFarm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:background="@drawable/login_btn_background"
+                        android:padding="@dimen/_12sdp"
+                        android:text="Save"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16sdp"
+                        android:textStyle="normal"
+                        android:onClick="test"
+                        />
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
