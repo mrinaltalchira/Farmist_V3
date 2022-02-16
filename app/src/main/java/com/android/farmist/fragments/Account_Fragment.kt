@@ -48,10 +48,10 @@ class Account_Fragment : Fragment() {
     private lateinit var binding: FragmentAccountBinding
     var imageURi: Uri? = null
     private var selectedImageUri: Uri? = null
-    lateinit var userId:String
-    var test:Int =0
-    var imageUrl:String=""
-    var nameStr:String=""
+    lateinit var userId: String
+    var test: Int = 0
+    var imageUrl: String = ""
+    var nameStr: String = ""
 
 
     companion object {
@@ -73,15 +73,15 @@ class Account_Fragment : Fragment() {
         binding =
             DataBindingUtil.inflate(layoutInflater, R.layout.fragment_account, container, false)
 
-        if (!imageUrl.isBlank())
-        {
-            activity?.let { Glide.with(it.applicationContext).load(imageUrl).into(binding.setPhoto) }
+        if (!imageUrl.isBlank()) {
+            activity?.let {
+                Glide.with(it.applicationContext).load(imageUrl).into(binding.setPhoto)
+            }
             binding.AccountUserName.setText(nameStr)
 
 
-        }
-        else{
-        getprofile()
+        } else {
+            getprofile()
 
         }
 
@@ -94,7 +94,6 @@ class Account_Fragment : Fragment() {
 
 
     }
-
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -135,9 +134,9 @@ class Account_Fragment : Fragment() {
 
     private fun getprofile() {
 
-        val call:Call<GetUserImagResponse>
-        call=Api_Controller().getInstacne().getUserProfile(userId)
-        call.enqueue(object :Callback<GetUserImagResponse>{
+        val call: Call<GetUserImagResponse>
+        call = Api_Controller().getInstacne().getUserProfile(userId)
+        call.enqueue(object : Callback<GetUserImagResponse> {
             override fun onResponse(
                 call: Call<GetUserImagResponse>,
                 response: Response<GetUserImagResponse>
@@ -147,22 +146,30 @@ class Account_Fragment : Fragment() {
 
                 context?.let {
 
-                    if (response!=null){
-                    val data= response.body()
+                    if (response != null) {
+                        val data = response.body()
                         if (data != null) {
-                            imageUrl=data.latestPic[0].image
-                            nameStr=data.name
+
+                            if (data.latestPic.size != 0)
+
+                            {
+                                imageUrl = data.latestPic[0].image
+                                Glide.with(it.applicationContext).load(imageUrl).into(binding.setPhoto)
+
+                            }
+                            nameStr = data.name
                         }
 
                     }
 
 
-                    Glide.with(it.applicationContext).load(imageUrl).into(binding.setPhoto) }
+
+                }
 //                    Glide.with(it.applicationContext).load(response.body()?.latestPic?.get(0)?.image).into(binding.setPhoto) }
                 binding.AccountUserName.setText(response.body()?.name)
                 test++
 
-                }
+            }
 
             override fun onFailure(call: Call<GetUserImagResponse>, t: Throwable) {
                 Log.d("getProfileError", t.toString())
@@ -256,7 +263,6 @@ class Account_Fragment : Fragment() {
         })
 
     }
-
 
 
 }

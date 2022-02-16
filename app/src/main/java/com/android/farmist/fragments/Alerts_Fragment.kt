@@ -52,7 +52,7 @@ class Alerts_Fragment : Fragment() {
 
         binding =
             DataBindingUtil.inflate(layoutInflater, R.layout.fragment_alerts, container, false)
-//        getNewsAlert()
+        getNewsAlert()
         getGovScheme()
 
         return binding.root
@@ -69,6 +69,26 @@ class Alerts_Fragment : Fragment() {
 
 
     }
+//
+//    private fun getGovScheme() {
+//        val call: Call<GetNewsAlert>
+//        call = Api_Controller().getInstacneAdmin().getNewsAlert()
+//        call.enqueue(object : Callback<GetNewsAlert> {
+//            override fun onResponse(call: Call<GetNewsAlert>, response: Response<GetNewsAlert>) {
+//                val responseList=response.body()?.news
+//
+//
+//                binding.rvnewsannouncment.adapter = adapterNewsAnnouncements
+//                if (responseList != null) {
+//                    adapterNewsAnnouncements.setList(responseList,requireContext())
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<GetNewsAlert>, t: Throwable) {
+//                Log.d("getNewsError", t.toString())
+//            }
+//        })
+//    }
 
     //rx java
 //    private fun getNewsAlert() {
@@ -112,28 +132,28 @@ class Alerts_Fragment : Fragment() {
 //        Log.d("Main", "OnFailure: "+ t.message)
 //    }
 
-    //    private fun getNewsAlert() {
-//        val call: Call<GetNewsAlert>
-//        call= Api_Controller().getInstacneAdmin().getNewsAlert()
-//        call.enqueue(object :Callback<GetNewsAlert>{
-//            override fun onResponse(call: Call<GetNewsAlert>, response: Response<GetNewsAlert>) {
-//
-//
-//                val   adapterAlertsNews=
-//                    response.body()?.let { activity?.applicationContext?.let { it1 ->
-//                        Adapter_Alerts_News(
-//                            it1, it.news)
-//                    } }
-//                binding.rvalertsnews.adapter = adapterAlertsNews
-//                binding.rvalertsnews.layoutManager = LinearLayoutManager(activity?.applicationContext)
-////                Toast.makeText(requireContext(), "news${response.body().toString()}", Toast.LENGTH_SHORT).show()
-//            }
-//
-//            override fun onFailure(call: Call<GetNewsAlert>, t: Throwable) {
-//              Log.d("getNewsError",t.toString())
-//            }
-//        })
-//    }
+        private fun getNewsAlert() {
+        val call: Call<GetNewsAlert>
+        call= Api_Controller().getInstacneAdmin().getNewsAlert()
+        call.enqueue(object :Callback<GetNewsAlert>{
+            override fun onResponse(call: Call<GetNewsAlert>, response: Response<GetNewsAlert>) {
+
+
+                val   adapterAlertsNews=
+                    response.body()?.let { activity?.applicationContext?.let { it1 ->
+                        Adapter_Alerts_News(
+                            it1, it.news)
+                    } }
+                binding.rvalertsnews.adapter = adapterAlertsNews
+                binding.rvalertsnews.layoutManager = LinearLayoutManager(activity?.applicationContext)
+//                Toast.makeText(requireContext(), "news${response.body().toString()}", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onFailure(call: Call<GetNewsAlert>, t: Throwable) {
+              Log.d("getNewsError",t.toString())
+            }
+        })
+    }
     private fun getGovScheme() {
         val call: Call<GetGovtScheme>
         call = Api_Controller().getInstacneAdmin().getGovtscheme()

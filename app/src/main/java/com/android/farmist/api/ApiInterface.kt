@@ -288,6 +288,14 @@ fun addincome(
     ):Call<SetArchiveResponse>
 
 
+    //Get Archive crop
+    @GET("crops/get/archieved")
+    fun getArchiveCrop(
+        @Query("userId") userId: String
+    ):Observable<GetExpensesIncomeTracker>
+
+
+
 
 
 }

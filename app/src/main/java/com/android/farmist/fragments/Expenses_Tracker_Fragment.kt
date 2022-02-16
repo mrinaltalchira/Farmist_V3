@@ -59,6 +59,7 @@ class Expenses_Tracker_Fragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         progressbarsDialog= progressbars(requireActivity())
         cropId = arguments?.getString("cropId").toString()
+        Toast.makeText(requireContext(), "$cropId", Toast.LENGTH_SHORT).show()
 
 
         binding.tvviewfullog.setOnClickListener(View.OnClickListener {
@@ -71,7 +72,6 @@ class Expenses_Tracker_Fragment : Fragment() {
             call.enqueue(object : Callback<SetArchiveResponse> {
                 override fun onResponse(call: Call<SetArchiveResponse>, response: Response<SetArchiveResponse>) {
                     val responseList=response.body()?.updatedCrop?.archieved
-                    Toast.makeText(requireActivity(),"response"+responseList, Toast.LENGTH_SHORT).show()
 
 
                 }
@@ -121,7 +121,7 @@ class Expenses_Tracker_Fragment : Fragment() {
         {
             getExpensesTrackerList=getExpensesTracker.data
 
-            Toast.makeText(requireActivity(), "data$getExpensesTrackerList", Toast.LENGTH_SHORT).show()
+
             binding.tvExpLogName.setText(getExpensesTrackerList.cropName)
 //        binding.tvExpLogAcers.setText(getExpensesTrackerList.)
             binding.tvexpeses.setText(getExpensesTrackerList.userExpense)
@@ -170,6 +170,8 @@ class Expenses_Tracker_Fragment : Fragment() {
         {
             val chartData=getPiChartResponse.data
 
+            Toast.makeText(requireContext(), "$chartData", Toast.LENGTH_SHORT).show()
+
             if (pieData.isEmpty())
             {
 
@@ -191,12 +193,6 @@ class Expenses_Tracker_Fragment : Fragment() {
             val pieChartData = PieChartData(pieData)
             pieChartData.setHasLabels(true).valueLabelTextSize = 10
             binding.Pichart.setPieChartData(pieChartData)
-
-
-
-            Toast.makeText(requireActivity(), "data$pieData", Toast.LENGTH_SHORT).show()
-
-
             progressbarsDialog.hidediloag()
         }
 

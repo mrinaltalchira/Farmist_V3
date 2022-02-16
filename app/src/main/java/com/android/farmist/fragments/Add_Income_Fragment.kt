@@ -33,7 +33,7 @@ class Add_Income_Fragment : Fragment() {
     private lateinit var binding: AddIncomeBinding
     var onDateSetListener: DatePickerDialog.OnDateSetListener? = null
     lateinit var date: String
-    lateinit var radioValue: String
+    var radioValue: String="Kg"
     var num = 0
     lateinit var preferences: SharedPreferences
     lateinit var userId: String
@@ -160,7 +160,7 @@ class Add_Income_Fragment : Fragment() {
 
 
         }
-//        Toast.makeText(activity?.applicationContext, "data${priceData.toString()}", Toast.LENGTH_SHORT).show()
+
 
 
     }

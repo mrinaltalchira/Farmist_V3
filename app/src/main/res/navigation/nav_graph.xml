@@ -88,6 +88,9 @@
         <action
             android:id="@+id/action_expensess_Income_tracker_to_add_Expenses_Fragment"
             app:destination="@id/add_Expenses_Fragment" />
+        <action
+            android:id="@+id/action_expensess_Income_tracker_to_archived_crop"
+            app:destination="@id/archived_crop" />
     </fragment>
     <fragment
         android:id="@+id/myFarm_Fragment"
@@ -262,6 +265,27 @@
         <action
             android:id="@+id/action_fragment_Farm_Info_to_fragment_editFarmDetails"
             app:destination="@id/fragment_editFarmDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/archived_crop"
+        android:name="com.android.farmist.Archived_crop"
+        android:label="fragment_archived_crop"
+        tools:layout="@layout/fragment_archived_crop" >
+        <action
+            android:id="@+id/action_archived_crop_to_add_Expenses_Fragment"
+            app:destination="@id/add_Expenses_Fragment" />
+        <action
+            android:id="@+id/action_archived_crop_to_add_Subsidy_Fragment"
+            app:destination="@id/add_Subsidy_Fragment" />
+        <action
+            android:id="@+id/action_archived_crop_to_add_Income_Fragment"
+            app:destination="@id/add_Income_Fragment" />
+        <action
+            android:id="@+id/action_archived_crop_to_expenses_Tracker_Fragment"
+            app:destination="@id/expenses_Tracker_Fragment" />
+        <action
+            android:id="@+id/action_archived_crop_to_expensess_Income_tracker"
+            app:destination="@id/expensess_Income_tracker" />
     </fragment>
 
 </navigation>

@@ -28,28 +28,17 @@
 
 
                 <TextView
-                    android:id="@+id/back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/back"
                     android:drawablePadding="@dimen/_10sdp"
-                    android:text="Expenses &amp; Income Tracker"
+                    android:text="Archived Expenses &amp; Income Tracker"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdp"
-                    android:textStyle="normal"
-
-                    />
-
-
-                <TextView
-                    android:id="@+id/tvArchived"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:text="Archived"
-                    android:textColor="@color/green_selected"
-                    android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />
+
+
+
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
@@ -70,7 +59,7 @@
                 android:orientation="vertical"
 
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/adaapter_exp_income_tracker" />
+                tools:listitem="@layout/adapter_archive_expenses_income_trackor" />
 
 
         </LinearLayout>
