@@ -164,6 +164,7 @@
                             android:layout_weight="3"
                             android:text="Kg"
                             android:textSize="@dimen/_14sdp"
+                            android:checked="true"
 
                             />
 

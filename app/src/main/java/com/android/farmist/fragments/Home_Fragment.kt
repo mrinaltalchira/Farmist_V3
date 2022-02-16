@@ -66,10 +66,6 @@ class Home_Fragment : Fragment() {
 
         fetchLocation()
 
-
-
-
-
         return binding.root
 
     }
@@ -132,7 +128,6 @@ class Home_Fragment : Fragment() {
         }
 
         task.addOnSuccessListener {
-
             if (it != null) {
                 val lat = it.latitude.toString()
                 val lon = it.longitude.toString()
@@ -158,7 +153,7 @@ class Home_Fragment : Fragment() {
                             binding.tvTodayTemp1.setText(responses.current?.tempC.toString() + "°")
                             binding.tvTodayTempday1.setText(responses.current?.tempC.toString() + "°")
 
-                            Glide.with(requireActivity())
+                            Glide.with(activity!!.applicationContext)
                                 .load("https://" + responses.forecast!!.forecastday[0].day?.condition?.icon)
                                 .into(binding.ivweather1)
                             binding.tvDayDate1.setText(responses.forecast!!.forecastday[0].date.toString())

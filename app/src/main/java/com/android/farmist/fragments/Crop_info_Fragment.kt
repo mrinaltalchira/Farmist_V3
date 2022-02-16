@@ -13,9 +13,14 @@ import com.android.farmist.databinding.FragmentCropInfoBinding
 
 
 class Crop_info_Fragment : Fragment() {
+    lateinit var cropId:String
 
 lateinit var binding: FragmentCropInfoBinding
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +33,13 @@ lateinit var binding: FragmentCropInfoBinding
          }
 
     return  binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        cropId = arguments?.getString("cropId").toString()
+        Toast.makeText(requireContext(), "$cropId", Toast.LENGTH_SHORT).show()
+
     }
 
 

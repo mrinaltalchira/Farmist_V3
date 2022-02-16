@@ -291,6 +291,14 @@ fun addincome(
     @DELETE("crop/delete/{id}")
     fun deleteCropExpence(@Path("id") id: String): Call<DeleteFarmRespo>
 
+    //Get Archive crop
+    @GET("crops/get/archieved")
+    fun getArchiveCrop(
+        @Query("userId") userId: String
+    ):Observable<GetExpensesIncomeTracker>
+
+
+
 
 
 }

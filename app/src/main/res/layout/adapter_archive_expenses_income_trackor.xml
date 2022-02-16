@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_5sdp">
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_removesvg"
+            android:layout_gravity="right"></ImageView>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp">
+
+
+            <RelativeLayout
+                android:id="@+id/rlprofile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:src="@drawable/cow" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_toRightOf="@+id/iv_profile"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/TvCropTitleIncomeExpesesTracker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Barley Crop"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/TvCropAreaIncomeExpesesTracker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="48 Acers"
+                        android:textColor="@color/brown_light"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="normal" />
+
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlprofile"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/brown_light">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_weight="1">
+
+
+                        <TextView
+                            android:id="@+id/TvCropExpensesIncomeExpesesTracker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rs.10,000"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14sdp"
+                            android:layout_gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Expenses"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/white"
+                            android:layout_gravity="center_horizontal" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_weight="1">
+
+
+                        <TextView
+                            android:id="@+id/TvCropSowedIncomeExpesesTracker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="26th May 2020"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14sdp"
+                            android:layout_gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Date Sowed"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/white"
+                            android:layout_gravity="center_horizontal" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/rl_info"
+                android:weightSum="3"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp">
+
+
+                <TextView
+                    android:id="@+id/addexp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Add Expenses"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/green_selected" />
+
+
+                <TextView
+                    android:id="@+id/tvaddsubsidy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Add Subsidy"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/green_selected" />
+
+
+                <TextView
+                    android:id="@+id/tvaddincome"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Add Income"
+                    android:gravity="end"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/green_selected" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>
