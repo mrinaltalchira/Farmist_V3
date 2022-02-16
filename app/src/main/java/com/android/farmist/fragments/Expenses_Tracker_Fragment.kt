@@ -1,13 +1,16 @@
 package com.android.farmist.fragments
 
+import android.app.AlertDialog
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,12 +26,14 @@ import com.android.farmist.model.ExpensesIncomeTrackerResponse.ExpensesTrackerRe
 import com.android.farmist.model.ExpensesIncomeTrackerResponse.GetExpensesIncomeTracker
 import com.android.farmist.model.alertsResponse.GetNewsAlert
 import com.android.farmist.model.archive.SetArchiveResponse
+import com.android.farmist.model.setFarm.DeleteFarmRespo
 import com.android.farmist.util.progressbars
 import com.bumptech.glide.Glide
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
+import kotlinx.android.synthetic.main.customedialoug.view.*
 import lecho.lib.hellocharts.model.SliceValue
 import lecho.lib.hellocharts.model.PieChartData
 import retrofit2.Call
@@ -50,10 +55,73 @@ class Expenses_Tracker_Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(layoutInflater,R.layout.expense_tracker,container,false)
+
+
+
+
+
+
+binding.llDeletebtn.setOnClickListener {
+
+    val view = View.inflate(context, R.layout.customedialoug, null)
+    val builder = AlertDialog.Builder(context)
+    builder.setView(view)
+    val dialog = builder.create()
+    dialog.show()
+    dialog.window?.setBackgroundDrawableResource(R.color.transe)
+
+    view.yes.setOnClickListener {
+
+        var progress = progressbars(requireActivity())
+        dialog.dismiss()
+        cropId = arguments?.getString("cropId").toString()
+        progress.showDialog()
+        Api_Controller().getInstacne().deleteCropExpence(cropId)
+            .enqueue(object : Callback<DeleteFarmRespo> {
+                override fun onResponse(
+                    call: Call<DeleteFarmRespo>,
+                    response: Response<DeleteFarmRespo>
+                ) {
+                    var respon = response.body()
+                    if (respon != null) {
+                        progress.hidediloag()
+                         findNavController().navigate(R.id.action_expenses_Tracker_Fragment_to_expensess_Income_tracker,null)
+
+
+
+                    }
+                }
+
+                override fun onFailure(
+                    call: Call<DeleteFarmRespo>,
+                    t: Throwable
+                ) {
+                    Toast.makeText(context , "not success $t", Toast.LENGTH_SHORT).show()
+                    progress.hidediloag()
+                    activity?.finish()
+                }
+            })
+
+
+    }
+    view.no.setOnClickListener {
+
+        dialog.dismiss()
+
+        Toast.makeText(requireActivity(), "cancel request", Toast.LENGTH_SHORT).show()
+    }
+
+}
+
+
+
+
         return binding.root
 
 
     }
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -62,7 +130,9 @@ class Expenses_Tracker_Fragment : Fragment() {
 
 
         binding.tvviewfullog.setOnClickListener(View.OnClickListener {
-            findNavController().navigate(R.id.action_expenses_Tracker_Fragment_to_full_Expenses_Log_Fragment)
+
+            findNavController().navigate(R.id.action_expenses_Tracker_Fragment_to_full_Expenses_Log_Fragment,
+                bundleOf("cropIdd" to cropId))
         })
 
         binding.llArchived.setOnClickListener {

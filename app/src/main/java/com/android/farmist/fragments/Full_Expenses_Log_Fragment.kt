@@ -32,7 +32,7 @@ class Full_Expenses_Log_Fragment : Fragment() {
 
     private lateinit var binding: FullExpenseLogBinding
     val pieData: MutableList<SliceValue> = ArrayList()
-    var cropid = "620496f5f76f5aab9e18431d"
+    lateinit var cropid:String
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,6 +44,7 @@ class Full_Expenses_Log_Fragment : Fragment() {
     }
 
     private fun setData() {
+        cropid = arguments?.getString("cropIdd").toString()
 
         val call: Call<Root> =
             Api_Controller().getInstacne().fullExpenceLogData(cropid)
@@ -65,10 +66,10 @@ class Full_Expenses_Log_Fragment : Fragment() {
                     binding.tvExpLogPriceLabour.setText(response.body()?.data?.totalLabour.toString())
                     binding.tvExpLogDateTractor.setText(response.body()?.data?.tractorDate.toString())
                     binding.tvExpLogPriceTractor.setText(response.body()?.data?.totalTractor.toString())
-//                    binding.tvExpLogDateSubsidy.setText(response.body()?.datesubsidy.toString())
+                  binding.tvExpLogDateSubsidy.setText(response.body()?.data?.subsidyDate.toString())
                     binding.tvExpLogPricesubsidy.setText(response.body()?.data?.subsidyTotal.toString())
                     binding.tvExpLogDateIncome.setText(
-                        response.body()?.data?.incomeDate.toString().toString()
+                        response.body()?.data?.incomeDate.toString()
                     )
                     binding.tvExpLogPriceIncome.setText(response.body()?.data?.incomeTotal.toString())
                     binding.tvExpLogTotalPrice.setText(response.body()?.data?.expenseTotal.toString())

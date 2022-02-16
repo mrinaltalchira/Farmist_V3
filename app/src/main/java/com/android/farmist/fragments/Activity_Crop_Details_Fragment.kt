@@ -81,7 +81,10 @@ class Activity_Crop_Details_Fragment : Fragment() {
 
 
 
+        binding.backbtn.setOnClickListener {
 
+            findNavController().navigate(R.id.action_activity_Crop_Details_Fragment_to_selectCropCategory)
+        }
 
         binding.btnSaveAddCrop.setOnClickListener {
 
@@ -238,6 +241,7 @@ class Activity_Crop_Details_Fragment : Fragment() {
             override fun onFailure(call: Call<AddCropResponse>, t: Throwable) {
                 Toast.makeText(requireContext(), "Failed:${t.toString()}", Toast.LENGTH_SHORT)
                     .show()
+                progressBarDailog.hidediloag()
             }
         })
 

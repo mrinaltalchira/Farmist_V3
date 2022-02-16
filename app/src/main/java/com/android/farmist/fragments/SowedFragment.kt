@@ -54,7 +54,7 @@ class SowedFragment : Fragment() {
     }
 
     private fun getcropData() {
-        val progressbars=progressbars(requireContext())
+        val progressbars=progressbars(requireActivity())
         progressbars.showDialog()
         val preferences =
             requireActivity().getSharedPreferences("userMassage", Context.MODE_PRIVATE)
@@ -65,10 +65,10 @@ class SowedFragment : Fragment() {
             override fun onResponse(call: Call<GetSowedCrop>, response: Response<GetSowedCrop>) {
                val cropList= response.body()?.userCrops
 
-                val adpterSowedCrop= cropList?.let { Adapter_Sowed_Crop(requireContext(), it) }
+                val adpterSowedCrop= cropList?.let { Adapter_Sowed_Crop(requireActivity(), it) }
                 progressbars.hidediloag()
                 binding.rvsowedlist.adapter = adpterSowedCrop
-                binding.rvsowedlist.layoutManager = LinearLayoutManager(requireContext())
+                binding.rvsowedlist.layoutManager = LinearLayoutManager(requireActivity())
 //                recyleviewOption.adapter = optionAdapter
 //                recyleviewOption.setHasFixedSize(true)
 
@@ -76,7 +76,7 @@ class SowedFragment : Fragment() {
 
             override fun onFailure(call: Call<GetSowedCrop>, t: Throwable) {
                 progressbars.hidediloag()
-                Toast.makeText(requireContext(), "${t.stackTrace}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireActivity(), "${t.stackTrace}", Toast.LENGTH_SHORT).show()
 
             }
         })

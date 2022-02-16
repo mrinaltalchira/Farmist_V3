@@ -1,19 +1,16 @@
 package com.android.farmist.fragments
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.farmist.R
@@ -21,11 +18,7 @@ import com.android.farmist.adapter.MyFarmsAdapter
 import com.android.farmist.api.Api_Controller
 import com.android.farmist.databinding.FragmentMyFarmBinding
 import com.android.farmist.model.adapterGetFarm.AdeptDataResponce
-import com.android.farmist.model.setFarm.DeleteFarmRespo
 import com.android.farmist.util.progressbars
-import kotlinx.android.synthetic.main.activity_add_crop_details.*
-import kotlinx.android.synthetic.main.adaapter_exp_income_tracker.*
-import kotlinx.android.synthetic.main.adapter_my_farms.*
 import kotlinx.android.synthetic.main.fragment_my_farm_.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -61,8 +54,17 @@ class MyFarm_Fragment : Fragment() {
         }
 
 
+binding.backText.setOnClickListener {
+    findNavController().navigate(R.id.action_myFarm_Fragment_to_nav_home2)
+
+
+
+}
+
+
         return binding.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
@@ -139,6 +141,5 @@ class MyFarm_Fragment : Fragment() {
         })
 
     }
-
 
 }

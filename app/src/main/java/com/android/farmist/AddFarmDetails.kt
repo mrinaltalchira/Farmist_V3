@@ -8,8 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.navigation.findNavController
 import com.android.farmist.api.Api_Controller
 import com.android.farmist.databinding.AddFarmDetailBinding
+import com.android.farmist.fragments.MyFarm_Fragment
 import com.android.farmist.model.setFarm.setFarm
 import com.android.farmist.util.progressbars
 import com.theartofdev.edmodo.cropper.CropImage
@@ -42,6 +44,11 @@ class AddFarmDetails : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+//binding.backbtn.setOnClickListener {
+//
+//    findNavController(R.id.nav_graph).navigate(R.id.action_add_Farm_Details_Fragment_to_myFarm_Fragment)
+//
+//}
         progress = progressbars(this)
         preferences = getSharedPreferences("userMassage", Context.MODE_PRIVATE)
         userId = preferences.getString("message", "").toString()

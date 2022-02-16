@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/activity_add_crop_details.xml" value="0.23645833333333333" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/add_farm_detail.xml" value="0.152" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/expense_tracker.xml" value="0.4" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment__farm__info.xml" value="0.14921875" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_crop_info_.xml" value="0.17734375" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_crops.xml" value="0.6" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_edit_farm_details.xml" value="0.152" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_my_farm_.xml" value="0.28027681660899656" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_prices.xml" value="0.17734375" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_select_crop_category.xml" value="0.17734375" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/drawable-v24/add_crop_background.xml" value="0.22552083333333334" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/drawable/ic_noun_fruits_2103787.xml" value="0.1" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/drawable/loan_form_background.xml" value="0.22552083333333334" />
@@ -62,7 +73,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -14,6 +14,7 @@
 
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_48sdp"
             android:elevation="@dimen/_5sdp">
@@ -27,9 +28,16 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/backText"
+                    android:layout_width="30dp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:drawableLeft="@drawable/back" />
+
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/back"
+                    android:layout_marginStart="@dimen/_20sdp"
                     android:drawablePadding="@dimen/_5sdp"
                     android:text="My Farms"
                     android:textColor="@color/black"

@@ -16,6 +16,7 @@ Data(
     var seedDate: List<String>,
     var labourDate: List<String>,
     var subsidyTotal: String,
+    var subsidyDate:List<String>,
     var incomeTotal: String,
     var incomeDate: List<String>
 )

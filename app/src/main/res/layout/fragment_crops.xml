@@ -27,10 +27,16 @@
 
 
                 <TextView
+                    android:id="@+id/backbtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/back"
                     android:drawablePadding="@dimen/_10sdp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30sdp"
                     android:text="My Crops"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdp"

@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import com.android.farmist.R
 import com.android.farmist.UploadRequestBody
 import com.android.farmist.api.Api_Controller
@@ -51,6 +52,10 @@ class Fragment_editFarmDetails : Fragment() {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_edit_farm_details, container, false)
 
+
+binding.backbtn.setOnClickListener {
+    findNavController().navigate(R.id.action_fragment_editFarmDetails_to_myFarm_Fragment)
+}
 
         id = arguments?.getString("EditFarmID")
 

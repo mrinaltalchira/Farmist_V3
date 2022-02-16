@@ -1,26 +1,13 @@
 package com.android.farmist.activity
 
-import android.content.Context
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.*
 import com.android.farmist.R
-import com.android.farmist.api.Api_Controller
-import com.android.farmist.model.getUserInfo.getUserModel
 import kotlinx.android.synthetic.main.activity_main.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import com.android.farmist.fragments.Account_Fragment
-import com.android.farmist.fragments.Alerts_Fragment
-import com.android.farmist.fragments.Home_Fragment
-import com.android.farmist.fragments.Prices_Fragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 //        val thirdFragment = Prices_Fragment()
 //        val forthFragment = Account_Fragment()
 //
-//        setCurrentFragment(firstFragment)
+//
 //
 //        bottomNavigationView.setOnNavigationItemSelectedListener {
 //            when (it.itemId) {
@@ -55,14 +42,14 @@ class MainActivity : AppCompatActivity() {
         ) as NavHostFragment
 //
         navController = navHostFragment.navController
-//        bottomNavigationView.setupWithNavController(navController,)
+        bottomNavigationView.setupWithNavController(navController,)
 
-
-        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
-            if(item.itemId != bottomNavigationView.selectedItemId)
-                NavigationUI.onNavDestinationSelected(item, navController)
-            true
-        }
+//
+//        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+//            if(item.itemId != bottomNavigationView.selectedItemId)
+//                NavigationUI.onNavDestinationSelected(item, navController)
+//            true
+//        }
 
     }
 //

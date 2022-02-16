@@ -210,7 +210,7 @@ class Home_Fragment : Fragment() {
 
                 binding.rvnewsannouncment.adapter = adapterNewsAnnouncements
                 if (responseList != null) {
-                    adapterNewsAnnouncements.setList(responseList,requireContext())
+                    adapterNewsAnnouncements.setList(responseList,requireActivity())
                 }
             }
 

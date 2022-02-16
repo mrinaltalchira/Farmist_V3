@@ -288,6 +288,9 @@ fun addincome(
     ):Call<SetArchiveResponse>
 
 
+    @DELETE("crop/delete/{id}")
+    fun deleteCropExpence(@Path("id") id: String): Call<DeleteFarmRespo>
+
 
 
 }

@@ -9,7 +9,7 @@
         android:id="@+id/nav_home"
         android:name="com.android.farmist.fragments.Home_Fragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_nav_home_to_expensess_Income_tracker"
             app:destination="@id/expensess_Income_tracker" />
@@ -42,7 +42,7 @@
         android:id="@+id/nav_alerts"
         android:name="com.android.farmist.fragments.Alerts_Fragment"
         android:label="Categroies"
-        tools:layout="@layout/fragment_alerts" >
+        tools:layout="@layout/fragment_alerts">
         <action
             android:id="@+id/action_nav_alerts_to_newsDetail_Fragment"
             app:destination="@id/newsDetail_Fragment" />
@@ -52,7 +52,7 @@
         android:id="@+id/nav_prices"
         android:name="com.android.farmist.fragments.Prices_Fragment"
         android:label="Favorite"
-        tools:layout="@layout/fragment_prices" >
+        tools:layout="@layout/fragment_prices">
         <action
             android:id="@+id/action_nav_prices_to_marketPriceFragment"
             app:destination="@id/marketPriceFragment" />
@@ -62,7 +62,7 @@
         android:id="@+id/nav_account"
         android:name="com.android.farmist.fragments.Account_Fragment"
         android:label="Histoory"
-        tools:layout="@layout/fragment_account" >
+        tools:layout="@layout/fragment_account">
         <action
             android:id="@+id/action_nav_account_to_personal_Information_Fragment"
             app:destination="@id/personal_Information_Fragment" />
@@ -106,6 +106,12 @@
         <action
             android:id="@+id/action_myFarm_Fragment_self"
             app:destination="@id/myFarm_Fragment" />
+        <action
+            android:id="@+id/action_myFarm_Fragment_to_nav_home2"
+            app:destination="@id/nav_home"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/nav_graph" />
+
     </fragment>
     <fragment
         android:id="@+id/crops_Fragment"
@@ -124,32 +130,36 @@
         <action
             android:id="@+id/action_crops_Fragment_to_selectCropCategory"
             app:destination="@id/selectCropCategory" />
+        <action
+            android:id="@+id/action_crops_Fragment_to_nav_home"
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/nav_graph" />
     </fragment>
     <fragment
         android:id="@+id/loan_Subsidies_Fragment"
         android:name="com.android.farmist.fragments.Loan_Subsidies_Fragment"
         android:label="Loan_Subsidies_Fragment"
-        tools:layout="@layout/loans_subsidies_info"/>
+        tools:layout="@layout/loans_subsidies_info" />
     <fragment
         android:id="@+id/fragment_Farm_States"
         android:name="com.android.farmist.fragments.Fragment_Farm_States"
         android:label="Fragment_Farm_States"
-        tools:layout="@layout/farm_status"/>
+        tools:layout="@layout/farm_status" />
     <fragment
         android:id="@+id/newsDetail_Fragment"
         android:name="com.android.farmist.fragments.NewsDetail_Fragment"
         android:label="NewsDetail_Fragment"
-        tools:layout="@layout/news_details"/>
+        tools:layout="@layout/news_details" />
     <fragment
         android:id="@+id/marketPriceFragment"
         android:name="com.android.farmist.fragments.MarketPriceFragment"
         android:label="MarketPriceFragment"
-        tools:layout="@layout/fragment_market_price"/>
+        tools:layout="@layout/fragment_market_price" />
     <fragment
         android:id="@+id/news_Announcement_all_Fragment"
         android:name="com.android.farmist.fragments.News_Announcement_all_Fragment"
         android:label="News_Announcement_all_Fragment"
-        tools:layout="@layout/fragment_news__announcement_all_"/>
+        tools:layout="@layout/fragment_news__announcement_all_" />
     <fragment
         android:id="@+id/expenses_Tracker_Fragment"
         android:name="com.android.farmist.fragments.Expenses_Tracker_Fragment"
@@ -158,22 +168,25 @@
         <action
             android:id="@+id/action_expenses_Tracker_Fragment_to_full_Expenses_Log_Fragment"
             app:destination="@id/full_Expenses_Log_Fragment" />
+        <action
+            android:id="@+id/action_expenses_Tracker_Fragment_to_expensess_Income_tracker"
+            app:destination="@id/expensess_Income_tracker" />
     </fragment>
     <fragment
         android:id="@+id/full_Expenses_Log_Fragment"
         android:name="com.android.farmist.fragments.Full_Expenses_Log_Fragment"
         android:label="Full_Expenses_Log_Fragment"
-        tools:layout="@layout/full_expense_log"/>
+        tools:layout="@layout/full_expense_log" />
     <fragment
         android:id="@+id/personal_Information_Fragment"
         android:name="com.android.farmist.fragments.Personal_Information_Fragment"
         android:label="Personal_Information_Fragment"
-        tools:layout="@layout/personal_information"/>
+        tools:layout="@layout/personal_information" />
     <fragment
         android:id="@+id/choose_Language_Fragment"
         android:name="com.android.farmist.fragments.Choose_Language_Fragment"
         android:label="Choose_Language_Fragment"
-        tools:layout="@layout/choose_language"/>
+        tools:layout="@layout/choose_language" />
     <fragment
         android:id="@+id/add_Subsidy_Fragment"
         android:name="com.android.farmist.fragments.Add_Subsidy_Fragment"
@@ -209,33 +222,45 @@
         <action
             android:id="@+id/action_activity_Crop_Details_Fragment_to_addFarmDetails"
             app:destination="@id/addFarmDetails" />
+        <action
+            android:id="@+id/action_activity_Crop_Details_Fragment_to_selectCropCategory"
+            app:destination="@id/selectCropCategory"
+            app:popUpTo="@id/selectCropCategory" />
     </fragment>
 
-    <fragment
-        android:id="@+id/add_Farm_Details_Fragment"
-        android:name="com.android.farmist.fragments.Add_Farm_Details_Fragment"
-        android:label="Add_Farm_Details_Fragment"
-        tools:layout="@layout/add_farm_detail"/>
     <activity
         android:id="@+id/addFarmDetails"
         android:name="com.android.farmist.AddFarmDetails"
         android:label="AddFarmDetails"
-        tools:layout="@layout/add_farm_detail"/>
+        app:action="addFarmDetails"
+        tools:layout="@layout/add_farm_detail" />
     <fragment
         android:id="@+id/crop_info_Fragment"
         android:name="com.android.farmist.fragments.Crop_info_Fragment"
         android:label="fragment_crop_info_"
         tools:layout="@layout/fragment_crop_info_"
 
-        />
+        >
+        <action
+            android:id="@+id/action_crop_info_Fragment_to_crops_Fragment"
+            app:destination="@id/crops_Fragment"
+            app:popUpTo="@id/crops_Fragment" />
+    </fragment>
     <fragment
         android:id="@+id/selectCropCategory"
         android:name="com.android.farmist.SelectCropCategory"
         android:label="fragment_select_crop_category"
-        tools:layout="@layout/fragment_select_crop_category" >
+        tools:layout="@layout/fragment_select_crop_category">
         <action
             android:id="@+id/action_selectCropCategory_to_activity_Crop_Details_Fragment"
             app:destination="@id/activity_Crop_Details_Fragment" />
+        <action
+            android:id="@+id/action_selectCropCategory_self"
+            app:destination="@id/selectCropCategory" />
+        <action
+            android:id="@+id/action_selectCropCategory_to_crops_Fragment"
+            app:destination="@id/crops_Fragment"
+            app:popUpTo="@id/nav_graph" />
     </fragment>
 
     <fragment
@@ -246,22 +271,28 @@
     <fragment
         android:id="@+id/fragment_editFarmDetails"
         android:name="com.android.farmist.fragments.Fragment_editFarmDetails"
-        android:label="Fragment_editFarmDetails" >
+        android:label="Fragment_editFarmDetails">
         <action
             android:id="@+id/action_fragment_editFarmDetails_to_myFarm_Fragment"
-            app:destination="@id/myFarm_Fragment" />
+            app:destination="@id/myFarm_Fragment"
+            app:popUpTo="@id/myFarm_Fragment" />
     </fragment>
 
     <fragment
         android:id="@+id/fragment_Farm_Info"
         android:name="com.android.farmist.fragments.Fragment_Farm_Info"
-        android:label="Fragment_Farm_Info" >
+        android:label="Fragment_Farm_Info">
         <action
             android:id="@+id/action_fragment_Farm_Info_to_myFarm_Fragment"
             app:destination="@id/myFarm_Fragment" />
         <action
             android:id="@+id/action_fragment_Farm_Info_to_fragment_editFarmDetails"
             app:destination="@id/fragment_editFarmDetails" />
+        <action
+            android:id="@+id/action_fragment_Farm_Info_to_myFarm_Fragment2"
+            app:destination="@id/myFarm_Fragment"
+            app:popUpTo="@id/myFarm_Fragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
 </navigation>

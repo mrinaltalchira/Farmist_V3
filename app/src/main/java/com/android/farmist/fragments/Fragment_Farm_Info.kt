@@ -61,6 +61,11 @@ class Fragment_Farm_Info : Fragment() {
             )
         }
 
+binding.backbtn.setOnClickListener {
+    findNavController().navigate(R.id.action_fragment_Farm_Info_to_myFarm_Fragment2)
+
+}
+
 
         return binding.root
     }

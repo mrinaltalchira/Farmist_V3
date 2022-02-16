@@ -42,10 +42,6 @@ class SelectCropCategory : Fragment(),Adapter_Select_category.SelectItem,Adapter
 
     private lateinit var binding : FragmentSelectCropCategoryBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,6 +49,11 @@ class SelectCropCategory : Fragment(),Adapter_Select_category.SelectItem,Adapter
     ): View? {
         binding =
             DataBindingUtil.inflate(layoutInflater, R.layout.fragment_select_crop_category, container, false)
+
+
+       binding.backbtn.setOnClickListener {
+        findNavController().navigate(R.id.action_selectCropCategory_to_crops_Fragment)
+       }
         return binding.root
 
     }

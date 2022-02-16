@@ -6,25 +6,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import com.android.farmist.R
-
+import com.android.farmist.databinding.FragmentCropInfoBinding
 
 
 class Crop_info_Fragment : Fragment() {
 
+lateinit var binding: FragmentCropInfoBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        Toast.makeText(requireContext(), "", Toast.LENGTH_SHORT).show()
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_crop_info_, container, false)
+    binding = DataBindingUtil.inflate(layoutInflater,R.layout.fragment_crop_info_,container,false)
+
+         binding.backbtn.setOnClickListener {
+             findNavController().navigate(R.id.action_crop_info_Fragment_to_crops_Fragment)
+         }
+
+    return  binding.root
     }
 
 
