@@ -5,15 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.android.farmist.R
-import com.android.farmist.adapter.Adapter_Exp_Income_Tracker
 import com.android.farmist.adapter.Adapter_Harvested_Crop
-import com.android.farmist.databinding.FragmentExpensessIncomeTrackerBinding
-import com.android.farmist.databinding.FragmentHarvestedBinding
 import com.android.farmist.databinding.NewsDetailsBinding
+import com.android.farmist.model.harvested.GetHarvestedCrop
 import com.bumptech.glide.Glide
 
 

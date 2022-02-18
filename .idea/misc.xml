@@ -5,10 +5,14 @@
       <map>
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/activity_add_crop_details.xml" value="0.23645833333333333" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/adapter_archive_expenses_income_trackor.xml" value="0.4" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/adapter_harvest.xml" value="0.264" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/add_farm_detail.xml" value="0.152" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/expense_tracker.xml" value="0.4" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/farmer_app.xml" value="0.11640625" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment__farm__info.xml" value="0.14921875" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_crop_info_.xml" value="0.17734375" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_archived_crop.xml" value="0.12" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_crop_info_.xml" value="0.4" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_crops.xml" value="0.6" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_edit_farm_details.xml" value="0.152" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_my_farm_.xml" value="0.28027681660899656" />

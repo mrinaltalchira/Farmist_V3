@@ -6,6 +6,7 @@ data class UserCrop(
     val areaType: String,
     val cloudinary_id: String,
     val farmName: String,
+    val cropName :String,
     val image: String,
     val sowedArea: String,
     val sowedDate: String,

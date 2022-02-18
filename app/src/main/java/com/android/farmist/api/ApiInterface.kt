@@ -1,43 +1,39 @@
 package com.android.farmist.api
 
 import com.android.farmist.model.CropPriceResponse.getCropPrice
-import com.android.farmist.model.ExpensesIncomeTrackerResponse.*
+import com.android.farmist.model.ExpensesIncomeTrackerResponse.AddExpesesResponse
+import com.android.farmist.model.ExpensesIncomeTrackerResponse.ExpenesData
 import com.android.farmist.model.ExpensesIncomeTrackerResponse.ExpensesTrackerResponse.GetExpensesTracker
 import com.android.farmist.model.ExpensesIncomeTrackerResponse.ExpensesTrackerResponse.GetPiChartResponse
+import com.android.farmist.model.ExpensesIncomeTrackerResponse.GetExpensesIncomeTracker
+import com.android.farmist.model.ExpensesIncomeTrackerResponse.addSubsidy
 import com.android.farmist.model.FullExpenseLog.Pie
 import com.android.farmist.model.FullExpenseLog.Root
 import com.android.farmist.model.adapterGetFarm.AdeptDataResponce
 import com.android.farmist.model.addCropResponse.AddCropResponse
 import com.android.farmist.model.alertsResponse.GetGovtScheme
 import com.android.farmist.model.alertsResponse.GetNewsAlert
-import com.android.farmist.model.alertsResponse.New
+import com.android.farmist.model.harvested.MakeHarvest
+import com.android.farmist.model.archive.RemoveFromAchiv
 import com.android.farmist.model.archive.SetArchiveResponse
-import com.android.farmist.model.getFarm.GetFarmForSpinner
+import com.android.farmist.model.cropDetailsFragment.CropName
 import com.android.farmist.model.getFarmForSpinnner.FarmsSpinner
 import com.android.farmist.model.getFarms
 import com.android.farmist.model.getSowedCrop.GetSowedCrop
 import com.android.farmist.model.getUserInfo.getUserModel
+import com.android.farmist.model.harvested.GetHarvestedCrop
 import com.android.farmist.model.location.Report
 import com.android.farmist.model.profileImgResponse.GetUserImagResponse
 import com.android.farmist.model.profileImgResponse.SetProfileResponse
-import com.android.farmist.model.profileImgResponse.getProfileResoponse
 import com.android.farmist.model.selectCategoryResponse.GetFruitsList
 import com.android.farmist.model.selectCategoryResponse.GetVagList
-import com.android.farmist.model.setFarm.DeleteFarmRespo
-import com.android.farmist.model.setFarm.GetFarmEditResponce
-import com.android.farmist.model.setFarm.setFarm
-import com.android.farmist.model.setFarm.updateDataRespo
+import com.android.farmist.model.setFarm.*
 import com.android.farmist.model.signUp.signUpModel
 import io.reactivex.rxjava3.core.Observable
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
-import retrofit2.http.GET
-import okhttp3.RequestBody
-
-import retrofit2.http.POST
-
-import retrofit2.http.Multipart
 
 
 interface ApiInterface {
@@ -135,6 +131,8 @@ interface ApiInterface {
     @Multipart
     @POST("newcrop")
     fun addCrop(
+        @Part("cropName") cropName:RequestBody,
+
         @Part image: MultipartBody.Part,
         @Part("image") desc: RequestBody,
 
@@ -144,8 +142,7 @@ interface ApiInterface {
         @Part("areaType") areaType: RequestBody,
         @Part("sowedDate") sowedDate: RequestBody,
 
-    ): Call<AddCropResponse>
-
+        ): Call<AddCropResponse>
 
 
     // mrinal code marge //
@@ -205,87 +202,87 @@ interface ApiInterface {
 
     //get govtScheme alert
     @GET("schemes")
-    fun getGovtscheme():Call<GetGovtScheme>
+    fun getGovtscheme(): Call<GetGovtScheme>
 
     //Get  crop price
     @GET("admin/get/crops")
-    fun getCropPrice():Observable<getCropPrice>
+    fun getCropPrice(): Observable<getCropPrice>
 
     //get select category friuts
     @GET("admin/fruits/list")
-    fun getcategoryFriuts():Observable<GetFruitsList>
+    fun getcategoryFriuts(): Observable<GetFruitsList>
 
     //get select category friuts
     @GET("admin/vegs/list")
-    fun getcategoryVeg():Observable<GetVagList>
+    fun getcategoryVeg(): Observable<GetVagList>
 
-   //get Expenses Income tracker data
+    //get Expenses Income tracker data
     @GET("income/tracker")
     fun getExpensesIncomeTracker(
         @Query("userId") userId: String
-    ):Observable<GetExpensesIncomeTracker>
+    ): Observable<GetExpensesIncomeTracker>
 
     //Add expenese in crop
     @FormUrlEncoded
     @POST("expense")
     fun addExpenses(
-        @Query("userId")userId: String,
-        @Query("cropId")cropId:String,
-        @Field("expenseType")expensesType:String,
-        @Field("date")date:String,
-        @Field("amount")amount:String,
-    ):Observable<AddExpesesResponse>
-//add subsidy
+        @Query("userId") userId: String,
+        @Query("cropId") cropId: String,
+        @Field("expenseType") expensesType: String,
+        @Field("date") date: String,
+        @Field("amount") amount: String,
+    ): Observable<AddExpesesResponse>
+
+    //add subsidy
     @FormUrlEncoded
     @POST("subsidy")
     fun addsubsidy(
-        @Query("userId")userId: String,
-        @Query("cropId")cropId:String,
-        @Field("name")name:String,
-        @Field("date")date:String,
-        @Field("amount")amount:String,
-    ):Observable<addSubsidy>
+        @Query("userId") userId: String,
+        @Query("cropId") cropId: String,
+        @Field("name") name: String,
+        @Field("date") date: String,
+        @Field("amount") amount: String,
+    ): Observable<addSubsidy>
 
-//  add income
-@FormUrlEncoded
-@POST("income/create")
-fun addincome(
-    @Query("userId")userId: String,
-    @Query("cropId")cropId:String,
-    @Field("quantity")Quntity:String,
-    @Field("date")date:String,
-    @Field("income")income:String,
-    @Field("quantityType")radiovalue:String,
-):Observable<addSubsidy>
+    //  add income
+    @FormUrlEncoded
+    @POST("income/create")
+    fun addincome(
+        @Query("userId") userId: String,
+        @Query("cropId") cropId: String,
+        @Field("quantity") Quntity: String,
+        @Field("date") date: String,
+        @Field("income") income: String,
+        @Field("quantityType") radiovalue: String,
+    ): Observable<addSubsidy>
 
 // get expenses tracker
 
     @GET("expense/expense-tracker")
     fun getExpensesTracker(
         @Query("cropId") cropId: String
-    ):Observable<GetExpensesTracker>
+    ): Observable<GetExpensesTracker>
 
-// get chart data
+    // get chart data
     @GET("expense/chart")
     fun getchartData(
-    @Query("cropId")cropId: String
-    ):Observable<GetPiChartResponse>
+        @Query("cropId") cropId: String
+    ): Observable<GetPiChartResponse>
 
 
-
-// get crop expense data in add Expenses Fragment
+    // get crop expense data in add Expenses Fragment
     @GET("expenses/details/total-date-type")
     fun getExpenseData(
-    @Query("cropId")cropId: String
-    ):Observable<ExpenesData>
+        @Query("cropId") cropId: String
+    ): Observable<ExpenesData>
 
 
     ///add in archive
 
     @PUT("crop/archieve/{cropId}")
     fun setArchieve(
-        @Path("cropId")cropId: String
-    ):Call<SetArchiveResponse>
+        @Path("cropId") cropId: String
+    ): Call<SetArchiveResponse>
 
 
     @DELETE("crop/delete/{id}")
@@ -295,10 +292,20 @@ fun addincome(
     @GET("crops/get/archieved")
     fun getArchiveCrop(
         @Query("userId") userId: String
-    ):Observable<GetExpensesIncomeTracker>
+    ): Observable<GetExpensesIncomeTracker>
 
 
+    @GET("crop/")
+    fun getCropDetails(@Query("id") id: String): Call<CropName>
 
+    @PUT("crop/remove/archieve/{id}")
+    fun removeIt(@Path("id") id: String): Call<RemoveFromAchiv>
+
+@PUT("crop/harvest/{id}")
+fun makeHarvested(@Path("id")id:String):Call<MakeHarvest>
+
+@GET("crops/get/harvested/")
+fun getHarvested(@Query("userId")userId:String):Call<GetHarvestedCrop>
 
 
 }

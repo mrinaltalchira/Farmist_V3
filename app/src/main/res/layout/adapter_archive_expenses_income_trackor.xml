@@ -17,10 +17,11 @@
         app:cardCornerRadius="@dimen/_5sdp">
 
         <ImageView
+            android:id="@+id/Img_remove_Achiv"
             android:layout_width="@dimen/_20sdp"
             android:layout_height="@dimen/_20sdp"
             android:src="@drawable/ic_removesvg"
-            android:layout_gravity="right"></ImageView>
+            android:layout_gravity="right"/>
 
 
 

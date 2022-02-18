@@ -57,8 +57,6 @@ class MyFarm_Fragment : Fragment() {
 binding.backText.setOnClickListener {
     findNavController().navigate(R.id.action_myFarm_Fragment_to_nav_home2)
 
-
-
 }
 
 

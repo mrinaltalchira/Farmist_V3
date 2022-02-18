@@ -7,7 +7,6 @@ import retrofit2.create
 
 class Api_Controller {
     val BASE_URL = "https://myfarmapp1.herokuapp.com/api/v1/"
-    val Admin_URl = "https://farmadmin.herokuapp.com/api/v2/"
     var retrofit: Retrofit
 
     init {
@@ -21,9 +20,8 @@ class Api_Controller {
         //    var retrofitAdmin: Retrofit
 
         val BASE_URL = "https://myfarmapp1.herokuapp.com/api/v1/"
-        var Admin_URl = "https://farmadmin.herokuapp.com/api/v2/"
         private val retrofitAdmin = Retrofit.Builder()
-            .baseUrl(Admin_URl)
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .build()

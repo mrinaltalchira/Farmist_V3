@@ -11,21 +11,25 @@ import androidx.core.os.bundleOf
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.android.farmist.R
+import com.android.farmist.api.Api_Controller
 import com.android.farmist.model.ExpensesIncomeTrackerResponse.Data
 import com.android.farmist.model.alertsResponse.New
+import com.android.farmist.model.archive.RemoveFromAchiv
 import com.bumptech.glide.Glide
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.adaapter_exp_income_tracker.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Adapter_Archived_Crop(val context: Context, var data: List<Data>)  : RecyclerView.Adapter<Adapter_Archived_Crop.ViewHolder>() {
 
 //    val incomeTrackerList: ArrayList<String> = ArrayList()
-
-    fun setList(DataList: List<Data>) {
+     fun setList(DataList: List<Data>) {
         this.data = DataList
         notifyDataSetChanged()
     }
-
+    var position:Int = -1
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_archive_expenses_income_trackor, parent, false)
@@ -37,6 +41,7 @@ class Adapter_Archived_Crop(val context: Context, var data: List<Data>)  : Recyc
 
 //        val list = incomeTrackerList[position]
 
+        var a = data[position]
         holder.tvtitle.setText(data[position].name)
         holder.tvArea.setText(data[position].area+" "+data[position].areaType)
         holder.tvSowed.setText(data[position].date)
@@ -74,12 +79,15 @@ class Adapter_Archived_Crop(val context: Context, var data: List<Data>)  : Recyc
 
         })
 
+        holder.remove.setOnClickListener {
+            remov(a.cropId)
 
-
+        }
     }
 
     override fun getItemCount(): Int {
         return data.size
+
 
     }
 
@@ -90,6 +98,27 @@ class Adapter_Archived_Crop(val context: Context, var data: List<Data>)  : Recyc
         var tvexpense: TextView = itemView.findViewById(R.id.TvCropExpensesIncomeExpesesTracker)
         var tvSowed: TextView = itemView.findViewById(R.id.TvCropSowedIncomeExpesesTracker)
         var ivprofile: CircleImageView = itemView.findViewById(R.id.iv_profile)
+        var remove:ImageView = itemView.findViewById(R.id.Img_remove_Achiv)
+
     }
 
+
+    fun remov(id:String){
+        var call: Call<RemoveFromAchiv> = Api_Controller().getInstacne().removeIt(id)
+        call.enqueue(object :Callback<RemoveFromAchiv>{
+            override fun onResponse(
+                call: Call<RemoveFromAchiv>,
+                response: Response<RemoveFromAchiv>
+            ) {
+                notifyItemRemoved(position)
+
+                Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onFailure(call: Call<RemoveFromAchiv>, t: Throwable) {
+                Toast.makeText(context, "error $t", Toast.LENGTH_SHORT).show()
+            }
+        })
+
+    }
 }

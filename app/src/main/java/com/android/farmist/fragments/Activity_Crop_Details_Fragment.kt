@@ -47,7 +47,7 @@ class Activity_Crop_Details_Fragment : Fragment() {
     lateinit var FarmsNames: List<String>
     lateinit var selectFarm: String
     lateinit var progressBarDailog: progressbars
-
+    lateinit var farmName:String
 
     companion object {
         val IMAGETOKEN = 200
@@ -194,6 +194,9 @@ class Activity_Crop_Details_Fragment : Fragment() {
         val CropnameRequestBody: RequestBody = RequestBody.create(
             MediaType.parse("multipart/form-data"), cropName
         )
+        val FarmnameRequestBody: RequestBody = RequestBody.create(
+            MediaType.parse("multipart/form-data"), selectFarm
+        )
         val SowedareaRequestBody: RequestBody = RequestBody.create(
             MediaType.parse("multipart/form-data"), showedArea
         )
@@ -206,17 +209,22 @@ class Activity_Crop_Details_Fragment : Fragment() {
 
         val call: Call<AddCropResponse>
         call = Api_Controller().getInstacne().addCrop(
-            MultipartBody.Part.createFormData(
-                "image",
-                file.name,
-                body
-            ),
-            RequestBody.create(MediaType.parse("multipart/form-data"), "json"),
-            userIdRequestBody,
-            CropnameRequestBody,
-            SowedareaRequestBody,
-            areaTypeRequestBody,
-            SowedRequestBody
+            CropnameRequestBody,MultipartBody.Part.createFormData("image",file.name,body),
+            RequestBody.create(MediaType.parse("multipart/form-data"),"json"),
+            userIdRequestBody,FarmnameRequestBody,SowedareaRequestBody,areaTypeRequestBody,SowedRequestBody
+
+        //            FarmnameRequestBody,
+//            MultipartBody.Part.createFormData(
+//                "image",
+//                file.name,
+//                body
+//            ),
+//            RequestBody.create(MediaType.parse("multipart/form-data"), "json"),
+//            userIdRequestBody,
+//            CropnameRequestBody,
+//            SowedareaRequestBody,
+//            areaTypeRequestBody,
+//            SowedRequestBody
         )
         call.enqueue(object : Callback<AddCropResponse> {
             override fun onResponse(
@@ -311,8 +319,6 @@ class Activity_Crop_Details_Fragment : Fragment() {
                             p3: Long
                         ) {
                             selectFarm = FarmsNames[p2]
-
-
                         }
 
                         override fun onNothingSelected(p0: AdapterView<*>?) {

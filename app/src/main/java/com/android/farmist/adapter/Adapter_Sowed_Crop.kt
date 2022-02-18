@@ -31,7 +31,7 @@ class Adapter_Sowed_Crop(val context: Context, val data: List<UserCrop>) :
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.tvCropName.setText(data?.get(position)?.farmName)
+        holder.tvCropName.setText(data?.get(position)?.cropName)
         holder.tvArea.setText(data?.get(position)?.sowedArea + " " + (data?.get(position)?.areaType))
         Glide.with(context).load(data?.get(position)?.image).into(holder.ivsowed)
         holder.cropId= data?.get(position)?._id.toString()

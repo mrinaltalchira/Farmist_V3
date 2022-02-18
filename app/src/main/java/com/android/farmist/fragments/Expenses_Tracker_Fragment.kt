@@ -203,7 +203,7 @@ binding.llDeletebtn.setOnClickListener {
             binding.tvSubsidyName.setText(getExpensesTrackerList.subName[0])
             binding.tvSubsidyamount.setText(getExpensesTrackerList.subAmount[0])
             binding.tvSubsidydate.setText(getExpensesTrackerList.subDate[0])
-            Glide.with(this).load(getExpensesTrackerList.image).into(binding.img)
+            Glide.with(requireActivity()).load(getExpensesTrackerList.image).into(binding.img)
 
             progressbarsDialog.hidediloag()
         }
