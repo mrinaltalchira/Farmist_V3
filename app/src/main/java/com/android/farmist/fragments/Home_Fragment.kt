@@ -15,6 +15,7 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.android.farmist.R
@@ -23,6 +24,8 @@ import com.android.farmist.adapter.*
 import com.android.farmist.api.Api_Controller
 import com.android.farmist.api.Api_Controller_Location
 import com.android.farmist.databinding.FragmentHomeBinding
+import com.android.farmist.model.CropPriceResponse.Crop
+import com.android.farmist.model.CropPriceResponse.getCropPrice
 import com.android.farmist.model.alertsResponse.GetGovtScheme
 import com.android.farmist.model.alertsResponse.GetNewsAlert
 import com.android.farmist.model.alertsResponse.New
@@ -46,9 +49,9 @@ class Home_Fragment : Fragment() {
 
     private lateinit var binding : FragmentHomeBinding
     private val adapterNewsAnnouncements by lazy { Adapter_News_Announcements() }
-    private val adapterCropPrices by lazy { Adapter_Crop_Prices() }
-    private var createGroupList : ArrayList<String> = ArrayList()
-    private var croppricelist : ArrayList<String> = ArrayList()
+
+    lateinit var adapterCropPrices : Adapter_Crop_Prices
+
     var key = "13497f7823f3433ebb161306220202"
     lateinit var addressList: ArrayList<Address>
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
@@ -74,6 +77,7 @@ class Home_Fragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 //        bindUIViews()
         getGovScheme()
+        getPriceCrop()
         binding.expIncometracker.setOnClickListener(View.OnClickListener {
             findNavController().navigate(R.id.action_nav_home_to_expensess_Income_tracker,null)
         })
@@ -103,6 +107,9 @@ class Home_Fragment : Fragment() {
         binding.tvallnewsannouncement.setOnClickListener(View.OnClickListener {
             findNavController().navigate(R.id.action_nav_home_to_news_Announcement_all_Fragment,null)
         })
+        binding.tvallCropPrice.setOnClickListener {
+            findNavController().navigate(R.id.action_nav_home_to_cropPrices)
+        }
 
     }
 
@@ -215,6 +222,45 @@ class Home_Fragment : Fragment() {
         })
     }
 
+
+
+    private fun getPriceCrop() {
+
+        adapterCropPrices=activity?.let {
+            Adapter_Crop_Prices(it.applicationContext, ArrayList<Crop>())
+        }!!
+        binding.rvcropprices.setHasFixedSize(true)
+//        binding.rvcropprices.layoutManager=
+//            GridLayoutManager(activity?.applicationContext,2)
+
+        binding.rvcropprices.adapter=adapterCropPrices
+        val compositeDisposable = CompositeDisposable()
+        compositeDisposable.add(
+            getObservable().subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({ response -> getObserver(response as getCropPrice) },
+                    { t -> onFailure(t) })
+        )
+
+    }
+
+    private fun getObservable(): Observable<getCropPrice> {
+        return Api_Controller.apiInterface.getCropPrice()
+    }
+
+    private fun getObserver(priceData: getCropPrice) {
+        if (priceData != null) {
+            val CropPriceList = priceData.crops
+
+            adapterCropPrices.setList(CropPriceList)
+        }
+
+
+    }
+
+    private fun onFailure(t: Throwable) {
+        Log.d("Main", "OnFailure: " + t.message)
+    }
 
 
 }

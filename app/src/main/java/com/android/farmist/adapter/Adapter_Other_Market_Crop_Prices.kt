@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.android.farmist.R
@@ -33,12 +34,16 @@ class Adapter_Other_Market_Crop_Prices(val context: Context, var data: List<Crop
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         holder.tvCroptitle.setText(data[position].title)
-        holder.tvPrice.setText("Rs. "+data[position].price)
+        holder.tvPrice.setText("Rs. "+data[position].currentPrice)
         Glide.with(context).load(data[position].image).into(holder.ivCrop)
 
 
         holder.itemView.setOnClickListener(View.OnClickListener {
-            Navigation.createNavigateOnClickListener(R.id.action_nav_prices_to_marketPriceFragment).onClick(holder.itemView)
+            var bundle = bundleOf(
+                "cropId" to data[position].id
+            )
+            Toast.makeText(context, "marketid"+data[position].id, Toast.LENGTH_SHORT).show()
+            Navigation.createNavigateOnClickListener(R.id.action_nav_prices_to_marketPriceFragment,bundle).onClick(holder.itemView)
 
 
         })

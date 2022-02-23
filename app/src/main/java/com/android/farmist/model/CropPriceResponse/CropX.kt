@@ -1,10 +1,12 @@
 package com.android.farmist.model.CropPriceResponse
 
-data class Crop(
+data class CropX(
     val __v: Int,
-    val id: String,
+    val _id: String,
     val cloudinary_id: String,
+    val fertilizerDay: String,
     val image: String,
-    val currentPrice: String,
+    val month: List<Any>,
+    val price: List<Any>,
     val title: String
 )

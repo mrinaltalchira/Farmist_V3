@@ -15,8 +15,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_80sdp"
-            android:orientation="vertical"
-            android:background="@color/green_selected">
+            android:background="@color/green_selected"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/backbtn"
@@ -26,13 +26,13 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:drawableLeft="@drawable/back"
                 android:drawablePadding="@dimen/_10sdp"
-                android:drawableTint="@color/white"/>
+                android:drawableTint="@color/white" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart = "@dimen/_34sdp"
+                android:layout_marginStart="@dimen/_34sdp"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:drawableTint="@color/white"
                 android:text="Add new Crop"
@@ -70,26 +70,44 @@
                     android:textStyle="bold" />
 
                 <LinearLayout
+                    android:id="@+id/llSelectCrop"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
-                    android:background="@drawable/searchview_bg"
+
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.SearchView
-                        android:id="@+id/country_search"
+                        android:id="@+id/crop_search"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/searchview_bg"
+                        android:inputType="text"
                         android:textCursorDrawable="@null"
                         app:iconifiedByDefault="false"
                         app:queryBackground="@null"
-                        app:queryHint="Search catgory" />
+                        app:queryHint="Search catgory"
 
+
+                        />
+
+                    <ListView
+                        android:id="@+id/searchList"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_600sdp"
+                        android:scrollbarSize="@dimen/_600sdp"
+                        android:visibility="gone" />
 
                 </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                </RelativeLayout>
 
 
                 <TextView
@@ -106,7 +124,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_150sdp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
@@ -116,7 +134,7 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/fruits_rv"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:background="@color/white"
 
                         android:orientation="vertical"
@@ -140,7 +158,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:background="@drawable/loan_form_background"
@@ -150,7 +168,7 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/vegetable_rv"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:background="@color/white"
                         android:orientation="vertical"
 
@@ -164,6 +182,7 @@
 
             </LinearLayout>
         </ScrollView>
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/nextBtnSelectCategory"

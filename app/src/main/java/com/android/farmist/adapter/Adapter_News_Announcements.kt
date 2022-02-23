@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.navigation.Navigation
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -41,7 +42,15 @@ class Adapter_News_Announcements()  : RecyclerView.Adapter<Adapter_News_Announce
 
 
         holder.itemView.setOnClickListener(View.OnClickListener {
-          Navigation.createNavigateOnClickListener(R.id.action_nav_home_to_newsDetail_Fragment).onClick(holder.itemView)
+
+            var bundle = bundleOf(
+                "newsId" to incomeTrackerList[position]._id,
+                "newsImage" to incomeTrackerList[position].image,
+                "newsTime" to incomeTrackerList[position].createdAt,
+                "newsDec" to incomeTrackerList[position].desc,
+                "newsTitle" to incomeTrackerList[position].title
+            )
+          Navigation.createNavigateOnClickListener(R.id.action_nav_home_to_newsDetail_Fragment,bundle).onClick(holder.itemView)
 
 
         })

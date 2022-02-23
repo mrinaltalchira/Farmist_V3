@@ -640,13 +640,14 @@
 
 
                         <TextView
+                            android:id="@+id/tvallCropPrice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
                             android:text="See all"
                             android:textColor="@color/green_selected"
-                            android:textStyle="normal"
-                            android:layout_alignParentEnd="true"
-                            android:textSize="@dimen/_14sdp" />
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="normal" />
 
 
                     </RelativeLayout>

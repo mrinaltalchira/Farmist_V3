@@ -1,6 +1,7 @@
 package com.android.farmist.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +9,13 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.android.farmist.R
 import com.android.farmist.adapter.Adapter_Announcement_All
-import com.android.farmist.adapter.Adapter_Harvested_Crop
+import com.android.farmist.api.Api_Controller
 import com.android.farmist.databinding.FragmentAnnounceAllBinding
-import com.android.farmist.databinding.FragmentHarvestedBinding
+import com.android.farmist.model.alertsResponse.GetGovtScheme
+import com.android.farmist.model.alertsResponse.Scheme
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class Announce_All : Fragment() {
@@ -34,25 +39,44 @@ class Announce_All : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        bindUIViews()
+        getGovScheme()
 
     }
 
-    private fun bindUIViews(){
-        setData()
-        adapterAnnouncementAll.setList(createGroupList)
+    private fun bindUIViews(dataRespo: List<Scheme>) {
+
+        adapterAnnouncementAll.setList(dataRespo, requireActivity())
         binding.rvannounceall.adapter = adapterAnnouncementAll
 
 
     }
 
-    private fun setData(): ArrayList<String> {
-        for (i in 0 until 5) {
+//    private fun setData(): ArrayList<String> {
+//        for (i in 0 until 5) {
+//
+//            createGroupList.add("Group")
+//        }
+//
+//        return createGroupList
+//    }
 
-            createGroupList.add("Group")
-        }
+    private fun getGovScheme() {
+        val call: Call<GetGovtScheme>
+        call = Api_Controller().getInstacneAdmin().getGovtscheme()
+        call.enqueue(object : Callback<GetGovtScheme> {
+            override fun onResponse(call: Call<GetGovtScheme>, response: Response<GetGovtScheme>) {
+                val dataRespo= response.body()?.schemes
+                if (dataRespo != null) {
+                    bindUIViews(dataRespo)
+                }
 
-        return createGroupList
+
+            }
+
+            override fun onFailure(call: Call<GetGovtScheme>, t: Throwable) {
+                Log.d("getNewsError", t.toString())
+            }
+        })
     }
 
 }

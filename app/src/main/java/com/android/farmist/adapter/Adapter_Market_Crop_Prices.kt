@@ -4,17 +4,21 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.android.farmist.R
 import com.android.farmist.model.CropPriceResponse.Crop
-import com.android.farmist.model.alertsResponse.New
+import com.android.farmist.model.CropPriceResponse.Data
+import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.adapter_market_crop_prices.view.*
 
-class Adapter_Market_Crop_Prices(val context: Context, var data: List<Crop>)  : RecyclerView.Adapter<Adapter_Market_Crop_Prices.ViewHolder>() {
+class Adapter_Market_Crop_Prices( )  : RecyclerView.Adapter<Adapter_Market_Crop_Prices.ViewHolder>() {
+    lateinit var context: Context
+    lateinit var data: List<Data>
 
-    val incomeTrackerList: ArrayList<String> = ArrayList()
-
-    fun setList(DataList: List<Crop>) {
+    fun setList(DataList: List<Data>, context: Context) {
+        this.context=context
         this.data = DataList
         notifyDataSetChanged()
     }
@@ -29,11 +33,16 @@ class Adapter_Market_Crop_Prices(val context: Context, var data: List<Crop>)  : 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        val list = incomeTrackerList[position]
+
+        holder.itemView.tvtitleMycropPrices.setText(data[position].title)
+        holder.itemView.tvPriceMycrop.setText("Rs. "+data[position].price)
+        Glide.with(context).load(data[position].image).into(holder.itemView.ivMycropImage)
 
         holder.itemView.setOnClickListener(View.OnClickListener {
-            Navigation.createNavigateOnClickListener(R.id.action_nav_prices_to_marketPriceFragment).onClick(holder.itemView)
-
+            var bundle = bundleOf(
+                "cropId" to data[position].id
+            )
+            Navigation.createNavigateOnClickListener(R.id.action_nav_prices_to_marketPriceFragment,bundle).onClick(holder.itemView)
 
         })
 
@@ -41,7 +50,7 @@ class Adapter_Market_Crop_Prices(val context: Context, var data: List<Crop>)  : 
     }
 
     override fun getItemCount(): Int {
-        return incomeTrackerList.size
+        return data.size
     }
 
 

@@ -69,15 +69,16 @@
 
 
                     <TextView
+                        android:id="@+id/tvCropNamePrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="SunFlower"
-                        android:textSize="@dimen/_14sdp"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-                        android:layout_toEndOf="@+id/ivdp"
                         android:layout_centerVertical="true"
-                        android:layout_marginStart="@dimen/_10sdp" />
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_toEndOf="@+id/ivdp"
+                        android:text="SunFlower"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
 
 
                 </RelativeLayout>
@@ -87,13 +88,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Current Market Price"
-                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdp" />
 
 
                 <TextView
+                    android:id="@+id/tvPricecropKg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rs. 100/kg"
@@ -111,14 +113,21 @@
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdp" />
-
-
-                <ImageView
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/graph"
-                    android:scaleType="fitXY"
-                    android:layout_marginTop="@dimen/_15sdp" />
+                    android:text="Price"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:textColor="@color/black"
+                    />
+
+                <lecho.lib.hellocharts.view.LineChartView
+                    android:id="@+id/chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_250sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    />
 
             </LinearLayout>
         </LinearLayout>

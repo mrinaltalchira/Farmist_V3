@@ -5,6 +5,7 @@ import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -15,6 +16,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.databinding.DataBindingUtil.inflate
 import androidx.navigation.fragment.findNavController
+import cn.pedant.SweetAlert.SweetAlertDialog
 import com.android.farmist.R
 import com.android.farmist.UploadRequestBody
 import com.android.farmist.activity.MainActivity
@@ -23,6 +25,7 @@ import com.android.farmist.databinding.ActivityAddCropDetailsBinding
 import com.android.farmist.model.addCropResponse.AddCropResponse
 import com.android.farmist.model.getFarmForSpinnner.FarmsSpinner
 import com.android.farmist.model.profileImgResponse.SetProfileResponse
+import com.android.farmist.util.SweetAlert
 import com.android.farmist.util.progressbars
 import okhttp3.MediaType
 import okhttp3.MultipartBody
@@ -90,6 +93,7 @@ class Activity_Crop_Details_Fragment : Fragment() {
 
 
             Toast.makeText(requireContext(), "$userId", Toast.LENGTH_SHORT).show()
+
             addCrop()
 
 
@@ -174,6 +178,7 @@ class Activity_Crop_Details_Fragment : Fragment() {
 
             return
         }
+
         progressBarDailog.showDialog()
 
         val parcelFileDescriptor =
@@ -231,6 +236,7 @@ class Activity_Crop_Details_Fragment : Fragment() {
                 call: Call<AddCropResponse>,
                 response: Response<AddCropResponse>
             ) {
+
                 val responseData = response.body()
                 if (responseData != null) {
 
@@ -241,9 +247,10 @@ class Activity_Crop_Details_Fragment : Fragment() {
                     ).show()
                 }
                 progressBarDailog.hidediloag()
-                val intent = Intent(requireContext(), MainActivity::class.java)
-                startActivity(intent)
-                requireActivity().finish()
+                createCropSuccess()
+
+
+
             }
 
             override fun onFailure(call: Call<AddCropResponse>, t: Throwable) {
@@ -337,6 +344,21 @@ class Activity_Crop_Details_Fragment : Fragment() {
             }
         })
 
+    }
+
+    fun createCropSuccess()
+    {
+        val sweetAlertDialog=SweetAlertDialog(requireContext(),SweetAlertDialog.SUCCESS_TYPE)
+        sweetAlertDialog.confirmButtonBackgroundColor=Color.parseColor("#46A908")
+        sweetAlertDialog.setConfirmClickListener {
+
+
+
+            val intent = Intent(requireContext(), MainActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
+        sweetAlertDialog.show()
     }
 
 }

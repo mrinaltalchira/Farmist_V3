@@ -1,5 +1,6 @@
 package com.android.farmist.api
 
+import com.android.farmist.model.CropPriceResponse.GetMyCropPrices
 import com.android.farmist.model.CropPriceResponse.getCropPrice
 import com.android.farmist.model.ExpensesIncomeTrackerResponse.AddExpesesResponse
 import com.android.farmist.model.ExpensesIncomeTrackerResponse.ExpenesData
@@ -9,6 +10,7 @@ import com.android.farmist.model.ExpensesIncomeTrackerResponse.GetExpensesIncome
 import com.android.farmist.model.ExpensesIncomeTrackerResponse.addSubsidy
 import com.android.farmist.model.FullExpenseLog.Pie
 import com.android.farmist.model.FullExpenseLog.Root
+import com.android.farmist.model.MarketPriceResponse.marketPriceResponse
 import com.android.farmist.model.adapterGetFarm.AdeptDataResponce
 import com.android.farmist.model.addCropResponse.AddCropResponse
 import com.android.farmist.model.alertsResponse.GetGovtScheme
@@ -131,7 +133,7 @@ interface ApiInterface {
     @Multipart
     @POST("newcrop")
     fun addCrop(
-        @Part("cropName") cropName:RequestBody,
+        @Part("cropName") cropName: RequestBody,
 
         @Part image: MultipartBody.Part,
         @Part("image") desc: RequestBody,
@@ -301,11 +303,16 @@ interface ApiInterface {
     @PUT("crop/remove/archieve/{id}")
     fun removeIt(@Path("id") id: String): Call<RemoveFromAchiv>
 
-@PUT("crop/harvest/{id}")
-fun makeHarvested(@Path("id")id:String):Call<MakeHarvest>
+    @PUT("crop/harvest/{id}")
+    fun makeHarvested(@Path("id") id: String): Call<MakeHarvest>
 
-@GET("crops/get/harvested/")
-fun getHarvested(@Query("userId")userId:String):Call<GetHarvestedCrop>
+    @GET("crops/get/harvested/")
+    fun getHarvested(@Query("userId") userId: String): Call<GetHarvestedCrop>
 
+    @GET("admin/get/graph/price-month")
+    fun getCropMarketPrices(@Query("id") CropPriceId: String): Call<marketPriceResponse>
 
-}
+    //get my crop market price
+    @GET("my/crops/price")
+    fun getMycropPrices(@Query("userId")cropId:String
+    ):Call<GetMyCropPrices>}

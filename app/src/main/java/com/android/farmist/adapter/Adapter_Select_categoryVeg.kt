@@ -5,9 +5,7 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.android.farmist.R
@@ -16,16 +14,21 @@ import com.android.farmist.model.CropPriceResponse.Crop
 import com.android.farmist.model.selectCategoryResponse.Fruitlist
 import com.android.farmist.model.selectCategoryResponse.Veg
 import com.bumptech.glide.Glide
+import java.util.*
+import kotlin.collections.ArrayList
 
 class Adapter_Select_categoryVeg(
     var data: List<Veg>,
     private var onselectitemVeg: SelectItemVeg,
     val context: Context
+
 ) :
-    RecyclerView.Adapter<Adapter_Select_categoryVeg.ViewHolder>() {
+    RecyclerView.Adapter<Adapter_Select_categoryVeg.ViewHolder>(),Filterable {
 
     var checkData: Int = -1
     var checkData2: Int = -1
+    var cropList = mutableListOf<Veg>()
+    var cropListFilter = mutableListOf<Veg>()
 
 
 //    private var onItemClickListener: Adapter_Select_categoryVeg.OnItemClickListener? = null
@@ -37,6 +40,8 @@ class Adapter_Select_categoryVeg(
 
     fun setList(DataList: List<Veg>) {
         this.data = DataList
+        this.cropList = DataList as ArrayList<Veg>
+        this.cropListFilter = DataList as ArrayList<Veg>
 
         notifyDataSetChanged()
     }
@@ -51,11 +56,11 @@ class Adapter_Select_categoryVeg(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        holder.tvCroptitle.setText(data[position].name)
-        Glide.with(context).load(data[position].image).into(holder.ivCrop)
+        holder.tvCroptitle.setText(cropList[position].name)
+        Glide.with(context).load(cropList[position].image).into(holder.ivCrop)
 
 
-        val obj: Veg = data[position]
+        val obj: Veg = cropList[position]
 
         holder.itemView.setOnClickListener(View.OnClickListener {
             checkData=-1
@@ -70,12 +75,12 @@ class Adapter_Select_categoryVeg(
         })
         if (checkData == position) {
             checkData2=-1
-            holder.tvCroptitle.setTextColor(Color.parseColor("#FFFFFF"))
+//            holder.tvCroptitle.setTextColor(Color.parseColor("#FFFFFF"))
             holder.itemView.setBackgroundResource(R.drawable.green_button_background)
             checkData=-1
             if (checkData2 == position) {
                 holder.itemView.setBackgroundResource(R.drawable.loan_form_background)
-                holder.tvCroptitle.setTextColor(Color.parseColor("#000000"))
+//                holder.tvCroptitle.setTextColor(Color.parseColor("#000000"))
                 checkData2 = -1
             }
             else {
@@ -92,7 +97,7 @@ class Adapter_Select_categoryVeg(
     }
 
     override fun getItemCount(): Int {
-        return data.size
+        return cropList.size
     }
 
 
@@ -111,6 +116,43 @@ class Adapter_Select_categoryVeg(
 
     interface SelectItemVeg {
         fun onItemSelect(viewModel: Veg)
+    }
+
+    override fun getFilter(): Filter {
+        return object : Filter(){
+            override fun performFiltering(charSequence: CharSequence?): FilterResults {
+                val filterResults=FilterResults();
+                if (charSequence==null||charSequence.length<0)
+                {
+                    filterResults.count=cropListFilter.size
+                    filterResults.values=cropListFilter
+
+                }
+                else{
+                    var searchChar=charSequence.toString()
+                    val itemModal=ArrayList<Veg>()
+                    for (item in cropListFilter)
+                    {
+                        if (item.name.lowercase(Locale.ROOT).contains(searchChar))
+                        {
+                            itemModal.add(item)
+                        }
+
+                    }
+                    filterResults.count=itemModal.size
+                    filterResults.values=itemModal
+                }
+                return filterResults
+
+            }
+
+            override fun publishResults(p0: CharSequence?, filterResult: FilterResults?) {
+                cropList=filterResult!!.values as ArrayList<Veg>
+                notifyDataSetChanged()
+
+            }
+        }
+
     }
 
 }
