@@ -1,11 +1,14 @@
 package com.android.farmist
 
 import android.os.Bundle
+import android.telecom.Call
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
@@ -22,6 +25,7 @@ import com.android.farmist.databinding.FragmentPricesBinding
 import com.android.farmist.databinding.FragmentSelectCropCategoryBinding
 import com.android.farmist.model.CropPriceResponse.Crop
 import com.android.farmist.model.CropPriceResponse.getCropPrice
+import com.android.farmist.model.search.ResponceSearch
 import com.android.farmist.model.selectCategoryResponse.Fruitlist
 import com.android.farmist.model.selectCategoryResponse.GetFruitsList
 import com.android.farmist.model.selectCategoryResponse.GetVagList
@@ -30,6 +34,9 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
+import kotlinx.android.synthetic.main.fragment_select_crop_category.*
+import retrofit2.Callback
+import retrofit2.Response
 
 class SelectCropCategory : Fragment(),Adapter_Select_category.SelectItem,Adapter_Select_categoryVeg.SelectItemVeg {
     lateinit var adapterMarketCropPrices: Adapter_Market_Crop_Prices
@@ -56,6 +63,7 @@ class SelectCropCategory : Fragment(),Adapter_Select_category.SelectItem,Adapter
        }
         return binding.root
 
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -72,20 +80,18 @@ class SelectCropCategory : Fragment(),Adapter_Select_category.SelectItem,Adapter
             var bundle = bundleOf(
                 "cropName" to datachecker
             )
-            Toast.makeText(activity?.applicationContext, "$datachecker ", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(activity?.applicationContext, "$datachecker ", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_selectCropCategory_to_activity_Crop_Details_Fragment,bundle)
 
 
         }
 
-
     }
-
 
 
     private fun getfruitCrop() {
         adapterSelectCategory=activity?.let {
-            Adapter_Select_category( ArrayList<Fruitlist>(),this,requireContext(),datachecker)
+            Adapter_Select_category( ArrayList<Fruitlist>(),this,requireActivity(),datachecker)
         }!!
         binding.fruitsRv.setHasFixedSize(true)
         binding.fruitsRv.layoutManager=
@@ -97,9 +103,8 @@ class SelectCropCategory : Fragment(),Adapter_Select_category.SelectItem,Adapter
             getObservable().subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ response -> getObserver(response as GetFruitsList) },
-                    { t -> onFailure(t) })
+                    {t -> onFailure(t)})
         )
-
     }
 
     private fun getObservable(): Observable<GetFruitsList> {
@@ -111,6 +116,7 @@ class SelectCropCategory : Fragment(),Adapter_Select_category.SelectItem,Adapter
             val CropPriceList = priceData.fruitlist
 
             adapterSelectCategory.setList(CropPriceList)
+
         }
 //        Toast.makeText(activity?.applicationContext, "data${priceData.toString()}", Toast.LENGTH_SHORT).show()
 
@@ -153,10 +159,11 @@ class SelectCropCategory : Fragment(),Adapter_Select_category.SelectItem,Adapter
             val CropPriceList = priceData.vegs
 
             adapterSelectCategoryVeg.setList(CropPriceList)
+
+
         }
-
-
     }
+
 
     private fun onFailureVeg(t: Throwable) {
         Log.d("Main", "OnFailure: " + t.message)
@@ -176,5 +183,7 @@ class SelectCropCategory : Fragment(),Adapter_Select_category.SelectItem,Adapter
 //        adapterSelectCategoryVeg.notifyDataSetChanged()
         datachecker=viewModel.name
     }
+
+
 
 }

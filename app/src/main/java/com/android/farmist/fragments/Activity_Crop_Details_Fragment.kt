@@ -8,12 +8,12 @@ import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.databinding.DataBindingUtil.inflate
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.android.farmist.R
 import com.android.farmist.UploadRequestBody
@@ -22,7 +22,6 @@ import com.android.farmist.api.Api_Controller
 import com.android.farmist.databinding.ActivityAddCropDetailsBinding
 import com.android.farmist.model.addCropResponse.AddCropResponse
 import com.android.farmist.model.getFarmForSpinnner.FarmsSpinner
-import com.android.farmist.model.profileImgResponse.SetProfileResponse
 import com.android.farmist.util.progressbars
 import okhttp3.MediaType
 import okhttp3.MultipartBody
@@ -47,7 +46,7 @@ class Activity_Crop_Details_Fragment : Fragment() {
     lateinit var FarmsNames: List<String>
     lateinit var selectFarm: String
     lateinit var progressBarDailog: progressbars
-    lateinit var farmName:String
+    lateinit var farmName: String
 
     companion object {
         val IMAGETOKEN = 200
@@ -69,7 +68,7 @@ class Activity_Crop_Details_Fragment : Fragment() {
             container,
             false
         )
-        cropName= arguments?.getString("cropName").toString()
+        cropName = arguments?.getString("cropName").toString()
         binding.cropName.setText(cropName)
 
         progressBarDailog = progressbars(requireContext())
@@ -209,22 +208,16 @@ class Activity_Crop_Details_Fragment : Fragment() {
 
         val call: Call<AddCropResponse>
         call = Api_Controller().getInstacne().addCrop(
-            CropnameRequestBody,MultipartBody.Part.createFormData("image",file.name,body),
-            RequestBody.create(MediaType.parse("multipart/form-data"),"json"),
-            userIdRequestBody,FarmnameRequestBody,SowedareaRequestBody,areaTypeRequestBody,SowedRequestBody
+            CropnameRequestBody,
+            MultipartBody.Part.createFormData("image", file.name, body),
+            RequestBody.create(MediaType.parse("multipart/form-data"), "json"),
+            userIdRequestBody,
+            FarmnameRequestBody,
+            SowedareaRequestBody,
+            areaTypeRequestBody,
+            SowedRequestBody
 
-        //            FarmnameRequestBody,
-//            MultipartBody.Part.createFormData(
-//                "image",
-//                file.name,
-//                body
-//            ),
-//            RequestBody.create(MediaType.parse("multipart/form-data"), "json"),
-//            userIdRequestBody,
-//            CropnameRequestBody,
-//            SowedareaRequestBody,
-//            areaTypeRequestBody,
-//            SowedRequestBody
+
         )
         call.enqueue(object : Callback<AddCropResponse> {
             override fun onResponse(

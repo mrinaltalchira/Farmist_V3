@@ -1,5 +1,6 @@
 package com.android.farmist.fragments
 
+import android.animation.ObjectAnimator
 import android.app.AlertDialog
 import android.graphics.Color
 import android.os.Bundle
@@ -7,7 +8,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.DecelerateInterpolator
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -15,12 +18,14 @@ import com.android.farmist.R
 import com.android.farmist.api.Api_Controller
 import com.android.farmist.databinding.FragmentCropInfoBinding
 import com.android.farmist.model.FullExpenseLog.Pie
-import com.android.farmist.model.harvested.MakeHarvest
 import com.android.farmist.model.cropDetailsFragment.CropName
+import com.android.farmist.model.getSowedCrop.ProgressTracker
+import com.android.farmist.model.harvested.MakeHarvest
 import com.android.farmist.model.setFarm.DeleteFarmRespo
 import com.android.farmist.util.progressbars
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.customedialoug.view.*
+import kotlinx.android.synthetic.main.fragment_crop_info_.*
 import lecho.lib.hellocharts.model.PieChartData
 import lecho.lib.hellocharts.model.SliceValue
 import retrofit2.Call
@@ -33,11 +38,6 @@ class Crop_info_Fragment : Fragment() {
     val pieData: MutableList<SliceValue> = ArrayList()
     lateinit var binding: FragmentCropInfoBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -49,7 +49,6 @@ class Crop_info_Fragment : Fragment() {
             findNavController().navigate(R.id.action_crop_info_Fragment_to_crops_Fragment)
         }
 
-
         return binding.root
     }
 
@@ -58,87 +57,187 @@ class Crop_info_Fragment : Fragment() {
         cropId = arguments?.getString("cropId").toString()
         getDetails()
         setChart()
-        binding.tvDelete.setOnClickListener {deleteCrop()}
-   binding.tvHarvest.setOnClickListener { makeHarvested() }
-    }
+        binding.tvViewFullLog.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_crop_info_Fragment_to_full_Expenses_Log_Fragment,
+                bundleOf("cropId" to cropId)
+            )
+        }
+        binding.tvDelete.setOnClickListener { deleteCrop() }
+        binding.tvHarvest.setOnClickListener { makeHarvested() }
+        progressBar()
+        tv_viewmoreOne.setOnClickListener {
 
-
-
-    fun makeHarvested(){
-var call:Call<MakeHarvest> = Api_Controller().getInstacne().makeHarvested(cropId)
-        call.enqueue(object : Callback<MakeHarvest>{
-            override fun onResponse(call: Call<MakeHarvest>, response: Response<MakeHarvest>) {
-                var respo = response.body()
-                if (respo != null){
-                    Toast.makeText(requireActivity(), "Crop Marked as Harvested", Toast.LENGTH_SHORT).show()
-                }
-            }
-
-            override fun onFailure(call: Call<MakeHarvest>, t: Throwable) {
-                Toast.makeText(requireContext(), "error found:- $t", Toast.LENGTH_SHORT).show()
-            }
-        })
-
-    }
-
-    fun deleteCrop(){
-
-
-
-            val view = View.inflate(context, R.layout.customedialoug, null)
-            val builder = AlertDialog.Builder(context)
-            builder.setView(view)
-            val dialog = builder.create()
-            dialog.show()
-            dialog.window?.setBackgroundDrawableResource(R.color.transe)
-
-            view.yes.setOnClickListener {
-
-                var progress = progressbars(requireActivity())
-                dialog.dismiss()
-                cropId = arguments?.getString("cropId").toString()
-                progress.showDialog()
-                Api_Controller().getInstacne().deleteCropExpence(cropId)
-                    .enqueue(object : Callback<DeleteFarmRespo> {
-                        override fun onResponse(
-                            call: Call<DeleteFarmRespo>,
-                            response: Response<DeleteFarmRespo>
-                        ) {
-                            var respon = response.body()
-                            if (respon != null) {
-                                progress.hidediloag()
-                                findNavController().navigate(R.id.action_crop_info_Fragment_to_crops_Fragment)
-
-
-
-                            }
-                        }
-
-                        override fun onFailure(
-                            call: Call<DeleteFarmRespo>,
-                            t: Throwable
-                        ) {
-                            Toast.makeText(context , "not success $t", Toast.LENGTH_SHORT).show()
-                            progress.hidediloag()
-                            activity?.finish()
-                        }
-                    })
-
-
-            }
-            view.no.setOnClickListener {
-
-                dialog.dismiss()
-
-                Toast.makeText(requireActivity(), "cancel request", Toast.LENGTH_SHORT).show()
+            if (expandable.isExpanded) {
+                expandable.collapse()
+            } else {
+                binding.expandable.expand()
             }
 
         }
+    }
 
-    fun setChart(){
 
-        var callpie:Call<Pie> = Api_Controller().getInstacne().getPie(cropId)
-        callpie.enqueue(object : Callback<Pie>{
+    fun progressBar() {
+
+        val call: Call<ProgressTracker> = Api_Controller.apiInterface.getProgress(cropId)
+        call.enqueue(object : Callback<ProgressTracker> {
+            override fun onResponse(
+                call: Call<ProgressTracker>,
+                response: Response<ProgressTracker>
+            ) {
+                var respo = response.body()
+                if (respo != null) {
+                    binding.sowedCorpDate.setText("Sowed \n" + respo?.sowedDate.toString())
+
+
+                    if (respo.fertilizeAt != "") {
+
+                        progressbarOne.max = 1000
+                        var currentProgress = 1000
+                        val animation =
+                            ObjectAnimator.ofInt(progressbarOne, "progress", currentProgress)
+                        animation.duration = 1250
+                        animation.interpolator = DecelerateInterpolator()
+                        animation.start()
+                        binding.addFertilizerData.setText("Add fertilizer \n" + respo.fertilizeAt.toString())
+
+
+                        if (respo.harvestAt != "") {
+                            progressbarTwo.max = 1000
+                            val animation =
+                                ObjectAnimator.ofInt(progressbarTwo, "progress", currentProgress)
+                            animation.duration = 5750
+                            animation.interpolator = DecelerateInterpolator()
+                            animation.start()
+                            binding.harvestCropDate.setText("Harvest  \n" + respo.harvestAt.toString())
+
+                        }
+
+                    }
+
+
+                }
+
+            }
+
+            override fun onFailure(call: Call<ProgressTracker>, t: Throwable) {
+                Toast.makeText(
+                    requireActivity(),
+                    "found progressBar error:- $t",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        })
+    }
+
+
+    fun makeHarvested() {
+
+
+        val view = View.inflate(context, R.layout.customedial2, null)
+        val builder = AlertDialog.Builder(context)
+        builder.setView(view)
+        val dialog = builder.create()
+        dialog.show()
+        dialog.window?.setBackgroundDrawableResource(R.color.transe)
+
+        view.yes.setOnClickListener {
+
+            var progress = progressbars(requireActivity())
+            dialog.dismiss()
+            cropId = arguments?.getString("cropId").toString()
+            progress.showDialog()
+
+            var call: Call<MakeHarvest> = Api_Controller().getInstacne().makeHarvested(cropId)
+            call.enqueue(object : Callback<MakeHarvest> {
+                override fun onResponse(call: Call<MakeHarvest>, response: Response<MakeHarvest>) {
+                    var respo = response.body()
+                    if (respo != null) {
+                        Toast.makeText(
+                            requireActivity(),
+                            "Crop Marked as Harvested",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        findNavController().navigate(R.id.action_crop_info_Fragment_to_crops_Fragment2)
+                        progress.hidediloag()
+
+                    }
+                }
+
+                override fun onFailure(call: Call<MakeHarvest>, t: Throwable) {
+                    Toast.makeText(requireContext(), "error found:- $t", Toast.LENGTH_SHORT).show()
+                }
+            })
+
+
+        }
+        view.no.setOnClickListener {
+
+            dialog.dismiss()
+
+            Toast.makeText(requireActivity(), "cancel request", Toast.LENGTH_SHORT).show()
+        }
+
+
+    }
+
+    fun deleteCrop() {
+
+
+        val view = View.inflate(context, R.layout.customedialoug, null)
+        val builder = AlertDialog.Builder(context)
+        builder.setView(view)
+        val dialog = builder.create()
+        dialog.show()
+        dialog.window?.setBackgroundDrawableResource(R.color.transe)
+
+        view.yes.setOnClickListener {
+
+            var progress = progressbars(requireActivity())
+            dialog.dismiss()
+            cropId = arguments?.getString("cropId").toString()
+            progress.showDialog()
+            Api_Controller().getInstacne().deleteCropExpence(cropId)
+                .enqueue(object : Callback<DeleteFarmRespo> {
+                    override fun onResponse(
+                        call: Call<DeleteFarmRespo>,
+                        response: Response<DeleteFarmRespo>
+                    ) {
+                        var respon = response.body()
+                        if (respon != null) {
+                            progress.hidediloag()
+                            findNavController().navigate(R.id.action_crop_info_Fragment_to_crops_Fragment)
+
+
+                        }
+                    }
+
+                    override fun onFailure(
+                        call: Call<DeleteFarmRespo>,
+                        t: Throwable
+                    ) {
+                        Toast.makeText(context, "not success $t", Toast.LENGTH_SHORT).show()
+                        progress.hidediloag()
+                        activity?.finish()
+                    }
+                })
+
+
+        }
+        view.no.setOnClickListener {
+
+            dialog.dismiss()
+
+            Toast.makeText(requireActivity(), "cancel request", Toast.LENGTH_SHORT).show()
+        }
+
+    }
+
+    fun setChart() {
+
+        var callpie: Call<Pie> = Api_Controller().getInstacne().getPie(cropId)
+        callpie.enqueue(object : Callback<Pie> {
             override fun onResponse(call: Call<Pie>, response: Response<Pie>) {
                 //pieData = response.body().toString()
                 if (pieData.isEmpty()) {
@@ -199,7 +298,7 @@ var call:Call<MakeHarvest> = Api_Controller().getInstacne().makeHarvested(cropId
             }
 
             override fun onFailure(call: Call<Pie>, t: Throwable) {
-                }
+            }
         })
 
     }
@@ -217,7 +316,7 @@ var call:Call<MakeHarvest> = Api_Controller().getInstacne().makeHarvested(cropId
                     binding.tvCropName.setText(respo.name)
                     binding.tvArea.setText(respo.area)
                     binding.tvAreaType.setText(respo.areaType)
-                    Glide.with(activity?.applicationContext!!).load(respo.image).into(binding.img)
+                    Glide.with(requireActivity()).load(respo.image).into(binding.img)
                     binding.tvTotalSum.setText(respo.totalExpense)
                 }
             }
@@ -229,4 +328,7 @@ var call:Call<MakeHarvest> = Api_Controller().getInstacne().makeHarvested(cropId
 
     }
 
+
 }
+
+

@@ -24,7 +24,7 @@ class SowedFragment : Fragment() {
 
     private lateinit var binding : FragmentSowedBinding
 
-//    private val adapterSowedCrop by lazy { Adapter_Sowed_Crop() }
+    //    private val adapterSowedCrop by lazy { Adapter_Sowed_Crop() }
     private var createGroupList : ArrayList<String> = ArrayList()
     lateinit var userId:String
 
@@ -63,7 +63,7 @@ class SowedFragment : Fragment() {
         call=Api_Controller().getInstacne().getSwoedCrop(userId)
         call.enqueue(object :Callback<GetSowedCrop>{
             override fun onResponse(call: Call<GetSowedCrop>, response: Response<GetSowedCrop>) {
-               val cropList= response.body()?.userCrops
+                val cropList= response.body()?.userCrops
 
                 val adpterSowedCrop= cropList?.let { Adapter_Sowed_Crop(requireActivity(), it) }
                 progressbars.hidediloag()

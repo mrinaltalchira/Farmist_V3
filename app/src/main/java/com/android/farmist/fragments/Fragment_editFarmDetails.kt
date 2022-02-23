@@ -5,12 +5,12 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.android.farmist.R
 import com.android.farmist.UploadRequestBody
@@ -53,9 +53,9 @@ class Fragment_editFarmDetails : Fragment() {
             DataBindingUtil.inflate(inflater, R.layout.fragment_edit_farm_details, container, false)
 
 
-binding.backbtn.setOnClickListener {
-    findNavController().navigate(R.id.action_fragment_editFarmDetails_to_myFarm_Fragment)
-}
+        binding.backbtn.setOnClickListener {
+            findNavController().navigate(R.id.action_fragment_editFarmDetails_to_myFarm_Fragment)
+        }
 
         id = arguments?.getString("EditFarmID")
 
@@ -130,6 +130,7 @@ binding.backbtn.setOnClickListener {
         super.onDetach()
 
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
 
@@ -243,13 +244,28 @@ binding.backbtn.setOnClickListener {
 
     private fun setUserdata(uerdata: GetFarmEditResponce) {
         if (uerdata != null) {
-            Glide.with(requireActivity()).load(uerdata.farm.image)
+            var A = binding.rbAcresUpdateMyFarm.text.toString()
+            var B = binding.rbBighaUpdateMyFarm.text.toString()
+            var G = binding.rbGuntasUpdateMyFarm.text.toString()
+
+                Glide.with(requireActivity()).load(uerdata.farm.image)
                 .into(binding.imgUpdateMyFarm)
             binding.etNameUpdateMyFarm.setText(uerdata.farm.name)
             binding.etAreaUpdateMyFarm.setText(uerdata.farm.area)
             binding.rbGroupUpdateMyFarm.checkedRadioButtonId
             binding.etTehsilUpdateMyFarm.setText(uerdata.farm.tehsil)
             binding.etSurveyUpdateMyFarm.setText(uerdata.farm.surveyNum)
+
+            if (uerdata.farm.areaType == A) {
+                binding.rbGroupUpdateMyFarm.check(R.id.rb_Acres_Update_myFarm)
+            } else
+                if (uerdata.farm.areaType == B) {
+                    binding.rbGroupUpdateMyFarm.check(R.id.rb_bigha_Update_myFarm)
+                } else
+                    if (uerdata.farm.areaType == G) {
+                        binding.rbGroupUpdateMyFarm.check(R.id.rb_Guntas_Update_myFarm)
+                    }
+
         }
 
     }

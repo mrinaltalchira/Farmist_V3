@@ -79,7 +79,7 @@
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.SearchView
-                        android:id="@+id/country_search"
+                        android:id="@+id/veg_search"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/searchview_bg"
@@ -87,6 +87,10 @@
                         app:iconifiedByDefault="false"
                         app:queryBackground="@null"
                         app:queryHint="Search catgory" />
+                    <ListView
+                        android:id="@+id/list"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
 
                 </LinearLayout>

@@ -89,7 +89,7 @@ lateinit var cropId:String
 
     private fun GetExpensesincomeTracker() {
         adapterExpIncomeTracker =
-            activity?.let { Adapter_Archived_Crop(it.applicationContext, ArrayList<Data>()) }!!
+            activity?.let {Adapter_Archived_Crop(requireActivity(), ArrayList<Data>())}!!
         binding.rvExpIncometracker.setHasFixedSize(true)
         binding.rvExpIncometracker.layoutManager = LinearLayoutManager(activity?.applicationContext)
         binding.rvExpIncometracker.adapter = adapterExpIncomeTracker
@@ -123,7 +123,5 @@ lateinit var cropId:String
         progressbarsDialog.hidediloag()
         Log.d("Main", "OnFailure: " + t.message)
     }
-
-
 
 }

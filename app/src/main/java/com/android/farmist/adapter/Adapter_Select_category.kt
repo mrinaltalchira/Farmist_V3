@@ -114,7 +114,8 @@ class Adapter_Select_category(
         dataCrop = viewModel.name
 
     }
-}
+
+    }
 
 
 

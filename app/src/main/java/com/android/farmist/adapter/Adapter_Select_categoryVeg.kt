@@ -64,7 +64,7 @@ class Adapter_Select_categoryVeg(
 //            holder.itemView.setBackgroundRenn source(R.drawable.green_button_background)
 //            holder.itemView.setBackgroundResource(R.drawable.green_button_background)
             checkData = position
-            Toast.makeText(context, "veg........"+checkData, Toast.LENGTH_SHORT).show()
+            //Toast.makeText(context, "veg........"+checkData, Toast.LENGTH_SHORT).show()
             onselectitemVeg.onItemSelect(obj)
             notifyDataSetChanged()
         })

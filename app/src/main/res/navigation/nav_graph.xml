@@ -137,6 +137,12 @@
             android:id="@+id/action_crops_Fragment_to_nav_home"
             app:destination="@id/nav_home"
             app:popUpTo="@id/nav_graph" />
+        <action
+            android:id="@+id/action_crops_Fragment_to_harvestedFragment"
+            app:destination="@id/harvestedFragment" />
+        <action
+            android:id="@+id/action_crops_Fragment_to_harvested_Crop_Info"
+            app:destination="@id/harvested_Crop_Info" />
     </fragment>
     <fragment
         android:id="@+id/loan_Subsidies_Fragment"
@@ -248,6 +254,13 @@
             android:id="@+id/action_crop_info_Fragment_to_crops_Fragment"
             app:destination="@id/crops_Fragment"
             app:popUpTo="@id/crops_Fragment" />
+        <action
+            android:id="@+id/action_crop_info_Fragment_to_crops_Fragment2"
+            app:destination="@id/crops_Fragment"
+            app:popUpTo="@id/crop_info_Fragment" />
+        <action
+            android:id="@+id/action_crop_info_Fragment_to_full_Expenses_Log_Fragment"
+            app:destination="@id/full_Expenses_Log_Fragment" />
     </fragment>
     <fragment
         android:id="@+id/selectCropCategory"
@@ -317,6 +330,30 @@
         <action
             android:id="@+id/action_archived_crop_to_expensess_Income_tracker"
             app:destination="@id/expensess_Income_tracker" />
+        <action
+            android:id="@+id/action_archived_crop_self"
+            app:destination="@id/archived_crop"
+            app:popUpTo="@id/nav_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/harvestedFragment"
+        android:name="com.android.farmist.fragments.HarvestedFragment"
+        android:label="HarvestedFragment" >
+        <action
+            android:id="@+id/action_harvestedFragment_to_crops_Fragment"
+            app:destination="@id/crops_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/harvested_Crop_Info"
+        android:name="com.android.farmist.fragments.Harvested_Crop_Info"
+        android:label="Harvested_Crop_Info" >
+        <action
+            android:id="@+id/action_harvested_Crop_Info_to_crops_Fragment"
+            app:destination="@id/crops_Fragment"
+            app:popUpTo="@id/crops_Fragment" />
+        <action
+            android:id="@+id/action_harvested_Crop_Info_to_full_Expenses_Log_Fragment"
+            app:destination="@id/full_Expenses_Log_Fragment" />
     </fragment>
 
 </navigation>

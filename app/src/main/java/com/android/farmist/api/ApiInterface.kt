@@ -17,14 +17,18 @@ import com.android.farmist.model.harvested.MakeHarvest
 import com.android.farmist.model.archive.RemoveFromAchiv
 import com.android.farmist.model.archive.SetArchiveResponse
 import com.android.farmist.model.cropDetailsFragment.CropName
+import com.android.farmist.model.farmstats.StatsData
 import com.android.farmist.model.getFarmForSpinnner.FarmsSpinner
 import com.android.farmist.model.getFarms
 import com.android.farmist.model.getSowedCrop.GetSowedCrop
+import com.android.farmist.model.getSowedCrop.ProgressTracker
 import com.android.farmist.model.getUserInfo.getUserModel
 import com.android.farmist.model.harvested.GetHarvestedCrop
+import com.android.farmist.model.harvested.profitloss.ProfitLoss
 import com.android.farmist.model.location.Report
 import com.android.farmist.model.profileImgResponse.GetUserImagResponse
 import com.android.farmist.model.profileImgResponse.SetProfileResponse
+import com.android.farmist.model.search.ResponceSearch
 import com.android.farmist.model.selectCategoryResponse.GetFruitsList
 import com.android.farmist.model.selectCategoryResponse.GetVagList
 import com.android.farmist.model.setFarm.*
@@ -307,5 +311,23 @@ fun makeHarvested(@Path("id")id:String):Call<MakeHarvest>
 @GET("crops/get/harvested/")
 fun getHarvested(@Query("userId")userId:String):Call<GetHarvestedCrop>
 
+
+// harvested profit loss
+    @GET("expense/expense-tracker")
+    fun getHarvestedProfit(
+        @Query("cropId") cropId: String
+    ): Call<ProfitLoss>
+
+    // get sowed crop progress
+
+    @GET("crop")
+    fun getProgress(@Query("id")id: String):Call<ProgressTracker>
+
+    // search
+    @GET("admin/crop/search")
+    fun searchData(@Query("name")name:String):Call<ResponceSearch>
+
+    @GET("farms/stats")
+    fun getFarmstats(@Query("userId")userId:String):Call<StatsData>
 
 }

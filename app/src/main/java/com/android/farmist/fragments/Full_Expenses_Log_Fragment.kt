@@ -2,25 +2,19 @@ package com.android.farmist.fragments
 
 import android.graphics.Color
 import android.os.Bundle
-import android.provider.DocumentsContract
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.Fragment
 import com.android.farmist.R
-import com.android.farmist.api.ApiInterface
 import com.android.farmist.api.Api_Controller
-import com.android.farmist.databinding.*
-import com.android.farmist.model.FullExpenseLog.Data
+import com.android.farmist.databinding.FullExpenseLogBinding
 import com.android.farmist.model.FullExpenseLog.Pie
 import com.android.farmist.model.FullExpenseLog.Root
-import com.android.farmist.model.FullExpenseLog.piechart.PieData
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.fragment_home.*
 import lecho.lib.hellocharts.model.PieChartData
 import lecho.lib.hellocharts.model.SliceValue
 import retrofit2.Call
@@ -32,7 +26,7 @@ class Full_Expenses_Log_Fragment : Fragment() {
 
     private lateinit var binding: FullExpenseLogBinding
     val pieData: MutableList<SliceValue> = ArrayList()
-    lateinit var cropid:String
+    lateinit var cropid: String
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,8 +37,16 @@ class Full_Expenses_Log_Fragment : Fragment() {
         return binding.root
     }
 
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        cropid = arguments?.getString("cropId").toString()
+        setData()
+        getPieData()
+    }
+
     private fun setData() {
-        cropid = arguments?.getString("cropIdd").toString()
+        //    cropid = arguments?.getString("cropId").toString()
 
         val call: Call<Root> =
             Api_Controller().getInstacne().fullExpenceLogData(cropid)
@@ -66,14 +68,18 @@ class Full_Expenses_Log_Fragment : Fragment() {
                     binding.tvExpLogPriceLabour.setText(response.body()?.data?.totalLabour.toString())
                     binding.tvExpLogDateTractor.setText(response.body()?.data?.tractorDate.toString())
                     binding.tvExpLogPriceTractor.setText(response.body()?.data?.totalTractor.toString())
-                  binding.tvExpLogDateSubsidy.setText(response.body()?.data?.subsidyDate.toString())
+                    binding.tvExpLogDateSubsidy.setText(response.body()?.data?.subsidyDate.toString())
                     binding.tvExpLogPricesubsidy.setText(response.body()?.data?.subsidyTotal.toString())
                     binding.tvExpLogDateIncome.setText(
                         response.body()?.data?.incomeDate.toString()
                     )
                     binding.tvExpLogPriceIncome.setText(response.body()?.data?.incomeTotal.toString())
                     binding.tvExpLogTotalPrice.setText(response.body()?.data?.expenseTotal.toString())
-
+                    if (respo.data.harvest == true) {
+                        binding.tvHarvestOrNot.setText("Harvested")
+                    } else {
+                        binding.tvHarvestOrNot.setText("Sowed")
+                    }
 
                 } else {
                     Toast.makeText(requireActivity(), "null", Toast.LENGTH_SHORT).show()
@@ -86,13 +92,6 @@ class Full_Expenses_Log_Fragment : Fragment() {
             }
         })
 
-    }
-
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setData()
-        getPieData()
     }
 
     fun getPieData() {

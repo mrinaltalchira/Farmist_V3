@@ -22,7 +22,7 @@
                 android:id="@+id/rvharvest"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:listitem="@layout/adapter_sowed"
+                tools:listitem="@layout/adapter_harvest"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_5sdp"

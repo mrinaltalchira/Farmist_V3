@@ -69,12 +69,13 @@
 
 
                     <TextView
+                        android:id="@+id/tv_HarvestOrNot"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/harvested_btn_background"
                         android:padding="@dimen/_5sdp"
-                        android:text="Harvested"
+                        android:text = "__"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="normal" />

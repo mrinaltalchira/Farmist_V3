@@ -133,7 +133,7 @@
                     android:layout_marginTop="@dimen/_15sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:orientation="horizontal"
-                    android:weightSum="3">
+                    android:weightSum="2">
 
                     <RelativeLayout
                         android:layout_width="0dp"
@@ -154,7 +154,6 @@
                                 android:layout_height="wrap_content"
                                 android:src="@drawable/ic__circle_point" />
 
-
                         </LinearLayout>
 
 
@@ -162,7 +161,16 @@
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/_1sdp"
                             android:layout_centerVertical="true"
-                            android:background="@color/light_grey" />
+                            android:background="@color/light_grey">
+
+                            <ProgressBar
+                                android:id="@+id/progressbarOne"
+                                android:shadowColor="@color/blue"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"/>
+
+                        </LinearLayout>
 
 
                     </RelativeLayout>
@@ -186,30 +194,50 @@
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/_1sdp"
                             android:layout_gravity="center"
-                            android:background="@color/light_grey" />
+                            android:background="@color/light_grey">
 
 
-                    </LinearLayout>
+                            <ProgressBar
 
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="horizontal"
-                        android:weightSum="1">
-
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic__circle_point" />
+                                android:shadowColor="@color/blue"
+                                android:id="@+id/progressbarTwo"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                                android:scaleX="4"/>
+                            <!--                        </LinearLayout>-->
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/_1sdp"
-                            android:layout_gravity="center"
-                            android:background="@color/light_grey" />
+                            <!--                    </LinearLayout>-->
+
+                            <!--                    <LinearLayout-->
+                            <!--                        android:layout_width="0dp"-->
+                            <!--                        android:layout_height="wrap_content"-->
+                            <!--                        android:layout_weight="1"-->
+                            <!--                        android:orientation="horizontal"-->
+                            <!--                        android:weightSum="1">-->
+
+
+                            <!--                        <ImageView-->
+                            <!--                            android:layout_width="wrap_content"-->
+                            <!--                            android:layout_height="wrap_content"-->
+                            <!--                            android:src="@drawable/ic__circle_point" />-->
+
+
+                            <!--                        <LinearLayout-->
+                            <!--                            android:layout_width="match_parent"-->
+                            <!--                            android:layout_height="@dimen/_1sdp"-->
+                            <!--                            android:layout_gravity="center"-->
+                            <!--                            android:background="@color/light_grey">-->
+
+
+                            <!--                            <ProgressBar-->
+                            <!--                                android:id="@+id/progressbarThree"-->
+                            <!--                                android:layout_width="match_parent"-->
+                            <!--                                android:layout_height="wrap_content"/>-->
+
+
+                        </LinearLayout>
 
 
                     </LinearLayout>
@@ -238,7 +266,7 @@
                     android:layout_marginTop="@dimen/_15sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:orientation="horizontal"
-                    android:weightSum="3">
+                    android:weightSum="2">
 
 
                     <LinearLayout
@@ -250,15 +278,33 @@
 
 
                         <TextView
+                            android:id="@+id/sowedCorpDate"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.9"
-                            android:text="Add fertilizer 26 Feb" />
+                            android:text="Sowed" />
 
 
                     </LinearLayout>
 
 
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:weightSum="1">-->
+
+
+<!--                        <TextView-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_weight="0.9"-->
+<!--                            android:text="" />-->
+
+
+<!--                    </LinearLayout>-->
+
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -268,27 +314,11 @@
 
 
                         <TextView
+                            android:id="@+id/addFertilizerData"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0.9"
-                            android:text="Add fertilizer 26 Feb" />
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="horizontal"
-                        android:weightSum="1">
-
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.9"
-                            android:text="Add fertilizer 26 Mar" />
+                            android:layout_weight="0.8"
+                            android:text="Add fertilizer" />
 
 
                     </LinearLayout>
@@ -300,10 +330,11 @@
 
 
                         <TextView
+                            android:id="@+id/harvestCropDate"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.9"
-                            android:text="Harvest 26 April" />
+                            android:text="Harvest" />
 
                     </LinearLayout>
 
@@ -329,6 +360,7 @@
 
 
                     <TextView
+                        android:id="@+id/tv_viewFullLog"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -592,29 +624,34 @@
                         android:textStyle="bold" />
 
 
-                    <TextView
-                        android:layout_width="wrap_content"
+
+
+                        <TextView
+                        android:id="@+id/tv_viewmoreOne"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="View more"
+                            android:textColor="@color/green_selected"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="normal"
+                            android:layout_alignParentEnd="true"/>
+
+                    <com.skydoves.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandable"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:text="View more"
-                        android:textColor="@color/green_selected"
-                        android:textSize="@dimen/_14sdp"
-                        android:textStyle="normal" />
+                        android:layout_marginTop="30dp"
+                        app:expandable_duration="300"
+                        app:expandable_isExpanded="false"
+                        app:expandable_parentLayout="@layout/expandableparenttrial"
+                        app:expandable_secondLayout="@layout/expandabletrial"
+                        app:expandable_showSpinner="true"
+                        app:expandable_spinner="@drawable/ic_arrow_down"
+                        app:expandable_spinner_animate="true"
+                        app:expandable_spinner_margin="14dp"
+                        app:expandable_spinner_size="32dp" />
 
-
-                </RelativeLayout>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:text=" Lorem ipsum set amet dorem"
-                    android:textColor="@color/light_grey"
-                    android:textSize="@dimen/_14sdp" />
-
+   </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -698,10 +735,11 @@
                     android:textSize="@dimen/_14sdp" />
 
 
+
             </LinearLayout>
 
-
         </ScrollView>
+
 
 
     </LinearLayout>

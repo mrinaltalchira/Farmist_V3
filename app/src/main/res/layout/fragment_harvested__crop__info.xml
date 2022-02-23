@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+    <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="@dimen/_10sdp"
@@ -30,20 +36,21 @@
 
 
                 <ImageView
+                    android:id="@+id/harvested_image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/cow"
-                    android:scaleType="fitXY"/>
-
+                    android:scaleType="fitXY"
+                    android:src="@drawable/cow" />
 
 
                 <ImageView
+                    android:id="@+id/back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/back"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:padding="@dimen/_5sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
+                    android:src="@drawable/back"
                     app:tint="@color/white" />
 
 
@@ -51,13 +58,13 @@
                     android:id="@+id/tvdelete"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Delete"
-                    android:textSize="@dimen/_14sdp"
-                    android:textColor="@color/white"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:drawableTop="@drawable/ic_delete"/>
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:drawableTop="@drawable/ic_delete"
+                    android:text="Delete"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp" />
 
 
                 <TextView
@@ -72,26 +79,36 @@
                     android:drawableTop="@drawable/ic_edit"/>
 
 
-
                 <TextView
-                    android:id="@+id/tvacers"
+                    android:id="@+id/tvarea"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="48 Acers"
-                    android:textSize="@dimen/_12sdp"
-                    android:textColor="@color/white"
-                    android:layout_marginStart="@dimen/_10sdp"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="@dimen/_5sdp"/>
-
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:text="48"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
                 <TextView
+                    android:id="@+id/tvaareaType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Red Chillies"
-                    android:textSize="@dimen/_14sdp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="@dimen/_35sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:text=""
                     android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/tv_harvested_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/tvarea"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_above="@+id/tvacers" />
+                    android:text="Red Chillies"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp" />
 
 
 
@@ -102,11 +119,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="@dimen/_15sdp"
                 android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
                 android:layout_marginEnd="@dimen/_10sdp"
-                android:weightSum="3">
+                android:orientation="horizontal"
+                android:weightSum="2">
 
                 <RelativeLayout
                     android:layout_width="0dp"
@@ -121,19 +138,11 @@
                         android:orientation="vertical">
 
 
-
-
                         <ImageView
                             android:id="@+id/sowedcircle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic__circle_point"/>
-
-
-
-
-
-
+                            android:src="@drawable/ic__circle_point" />
 
                     </LinearLayout>
 
@@ -141,12 +150,17 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_1sdp"
-                        android:background="@color/light_grey"
-                        android:layout_centerVertical="true" />
+                        android:layout_centerVertical="true"
+                        android:background="@color/light_grey">
 
+                        <ProgressBar
+                            android:id="@+id/progressbarOne"
+                            android:shadowColor="@color/blue"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"/>
 
-
-
+                    </LinearLayout>
 
 
                 </RelativeLayout>
@@ -156,48 +170,68 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:weightSum="1"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="1">
 
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic__circle_point"/>
+                        android:src="@drawable/ic__circle_point" />
 
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_1sdp"
-                        android:background="@color/light_grey"
-                        android:layout_gravity="center"/>
+                        android:layout_gravity="center"
+                        android:background="@color/light_grey">
 
+
+                        <ProgressBar
+
+                            android:shadowColor="@color/blue"
+                            android:id="@+id/progressbarTwo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                            android:scaleX="4"/>
+                        <!--                        </LinearLayout>-->
+
+
+                        <!--                    </LinearLayout>-->
+
+                        <!--                    <LinearLayout-->
+                        <!--                        android:layout_width="0dp"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:layout_weight="1"-->
+                        <!--                        android:orientation="horizontal"-->
+                        <!--                        android:weightSum="1">-->
+
+
+                        <!--                        <ImageView-->
+                        <!--                            android:layout_width="wrap_content"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:src="@drawable/ic__circle_point" />-->
+
+
+                        <!--                        <LinearLayout-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="@dimen/_1sdp"-->
+                        <!--                            android:layout_gravity="center"-->
+                        <!--                            android:background="@color/light_grey">-->
+
+
+                        <!--                            <ProgressBar-->
+                        <!--                                android:id="@+id/progressbarThree"-->
+                        <!--                                android:layout_width="match_parent"-->
+                        <!--                                android:layout_height="wrap_content"/>-->
+
+
+                    </LinearLayout>
 
 
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:weightSum="1"
-                    android:orientation="horizontal">
 
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic__circle_point"/>
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_1sdp"
-                        android:background="@color/light_grey"
-                        android:layout_gravity="center"/>
-
-
-
-                </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -207,11 +241,9 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic__circle_point"/>
+                        android:src="@drawable/ic__circle_point" />
 
                 </LinearLayout>
-
-
 
 
             </LinearLayout>
@@ -222,79 +254,67 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="@dimen/_15sdp"
                 android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
                 android:layout_marginEnd="@dimen/_10sdp"
-                android:weightSum="3">
-
-
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:weightSum="1"
-                    android:orientation="horizontal">
-
-
-
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:text="Add fertilizer 26 Feb"
-                        android:layout_weight="0.9" />
-
-
-
-
-
-
-
-                </LinearLayout>
+                android:orientation="horizontal"
+                android:weightSum="2">
 
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:weightSum="1"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="1">
 
 
                     <TextView
+                        android:id="@+id/sowedCorpDate"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Add fertilizer 26 Feb"
-                        android:layout_weight="0.9" />
-
-
-
-
+                        android:layout_weight="0.9"
+                        android:text="Sowed" />
 
 
                 </LinearLayout>
+
+
+                <!--                    <LinearLayout-->
+                <!--                        android:layout_width="0dp"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_weight="1"-->
+                <!--                        android:orientation="horizontal"-->
+                <!--                        android:weightSum="1">-->
+
+
+                <!--                        <TextView-->
+                <!--                            android:layout_width="0dp"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:layout_weight="0.9"-->
+                <!--                            android:text="" />-->
+
+
+                <!--                    </LinearLayout>-->
+
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:weightSum="1"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="1">
 
 
                     <TextView
+                        android:id="@+id/addFertilizerData"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Add fertilizer 26 Mar"
-                        android:layout_weight="0.9" />
-
-
-
-
+                        android:layout_weight="0.8"
+                        android:text="Add fertilizer" />
 
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -302,14 +322,13 @@
 
 
                     <TextView
+                        android:id="@+id/harvestCropDate"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Harvest 26 April"
-                        android:layout_weight="0.9" />
+                        android:layout_weight="0.9"
+                        android:text="Harvest" />
 
                 </LinearLayout>
-
-
 
 
             </LinearLayout>
@@ -434,19 +453,35 @@
                     android:background="@drawable/profit_background"
                     android:orientation="vertical">
 
-
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_gravity="center">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/_16sdp"
                         android:textColor="@color/white"
                         android:textStyle="normal"
-                        android:text="Rs. 1,000"
+                        android:text="Rs. "
                         android:layout_gravity="center_horizontal"
                         android:drawableLeft="@drawable/ic_profit"
                         android:drawablePadding="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_5sdp"/>
 
+
+                    <TextView
+                        android:id="@+id/tv_harvestedprofit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_16sdp"
+                        android:textColor="@color/white"
+                        android:textStyle="normal"
+                        android:text=" 1,000"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_5sdp"/>
+</LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -470,20 +505,34 @@
                     android:background="@drawable/loss_background"
                     android:orientation="vertical">
 
-
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_gravity="center">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/_16sdp"
                         android:textColor="@color/white"
                         android:textStyle="normal"
-                        android:text="Rs. 1,000"
+                        android:text="Rs. "
                         android:layout_gravity="center_horizontal"
                         android:drawableLeft="@drawable/ic_loose"
                         android:drawablePadding="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_5sdp"/>
 
+    <TextView
+        android:id="@+id/tv_harvestedloss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_16sdp"
+        android:textColor="@color/white"
+        android:textStyle="normal"
+        android:text="1,000"
+        android:layout_marginBottom="@dimen/_5sdp"/>
 
+</LinearLayout>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -537,15 +586,15 @@
                     android:textStyle="bold" />
 
 
-
                 <TextView
+                    android:id="@+id/tv_viewFullLog_harvested"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="View full log"
-                    android:textStyle="normal"
                     android:layout_alignParentEnd="true"
+                    android:text="View full log"
                     android:textColor="@color/green_selected"
-                    android:textSize="@dimen/_14sdp"/>
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="normal" />
 
 
 
@@ -563,7 +612,9 @@
 
 
 
-                <ImageView
+                <lecho.lib.hellocharts.view.PieChartView
+                    android:id="@+id/pie"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:layout_width="@dimen/_120sdp"
                     android:layout_height="@dimen/_120sdp"
                     android:src="@drawable/chart"/>
@@ -922,3 +973,5 @@
 
 
 </LinearLayout>
+
+</layout>

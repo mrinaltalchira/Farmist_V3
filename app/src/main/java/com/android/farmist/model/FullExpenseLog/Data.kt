@@ -18,5 +18,6 @@ Data(
     var subsidyTotal: String,
     var subsidyDate:List<String>,
     var incomeTotal: String,
-    var incomeDate: List<String>
+    var incomeDate: List<String>,
+    var harvest:Boolean
 )

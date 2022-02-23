@@ -33,7 +33,6 @@
                 android:textSize="@dimen/_12sdp" />
 
 
-
         </RelativeLayout>
 
 
@@ -69,7 +68,20 @@
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_2sdp"
             android:layout_marginBottom="@dimen/_10sdp"
-            android:text="48 Acers"
+            android:text="48"
+            android:textColor="@color/brown_light"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="normal" />
+
+
+        <TextView
+            android:id="@+id/tvsowedacerstype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvsowedname"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
             android:textColor="@color/brown_light"
             android:textSize="@dimen/_12sdp"
             android:textStyle="normal" />
@@ -107,11 +119,7 @@
             android:textStyle="normal" />
 
 
-
     </RelativeLayout>
-
-
-
 
 
 </androidx.cardview.widget.CardView>

@@ -183,6 +183,7 @@
                                 android:text="Acers"
                                 android:layout_weight="3"
                                 android:textSize="@dimen/_14sdp"
+                                android:checked="true"
 
                                 />
 

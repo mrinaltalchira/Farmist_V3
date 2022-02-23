@@ -31,7 +31,7 @@ class AddFarmDetails : AppCompatActivity() {
     lateinit var userId: String
     lateinit var name: String
     lateinit var area: String
-    lateinit var areaType: String
+     var areaType: String= "Acres"
     lateinit var tehsil: String
     lateinit var surveyNum: String
     lateinit var preferences: SharedPreferences

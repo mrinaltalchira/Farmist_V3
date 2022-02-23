@@ -133,7 +133,7 @@ binding.llDeletebtn.setOnClickListener {
         binding.tvviewfullog.setOnClickListener(View.OnClickListener {
 
             findNavController().navigate(R.id.action_expenses_Tracker_Fragment_to_full_Expenses_Log_Fragment,
-                bundleOf("cropIdd" to cropId))
+                bundleOf("cropId" to cropId))
         })
 
         binding.llArchived.setOnClickListener {
