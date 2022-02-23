@@ -14,18 +14,19 @@ import com.android.farmist.R
 import com.android.farmist.model.CropPriceResponse.Crop
 import com.bumptech.glide.Glide
 
-class Adapter_Crop_Prices(val context: Context, var data: List<Crop>)  : RecyclerView.Adapter<Adapter_Crop_Prices.ViewHolder>() {
+class Adapter_Crop_Prices_singleRow(val context: Context, var data: List<Crop>)  : RecyclerView.Adapter<Adapter_Crop_Prices_singleRow.ViewHolder>() {
 
-    val incomeTrackerList: ArrayList<String> = ArrayList()
+
 
     fun setList(DataList: List<Crop>) {
         this.data = DataList
+        Toast.makeText(context, "setlist"+DataList, Toast.LENGTH_SHORT).show()
         notifyDataSetChanged()
     }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_crop_prices, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_other_market_crop_prices, parent, false)
         return ViewHolder(view)
     }
 
@@ -41,10 +42,11 @@ class Adapter_Crop_Prices(val context: Context, var data: List<Crop>)  : Recycle
             var bundle = bundleOf(
                 "cropId" to data[position].id
             )
-            Navigation.createNavigateOnClickListener(R.id.action_nav_home_to_marketPriceFragment,bundle).onClick(holder.itemView)
+            Navigation.createNavigateOnClickListener(R.id.action_cropPrices_to_marketPriceFragment,bundle).onClick(holder.itemView)
 
 
         })
+
 
     }
 
@@ -54,9 +56,11 @@ class Adapter_Crop_Prices(val context: Context, var data: List<Crop>)  : Recycle
 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var tvCroptitle: TextView = itemView.findViewById(R.id.tvTitleAdapterCrop)
-        var tvPrice: TextView = itemView.findViewById(R.id.tvPriceAdapterCrop)
-        var ivCrop: ImageView = itemView.findViewById(R.id.ivImageAdpterCrop)
+
+        var tvCroptitle: TextView = itemView.findViewById(R.id.TvtitleCropPrice)
+        var tvPrice: TextView = itemView.findViewById(R.id.tvcropPrice)
+        var ivCrop: ImageView = itemView.findViewById(R.id.ivcrop)
+
     }
 
 }

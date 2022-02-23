@@ -34,6 +34,7 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/ivImageAdpterCrop"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_90sdp"
                         android:src="@drawable/carrot"
@@ -43,6 +44,7 @@
 
 
                     <TextView
+                        android:id="@+id/tvTitleAdapterCrop"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Corn"
@@ -53,6 +55,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/tvPriceAdapterCrop"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Rs. 100"

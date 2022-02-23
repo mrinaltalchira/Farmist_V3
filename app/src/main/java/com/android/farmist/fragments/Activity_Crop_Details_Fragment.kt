@@ -5,16 +5,18 @@ import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.databinding.DataBindingUtil.inflate
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import cn.pedant.SweetAlert.SweetAlertDialog
 import com.android.farmist.R
 import com.android.farmist.UploadRequestBody
 import com.android.farmist.activity.MainActivity
@@ -22,6 +24,7 @@ import com.android.farmist.api.Api_Controller
 import com.android.farmist.databinding.ActivityAddCropDetailsBinding
 import com.android.farmist.model.addCropResponse.AddCropResponse
 import com.android.farmist.model.getFarmForSpinnner.FarmsSpinner
+import com.android.farmist.model.profileImgResponse.SetProfileResponse
 import com.android.farmist.util.progressbars
 import okhttp3.MediaType
 import okhttp3.MultipartBody
@@ -46,7 +49,7 @@ class Activity_Crop_Details_Fragment : Fragment() {
     lateinit var FarmsNames: List<String>
     lateinit var selectFarm: String
     lateinit var progressBarDailog: progressbars
-    lateinit var farmName: String
+    lateinit var farmName:String
 
     companion object {
         val IMAGETOKEN = 200
@@ -68,7 +71,7 @@ class Activity_Crop_Details_Fragment : Fragment() {
             container,
             false
         )
-        cropName = arguments?.getString("cropName").toString()
+        cropName= arguments?.getString("cropName").toString()
         binding.cropName.setText(cropName)
 
         progressBarDailog = progressbars(requireContext())
@@ -234,9 +237,10 @@ class Activity_Crop_Details_Fragment : Fragment() {
                     ).show()
                 }
                 progressBarDailog.hidediloag()
-                val intent = Intent(requireContext(), MainActivity::class.java)
-                startActivity(intent)
-                requireActivity().finish()
+                createCropSuccess()
+
+
+
             }
 
             override fun onFailure(call: Call<AddCropResponse>, t: Throwable) {
@@ -330,6 +334,21 @@ class Activity_Crop_Details_Fragment : Fragment() {
             }
         })
 
+    }
+
+    fun createCropSuccess()
+    {
+        val sweetAlertDialog=SweetAlertDialog(requireContext(),SweetAlertDialog.SUCCESS_TYPE)
+        sweetAlertDialog.confirmButtonBackgroundColor=Color.parseColor("#46A908")
+        sweetAlertDialog.setConfirmClickListener {
+
+
+
+            val intent = Intent(requireContext(), MainActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
+        sweetAlertDialog.show()
     }
 
 }

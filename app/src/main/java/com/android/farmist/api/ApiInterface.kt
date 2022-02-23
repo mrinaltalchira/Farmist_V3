@@ -311,6 +311,8 @@ fun makeHarvested(@Path("id")id:String):Call<MakeHarvest>
 @GET("crops/get/harvested/")
 fun getHarvested(@Query("userId")userId:String):Call<GetHarvestedCrop>
 
+    @GET("admin/get/graph/price-month")
+    fun getCropMarketPrices(@Query("id") CropPriceId: String): Call<marketPriceResponse>
 
 // harvested profit loss
     @GET("expense/expense-tracker")
@@ -329,5 +331,9 @@ fun getHarvested(@Query("userId")userId:String):Call<GetHarvestedCrop>
 
     @GET("farms/stats")
     fun getFarmstats(@Query("userId")userId:String):Call<StatsData>
+
+    @GET("my/crops/price")
+    fun getMycropPrices(@Query("userId")cropId:String
+    ):Call<GetMyCropPrices>}
 
 }

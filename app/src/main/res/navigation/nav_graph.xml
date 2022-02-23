@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_nav_home_to_upcomingAction"
             app:destination="@id/upcomingAction" />
+        <action
+            android:id="@+id/action_nav_home_to_cropPrices"
+            app:destination="@id/cropPrices" />
     </fragment>
     <fragment
         android:id="@+id/nav_alerts"
@@ -168,7 +171,14 @@
         android:id="@+id/news_Announcement_all_Fragment"
         android:name="com.android.farmist.fragments.News_Announcement_all_Fragment"
         android:label="News_Announcement_all_Fragment"
-        tools:layout="@layout/fragment_news__announcement_all_" />
+        tools:layout="@layout/fragment_news__announcement_all_" >
+        <action
+            android:id="@+id/action_news_Announcement_all_Fragment_to_newsDetail_Fragment"
+            app:destination="@id/newsDetail_Fragment" />
+        <action
+            android:id="@+id/action_news_Announcement_all_Fragment_to_announcement_Detail_Fragment"
+            app:destination="@id/announcement_Detail_Fragment" />
+    </fragment>
     <fragment
         android:id="@+id/expenses_Tracker_Fragment"
         android:name="com.android.farmist.fragments.Expenses_Tracker_Fragment"
@@ -355,5 +365,22 @@
             android:id="@+id/action_harvested_Crop_Info_to_full_Expenses_Log_Fragment"
             app:destination="@id/full_Expenses_Log_Fragment" />
     </fragment>
+    <fragment
+        android:id="@+id/announcement_Detail_Fragment"
+        android:name="com.android.farmist.fragments.Announcement_Detail_Fragment"
+        android:label="Announcement_Detail_Fragment" />
+    <fragment
+        android:id="@+id/cropPrices"
+        android:name="com.android.farmist.cropPrices"
+        android:label="cropPrices" >
+        <action
+            android:id="@+id/action_cropPrices_to_marketPriceFragment"
+            app:destination="@id/marketPriceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cropSearchFragment"
+        android:name="com.android.farmist.CropSearchFragment"
+        android:label="fragment_crop_search"
+        tools:layout="@layout/fragment_crop_search" />
 
 </navigation>

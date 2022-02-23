@@ -1,7 +1,6 @@
 package com.android.farmist.model.CropPriceResponse
 
-data class getCropPrice(
-    val crops: List<Crop>,
+data class getAdminCrop(
+    val crops: List<CropX>,
     val message: String
-
 )

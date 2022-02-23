@@ -99,6 +99,9 @@ dependencies {
     implementation("androidx.room:room-runtime:2.4.1")
     annotationProcessor("androidx.room:room-compiler:2.4.1")
 
+    // For Graph
+    implementation 'com.jjoe64:graphview:4.2.1'
+//    implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
 // readmore
 
     implementation 'com.github.skydoves:expandablelayout:1.0.0'
