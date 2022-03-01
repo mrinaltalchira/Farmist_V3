@@ -6,6 +6,9 @@
 
 
     </data>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -153,56 +156,27 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_below="@+id/rl_img"
-            android:layout_marginTop="@dimen/_25sdp"
             android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_10sdp">
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:orientation="vertical">
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Crops Sown"
-                android:textStyle="bold"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_16sdp"/>
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
 
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="@dimen/_100sdp"
-                android:layout_height="wrap_content"
-                app:cardElevation="@dimen/_5sdp"
-                app:cardCornerRadius="@dimen/_5sdp"
-                android:layout_marginTop="@dimen/_10sdp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_marginTop="@dimen/_15sdp"
-                    android:layout_marginBottom="@dimen/_15sdp">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="@dimen/_35sdp"
-                        android:layout_height="@dimen/_35sdp"
-                        android:src="@drawable/cow" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="@dimen/_14sdp"
-                        android:textColor="@color/black"
-                        android:textStyle="normal"
-                        android:text="Corn"/>
-
-
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvfarmsCrop"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_100sdp"
+                tools:listitem="@layout/farmscroplayout" />
 
             <!--<androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
@@ -215,50 +189,50 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tehsil"
-                android:textStyle="bold"
                 android:layout_marginTop="@dimen/_10sdp"
+                android:text="Tehsil"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_16sdp"/>
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_tehsil_Farm_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sardar"
-                android:textStyle="normal"
                 android:layout_marginTop="@dimen/_5sdp"
+                android:text="Sardar"
                 android:textColor="@color/grey"
-                android:textSize="@dimen/_16sdp"/>
-
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="normal" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Survey Number"
-                android:textStyle="bold"
                 android:layout_marginTop="@dimen/_10sdp"
+                android:text="Survey Number"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_16sdp"/>
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_survey_Farm_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="25598"
-                android:textStyle="normal"
                 android:layout_marginTop="@dimen/_5sdp"
+                android:text="25598"
                 android:textColor="@color/grey"
-                android:textSize="@dimen/_16sdp"/>
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="normal" />
 
 
         </LinearLayout>
 
 
 
-
-
     </RelativeLayout>
+
+
+</ScrollView>
 
 </layout>

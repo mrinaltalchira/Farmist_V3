@@ -111,7 +111,8 @@
             app:destination="@id/fragment_Farm_Info" />
         <action
             android:id="@+id/action_myFarm_Fragment_self"
-            app:destination="@id/myFarm_Fragment" />
+            app:destination="@id/myFarm_Fragment"
+            app:popUpTo="@id/nav_home" />
         <action
             android:id="@+id/action_myFarm_Fragment_to_nav_home2"
             app:destination="@id/nav_home"
@@ -190,6 +191,11 @@
         <action
             android:id="@+id/action_expenses_Tracker_Fragment_to_expensess_Income_tracker"
             app:destination="@id/expensess_Income_tracker" />
+        <action
+            android:id="@+id/action_expenses_Tracker_Fragment_to_expensess_Income_tracker2"
+            app:destination="@id/expensess_Income_tracker"
+            app:popUpTo="@id/expensess_Income_tracker"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/full_Expenses_Log_Fragment"
@@ -245,6 +251,10 @@
             android:id="@+id/action_activity_Crop_Details_Fragment_to_selectCropCategory"
             app:destination="@id/selectCropCategory"
             app:popUpTo="@id/selectCropCategory" />
+        <action
+            android:id="@+id/action_activity_Crop_Details_Fragment_to_crops_Fragment"
+            app:destination="@id/crops_Fragment"
+            app:popUpTo="@id/crops_Fragment" />
     </fragment>
 
     <activity
@@ -310,7 +320,8 @@
         android:label="Fragment_Farm_Info">
         <action
             android:id="@+id/action_fragment_Farm_Info_to_myFarm_Fragment"
-            app:destination="@id/myFarm_Fragment" />
+            app:destination="@id/myFarm_Fragment"
+            app:popUpTo="@id/nav_home" />
         <action
             android:id="@+id/action_fragment_Farm_Info_to_fragment_editFarmDetails"
             app:destination="@id/fragment_editFarmDetails" />
@@ -343,7 +354,7 @@
         <action
             android:id="@+id/action_archived_crop_self"
             app:destination="@id/archived_crop"
-            app:popUpTo="@id/nav_graph" />
+            app:popUpTo="@id/nav_home" />
     </fragment>
     <fragment
         android:id="@+id/harvestedFragment"

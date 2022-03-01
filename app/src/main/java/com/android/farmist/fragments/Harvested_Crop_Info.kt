@@ -57,7 +57,6 @@ class Harvested_Crop_Info : Fragment() {
 
         cropid = arguments?.getString("cropId").toString()
 
-        Toast.makeText(requireContext(), "$cropid", Toast.LENGTH_SHORT).show()
         getDetails()
         getPieData()
         getProfitLoss()
@@ -89,21 +88,18 @@ class Harvested_Crop_Info : Fragment() {
 
                     if (respo.fertilizeAt != "") {
 
-                        progressbarOne.max = 1000
-                        var currentProgress = 1000
                         val animation =
-                            ObjectAnimator.ofInt(progressbarOne, "progress", currentProgress)
-                        animation.duration = 1250
+                            ObjectAnimator.ofInt(progressbarOne, "progress", 1000)
+                        animation.duration = 32500
                         animation.interpolator = DecelerateInterpolator()
                         animation.start()
                         binding.addFertilizerData.setText("Add fertilizer \n" + respo.fertilizeAt.toString())
 
 
                         if (respo.harvestAt != "") {
-                            progressbarTwo.max = 1000
                             val animation =
-                                ObjectAnimator.ofInt(progressbarTwo, "progress", currentProgress)
-                            animation.duration = 5750
+                                ObjectAnimator.ofInt(progressbarOne, "progress", 1000)
+                            animation.duration = 62500
                             animation.interpolator = DecelerateInterpolator()
                             animation.start()
                             binding.harvestCropDate.setText("Harvest  \n" + respo.harvestAt.toString())
@@ -120,7 +116,7 @@ class Harvested_Crop_Info : Fragment() {
             override fun onFailure(call: Call<ProgressTracker>, t: Throwable) {
                 Toast.makeText(
                     requireActivity(),
-                    "found progressBar error:- $t",
+                    "error found :- $t",
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -213,7 +209,10 @@ class Harvested_Crop_Info : Fragment() {
                     binding.tvHarvestedName.setText(respo.name)
                     binding.tvarea.setText(respo.area)
                     binding.tvaareaType.setText(respo.areaType)
-                    Glide.with(requireActivity()).load(respo.image).into(binding.harvestedImage)
+try {
+    Glide.with(requireActivity()).load(respo.image).into(binding.harvestedImage)
+
+}catch (e:Exception){Log.d("",e.toString())}
                 }
             }
 

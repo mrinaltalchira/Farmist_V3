@@ -20,7 +20,7 @@ class Adapter_Other_Market_Crop_Prices(val context: Context, var data: List<Crop
 
     fun setList(DataList: List<Crop>) {
         this.data = DataList
-        Toast.makeText(context, "setlist"+DataList, Toast.LENGTH_SHORT).show()
+      //  Toast.makeText(context, "setlist"+DataList, Toast.LENGTH_SHORT).show()
         notifyDataSetChanged()
     }
 
@@ -42,7 +42,7 @@ class Adapter_Other_Market_Crop_Prices(val context: Context, var data: List<Crop
             var bundle = bundleOf(
                 "cropId" to data[position].id
             )
-            Toast.makeText(context, "marketid"+data[position].id, Toast.LENGTH_SHORT).show()
+         //   Toast.makeText(context, "marketid"+data[position].id, Toast.LENGTH_SHORT).show()
             Navigation.createNavigateOnClickListener(R.id.action_nav_prices_to_marketPriceFragment,bundle).onClick(holder.itemView)
 
 

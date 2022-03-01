@@ -88,25 +88,24 @@
             android:textStyle="normal" />
 
 
-
         <TextView
             android:id="@+id/tvaddfertilizer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add fertilizer in 20 days"
-            android:textSize="@dimen/_12sdp"
-            android:textColor="@color/black"
-            android:textStyle="normal"
+            android:layout_below="@+id/rlmoredetails"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_toEndOf="@+id/iv_harvest_Image"
             android:drawableStart="@drawable/ic_fertilizer"
             android:drawablePadding="@dimen/_10sdp"
-            android:layout_below="@+id/rlmoredetails"
-            android:layout_toEndOf="@+id/iv_harvest_Image"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_5sdp"/>
+            android:text="Add fertilizer in 20 days"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="normal" />
 
 
         <TextView
-
+android:id="@+id/tvHarvesteDay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvaddfertilizer"

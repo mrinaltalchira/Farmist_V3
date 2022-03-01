@@ -1,5 +1,6 @@
 package com.android.farmist.fragments
 
+import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -72,8 +73,14 @@ class Prices_Fragment : Fragment() {
                     val adapterMarketCropPrices=Adapter_Market_Crop_Prices()
                     binding.rvmarketcropprice.setHasFixedSize(true)
                     binding.rvmarketcropprice.adapter=adapterMarketCropPrices
-                    adapterMarketCropPrices.setList(cropList,requireActivity())
 
+
+                    val activity: Activity? = activity
+                    if (activity != null) {
+//context used cod
+
+                        adapterMarketCropPrices.setList(cropList, requireActivity())
+                    }
                 }
             }
 

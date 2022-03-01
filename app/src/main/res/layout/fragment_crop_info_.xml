@@ -38,7 +38,8 @@
                         android:id="@id/img"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:scaleType="fitXY"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
                         android:src="@drawable/cow" />
 
 
@@ -71,23 +72,24 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginEnd="@dimen/_10sdp"
-                        android:layout_toStartOf="@+id/tv_edit"
+                        android:layout_toStartOf="@+id/tv_delete"
                         android:drawableTop="@drawable/ic_baseline_content_cut_24"
                         android:text="Harvest"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_14sdp" />
 
-                    <TextView
-                        android:id="@+id/tv_edit"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginEnd="@dimen/_10sdp"
-                        android:layout_toStartOf="@+id/tv_delete"
-                        android:drawableTop="@drawable/ic_edit"
-                        android:text="Edit"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_14sdp" />
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_edit"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/_10sdp"-->
+<!--                        android:layout_marginEnd="@dimen/_10sdp"-->
+<!--                        android:layout_toStartOf="@+id/tv_delete"-->
+<!--                        android:drawableTop="@drawable/ic_edit"-->
+<!--                        android:text="Edit"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="@dimen/_14sdp" />-->
 
 
                     <TextView
@@ -624,17 +626,15 @@
                         android:textStyle="bold" />
 
 
-
-
-                        <TextView
+                    <TextView
                         android:id="@+id/tv_viewmoreOne"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="View more"
-                            android:textColor="@color/green_selected"
-                            android:textSize="@dimen/_14sdp"
-                            android:textStyle="normal"
-                            android:layout_alignParentEnd="true"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="View more"
+                        android:textColor="@color/green_selected"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="normal" />
 
                     <com.skydoves.expandablelayout.ExpandableLayout
                         android:id="@+id/expandable"

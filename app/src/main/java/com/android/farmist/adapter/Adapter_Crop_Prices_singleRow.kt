@@ -20,7 +20,7 @@ class Adapter_Crop_Prices_singleRow(val context: Context, var data: List<Crop>) 
 
     fun setList(DataList: List<Crop>) {
         this.data = DataList
-        Toast.makeText(context, "setlist"+DataList, Toast.LENGTH_SHORT).show()
+      //  Toast.makeText(context, "setlist"+DataList, Toast.LENGTH_SHORT).show()
         notifyDataSetChanged()
     }
 

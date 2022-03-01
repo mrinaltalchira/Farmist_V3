@@ -3,52 +3,41 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/FarmistV.2/app/src/main/res/drawable/backgroundbnobutton.xml" value="0.18725868725868725" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/activity_add_crop_details.xml" value="0.23645833333333333" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/activity_update_crop.xml" value="0.17421875" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/layout/adaapter_exp_income_tracker.xml" value="0.13958333333333334" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/layout/adapter_alerts_govermentnews.xml" value="0.209375" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/layout/adapter_alerts_news.xml" value="0.209375" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/layout/adapter_announcement_all.xml" value="0.209375" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/adaapter_exp_income_tracker.xml" value="0.17734375" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/adapter_archive_expenses_income_trackor.xml" value="0.4" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/layout/adapter_crop_prices.xml" value="0.18" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/adapter_harvest.xml" value="0.264" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/adapter_my_farms.xml" value="0.17734375" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/adapter_sowed.xml" value="0.264" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/layout/adapter_market_crop_prices.xml" value="0.75" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/layout/adapter_news_all.xml" value="0.209375" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/layout/adapter_other_market_crop_prices.xml" value="0.1" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/add_farm_detail.xml" value="0.152" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/layout/customedial2.xml" value="0.132421875" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/customedial2.xml" value="0.264" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/customedialogarchivecrop.xml" value="0.17734375" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/customedialoug.xml" value="0.132421875" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/customedialougcropdelete.xml" value="0.17734375" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/customeprogressbar.xml" value="0.17421875" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/expandableparenttrial.xml" value="0.1912568306010929" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/expandabletrial.xml" value="0.136" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/layout/announcement_details.xml" value="0.209375" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/layout/crop_prices.xml" value="0.18611111111111112" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/layout/expense_tracker.xml" value="0.4" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/expense_tracker.xml" value="0.2" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/farm_status.xml" value="0.176" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/farmer_app.xml" value="0.11640625" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/farmscroplayout.xml" value="0.4" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment__farm__info.xml" value="0.14921875" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_archived_crop.xml" value="0.12" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_crop_info_.xml" value="0.16" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_crop_info_.xml" value="0.4" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_crop_prices.xml" value="0.18611111111111112" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_crops.xml" value="0.6" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_edit_farm_details.xml" value="0.152" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_frag_update_crop.xml" value="0.17421875" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_harvested.xml" value="0.2361275088547816" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_harvested__crop__info.xml" value="0.152" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_my_farm_.xml" value="0.28027681660899656" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_news__announcement_all_.xml" value="0.209375" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_news_all.xml" value="0.209375" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_prices.xml" value="0.17734375" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_select_crop_category.xml" value="0.17734375" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_sowed.xml" value="0.17734375" />
+        <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_upcoming_action.xml" value="0.12" />
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/full_expense_log.xml" value="0.152" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/layout/fragment_sowed.xml" value="0.16018518518518518" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/layout/news_details.xml" value="0.209375" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/menu/menu_bar.xml" value="0.18518518518518517" />
-        <entry key="..\:/FarmistV.2/app/src/main/res/menu/search_menu.xml" value="0.18518518518518517" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/drawable-v24/add_crop_background.xml" value="0.22552083333333334" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/drawable/ic_noun_fruits_2103787.xml" value="0.1" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/drawable/loan_form_background.xml" value="0.22552083333333334" />

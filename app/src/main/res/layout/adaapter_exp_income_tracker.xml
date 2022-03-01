@@ -97,7 +97,7 @@
                             android:id="@+id/TvCropExpensesIncomeExpesesTracker"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Rs.10,000"
+                            android:text="Rs._"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_14sdp"
                             android:layout_gravity="center_horizontal" />

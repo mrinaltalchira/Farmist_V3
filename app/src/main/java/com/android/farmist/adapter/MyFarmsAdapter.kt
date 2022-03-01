@@ -46,7 +46,6 @@ class MyFarmsAdapter(val context: Context, val data: List<AdaptedData>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyFarmsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.adapter_my_farms, parent, false)
-//        return MyFarmsViewHolder(view,mListener)
         return MyFarmsViewHolder(view)
     }
 
@@ -59,7 +58,16 @@ class MyFarmsAdapter(val context: Context, val data: List<AdaptedData>) :
         Glide.with(context).load(datapositon.image).into(holder.adaptImage)
 
         holder.adaptName.setOnClickListener {
-            var bundel: Bundle = bundleOf("FarmID" to datapositon._id)
+
+            var bundel: Bundle = bundleOf(
+                "FarmID" to datapositon._id,
+                "FarmImg" to datapositon.image,
+                "FarmName" to datapositon.name,
+                "FarmArea" to datapositon.area,
+                "FarmAreaType" to datapositon.areaType,
+                "FarmTehsil" to datapositon.tehsil,
+                "FarmSurvey" to datapositon.surveyNum
+            )
             var navController = Navigation.findNavController(it)
             navController.navigate(
                 R.id.action_myFarm_Fragment_to_fragment_Farm_Info,
@@ -108,8 +116,8 @@ class MyFarmsAdapter(val context: Context, val data: List<AdaptedData>) :
                         ) {
                             var respon = response.body()
                             if (respon != null) {
+                                notifyItemRemoved(holder.adapterPosition)
                                 progress.hidediloag()
-                                return
                             }
                         }
 
@@ -142,7 +150,7 @@ class MyFarmsAdapter(val context: Context, val data: List<AdaptedData>) :
             editor.apply()
             val bbundle = bundleOf("EditFarmID" to datapositon._id)
 
-            var navController = Navigation.findNavController(it)
+            val navController = Navigation.findNavController(it)
             navController.navigate(
                 R.id.action_myFarm_Fragment_to_fragment_editFarmDetails,
                 bbundle

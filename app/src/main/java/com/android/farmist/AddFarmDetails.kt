@@ -175,15 +175,11 @@ class AddFarmDetails : AppCompatActivity() {
             override fun onResponse(call: Call<setFarm>, response: Response<setFarm>) {
 
                 val setProfileResponse = response.body()
-                Toast.makeText(
-                    this@AddFarmDetails,
-                    "${setProfileResponse.toString()} image upload successfully",
-                    Toast.LENGTH_SHORT
-                ).show()
+
                 Log.d("addfarmdata", setProfileResponse.toString())
                 binding.tvNameAddFarm.text.clear()
                 binding.tvAreaAddFarm.text.clear()
-                binding.rgRadiogroupAddFarm.clearCheck()
+//                binding.rgRadiogroupAddFarm.clearCheck()
                 binding.tvTehsilAddFarm.text.clear()
                 binding.tvSurveyNumAddFarm.text.clear()
                 imageURi = null

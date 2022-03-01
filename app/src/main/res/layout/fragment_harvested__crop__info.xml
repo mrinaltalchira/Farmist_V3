@@ -36,10 +36,11 @@
 
 
                 <ImageView
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
                     android:id="@+id/harvested_image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="fitXY"
                     android:src="@drawable/cow" />
 
 
@@ -67,16 +68,16 @@
                     android:textSize="@dimen/_14sdp" />
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Edit"
-                    android:textSize="@dimen/_14sdp"
-                    android:textColor="@color/white"
-                    android:layout_toStartOf="@+id/tvdelete"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:drawableTop="@drawable/ic_edit"/>
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="@dimen/_10sdp"-->
+<!--                    android:layout_marginEnd="@dimen/_10sdp"-->
+<!--                    android:layout_toStartOf="@+id/tvdelete"-->
+<!--                    android:drawableTop="@drawable/ic_edit"-->
+<!--                    android:text="Edit"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="@dimen/_14sdp" />-->
 
 
                 <TextView

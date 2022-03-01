@@ -119,7 +119,7 @@ class SelectCropCategory : Fragment(), Adapter_Select_category.SelectItem,
                 "cropName" to datachecker
             )
 
-            Toast.makeText(activity?.applicationContext, "$datachecker ", Toast.LENGTH_SHORT).show()
+          //  Toast.makeText(activity?.applicationContext, "$datachecker ", Toast.LENGTH_SHORT).show()
             findNavController().navigate(
                 R.id.action_selectCropCategory_to_activity_Crop_Details_Fragment,
                 bundle

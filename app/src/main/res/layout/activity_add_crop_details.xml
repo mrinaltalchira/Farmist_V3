@@ -217,7 +217,7 @@
                                 android:layout_centerInParent="true"
                                 android:background="@null"
                                 android:focusable="true"
-                                android:hint="0"
+                                android:text="0"
                                 android:inputType="number"
                                 android:padding="@dimen/_12sdp"
                                 android:textColor="@color/black"
@@ -266,6 +266,7 @@
                             >
 
                             <RadioButton
+                                android:checked="true"
                                 android:id="@+id/r_b_Acers_addCrop"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"

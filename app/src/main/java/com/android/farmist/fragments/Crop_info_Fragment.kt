@@ -93,21 +93,18 @@ class Crop_info_Fragment : Fragment() {
 
                     if (respo.fertilizeAt != "") {
 
-                        progressbarOne.max = 1000
-                        var currentProgress = 1000
                         val animation =
-                            ObjectAnimator.ofInt(progressbarOne, "progress", currentProgress)
-                        animation.duration = 1250
+                            ObjectAnimator.ofInt(progressbarOne, "progress", 1000)
+                        animation.duration = 32500
                         animation.interpolator = DecelerateInterpolator()
                         animation.start()
                         binding.addFertilizerData.setText("Add fertilizer \n" + respo.fertilizeAt.toString())
 
 
                         if (respo.harvestAt != "") {
-                            progressbarTwo.max = 1000
                             val animation =
-                                ObjectAnimator.ofInt(progressbarTwo, "progress", currentProgress)
-                            animation.duration = 5750
+                                ObjectAnimator.ofInt(progressbarTwo, "progress", 1000)
+                            animation.duration = 67500
                             animation.interpolator = DecelerateInterpolator()
                             animation.start()
                             binding.harvestCropDate.setText("Harvest  \n" + respo.harvestAt.toString())
@@ -316,7 +313,11 @@ class Crop_info_Fragment : Fragment() {
                     binding.tvCropName.setText(respo.name)
                     binding.tvArea.setText(respo.area)
                     binding.tvAreaType.setText(respo.areaType)
-                    Glide.with(requireActivity()).load(respo.image).into(binding.img)
+                    try {
+                        Glide.with(requireActivity()).load(respo.image).into(binding.img)
+                    } catch (e: Exception) {
+                        Log.d("", "")
+                    }
                     binding.tvTotalSum.setText(respo.totalExpense)
                 }
             }

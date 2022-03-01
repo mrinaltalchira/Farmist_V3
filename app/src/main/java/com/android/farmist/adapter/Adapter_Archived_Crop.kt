@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.farmist.R
 import com.android.farmist.api.Api_Controller
 import com.android.farmist.model.ExpensesIncomeTrackerResponse.Data
+import com.android.farmist.model.ExpensesIncomeTrackerResponse.ExpensesTrackerResponse.GetExpensesTracker
 import com.android.farmist.model.archive.RemoveFromAchiv
 import com.android.farmist.util.progressbars
 import com.bumptech.glide.Glide
@@ -126,6 +127,24 @@ class Adapter_Archived_Crop(val context: Context, var data: List<Data>) :
 
 
         }
+
+        var call: Call<GetExpensesTracker> = Api_Controller.apiInterface.getExpenses(data[position].cropId)
+        call.enqueue(object : Callback<GetExpensesTracker> {
+            override fun onResponse(
+                call: Call<GetExpensesTracker>,
+                response: Response<GetExpensesTracker>
+            ) {
+
+                holder.tvexpense.setText("Rs. "+response.body()?.data?.userExpense)
+
+            }
+
+            override fun onFailure(call: Call<GetExpensesTracker>, t: Throwable) {
+
+
+            }
+        })
+
     }
 
     override fun getItemCount(): Int {

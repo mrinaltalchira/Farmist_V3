@@ -49,7 +49,9 @@ class MyFarm_Fragment : Fragment() {
 
                 binding.refresh.isRefreshing = false
             }, 3000)
-            getFarmssagain()
+            try {
+                getFarmssagain()
+            }catch (e:Exception){Log.d("","")}
 
         }
 
@@ -91,11 +93,11 @@ binding.backText.setOnClickListener {
                 if (respo != null) {
                     adap = MyFarmsAdapter(context!!, respo.farms)
                     Log.d("dataFarm", userId)
-                    adap.notifyDataSetChanged()
+
                     recyclerview_myfarm.adapter = adap
                     recyclerview_myfarm.layoutManager = LinearLayoutManager(requireActivity())
+                    adap.notifyDataSetChanged()
                     progress.hidediloag()
-
                 }
 
             }
@@ -125,10 +127,10 @@ binding.backText.setOnClickListener {
                 var respo = response.body()
                 if (respo != null) {
                     adap = MyFarmsAdapter(context!!, respo.farms)
-                    adap.notifyDataSetChanged()
                     Log.d("dataFarm", userId)
                     recyclerview_myfarm.adapter = adap
                     recyclerview_myfarm.layoutManager = LinearLayoutManager(requireActivity())
+                    adap.notifyDataSetChanged()
                 }
 
             }

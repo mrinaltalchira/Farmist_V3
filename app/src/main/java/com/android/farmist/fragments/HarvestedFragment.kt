@@ -64,14 +64,13 @@ var call:Call<GetHarvestedCrop> = Api_Controller().getInstacne().getHarvested(us
                 if (respond != null){
 
                     data = respond.data
-                    Toast.makeText(requireActivity(), "$data", Toast.LENGTH_SHORT).show()
                     adapterHarvestedCrop.setList(data)
                     binding.rvharvest.adapter = adapterHarvestedCrop
                 }
             }
 
             override fun onFailure(call: Call<GetHarvestedCrop>, t: Throwable) {
-                Toast.makeText(requireActivity(), "$t", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireActivity(), "error found :- $t", Toast.LENGTH_SHORT).show()
             }
         })
 

@@ -1,5 +1,6 @@
 package com.android.farmist.api
 
+import com.android.farmist.model.CropPriceResponse.GetMyCropPrices
 import com.android.farmist.model.CropPriceResponse.getCropPrice
 import com.android.farmist.model.ExpensesIncomeTrackerResponse.AddExpesesResponse
 import com.android.farmist.model.ExpensesIncomeTrackerResponse.ExpenesData
@@ -9,6 +10,7 @@ import com.android.farmist.model.ExpensesIncomeTrackerResponse.GetExpensesIncome
 import com.android.farmist.model.ExpensesIncomeTrackerResponse.addSubsidy
 import com.android.farmist.model.FullExpenseLog.Pie
 import com.android.farmist.model.FullExpenseLog.Root
+import com.android.farmist.model.MarketPriceResponse.marketPriceResponse
 import com.android.farmist.model.adapterGetFarm.AdeptDataResponce
 import com.android.farmist.model.addCropResponse.AddCropResponse
 import com.android.farmist.model.alertsResponse.GetGovtScheme
@@ -18,6 +20,8 @@ import com.android.farmist.model.archive.RemoveFromAchiv
 import com.android.farmist.model.archive.SetArchiveResponse
 import com.android.farmist.model.cropDetailsFragment.CropName
 import com.android.farmist.model.farmstats.StatsData
+import com.android.farmist.model.getFarm.Farmcroprespo
+import com.android.farmist.model.getFarm.farmsccrop
 import com.android.farmist.model.getFarmForSpinnner.FarmsSpinner
 import com.android.farmist.model.getFarms
 import com.android.farmist.model.getSowedCrop.GetSowedCrop
@@ -334,6 +338,15 @@ fun getHarvested(@Query("userId")userId:String):Call<GetHarvestedCrop>
 
     @GET("my/crops/price")
     fun getMycropPrices(@Query("userId")cropId:String
-    ):Call<GetMyCropPrices>}
+    ):Call<GetMyCropPrices>
+
+    @GET("expense/expense-tracker")
+    fun getExpenses(
+        @Query("cropId") cropId: String
+    ): Call<GetExpensesTracker>
+
+    @GET("crop/name-image")
+    fun farmscroop(@Query("userId")userId:String,@Query("id")id:String):Call<Farmcroprespo>
 
 }
+

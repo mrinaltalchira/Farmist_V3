@@ -16,7 +16,7 @@ import com.bumptech.glide.Glide
 
 class Announcement_Detail_Fragment : Fragment() {
     private lateinit var binding : AnnouncementDetailsBinding
-    private val adapterHarvestedCrop by lazy { Adapter_Harvested_Crop() }
+//    private val adapterHarvestedCrop by lazy { Adapter_Harvested_Crop() }
     private var createGroupList : ArrayList<String> = ArrayList()
 
 

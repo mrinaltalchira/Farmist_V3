@@ -31,20 +31,23 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 import android.view.MotionEvent
 
 import android.view.View.OnTouchListener
+import com.android.farmist.model.ExpensesIncomeTrackerResponse.ExpensesTrackerResponse.GetExpensesTracker
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class Expensess_Income_tracker : Fragment() {
 
 
     private lateinit var binding: FragmentExpensessIncomeTrackerBinding
-
-    //    private val adapterexpIncomeTracker by lazy { Adapter_Exp_Income_Tracker() }
+lateinit var exp:String
+//    private val adapterexpIncomeTracker by lazy { Adapter_Exp_Income_Tracker() }
     private var createGroupList: ArrayList<String> = ArrayList()
     lateinit var adapterExpIncomeTracker: Adapter_Exp_Income_Tracker
     lateinit var preferences: SharedPreferences
     lateinit var userId: String
     lateinit var progressbarsDialog: progressbars
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -79,25 +82,10 @@ class Expensess_Income_tracker : Fragment() {
             )
 
         }
-//        binding.back.setOnTouchListener(object : L(binding.back) {
-//            fun onDrawableClick(): Boolean {
-//
-//                return true
-//            }
-//        })
-//        bindUIViews()
-//        binding.back.setOnTouchListener(OnTouchListener { v, event ->
-//            if (event.action == MotionEvent.ACTION_UP) {
-//                if (event.rawX <= binding.back.paddingLeft) {
-//                    Toast.makeText(requireContext(), "hello", Toast.LENGTH_SHORT).show()
-//                    // your action for drawable click event
-//                    return@OnTouchListener true
-//                }
-//            }
-//            false
-//        })
+
 
     }
+
 
 
     private fun GetExpensesincomeTracker() {

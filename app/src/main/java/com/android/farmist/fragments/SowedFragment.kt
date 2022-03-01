@@ -1,5 +1,6 @@
 package com.android.farmist.fragments
 
+
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,7 +15,9 @@ import com.android.farmist.adapter.Adapter_Sowed_Crop
 import com.android.farmist.api.Api_Controller
 import com.android.farmist.databinding.FragmentSowedBinding
 import com.android.farmist.model.getSowedCrop.GetSowedCrop
+import com.android.farmist.model.getSowedCrop.ProgressTracker
 import com.android.farmist.util.progressbars
+import kotlinx.android.synthetic.main.fragment_crop_info_.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

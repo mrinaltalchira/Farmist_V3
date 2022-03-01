@@ -56,7 +56,13 @@ class Full_Expenses_Log_Fragment : Fragment() {
                 var respo = response.body()
 
                 if (respo != null) {
-                    Glide.with(requireActivity()).load(respo.data.image).into(binding.img)
+
+                    try {
+                        Glide.with(requireActivity()).load(respo.data.image).into(binding.img)
+
+                    } catch (e: Exception) {
+                        Log.d("", e.toString())
+                    }
                     binding.tvExpLogCropName.setText(response.body()?.data?.name.toString())
                     binding.tvExpLogArea.setText(response.body()?.data?.area.toString())
                     binding.tvExpLogAreatype.setText(response.body()?.data?.areaType.toString())

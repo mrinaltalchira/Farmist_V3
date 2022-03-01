@@ -146,8 +146,7 @@ class Fragment_editFarmDetails : Fragment() {
             return
         }
 
-        Toast.makeText(activity?.applicationContext, "enter updateuser ", Toast.LENGTH_SHORT).show()
-        var progressBars = progressbars(requireActivity())
+         var progressBars = progressbars(requireActivity())
         progressBars.showDialog()
 
         val nameRequestBody: RequestBody = RequestBody.create(
@@ -198,9 +197,11 @@ class Fragment_editFarmDetails : Fragment() {
             ) {
                 val updateData = response.body()
                 if (response.isSuccessful) {
+
+                    findNavController().navigate(R.id.action_fragment_editFarmDetails_to_myFarm_Fragment)
                     Toast.makeText(
                         activity?.applicationContext,
-                        "update Successful:${updateData.toString()}",
+                        "update Successful}",
                         Toast.LENGTH_SHORT
                     ).show()
                     progressBars.hidediloag()
@@ -232,7 +233,10 @@ class Fragment_editFarmDetails : Fragment() {
             ) {
                 val userData = response.body()
                 if (response.isSuccessful) {
-                    setUserdata(userData!!)
+                    try {
+                        setUserdata(userData!!)
+                    }
+                    catch (e:Exception){Log.d("",e.toString())}
                 }
             }
 

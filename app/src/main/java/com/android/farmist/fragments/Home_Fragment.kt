@@ -1,6 +1,7 @@
 package com.android.farmist.fragments
 
 import android.Manifest
+import android.app.Activity
 import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Geocoder
@@ -56,7 +57,11 @@ class Home_Fragment : Fragment() {
     lateinit var addressList: ArrayList<Address>
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -160,23 +165,31 @@ class Home_Fragment : Fragment() {
                             binding.tvTodayTemp1.setText(responses.current?.tempC.toString() + "°")
                             binding.tvTodayTempday1.setText(responses.current?.tempC.toString() + "°")
 
-                            Glide.with(activity!!.applicationContext)
-                                .load("https://" + responses.forecast!!.forecastday[0].day?.condition?.icon)
-                                .into(binding.ivweather1)
+
                             binding.tvDayDate1.setText(responses.forecast!!.forecastday[0].date.toString())
                             binding.tvDayDate2.setText(responses.forecast!!.forecastday[1].date.toString())
                             binding.tvDayDate3.setText(responses.forecast!!.forecastday[2].date.toString())
                             binding.tvTemp2.setText(responses.forecast!!.forecastday[1].hour[12].tempC.toString() + "°")
                             binding.tvTemp3.setText(responses.forecast!!.forecastday[2].hour[14].tempC.toString() + "°")
-                            Glide.with(requireActivity())
-                                .load("https://" + responses.forecast!!.forecastday[0].day?.condition?.icon)
-                                .into(binding.ivday1weather)
-                            Glide.with(requireActivity())
-                                .load("https://" + responses.forecast!!.forecastday[1].day?.condition?.icon)
-                                .into(binding.ivtueweatherday2)
-                            Glide.with(requireActivity())
-                                .load("https://" + responses.forecast!!.forecastday[2].day?.condition?.icon)
-                                .into(binding.ivwedweatherday3)
+
+                            val activity: Activity? = activity
+                            if (activity != null) {
+//context used cod
+
+                                Glide.with(activity!!.applicationContext)
+                                    .load("https://" + responses.forecast!!.forecastday[0].day?.condition?.icon)
+                                    .into(binding.ivweather1)
+                                Glide.with(requireActivity())
+                                    .load("https://" + responses.forecast!!.forecastday[0].day?.condition?.icon)
+                                    .into(binding.ivday1weather)
+                                Glide.with(requireActivity())
+                                    .load("https://" + responses.forecast!!.forecastday[1].day?.condition?.icon)
+                                    .into(binding.ivtueweatherday2)
+                                Glide.with(requireActivity())
+                                    .load("https://" + responses.forecast!!.forecastday[2].day?.condition?.icon)
+                                    .into(binding.ivwedweatherday3)
+
+                            }
 
 
                         }
@@ -212,7 +225,11 @@ class Home_Fragment : Fragment() {
 
                 binding.rvnewsannouncment.adapter = adapterNewsAnnouncements
                 if (responseList != null) {
+                    val activity: Activity? = activity
+                    if (activity != null) {
                     adapterNewsAnnouncements.setList(responseList,requireActivity())
+//context used code
+                    }
                 }
             }
 

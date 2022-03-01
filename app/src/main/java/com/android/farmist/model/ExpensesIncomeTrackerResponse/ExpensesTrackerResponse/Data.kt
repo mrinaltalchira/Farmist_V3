@@ -12,5 +12,7 @@ data class Data(
     val userExpense: String,
     val userIncome: String,
     val userLoss: String,
-    val userProfit: String
+    val userProfit: String,
+    val archieve: String
+
 )

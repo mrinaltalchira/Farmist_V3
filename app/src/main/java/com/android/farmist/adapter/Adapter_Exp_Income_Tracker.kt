@@ -10,11 +10,16 @@ import androidx.core.os.bundleOf
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.android.farmist.R
+import com.android.farmist.api.Api_Controller
 import com.android.farmist.model.ExpensesIncomeTrackerResponse.Data
+import com.android.farmist.model.ExpensesIncomeTrackerResponse.ExpensesTrackerResponse.GetExpensesTracker
 import com.android.farmist.model.alertsResponse.New
 import com.bumptech.glide.Glide
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.adaapter_exp_income_tracker.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Adapter_Exp_Income_Tracker(val context: Context, var data: List<Data>)  : RecyclerView.Adapter<Adapter_Exp_Income_Tracker.ViewHolder>() {
 
@@ -39,7 +44,6 @@ class Adapter_Exp_Income_Tracker(val context: Context, var data: List<Data>)  : 
         holder.tvtitle.setText(data[position].name)
         holder.tvArea.setText(data[position].area+" "+data[position].areaType)
         holder.tvSowed.setText(data[position].date)
-//        holder.tvexpense.setText(data[position].)
         Glide.with(context).load(data[position].image).into(holder.ivprofile)
 
         holder.itemView.setOnClickListener(View.OnClickListener {
@@ -67,12 +71,26 @@ class Adapter_Exp_Income_Tracker(val context: Context, var data: List<Data>)  : 
                 "cropId" to data[position].cropId)
             Navigation.createNavigateOnClickListener(R.id.action_expensess_Income_tracker_to_add_Income_Fragment, bundle).onClick(holder.itemView)
 
-
         })
 
+            var call: Call<GetExpensesTracker> = Api_Controller.apiInterface.getExpenses(data[position].cropId)
+            call.enqueue(object : Callback<GetExpensesTracker> {
+                override fun onResponse(
+                    call: Call<GetExpensesTracker>,
+                    response: Response<GetExpensesTracker>
+                ) {
+
+                   holder.expen.setText("Rs. "+response.body()?.data?.userExpense)
+
+                }
+
+                override fun onFailure(call: Call<GetExpensesTracker>, t: Throwable) {
 
 
-    }
+                }
+            })
+        }
+
 
     override fun getItemCount(): Int {
         return data.size
@@ -83,9 +101,10 @@ class Adapter_Exp_Income_Tracker(val context: Context, var data: List<Data>)  : 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvtitle: TextView = itemView.findViewById(R.id.TvCropTitleIncomeExpesesTracker)
         var tvArea: TextView = itemView.findViewById(R.id.TvCropAreaIncomeExpesesTracker)
-        var tvexpense: TextView = itemView.findViewById(R.id.TvCropExpensesIncomeExpesesTracker)
-        var tvSowed: TextView = itemView.findViewById(R.id.TvCropSowedIncomeExpesesTracker)
+         var tvSowed: TextView = itemView.findViewById(R.id.TvCropSowedIncomeExpesesTracker)
         var ivprofile: CircleImageView = itemView.findViewById(R.id.iv_profile)
+    var expen:TextView = itemView.findViewById(R.id.TvCropExpensesIncomeExpesesTracker)
+
     }
 
 }

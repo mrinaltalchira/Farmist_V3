@@ -27,15 +27,21 @@
 
 
                 <TextView
+                    android:id="@+id/back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Expense Tracker"
-                    android:textStyle="normal"
-                    android:textSize="@dimen/_14sdp"
-                    android:textColor="@color/black"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:drawableLeft="@drawable/back"
-                    android:drawablePadding="@dimen/_10sdp" />
+                    android:drawablePadding="@dimen/_10sdp"  />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_35sdp"
+                    android:text="Expense Tracker"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="normal" />
 
 
             </RelativeLayout>
@@ -592,7 +598,7 @@
                     android:textSize="@dimen/_14sdp"
                     android:textColor="@color/light_grey"
                     android:textStyle="normal"
-                    android:text="Rs. 100/kg" />
+                    android:text="Rs. _/kg" />
 
             </LinearLayout>
 
@@ -629,7 +635,7 @@
                     android:textSize="@dimen/_14sdp"
                     android:textColor="@color/light_grey"
                     android:textStyle="normal"
-                    android:text="NABARD" />
+                    android:text="_" />
 
             </LinearLayout>
 
@@ -655,7 +661,7 @@
                     android:textSize="@dimen/_14sdp"
                     android:textColor="@color/light_grey"
                     android:textStyle="normal"
-                    android:text="1000" />
+                    android:text="_" />
 
             </LinearLayout>
 
@@ -682,7 +688,7 @@
                     android:textSize="@dimen/_14sdp"
                     android:textColor="@color/light_grey"
                     android:textStyle="normal"
-                    android:text="19-04-2021" />
+                    android:text="_" />
 
             </LinearLayout>
 

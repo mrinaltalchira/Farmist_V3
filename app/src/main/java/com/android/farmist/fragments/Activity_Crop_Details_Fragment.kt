@@ -51,12 +51,14 @@ class Activity_Crop_Details_Fragment : Fragment() {
     lateinit var progressBarDailog: progressbars
     lateinit var farmName:String
 
+
+
     companion object {
         val IMAGETOKEN = 200
     }
 
     lateinit var date: String
-    lateinit var radioValue: String
+    var radioValue: String = "Acers"
     var num = 0
     lateinit var preferences: SharedPreferences
 
@@ -91,7 +93,7 @@ class Activity_Crop_Details_Fragment : Fragment() {
         binding.btnSaveAddCrop.setOnClickListener {
 
 
-            Toast.makeText(requireContext(), "$userId", Toast.LENGTH_SHORT).show()
+
             addCrop()
 
 
@@ -127,6 +129,7 @@ class Activity_Crop_Details_Fragment : Fragment() {
         binding.rgRadiogroupAddCrop.setOnCheckedChangeListener { group, i ->
 
             var radioButton: RadioButton? = view?.findViewById(i)
+
             when (radioButton) {
                 binding.rBAcersAddCrop -> radioValue = radioButton.text.toString()
                 binding.rBBhigasAddCrop -> radioValue = radioButton.text.toString()
@@ -228,20 +231,10 @@ class Activity_Crop_Details_Fragment : Fragment() {
                 response: Response<AddCropResponse>
             ) {
                 val responseData = response.body()
-                if (responseData != null) {
 
-                    Toast.makeText(
-                        requireContext(),
-                        "addcrop${responseData.message}",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
                 progressBarDailog.hidediloag()
                 createCropSuccess()
-
-
-
-            }
+             }
 
             override fun onFailure(call: Call<AddCropResponse>, t: Throwable) {
                 Toast.makeText(requireContext(), "Failed:${t.toString()}", Toast.LENGTH_SHORT)
@@ -290,7 +283,7 @@ class Activity_Crop_Details_Fragment : Fragment() {
     }
 
     private fun getSpinnerData() {
-        Toast.makeText(requireContext(), "IdData:$userId", Toast.LENGTH_SHORT).show()
+      //  Toast.makeText(requireContext(), "IdData:$userId", Toast.LENGTH_SHORT).show()
         val call: Call<FarmsSpinner>
         call = Api_Controller().getInstacne().getSpinnerFarm(userId)
         call.enqueue(object : Callback<FarmsSpinner> {
@@ -342,11 +335,8 @@ class Activity_Crop_Details_Fragment : Fragment() {
         sweetAlertDialog.confirmButtonBackgroundColor=Color.parseColor("#46A908")
         sweetAlertDialog.setConfirmClickListener {
 
-
-
-            val intent = Intent(requireContext(), MainActivity::class.java)
-            startActivity(intent)
-            requireActivity().finish()
+            findNavController().navigate(R.id.action_activity_Crop_Details_Fragment_to_crops_Fragment)
+        sweetAlertDialog.dismiss()
         }
         sweetAlertDialog.show()
     }
