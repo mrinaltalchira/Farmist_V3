@@ -36,7 +36,7 @@ class Adapter_Select_category(
         this.cropList = DataList as ArrayList<Fruitlist>
         this.cropListFilter = DataList as ArrayList<Fruitlist>
 
-        Toast.makeText(context, "setlist" + DataList, Toast.LENGTH_SHORT).show()
+
         notifyDataSetChanged()
     }
 
@@ -67,7 +67,7 @@ class Adapter_Select_category(
 
         if (checkData == position) {
             checkData2 = -1
-            Toast.makeText(context, "fruits ......." + checkData, Toast.LENGTH_SHORT).show()
+
 
             holder.itemView.setBackgroundResource(R.drawable.green_button_background)
 //            holder.tvCroptitle.setTextColor(Color.parseColor("#FFFFFF"))

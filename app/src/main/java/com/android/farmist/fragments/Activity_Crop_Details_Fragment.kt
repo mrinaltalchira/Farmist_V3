@@ -51,8 +51,6 @@ class Activity_Crop_Details_Fragment : Fragment() {
     lateinit var progressBarDailog: progressbars
     lateinit var farmName:String
 
-
-
     companion object {
         val IMAGETOKEN = 200
     }
@@ -129,7 +127,6 @@ class Activity_Crop_Details_Fragment : Fragment() {
         binding.rgRadiogroupAddCrop.setOnCheckedChangeListener { group, i ->
 
             var radioButton: RadioButton? = view?.findViewById(i)
-
             when (radioButton) {
                 binding.rBAcersAddCrop -> radioValue = radioButton.text.toString()
                 binding.rBBhigasAddCrop -> radioValue = radioButton.text.toString()
@@ -251,8 +248,7 @@ class Activity_Crop_Details_Fragment : Fragment() {
     ) {
         super.onViewCreated(view, savedInstanceState)
 
-//        cropName = binding.cropName.text.toString()
-        Toast.makeText(requireActivity(), "crop name: $cropName", Toast.LENGTH_SHORT).show()
+//        cropName = binding.cropName.text.toString
 
         binding.tvaddnewfarm.setOnClickListener {
             findNavController().navigate(
@@ -284,6 +280,7 @@ class Activity_Crop_Details_Fragment : Fragment() {
 
     private fun getSpinnerData() {
       //  Toast.makeText(requireContext(), "IdData:$userId", Toast.LENGTH_SHORT).show()
+
         val call: Call<FarmsSpinner>
         call = Api_Controller().getInstacne().getSpinnerFarm(userId)
         call.enqueue(object : Callback<FarmsSpinner> {

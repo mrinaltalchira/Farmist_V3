@@ -44,7 +44,7 @@ class Adapter_News_Announcements()  : RecyclerView.Adapter<Adapter_News_Announce
         holder.itemView.setOnClickListener(View.OnClickListener {
 
             var bundle = bundleOf(
-                "newsId" to incomeTrackerList[position]._id,
+//                "newsId" to incomeTrackerList[position]._id,
                 "newsImage" to incomeTrackerList[position].image,
                 "newsTime" to incomeTrackerList[position].createdAt,
                 "newsDec" to incomeTrackerList[position].desc,

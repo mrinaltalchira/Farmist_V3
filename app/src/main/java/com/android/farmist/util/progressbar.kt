@@ -20,7 +20,7 @@ open class progressbars(context: Context) {
     }
 
     public fun hidediloag() {
-        pDialog.hide()
+        pDialog.dismiss()
 
 
     }

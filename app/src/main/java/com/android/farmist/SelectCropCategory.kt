@@ -245,9 +245,8 @@ class SelectCropCategory : Fragment(), Adapter_Select_category.SelectItem,
     }
 
     override fun onItemSelect(viewModel: Veg) {
-//        Toast.makeText(requireActivity(), "Veg"+viewModel.name, Toast.LENGTH_SHORT).show()
+
         adapterSelectCategory.notifyDataSetChanged()
-//        adapterSelectCategoryVeg.notifyDataSetChanged()
         datachecker = viewModel.name
     }
 

@@ -1,16 +1,15 @@
 package com.android.farmist.model.alertsResponse
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "News")
 data class New(
-    val __v: Int,
-    @PrimaryKey
-    val _id: String,
-    val cloudinary_id: String,
-    val createdAt: String,
-    val desc: String,
-    val image: String,
-    val title: String
+    @PrimaryKey (autoGenerate = true)@ColumnInfo(name = "id") val idcrop: Int=12,
+//    @ColumnInfo(name = "cloud_id")val cloudinary_id: String,
+    @ColumnInfo(name = "date")  val createdAt: String,
+    @ColumnInfo(name = "description")  val desc: String,
+    @ColumnInfo(name = "image")  val image: String,
+    @ColumnInfo(name = "name") val title: String
 )

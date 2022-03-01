@@ -1,7 +1,7 @@
 package com.android.farmist.fragments
 
-
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,14 +10,14 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import cn.pedant.SweetAlert.SweetAlertDialog
 import com.android.farmist.R
 import com.android.farmist.adapter.Adapter_Sowed_Crop
 import com.android.farmist.api.Api_Controller
 import com.android.farmist.databinding.FragmentSowedBinding
 import com.android.farmist.model.getSowedCrop.GetSowedCrop
-import com.android.farmist.model.getSowedCrop.ProgressTracker
+import com.android.farmist.util.SweetAlert
 import com.android.farmist.util.progressbars
-import kotlinx.android.synthetic.main.fragment_crop_info_.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,6 +30,7 @@ class SowedFragment : Fragment() {
     //    private val adapterSowedCrop by lazy { Adapter_Sowed_Crop() }
     private var createGroupList : ArrayList<String> = ArrayList()
     lateinit var userId:String
+    lateinit var pDialog: SweetAlertDialog
 
 
 
@@ -41,7 +42,13 @@ class SowedFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {  binding = DataBindingUtil.inflate(layoutInflater,R.layout.fragment_sowed,container,false)
+    ): View? {
+        pDialog = SweetAlertDialog(context,SweetAlertDialog.PROGRESS_TYPE)
+        pDialog.progressHelper.barColor = Color.parseColor("#A5DC86")
+        pDialog.titleText = "Loading"
+        pDialog.setCancelable(true)
+
+        binding = DataBindingUtil.inflate(layoutInflater,R.layout.fragment_sowed,container,false)
         return binding.root
 
 
@@ -57,8 +64,10 @@ class SowedFragment : Fragment() {
     }
 
     private fun getcropData() {
-        val progressbars=progressbars(requireActivity())
-        progressbars.showDialog()
+//        val progressbars=progressbars(requireActivity())
+//        progressbars.showDialog()
+        pDialog.show()
+
         val preferences =
             requireActivity().getSharedPreferences("userMassage", Context.MODE_PRIVATE)
         userId = preferences.getString("message", "").toString()
@@ -69,16 +78,20 @@ class SowedFragment : Fragment() {
                 val cropList= response.body()?.userCrops
 
                 val adpterSowedCrop= cropList?.let { Adapter_Sowed_Crop(requireActivity(), it) }
-                progressbars.hidediloag()
+//                progressbars.hidediloag()
                 binding.rvsowedlist.adapter = adpterSowedCrop
                 binding.rvsowedlist.layoutManager = LinearLayoutManager(requireActivity())
 //                recyleviewOption.adapter = optionAdapter
 //                recyleviewOption.setHasFixedSize(true)
+                pDialog.dismiss()
+
+
 
             }
 
             override fun onFailure(call: Call<GetSowedCrop>, t: Throwable) {
-                progressbars.hidediloag()
+//                progressbars.hidediloag()
+                pDialog.dismiss()
                 Toast.makeText(requireActivity(), "${t.stackTrace}", Toast.LENGTH_SHORT).show()
 
             }

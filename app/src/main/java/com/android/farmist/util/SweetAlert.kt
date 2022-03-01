@@ -24,7 +24,7 @@ object SweetAlert {
     }
 
     public fun hidediloag() {
-        pDialog.hide()
+        pDialog.dismiss()
 
 
     }

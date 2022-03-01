@@ -58,11 +58,19 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setupWithNavController(navController)
 
 
-//        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
-//            if(item.itemId != bottomNavigationView.selectedItemId)
-//                NavigationUI.onNavDestinationSelected(item, navController)
-//            true
-//        }
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            if (item.itemId != bottomNavigationView.selectedItemId) NavigationUI.onNavDestinationSelected(
+                item,
+                navController
+            )
+            else
+            {
+                bottomNavigationView.setupWithNavController(navController)
+            true
+
+            }
+
+        }
 
     }
 //

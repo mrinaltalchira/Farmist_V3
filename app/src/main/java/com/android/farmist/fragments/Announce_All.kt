@@ -45,7 +45,7 @@ class Announce_All : Fragment() {
 
     private fun bindUIViews(dataRespo: List<Scheme>) {
 
-        adapterAnnouncementAll.setList(dataRespo, requireActivity())
+        activity?.let { adapterAnnouncementAll.setList(dataRespo, it.applicationContext) }
         binding.rvannounceall.adapter = adapterAnnouncementAll
 
 

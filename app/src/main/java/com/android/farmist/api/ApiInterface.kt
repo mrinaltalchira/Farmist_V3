@@ -21,7 +21,6 @@ import com.android.farmist.model.archive.SetArchiveResponse
 import com.android.farmist.model.cropDetailsFragment.CropName
 import com.android.farmist.model.farmstats.StatsData
 import com.android.farmist.model.getFarm.Farmcroprespo
-import com.android.farmist.model.getFarm.farmsccrop
 import com.android.farmist.model.getFarmForSpinnner.FarmsSpinner
 import com.android.farmist.model.getFarms
 import com.android.farmist.model.getSowedCrop.GetSowedCrop
@@ -347,6 +346,11 @@ fun getHarvested(@Query("userId")userId:String):Call<GetHarvestedCrop>
 
     @GET("crop/name-image")
     fun farmscroop(@Query("userId")userId:String,@Query("id")id:String):Call<Farmcroprespo>
+//    ):Call<GetMyCropPrices>
+
+
+    //get news alert
+    @GET("alerts")
+    fun getNewsAlertRoomDb(): Call<GetNewsAlert>
 
 }
-

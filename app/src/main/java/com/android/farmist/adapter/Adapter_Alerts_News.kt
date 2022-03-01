@@ -43,7 +43,7 @@ class Adapter_Alerts_News(val context: Context, var data: List<New>) :
 
         holder.itemView.setOnClickListener(View.OnClickListener {
             var bundle = bundleOf(
-                "newsId" to data[position]._id,
+//                "newsId" to data[position]._id,
                 "newsImage" to data[position].image,
                 "newsTime" to data[position].createdAt,
                 "newsDec" to data[position].desc,

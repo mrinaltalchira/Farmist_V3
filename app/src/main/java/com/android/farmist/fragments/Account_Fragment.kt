@@ -33,9 +33,11 @@ import android.R.attr.data
 import android.content.IntentFilter
 import android.content.SharedPreferences
 import android.util.Log
+import androidx.lifecycle.ViewModelProvider
 import com.android.farmist.UploadRequestBody
 import com.android.farmist.model.profileImgResponse.GetUserImagResponse
 import com.android.farmist.model.profileImgResponse.getProfileResoponse
+import com.android.farmist.viewModel.Account_View_Model
 import com.bumptech.glide.Glide
 import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.adaapter_exp_income_tracker.*
@@ -52,6 +54,7 @@ class Account_Fragment : Fragment() {
     var test: Int = 0
     var imageUrl: String = ""
     var nameStr: String = ""
+    lateinit var accountViewModel: Account_View_Model
 
 
     companion object {
@@ -64,6 +67,7 @@ class Account_Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        accountViewModel=ViewModelProvider(this).get(Account_View_Model::class.java)
 
         preferences =
             requireActivity().getSharedPreferences("userMassage", Context.MODE_PRIVATE)
@@ -73,17 +77,18 @@ class Account_Fragment : Fragment() {
         binding =
             DataBindingUtil.inflate(layoutInflater, R.layout.fragment_account, container, false)
 
-        if (!imageUrl.isBlank()) {
-            activity?.let {
-                Glide.with(it.applicationContext).load(imageUrl).into(binding.setPhoto)
-            }
-            binding.AccountUserName.setText(nameStr)
-
-
-        } else {
-            getprofile()
-
-        }
+//        if (!imageUrl.isBlank()) {
+//            activity?.let {
+//                Glide.with(it.applicationContext).load(imageUrl).into(binding.setPhoto)
+//            }
+//            binding.AccountUserName.setText(nameStr)
+//
+//
+//        } else {
+//            getprofile()
+//
+//        }
+        setImage()
 
 
 
@@ -92,6 +97,14 @@ class Account_Fragment : Fragment() {
 
         return binding.root
 
+
+    }
+
+    private fun setImage() {
+        accountViewModel.getprofile(requireContext())
+        imageUrl=accountViewModel.imageUrl
+        Toast.makeText(requireContext(), "data$imageUrl", Toast.LENGTH_SHORT).show()
+        Glide.with(requireContext()).load(imageUrl).into(binding.setPhoto)
 
     }
 
@@ -126,8 +139,6 @@ class Account_Fragment : Fragment() {
         }
         binding.setPhoto.setOnClickListener {
             openImageChooser()
-
-
         }
 
     }
@@ -155,7 +166,6 @@ class Account_Fragment : Fragment() {
                             {
                                 imageUrl = data.latestPic[0].image
                                 Glide.with(it.applicationContext).load(imageUrl).into(binding.setPhoto)
-
                             }
                             nameStr = data.name
                         }

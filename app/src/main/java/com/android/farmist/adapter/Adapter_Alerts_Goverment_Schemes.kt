@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.android.farmist.R
@@ -36,7 +37,23 @@ class Adapter_Alerts_Goverment_Schemes(val context: Context, val data: List<Sche
         Glide.with(context).load(data[position].image).into(holder.ivNews)
 
 //        val list = incomeTrackerList[position]
+        holder.itemView.setOnClickListener(View.OnClickListener {
+            var bundle = bundleOf(
+                "newsId" to data[position]._id,
+                "newsImage" to data[position].image,
+                "newsTime" to data[position].createdAt,
+                "newsDec" to data[position].desc,
+                "newsTitle" to data[position].title
+            )
 
+
+            Navigation.createNavigateOnClickListener(
+                R.id.action_nav_alerts_to_newsDetail_Fragment,
+                bundle
+            ).onClick(holder.itemView)
+
+
+        })
 
     }
 

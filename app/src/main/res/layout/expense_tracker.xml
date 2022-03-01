@@ -111,6 +111,7 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/ivArchivetemp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_archive"
@@ -118,6 +119,7 @@
 
 
                     <TextView
+                        android:id="@+id/tvarchibedTemp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Archive"
@@ -598,7 +600,7 @@
                     android:textSize="@dimen/_14sdp"
                     android:textColor="@color/light_grey"
                     android:textStyle="normal"
-                    android:text="Rs. _/kg" />
+                    android:text="Rs. 100/kg" />
 
             </LinearLayout>
 
@@ -635,7 +637,7 @@
                     android:textSize="@dimen/_14sdp"
                     android:textColor="@color/light_grey"
                     android:textStyle="normal"
-                    android:text="_" />
+                    android:text="NABARD" />
 
             </LinearLayout>
 
@@ -661,7 +663,7 @@
                     android:textSize="@dimen/_14sdp"
                     android:textColor="@color/light_grey"
                     android:textStyle="normal"
-                    android:text="_" />
+                    android:text="1000" />
 
             </LinearLayout>
 
@@ -688,7 +690,7 @@
                     android:textSize="@dimen/_14sdp"
                     android:textColor="@color/light_grey"
                     android:textStyle="normal"
-                    android:text="_" />
+                    android:text="19-04-2021" />
 
             </LinearLayout>
 

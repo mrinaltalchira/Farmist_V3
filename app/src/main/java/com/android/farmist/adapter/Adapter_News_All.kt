@@ -43,7 +43,7 @@ class Adapter_News_All()  : RecyclerView.Adapter<Adapter_News_All.ViewHolder>() 
 
         holder.itemView.setOnClickListener {
             var bundle = bundleOf(
-                "newsId" to newsList[position]._id,
+//                "newsId" to newsList[position]._id,
                 "newsImage" to newsList[position].image,
                 "newsTime" to newsList[position].createdAt,
                 "newsDec" to newsList[position].desc,

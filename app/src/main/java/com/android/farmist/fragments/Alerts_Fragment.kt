@@ -8,11 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.android.farmist.R
+import com.android.farmist.RoomDatabase.Repository
 import com.android.farmist.RoomDatabase.appDatabase
 import com.android.farmist.adapter.*
 import com.android.farmist.api.Api_Controller
@@ -20,6 +22,7 @@ import com.android.farmist.databinding.FragmentAlertsBinding
 import com.android.farmist.model.alertsResponse.GetGovtScheme
 import com.android.farmist.model.alertsResponse.GetNewsAlert
 import com.android.farmist.model.alertsResponse.New
+import com.android.farmist.viewModel.NewsViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
@@ -41,6 +44,10 @@ class Alerts_Fragment : Fragment() {
     private var createGroupList: ArrayList<String> = ArrayList()
     private var croppricelist: ArrayList<String> = ArrayList()
 
+//    lateinit var newsViewModel: NewsViewModel
+//    lateinit var newsList:List<New>
+//    lateinit var repository: Repository
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,8 +59,9 @@ class Alerts_Fragment : Fragment() {
 
         binding =
             DataBindingUtil.inflate(layoutInflater, R.layout.fragment_alerts, container, false)
-        getNewsAlert()
+//        getNewsAlert()
         getGovScheme()
+        getNewsAlert()
 
         return binding.root
 
@@ -63,6 +71,12 @@ class Alerts_Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         bindUIViews()
+
+//        repository=Repository(activity?.application)
+//        newsList=ArrayList<New>()
+//        newsViewModel=ViewModelProvider(requireActivity()).get(NewsViewModel::class.java)
+
+
 
 
 
@@ -144,6 +158,12 @@ class Alerts_Fragment : Fragment() {
                         Adapter_Alerts_News(
                             it1, it.news)
                     } }
+//                repository=Repository(activity?.application)
+//                newsList=ArrayList<New>()
+//                newsViewModel=ViewModelProvider(requireActivity()).get(NewsViewModel::class.java)
+//                val responseData=response.body()?.news
+//                repository.insert(responseData)
+
                 binding.rvalertsnews.adapter = adapterAlertsNews
                 binding.rvalertsnews.layoutManager = LinearLayoutManager(activity?.applicationContext)
 //                Toast.makeText(requireContext(), "news${response.body().toString()}", Toast.LENGTH_SHORT).show()

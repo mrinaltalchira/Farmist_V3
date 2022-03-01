@@ -1,7 +1,6 @@
 package com.android.farmist.fragments
 
 import android.Manifest
-import android.app.Activity
 import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Geocoder
@@ -44,6 +43,10 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
 import kotlin.collections.ArrayList
+import android.app.Activity
+
+
+
 
 
 class Home_Fragment : Fragment() {
@@ -56,12 +59,7 @@ class Home_Fragment : Fragment() {
     var key = "13497f7823f3433ebb161306220202"
     lateinit var addressList: ArrayList<Address>
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-
-    }
+    lateinit var appDatabaseObj: appDatabase
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -71,7 +69,12 @@ class Home_Fragment : Fragment() {
 
         fusedLocationProviderClient =
             LocationServices.getFusedLocationProviderClient(activity?.applicationContext!!)
-
+        appDatabaseObj= appDatabase.getAppDBInstance(requireContext())
+        val list =appDatabaseObj.getAppDao().getnews().observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            adapterNewsAnnouncements.setList(it,requireActivity())
+            binding.rvnewsannouncment.adapter=adapterNewsAnnouncements
+            adapterNewsAnnouncements.notifyDataSetChanged()
+        })
         fetchLocation()
 
         return binding.root
@@ -80,8 +83,7 @@ class Home_Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        bindUIViews()
-        getGovScheme()
+//        getGovScheme()
         getPriceCrop()
         binding.expIncometracker.setOnClickListener(View.OnClickListener {
             findNavController().navigate(R.id.action_nav_home_to_expensess_Income_tracker,null)
@@ -165,20 +167,12 @@ class Home_Fragment : Fragment() {
                             binding.tvTodayTemp1.setText(responses.current?.tempC.toString() + "°")
                             binding.tvTodayTempday1.setText(responses.current?.tempC.toString() + "°")
 
-
-                            binding.tvDayDate1.setText(responses.forecast!!.forecastday[0].date.toString())
-                            binding.tvDayDate2.setText(responses.forecast!!.forecastday[1].date.toString())
-                            binding.tvDayDate3.setText(responses.forecast!!.forecastday[2].date.toString())
-                            binding.tvTemp2.setText(responses.forecast!!.forecastday[1].hour[12].tempC.toString() + "°")
-                            binding.tvTemp3.setText(responses.forecast!!.forecastday[2].hour[14].tempC.toString() + "°")
-
                             val activity: Activity? = activity
                             if (activity != null) {
-//context used cod
 
-                                Glide.with(activity!!.applicationContext)
-                                    .load("https://" + responses.forecast!!.forecastday[0].day?.condition?.icon)
-                                    .into(binding.ivweather1)
+                            Glide.with(this@Home_Fragment)
+                                .load("https://" + responses.forecast!!.forecastday[0].day?.condition?.icon)
+                                .into(binding.ivweather1)
                                 Glide.with(requireActivity())
                                     .load("https://" + responses.forecast!!.forecastday[0].day?.condition?.icon)
                                     .into(binding.ivday1weather)
@@ -189,7 +183,14 @@ class Home_Fragment : Fragment() {
                                     .load("https://" + responses.forecast!!.forecastday[2].day?.condition?.icon)
                                     .into(binding.ivwedweatherday3)
 
+                                // etc ...
                             }
+
+                            binding.tvDayDate1.setText(responses.forecast!!.forecastday[0].date.toString())
+                            binding.tvDayDate2.setText(responses.forecast!!.forecastday[1].date.toString())
+                            binding.tvDayDate3.setText(responses.forecast!!.forecastday[2].date.toString())
+                            binding.tvTemp2.setText(responses.forecast!!.forecastday[1].hour[12].tempC.toString() + "°")
+                            binding.tvTemp3.setText(responses.forecast!!.forecastday[2].hour[14].tempC.toString() + "°")
 
 
                         }
@@ -227,8 +228,7 @@ class Home_Fragment : Fragment() {
                 if (responseList != null) {
                     val activity: Activity? = activity
                     if (activity != null) {
-                    adapterNewsAnnouncements.setList(responseList,requireActivity())
-//context used code
+                        adapterNewsAnnouncements.setList(responseList, requireActivity())
                     }
                 }
             }
@@ -238,6 +238,7 @@ class Home_Fragment : Fragment() {
             }
         })
     }
+
 
 
 

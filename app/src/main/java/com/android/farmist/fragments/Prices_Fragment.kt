@@ -73,14 +73,13 @@ class Prices_Fragment : Fragment() {
                     val adapterMarketCropPrices=Adapter_Market_Crop_Prices()
                     binding.rvmarketcropprice.setHasFixedSize(true)
                     binding.rvmarketcropprice.adapter=adapterMarketCropPrices
-
-
                     val activity: Activity? = activity
                     if (activity != null) {
-//context used cod
 
-                        adapterMarketCropPrices.setList(cropList, requireActivity())
+                    adapterMarketCropPrices.setList(cropList,requireActivity())
+                        // etc ...
                     }
+
                 }
             }
 
