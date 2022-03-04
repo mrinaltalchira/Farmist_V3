@@ -38,7 +38,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_35sdp"
-                    android:text="Expense Tracker"
+                    android:text="@string/expense_tracker"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />
@@ -94,7 +94,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Delete"
+                        android:text="@string/delete"
                         android:textColor="@color/green_selected"
                         android:textSize="@dimen/_12sdp" />
 
@@ -122,7 +122,7 @@
                         android:id="@+id/tvarchibedTemp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Archive"
+                        android:text="@string/archive"
                         android:textColor="@color/green_selected"
                         android:textSize="@dimen/_12sdp" />
 
@@ -178,7 +178,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Expense"
+                        android:text="@string/expense"
                         android:layout_gravity="center_horizontal"
                         android:textSize="@dimen/_14sdp"
                         android:textColor="@color/black"
@@ -209,7 +209,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Date Sowed"
+                        android:text="@string/date_sowed"
                         android:layout_gravity="center_horizontal"
                         android:textSize="@dimen/_14sdp"
                         android:textColor="@color/black"
@@ -238,7 +238,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_15sdp"
-                android:text="Profit &amp; Loss"
+                android:text="@string/profit_amp_loss"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_14sdp" />
@@ -282,7 +282,7 @@
                         android:textSize="@dimen/_16sdp"
                         android:textColor="@color/white"
                         android:textStyle="normal"
-                        android:text="Profit"
+                        android:text="@string/profit"
                         android:layout_marginBottom="@dimen/_5sdp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/_3sdp" />
@@ -319,7 +319,7 @@
                         android:textSize="@dimen/_16sdp"
                         android:textColor="@color/white"
                         android:textStyle="normal"
-                        android:text="Loss"
+                        android:text="@string/loss"
                         android:layout_marginBottom="@dimen/_5sdp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/_3sdp" />
@@ -340,7 +340,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Expense Chart"
+                    android:text="@string/expense_chart"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="bold" />
@@ -351,7 +351,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="View full log"
+                    android:text="@string/view_full_log"
                     android:textColor="@color/green_selected"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />
@@ -400,10 +400,10 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
+                            android:layout_centerHorizontal="true"
                             android:layout_marginStart="@dimen/_10sdp"
                             android:layout_toEndOf="@+id/llgraphseeds"
-                            android:text="Seeds"
+                            android:text="@string/seeds"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12sdp"
                             android:textStyle="normal" />
@@ -433,7 +433,7 @@
                             android:layout_centerVertical="true"
                             android:layout_marginStart="@dimen/_10sdp"
                             android:layout_toEndOf="@+id/llgraphFertilizer"
-                            android:text="Fertilizer"
+                            android:text="@string/fertilizer"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12sdp"
                             android:textStyle="normal" />
@@ -460,13 +460,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
                             android:layout_toEndOf="@+id/llgraphLabour"
-                            android:text="Labour"
-                            android:textStyle="normal"
+                            android:text="@string/labour"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12sdp"
-                            android:layout_centerVertical="true"
-                            android:layout_marginStart="@dimen/_10sdp" />
+                            android:textStyle="normal" />
 
 
                     </RelativeLayout>
@@ -491,7 +490,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@+id/llgraphTractor"
-                            android:text="Tractor"
+                            android:text="@string/tractor"
                             android:textStyle="normal"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12sdp"
@@ -519,13 +518,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
                             android:layout_toEndOf="@+id/llgraphIncome"
-                            android:text="Income"
-                            android:textStyle="normal"
+                            android:text="@string/income"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12sdp"
-                            android:layout_centerVertical="true"
-                            android:layout_marginStart="@dimen/_10sdp" />
+                            android:textStyle="normal" />
 
 
                     </RelativeLayout>
@@ -552,7 +550,7 @@
                             android:layout_centerVertical="true"
                             android:layout_marginStart="@dimen/_10sdp"
                             android:layout_toEndOf="@+id/llgraphSubsidy"
-                            android:text="Subsidy"
+                            android:text="@string/subsidy"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12sdp"
                             android:textStyle="normal" />
@@ -573,7 +571,7 @@
                 android:textSize="@dimen/_14sdp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:text="Income"
+                android:text="@string/income"
                 android:layout_marginTop="@dimen/_15sdp" />
 
 
@@ -611,7 +609,7 @@
                 android:textSize="@dimen/_14sdp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:text="Subsidy"
+                android:text="@string/subsidy"
                 android:layout_marginTop="@dimen/_15sdp" />
 
 
@@ -628,7 +626,7 @@
                     android:textSize="@dimen/_14sdp"
                     android:textColor="@color/black"
                     android:textStyle="normal"
-                    android:text="Subsidy Name :" />
+                    android:text="@string/subsidy_name" />
 
                 <TextView
                     android:id="@+id/tvSubsidyName"
@@ -654,7 +652,7 @@
                     android:textSize="@dimen/_14sdp"
                     android:textColor="@color/black"
                     android:textStyle="normal"
-                    android:text="Amount : " />
+                    android:text="@string/amount" />
 
                 <TextView
                     android:id="@+id/tvSubsidyamount"
@@ -681,7 +679,7 @@
                     android:textSize="@dimen/_14sdp"
                     android:textColor="@color/black"
                     android:textStyle="normal"
-                    android:text="Date :" />
+                    android:text="@string/date" />
 
                 <TextView
                     android:id="@+id/tvSubsidydate"

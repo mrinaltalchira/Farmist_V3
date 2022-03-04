@@ -33,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/back"
                     android:drawablePadding="@dimen/_10sdp"
-                    android:text="Expenses &amp; Income Tracker"
+                    android:text="@string/expenses_amp_income_tracker"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal"
@@ -46,7 +46,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="Archived"
+                    android:text="@string/archive"
                     android:textColor="@color/green_selected"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />

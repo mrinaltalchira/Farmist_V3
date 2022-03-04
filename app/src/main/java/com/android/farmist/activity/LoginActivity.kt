@@ -15,6 +15,7 @@ import com.android.farmist.Signup
 import com.android.farmist.api.Api_Controller
 import com.android.farmist.databinding.ActivityLoginBinding
 import com.android.farmist.model.signUp.signUpModel
+import com.android.farmist.util.SweetAlert
 import retrofit2.Callback
 import retrofit2.Response
 
@@ -48,6 +49,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun loginUser() {
+        SweetAlert.showDialog(this)
         val numberUser=binding.etMobilenumber.text.toString()
 
         var call: retrofit2.Call<signUpModel>
@@ -66,8 +68,7 @@ class LoginActivity : AppCompatActivity() {
                         val sharedPreferences =
                             getSharedPreferences("userMassage", Context.MODE_PRIVATE)
                         val editor = sharedPreferences.edit()
-                        Toast.makeText(this@LoginActivity, "id:$idStr", Toast.LENGTH_SHORT)
-                            .show()
+
                         editor.putString("message", idStr)
                     if (loginData != null) {
                         editor.putString("check", loginData.message.toString())
@@ -76,17 +77,21 @@ class LoginActivity : AppCompatActivity() {
 
 
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    SweetAlert.hidediloag()
                     startActivity(intent)
-                    Toast.makeText(this@LoginActivity , "login sucessful${loginData.toString()}", Toast.LENGTH_SHORT).show()
+                    finish()
+                    Toast.makeText(this@LoginActivity , "Login sucessful", Toast.LENGTH_SHORT).show()
                 }
                 else{
-                    Toast.makeText(this@LoginActivity , "login Unsucessful${loginData.toString()}", Toast.LENGTH_SHORT).show()
+                    SweetAlert.hidediloag()
+                    Toast.makeText(this@LoginActivity , "Login Failed", Toast.LENGTH_SHORT).show()
 
                 }
 
             }
 
             override fun onFailure(call: retrofit2.Call<signUpModel>, t: Throwable) {
+                SweetAlert.hidediloag()
                 Log.d("loginError", t.toString())
 
             }

@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import com.android.farmist.R
 import com.android.farmist.activity.MainActivity
 import com.android.farmist.api.Api_Controller
@@ -22,6 +23,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import cn.pedant.SweetAlert.SweetAlertDialog
+import com.android.farmist.RoomDatabase.appDatabase
 import com.android.farmist.util.progressbars
 
 
@@ -31,6 +33,7 @@ class Personal_Information_Fragment : Fragment() {
 
     //    private lateinit var getUserModelObj:getUserModel
     lateinit var message: String
+    lateinit var appDatabaseobj: appDatabase
 
 
     override fun onCreateView(
@@ -47,6 +50,9 @@ class Personal_Information_Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getUserData()
+        appDatabaseobj = appDatabase.getAppDBInstance(requireActivity())
+        setUserdata()
+
         binding.saveBtn.setOnClickListener {
 
             updateUserData()
@@ -57,7 +63,7 @@ class Personal_Information_Fragment : Fragment() {
 
     private fun updateUserData() {
 
-        var progressBars=progressbars(requireContext())
+        var progressBars = progressbars(requireContext())
         progressBars.showDialog()
 
 
@@ -90,8 +96,8 @@ class Personal_Information_Fragment : Fragment() {
                         "update Successful:${updateData.toString()}",
                         Toast.LENGTH_SHORT
                     ).show()
-                    val intent= Intent(requireContext(), MainActivity::class.java)
-                  progressBars.hidediloag()
+                    val intent = Intent(requireContext(), MainActivity::class.java)
+                    progressBars.hidediloag()
                     startActivity(intent)
                     activity?.finish()
                 }
@@ -112,17 +118,17 @@ class Personal_Information_Fragment : Fragment() {
         val preferences =
             requireActivity().getSharedPreferences("userMassage", Context.MODE_PRIVATE)
         message = preferences.getString("message", "").toString()
-        Toast.makeText(requireContext(), "id:${message.toString()}", Toast.LENGTH_SHORT).show()
-
-
         val call: Call<getUserModel>
         call = Api_Controller().getInstacne().getUser(message.toString())
         call.enqueue(object : Callback<getUserModel> {
             override fun onResponse(call: Call<getUserModel>, response: Response<getUserModel>) {
                 val test = response.body()
                 if (response.isSuccessful) {
+                    if (test != null) {
+                        appDatabaseobj.getAppDao().deletPersonalInfo()
+                        appDatabaseobj.getAppDao().insertPersonalInfo(test.user)
+                    }
 
-                    setUserdata(test)
                 } else {
                     Toast.makeText(
                         activity?.applicationContext,
@@ -138,17 +144,22 @@ class Personal_Information_Fragment : Fragment() {
         })
     }
 
-    private fun setUserdata(userdata: getUserModel?) {
-        if (userdata != null) {
-            binding.userName.setText(userdata.user.name.toString())
-            binding.userPhone.setText(userdata.user.phone.toString())
-            binding.userPincode.setText(userdata.user.pincode.toString())
-            binding.userVillage.setText(userdata.user.village.toString())
-            binding.userTehsil.setText(userdata.user.tehsil.toString())
-            binding.userDistrict.setText(userdata.user.district.toString())
-            binding.userNoAcres.setText(userdata.user.numOfAcers.toString())
+    private fun setUserdata() {
 
-        }
+        appDatabaseobj.getAppDao().getPersonalInfo().observe(requireActivity(), Observer {
+            if (it != null) {
+                binding.userName.setText(it.name)
+                binding.userPhone.setText(it.phone)
+                binding.userPincode.setText(it.pincode)
+                binding.userVillage.setText(it.village)
+                binding.userTehsil.setText(it.tehsil)
+                binding.userDistrict.setText(it.district)
+                binding.userNoAcres.setText(it.numOfAcers)
+
+            }
+
+
+        })
 
 
     }

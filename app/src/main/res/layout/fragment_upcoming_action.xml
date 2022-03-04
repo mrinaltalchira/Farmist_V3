@@ -35,7 +35,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:drawableLeft="@drawable/back"
                     android:drawablePadding="@dimen/_10sdp"
-                    android:text="Upcoming Action"
+                    android:text="@string/upcoming_actions"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />
@@ -56,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_20sdp"
-            android:text="Actions"
+            android:text="@string/actions"
             android:textColor="@color/black"
             android:textSize="@dimen/_20sdp" />
 

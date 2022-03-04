@@ -62,7 +62,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginEnd="@dimen/_10sdp"
                         android:drawableTop="@drawable/ic_delete"
-                        android:text="Delete"
+                        android:text="@string/delete"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_14sdp" />
 
@@ -74,7 +74,7 @@
                         android:layout_marginEnd="@dimen/_10sdp"
                         android:layout_toStartOf="@+id/tv_delete"
                         android:drawableTop="@drawable/ic_baseline_content_cut_24"
-                        android:text="Harvest"
+                        android:text="@string/harvest"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_14sdp" />
 
@@ -284,7 +284,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.9"
-                            android:text="Sowed" />
+                            android:text="@string/sowed" />
 
 
                     </LinearLayout>
@@ -320,7 +320,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
-                            android:text="Add fertilizer" />
+                            android:text="@string/add_fertilizer" />
 
 
                     </LinearLayout>
@@ -336,7 +336,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.9"
-                            android:text="Harvest" />
+                            android:text="@string/harvest" />
 
                     </LinearLayout>
 
@@ -355,7 +355,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Expense Chart"
+                        android:text="@string/expense_chart"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="bold" />
@@ -366,7 +366,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="View full log"
+                        android:text="@string/view_full_log"
                         android:textColor="@color/green_selected"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="normal" />
@@ -419,7 +419,7 @@
                                 android:layout_centerInParent="true"
                                 android:layout_marginStart="@dimen/_10sdp"
                                 android:layout_toEndOf="@+id/llgraphseeds"
-                                android:text="Seeds"
+                                android:text="@string/seeds"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
                                 android:textStyle="normal" />
@@ -447,10 +447,9 @@
                                 android:id="@+id/tv_Fertilizer"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
                                 android:layout_marginStart="@dimen/_10sdp"
                                 android:layout_toEndOf="@+id/llgraphFertilizer"
-                                android:text="Fertilizer"
+                                android:text="@string/fertilizer"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
                                 android:textStyle="normal" />
@@ -478,10 +477,9 @@
                                 android:id="@+id/tv_labour"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
                                 android:layout_marginStart="@dimen/_10sdp"
                                 android:layout_toEndOf="@+id/llgraphLabour"
-                                android:text="Labour"
+                                android:text="@string/labour"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
                                 android:textStyle="normal" />
@@ -508,10 +506,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
                                 android:layout_marginStart="@dimen/_10sdp"
                                 android:layout_toEndOf="@+id/llgraphTractor"
-                                android:text="Tractor"
+                                android:text="@string/tractor"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
                                 android:textStyle="normal" />
@@ -538,10 +535,9 @@
                                 android:id="@+id/tv_income"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
                                 android:layout_marginStart="@dimen/_10sdp"
                                 android:layout_toEndOf="@+id/llgraphIncome"
-                                android:text="Income"
+                                android:text="@string/income"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
                                 android:textStyle="normal" />
@@ -572,7 +568,7 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginStart="@dimen/_10sdp"
                                 android:layout_toEndOf="@+id/llgraphSubsidy"
-                                android:text="Subsidy"
+                                android:text="@string/subsidy"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
                                 android:textStyle="normal" />
@@ -620,7 +616,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Fertilizer Info"
+                        android:text="@string/fertilizer_info"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="bold" />
@@ -631,7 +627,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="View more"
+                        android:text="@string/view_more"
                         android:textColor="@color/green_selected"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="normal" />
@@ -664,7 +660,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Pest Info"
+                        android:text="@string/pest_info"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="bold" />
@@ -674,7 +670,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="View more"
+                        android:text="@string/view_more"
                         android:textColor="@color/green_selected"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="normal" />
@@ -705,7 +701,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Insecticides Info"
+                        android:text="@string/insecticides_info"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="bold" />
@@ -715,7 +711,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="View more"
+                        android:text="@string/view_more"
                         android:textColor="@color/green_selected"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="normal" />

@@ -105,7 +105,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Expenses"
+                            android:text="@string/expenses"
                             android:textSize="@dimen/_12sdp"
                             android:textColor="@color/white"
                             android:layout_gravity="center_horizontal" />
@@ -135,7 +135,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Date Sowed"
+                            android:text="@string/date_sowed"
                             android:textSize="@dimen/_12sdp"
                             android:textColor="@color/white"
                             android:layout_gravity="center_horizontal" />
@@ -165,7 +165,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Add Expenses"
+                    android:text="@string/add_expenses"
                     android:textSize="@dimen/_12sdp"
                     android:textColor="@color/green_selected" />
 
@@ -175,7 +175,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Add Subsidy"
+                    android:text="@string/add_subsidy"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:textSize="@dimen/_12sdp"
@@ -187,7 +187,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Add Income"
+                    android:text="@string/add_income"
                     android:gravity="end"
                     android:textSize="@dimen/_12sdp"
                     android:textColor="@color/green_selected" />

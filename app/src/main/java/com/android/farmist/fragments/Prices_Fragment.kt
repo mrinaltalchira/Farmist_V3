@@ -102,7 +102,7 @@ class Prices_Fragment : Fragment() {
 
                         appDatabaseObj.getAppDao().deleteAllmyPrice()
                         appDatabaseObj.getAppDao().insertMyPrice(cropList)
-                    adapterMarketCropPrices.setList(cropList,requireActivity())
+                        adapterMarketCropPrices.setList(cropList,requireActivity())
                     }
 
                 }
@@ -142,14 +142,12 @@ class Prices_Fragment : Fragment() {
         if (priceData != null) {
             val CropPriceList = priceData.crops
 
-             appDatabaseObj.getAppDao().deleteAllPrice()
+            appDatabaseObj.getAppDao().deleteAllPrice()
             appDatabaseObj.getAppDao().insertPrice(CropPriceList)
 
-         adapterOtherMarketCropPrices.setList(CropPriceList)
+            adapterOtherMarketCropPrices.setList(CropPriceList)
 
         }
-
-
     }
 
     private fun onFailure(t: Throwable) {

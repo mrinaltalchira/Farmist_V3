@@ -32,7 +32,7 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/back"
                     android:drawablePadding="@dimen/_10sdp"
-                    android:text="Archived Expenses &amp; Income Tracker"
+                    android:text="@string/archived_expenses_amp_income_tracker"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />

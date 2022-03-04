@@ -58,7 +58,7 @@
                         android:id="@+id/tvPriceAdapterCrop"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Rs. 100"
+                        android:text="@string/rs"
                         android:textStyle="normal"
                         android:textSize="@dimen/_12sdp"
                         android:layout_marginStart="@dimen/_5sdp"

@@ -74,7 +74,8 @@ class News_All : Fragment() {
                 val   adapterAlertsNews=
                     response.body()?.let { activity?.applicationContext?.let { it1 ->
                         Adapter_Alerts_News(
-                            it1, it.news)
+                            )
+                        adapterNewsAll.setList(it.news,it1.applicationContext)
                     } }
 
                 val dataRespo= response.body()?.news

@@ -33,7 +33,9 @@ import android.R.attr.data
 import android.content.IntentFilter
 import android.content.SharedPreferences
 import android.util.Log
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.android.farmist.RoomDatabase.appDatabase
 import com.android.farmist.UploadRequestBody
 import com.android.farmist.model.profileImgResponse.GetUserImagResponse
 import com.android.farmist.model.profileImgResponse.getProfileResoponse
@@ -54,7 +56,9 @@ class Account_Fragment : Fragment() {
     var test: Int = 0
     var imageUrl: String = ""
     var nameStr: String = ""
-    lateinit var accountViewModel: Account_View_Model
+
+    //    lateinit var accountViewModel: Account_View_Model
+    lateinit var appDatabaseObj: appDatabase
 
 
     companion object {
@@ -67,47 +71,46 @@ class Account_Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        accountViewModel=ViewModelProvider(this).get(Account_View_Model::class.java)
+//        accountViewModel=ViewModelProvider(this).get(Account_View_Model::class.java)
 
         preferences =
             requireActivity().getSharedPreferences("userMassage", Context.MODE_PRIVATE)
         userId = preferences.getString("message", "").toString()
 
+        appDatabaseObj = appDatabase.getAppDBInstance(requireActivity())
+        appDatabaseObj.getAppDao().getAccountInfo().observe(requireActivity(), Observer {
+            if (it.size != 0) {
+                binding.AccountUserName.setText(it[0].name)
+                binding.AccountUserName.setText(it[0].name)
+                activity?.let { it1 ->
+                    Glide.with(it1.applicationContext).load(it[0].image).into(binding.setPhoto)
+                }
+
+            }
+
+        })
 
         binding =
             DataBindingUtil.inflate(layoutInflater, R.layout.fragment_account, container, false)
 
-//        if (!imageUrl.isBlank()) {
-//            activity?.let {
-//                Glide.with(it.applicationContext).load(imageUrl).into(binding.setPhoto)
-//            }
-//            binding.AccountUserName.setText(nameStr)
-//
-//
-//        } else {
-//            getprofile()
-//
-//        }
-        setImage()
+        if (!imageUrl.isBlank()) {
+            activity?.let {
+                Glide.with(it.applicationContext).load(imageUrl).into(binding.setPhoto)
+            }
+            binding.AccountUserName.setText(nameStr)
 
 
+        } else {
+            getprofile()
 
-
+        }
+//        setImage()
 
 
         return binding.root
 
 
     }
-
-    private fun setImage() {
-        accountViewModel.getprofile(requireContext())
-        imageUrl=accountViewModel.imageUrl
-        Toast.makeText(requireContext(), "data$imageUrl", Toast.LENGTH_SHORT).show()
-        Glide.with(requireContext()).load(imageUrl).into(binding.setPhoto)
-
-    }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -152,7 +155,6 @@ class Account_Fragment : Fragment() {
                 call: Call<GetUserImagResponse>,
                 response: Response<GetUserImagResponse>
             ) {
-//                Toast.makeText(requireContext(), "this${response.body().toString()}", Toast.LENGTH_SHORT).show()
 
 
                 context?.let {
@@ -161,22 +163,25 @@ class Account_Fragment : Fragment() {
                         val data = response.body()
                         if (data != null) {
 
-                            if (data.latestPic.size != 0)
+                            if (data.latestPic.size != 0) {
+//                                appDatabaseObj.getAppDao().deleteAllRecords
+                                appDatabaseObj.getAppDao().deeletAccountInfo()
 
-                            {
+                                appDatabaseObj.getAppDao().insertAccountInfo(data.latestPic)
+
                                 imageUrl = data.latestPic[0].image
-                                Glide.with(it.applicationContext).load(imageUrl).into(binding.setPhoto)
+                                Glide.with(it.applicationContext).load(imageUrl)
+                                    .into(binding.setPhoto)
+
+                                nameStr = data.latestPic[0].name
                             }
-                            nameStr = data.name
                         }
 
                     }
 
 
-
                 }
-//                    Glide.with(it.applicationContext).load(response.body()?.latestPic?.get(0)?.image).into(binding.setPhoto) }
-                binding.AccountUserName.setText(response.body()?.name)
+                binding.AccountUserName.setText(nameStr)
                 test++
 
             }
@@ -251,7 +256,7 @@ class Account_Fragment : Fragment() {
             ) {
                 val dataresponse = response.body()
                 Toast.makeText(
-                    requireContext(),
+                    activity?.applicationContext,
                     "Select an Image First" + dataresponse.toString(),
                     Toast.LENGTH_SHORT
                 ).show()
@@ -263,18 +268,14 @@ class Account_Fragment : Fragment() {
                         "image upload successfully",
                         Toast.LENGTH_SHORT
                     ).show()
-                    getprofile()
+//                    getprofile()
                 }
             }
 
             override fun onFailure(call: Call<SetProfileResponse>, t: Throwable) {
-                Toast.makeText(requireContext(), "Image failed $t", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity?.applicationContext, "Image failed $t", Toast.LENGTH_SHORT)
+                    .show()
             }
         })
-
     }
-
-
 }
-
-

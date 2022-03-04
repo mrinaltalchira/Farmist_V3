@@ -1,7 +1,7 @@
 package com.android.farmist.fragments
 
 import android.Manifest
-import android.app.Activity
+
 import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
@@ -22,6 +22,9 @@ import androidx.core.app.ActivityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.room.Room
 import com.android.farmist.R
 import com.android.farmist.RoomDatabase.appDatabase
 import com.android.farmist.adapter.*
@@ -46,6 +49,10 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
 import kotlin.collections.ArrayList
+import android.app.Activity
+import android.content.res.Configuration
+import android.content.res.Resources
+import android.util.DisplayMetrics
 
 
 class Home_Fragment : Fragment() {
@@ -68,14 +75,21 @@ class Home_Fragment : Fragment() {
 
         fusedLocationProviderClient =
             LocationServices.getFusedLocationProviderClient(activity?.applicationContext!!)
+        appDatabaseObj= appDatabase.getAppDBInstance(requireContext())
+        getNewsAlert()
+        val list =appDatabaseObj.getAppDao().getnews().observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            adapterNewsAnnouncements.setList(it,requireActivity())
+            binding.rvnewsannouncment.adapter=adapterNewsAnnouncements
+            adapterNewsAnnouncements.notifyDataSetChanged()
+        })
         appDatabaseObj = appDatabase.getAppDBInstance(requireContext())
         appDatabaseObj2 = appDatabase.getAppDBInstance(requireContext())
-        val list = appDatabaseObj.getAppDao().getnews()
-            .observe(viewLifecycleOwner, androidx.lifecycle.Observer {
-                adapterNewsAnnouncements.setList(it, requireActivity())
-                binding.rvnewsannouncment.adapter = adapterNewsAnnouncements
-                adapterNewsAnnouncements.notifyDataSetChanged()
-            })
+//        val list = appDatabaseObj.getAppDao().getnews()
+//            .observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+//                adapterNewsAnnouncements.setList(it, requireActivity())
+//                binding.rvnewsannouncment.adapter = adapterNewsAnnouncements
+//                adapterNewsAnnouncements.notifyDataSetChanged()
+//            })
         val list2 = appDatabaseObj2.getAppDao().gelAllPrice()
             .observe(viewLifecycleOwner, androidx.lifecycle.Observer {
                 adapterCropPrices.setList(it)
@@ -147,16 +161,16 @@ class Home_Fragment : Fragment() {
 //        getGovScheme()
         getPriceCrop()
         binding.expIncometracker.setOnClickListener(View.OnClickListener {
-            findNavController().navigate(R.id.action_nav_home_to_expensess_Income_tracker, null)
+            findNavController().navigate(R.id.action_nav_home_to_expensess_Income_tracker,null)
         })
 
         binding.crop.setOnClickListener(View.OnClickListener {
-            findNavController().navigate(R.id.action_nav_home_to_crops_Fragment, null)
+            findNavController().navigate(R.id.action_nav_home_to_crops_Fragment,null)
         })
 
 
         binding.myfarms.setOnClickListener(View.OnClickListener {
-            findNavController().navigate(R.id.myFarm_Fragment, null)
+            findNavController().navigate(R.id.myFarm_Fragment,null)
         })
 
         binding.upcomingaction.setOnClickListener(View.OnClickListener {
@@ -164,19 +178,16 @@ class Home_Fragment : Fragment() {
         })
 
         binding.loansubsidies.setOnClickListener(View.OnClickListener {
-            findNavController().navigate(R.id.action_nav_home_to_loan_Subsidies_Fragment, null)
+            findNavController().navigate(R.id.action_nav_home_to_loan_Subsidies_Fragment,null)
         })
 
 
         binding.farmstates.setOnClickListener(View.OnClickListener {
-            findNavController().navigate(R.id.action_nav_home_to_fragment_Farm_States, null)
+            findNavController().navigate(R.id.action_nav_home_to_fragment_Farm_States,null)
         })
 
         binding.tvallnewsannouncement.setOnClickListener(View.OnClickListener {
-            findNavController().navigate(
-                R.id.action_nav_home_to_news_Announcement_all_Fragment,
-                null
-            )
+            findNavController().navigate(R.id.action_nav_home_to_news_Announcement_all_Fragment,null)
         })
         binding.tvallCropPrice.setOnClickListener {
             findNavController().navigate(R.id.action_nav_home_to_cropPrices)
@@ -207,8 +218,11 @@ class Home_Fragment : Fragment() {
 
         task.addOnSuccessListener {
             if (it != null) {
+                val lat = it.latitude.toString()
+                val lon = it.longitude.toString()
 
                 var geocoder = Geocoder(requireActivity(), Locale.getDefault())
+
                 addressList = geocoder.getFromLocation(
                     it.latitude,
                     it.longitude,
@@ -311,13 +325,36 @@ class Home_Fragment : Fragment() {
         }
 
     }
+    private fun getNewsAlert() {
+        val call: Call<GetNewsAlert>
+        call= Api_Controller().getInstacneAdmin().getNewsAlert()
+        call.enqueue(object : Callback<GetNewsAlert> {
+            override fun onResponse(call: Call<GetNewsAlert>, response: Response<GetNewsAlert>) {
 
+
+                val   adapterAlertsNews=
+                    response.body()?.let { activity?.applicationContext?.let { it1 ->
+                        Adapter_Alerts_News(
+                        )
+                        adapterNewsAnnouncements.setList(it.news,it1.applicationContext)
+                    } }
+
+                val dataRespo= response.body()?.news
+                appDatabaseObj.getAppDao().deleteAllRecords()
+                appDatabaseObj.getAppDao().insertAll(dataRespo!!)
+            }
+
+            override fun onFailure(call: Call<GetNewsAlert>, t: Throwable) {
+                Log.d("getNewsError",t.toString())
+            }
+        })
+    }
     private fun getGovScheme() {
         val call: Call<GetNewsAlert>
         call = Api_Controller().getInstacneAdmin().getNewsAlert()
         call.enqueue(object : Callback<GetNewsAlert> {
             override fun onResponse(call: Call<GetNewsAlert>, response: Response<GetNewsAlert>) {
-                val responseList = response.body()?.news
+                val responseList=response.body()?.news
 
 
                 binding.rvnewsannouncment.adapter = adapterNewsAnnouncements
@@ -334,6 +371,8 @@ class Home_Fragment : Fragment() {
             }
         })
     }
+
+
 
 
     private fun getPriceCrop() {
@@ -376,10 +415,14 @@ class Home_Fragment : Fragment() {
     private fun onFailure(t: Throwable) {
         Log.d("Main", "OnFailure: " + t.message)
     }
-
-    fun getsavedData() {
-
-
+    fun setLocale(lang: String?) {
+        val myLocale = Locale(lang)
+        val res: Resources = resources
+        val dm: DisplayMetrics = res.getDisplayMetrics()
+        val conf: Configuration = res.getConfiguration()
+        conf.locale = myLocale
+        res.updateConfiguration(conf, dm)
+//        findNavController().navigate(R.id.nav_home)
     }
 
 

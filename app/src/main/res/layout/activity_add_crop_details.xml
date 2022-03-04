@@ -34,7 +34,7 @@
                 android:layout_marginStart="@dimen/_33sdp"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:drawableTint="@color/white"
-                android:text="Add crop details"
+                android:text="@string/add_crop_details"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_14sdp" />
 
@@ -97,7 +97,7 @@
                         android:id="@+id/addphoto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Add photo"
+                        android:text="@string/add_photo"
                         android:textColor="@color/green_selected"
                         android:textSize="@dimen/_12sdp"
                         android:layout_gravity="center_horizontal"
@@ -112,13 +112,13 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Choose Farm"
-                            android:textColor="@color/grey"
-                            android:textStyle="normal"
                             android:layout_marginStart="@dimen/_10sdp"
-                            android:layout_marginEnd="@dimen/_10sdp"
                             android:layout_marginTop="@dimen/_15sdp"
-                            android:textSize="@dimen/_12sdp" />
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:text="@string/choose_farm"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="normal" />
 
                         <TextView
                             android:id="@+id/tvaddnewfarm"
@@ -128,7 +128,7 @@
                             android:layout_marginStart="@dimen/_10sdp"
                             android:layout_marginTop="@dimen/_15sdp"
                             android:layout_marginEnd="@dimen/_10sdp"
-                            android:text="Add new farm"
+                            android:text="@string/add_new_farm"
                             android:textColor="@color/green_selected"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="normal" />
@@ -165,7 +165,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sowed Area"
+                        android:text="@string/sowed_area"
                         android:textColor="@color/light_grey"
                         android:textStyle="normal"
                         android:layout_marginStart="@dimen/_10sdp"
@@ -270,7 +270,7 @@
                                 android:id="@+id/r_b_Acers_addCrop"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Acers"
+                                android:text="@string/acers"
                                 android:layout_weight="3"
                                 android:textSize="@dimen/_14sdp"
                                 />
@@ -279,7 +279,7 @@
                                 android:id="@+id/r_b_Guntas_addCrop"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Guntas"
+                                android:text="@string/guntas"
                                 android:layout_weight="3"
                                 android:textSize="@dimen/_14sdp"
                                 />
@@ -288,7 +288,7 @@
                                 android:id="@+id/r_b_Bhigas_addCrop"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Bhigas"
+                                android:text="@string/bhigas"
                                 android:layout_weight="3.33"
                                 android:textSize="@dimen/_14sdp"/>
 
@@ -299,7 +299,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sowed Date"
+                        android:text="@string/sowed_date"
                         android:textColor="@color/light_grey"
                         android:textStyle="normal"
                         android:layout_marginStart="@dimen/_10sdp"
@@ -369,7 +369,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_20sdp"
                         android:padding="@dimen/_10sdp"
-                        android:text="Save"
+                        android:text="@string/save"
                         android:textSize="@dimen/_14sdp"
                         android:textColor="@color/white"
                         android:textStyle="normal"

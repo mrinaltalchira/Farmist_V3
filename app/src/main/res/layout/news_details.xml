@@ -29,7 +29,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="News details"
+                    android:text="@string/news_details"
                     android:textStyle="normal"
                     android:textSize="@dimen/_14sdp"
                     android:textColor="@color/black"

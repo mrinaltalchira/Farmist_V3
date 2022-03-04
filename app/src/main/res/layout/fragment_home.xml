@@ -95,7 +95,7 @@
                                     android:layout_marginEnd="@dimen/_2sdp"
                                     android:layout_marginTop="@dimen/_3sdp"
                                     android:gravity="center_horizontal"
-                                    android:text="Expenses &amp; Income Tracker" />
+                                    android:text="@string/expenses_amp_income_tracker" />
 
 
                             </LinearLayout>
@@ -137,7 +137,7 @@
                                     android:layout_gravity="center_horizontal"
                                     android:layout_marginTop="@dimen/_3sdp"
                                     android:gravity="center_horizontal"
-                                    android:text="Crop"
+                                    android:text="@string/crop"
                                     android:layout_marginStart="@dimen/_2sdp"
                                     android:layout_marginEnd="@dimen/_2sdp"
                                     android:textColor="@color/brown_light"
@@ -183,7 +183,7 @@
                                     android:layout_gravity="center_horizontal"
                                     android:layout_marginTop="@dimen/_3sdp"
                                     android:gravity="center_horizontal"
-                                    android:text="My Farms"
+                                    android:text="@string/my_farms"
                                     android:layout_marginStart="@dimen/_2sdp"
                                     android:layout_marginEnd="@dimen/_2sdp"
                                     android:textColor="@color/brown_light"
@@ -244,7 +244,7 @@
                                     android:layout_marginEnd="@dimen/_2sdp"
                                     android:layout_marginTop="@dimen/_3sdp"
                                     android:gravity="center_horizontal"
-                                    android:text="Upcoming Actions" />
+                                    android:text="@string/upcoming_actions" />
 
 
                             </LinearLayout>
@@ -290,7 +290,7 @@
                                     android:layout_marginEnd="@dimen/_2sdp"
                                     android:layout_marginTop="@dimen/_3sdp"
                                     android:gravity="center_horizontal"
-                                    android:text="Farm States" />
+                                    android:text="@string/farm_states" />
 
 
                             </LinearLayout>
@@ -336,7 +336,7 @@
                                     android:layout_marginEnd="@dimen/_2sdp"
                                     android:layout_marginTop="@dimen/_3sdp"
                                     android:gravity="center_horizontal"
-                                    android:text="Loans &amp; Subsidies Info" />
+                                    android:text="@string/loans_amp_subsidies_info" />
 
 
                             </LinearLayout>
@@ -368,7 +368,7 @@
                                 android:layout_alignParentEnd="true"
                                 android:layout_marginTop="@dimen/_10sdp"
                                 android:layout_marginRight="@dimen/_50sdp"
-                                android:text="Next 3 days forecast"
+                                android:text="@string/next_3_days_forecast"
                                 android:textColor="@color/white" />
 
                             <ImageView
@@ -604,7 +604,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="News &amp; Announcements"
+                            android:text="@string/news_amp_announcements"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="bold" />
@@ -615,7 +615,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
-                            android:text="See all"
+                            android:text="@string/see_all"
                             android:textColor="@color/green_selected"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="normal" />
@@ -644,10 +644,10 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Crop Prices"
+                            android:text="@string/crop_prices"
                             android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/_14sdp" />
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold" />
 
 
                         <TextView
@@ -655,7 +655,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
-                            android:text="See all"
+                            android:text="@string/see_all"
                             android:textColor="@color/green_selected"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="normal" />

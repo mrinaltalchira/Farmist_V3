@@ -26,7 +26,7 @@
                 android:drawableLeft="@drawable/back"
                 android:drawablePadding="@dimen/_10sdp"
                 android:drawableTint="@color/white"
-                android:text="Add subsidy"
+                android:text="@string/add_subsidy"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_14sdp" />
 
@@ -41,28 +41,28 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_50sdp"
                 android:background="@drawable/layout_background"
-                android:orientation="vertical"
-                android:layout_marginTop="@dimen/_50sdp">
+                android:orientation="vertical">
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Subsidy Name"
-                    android:textColor="@color/light_grey"
-                    android:textStyle="normal"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_15sdp"
-                    android:textSize="@dimen/_14sdp" />
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:text="@string/subsidy_name"
+                    android:textColor="@color/light_grey"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="normal" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
                     android:background="@drawable/loan_form_background"
                     android:orientation="vertical">
 
@@ -71,16 +71,16 @@
                         android:id="@+id/edtsubsidy"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@null"
                         android:layout_gravity="center"
-                        android:textColor="@color/black"
-                        android:textStyle="normal"
+                        android:background="@null"
                         android:inputType="text"
-                        android:maxLines="1"
-                        android:text=""
                         android:maxLength="10"
+                        android:maxLines="1"
+                        android:padding="@dimen/_12sdp"
+                        android:text=""
+                        android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp"
-                        android:padding="@dimen/_12sdp" />
+                        android:textStyle="normal" />
 
 
                 </LinearLayout>
@@ -89,13 +89,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Date"
-                    android:textColor="@color/light_grey"
-                    android:textStyle="normal"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:textSize="@dimen/_14sdp" />
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:text="@string/date"
+                    android:textColor="@color/light_grey"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="normal" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -138,24 +138,23 @@
                 </RelativeLayout>
 
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Amount"
-                    android:textColor="@color/light_grey"
-                    android:textStyle="normal"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:textSize="@dimen/_14sdp" />
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:text="@string/amount"
+                    android:textColor="@color/light_grey"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="normal" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
                     android:background="@drawable/loan_form_background"
                     android:orientation="vertical">
 
@@ -164,16 +163,16 @@
                         android:id="@+id/edtAmount"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@null"
                         android:layout_gravity="center"
-                        android:textColor="@color/black"
-                        android:textStyle="normal"
+                        android:background="@null"
                         android:inputType="number"
-                        android:maxLines="1"
-                        android:text=""
                         android:maxLength="10"
+                        android:maxLines="1"
+                        android:padding="@dimen/_12sdp"
+                        android:text=""
+                        android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp"
-                        android:padding="@dimen/_12sdp" />
+                        android:textStyle="normal" />
 
 
                 </LinearLayout>
@@ -183,16 +182,16 @@
                     android:id="@+id/btnAddSubsidy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_25sdp"
-                    android:padding="@dimen/_12sdp"
-                    android:text="Add subsidy"
-                    android:textAllCaps="false"
-                    android:textSize="@dimen/_14sdp"
-                    android:textColor="@color/white"
-                    android:textStyle="normal"
-                    android:layout_marginRight="@dimen/_10sdp"
                     android:layout_marginLeft="@dimen/_10sdp"
-                    android:background="@drawable/login_btn_background" />
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@drawable/login_btn_background"
+                    android:padding="@dimen/_12sdp"
+                    android:text="@string/add_subsidy"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="normal" />
 
             </LinearLayout>
         </ScrollView>

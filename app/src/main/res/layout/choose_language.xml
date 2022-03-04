@@ -30,7 +30,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Choose Language"
+                    android:text="@string/choose_language"
                     android:textStyle="normal"
                     android:textSize="@dimen/_14sdp"
                     android:textColor="@color/black"
@@ -52,18 +52,23 @@
 
 
             <RadioGroup
+                android:id="@+id/Rg_select_lang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
 
             <RadioButton
-                android:layout_width="wrap_content"
+                android:id="@+id/Rb_English"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="English"
                 android:textStyle="normal"
                 android:textSize="@dimen/_14sdp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:checked="true"
+
+                />
 
 
             <TextView
@@ -72,9 +77,10 @@
                 android:background="@color/grey" />
 
             <RadioButton
-                android:layout_width="wrap_content"
+                android:id="@+id/Rb_hindi"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hindi"
+                android:text="हिन्दी"
                 android:textStyle="normal"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:textSize="@dimen/_14sdp"
@@ -88,9 +94,10 @@
 
 
             <RadioButton
-                android:layout_width="wrap_content"
+                android:id="@+id/Rb_Telugu"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Telugu"
+                android:text="తెలుగు"
                 android:textStyle="normal"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:textSize="@dimen/_14sdp"
@@ -103,9 +110,10 @@
                 android:background="@color/grey" />
 
             <RadioButton
-                android:layout_width="wrap_content"
+                android:id="@+id/Rb_Kannada"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Kannada"
+                android:text="ಕನ್ನಡ"
                 android:textStyle="normal"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:textSize="@dimen/_14sdp"
@@ -115,11 +123,12 @@
             </RadioGroup>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_select_lang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:padding="@dimen/_10sdp"
-                android:text="Save"
+                android:text="@string/continue_"
                 android:textSize="@dimen/_14sdp"
                 android:textColor="@color/white"
                 android:textStyle="normal"

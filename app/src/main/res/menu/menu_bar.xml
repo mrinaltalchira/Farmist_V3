@@ -3,23 +3,23 @@
 
     <item
         android:id="@+id/nav_home"
-        android:title="Home"
+        android:title="@string/home"
         android:icon="@drawable/ic_home"/>
 
 
     <item
         android:id="@+id/nav_alerts"
-        android:title="Alerts"
+        android:title="@string/alerts"
         android:icon="@drawable/ic_alert"/>
 
     <item
         android:id="@+id/nav_prices"
-        android:title="Prices"
+        android:title="@string/prices"
         android:icon="@drawable/ic_prices"/>
 
     <item
         android:id="@+id/nav_account"
-        android:title="Account"
+        android:title="@string/account"
         android:icon="@drawable/ic_user"/>
 
 

@@ -16,13 +16,15 @@ import com.android.farmist.model.getSowedCrop.UserCrop
 import com.bumptech.glide.Glide
 import de.hdodenhof.circleimageview.CircleImageView
 
-class Adapter_Alerts_News(val context: Context, var data: List<New>) :
+class Adapter_Alerts_News() :
     RecyclerView.Adapter<Adapter_Alerts_News.ViewHolder>() {
 
 //    val incomeTrackerList: ArrayList<String> = ArrayList()
-
-    fun setList(DataList: List<New>) {
-        this.data = DataList
+    lateinit var data:List<New>
+    lateinit var context:Context
+    fun setList(DataList: List<New>, context: Context) {
+        data = DataList
+        this.context=context
         notifyDataSetChanged()
     }
 

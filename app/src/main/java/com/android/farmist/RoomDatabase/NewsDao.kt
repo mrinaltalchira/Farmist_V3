@@ -8,6 +8,8 @@ import com.android.farmist.model.alertsResponse.GetNewsAlert
 import com.android.farmist.model.alertsResponse.New
 import com.android.farmist.model.alertsResponse.Scheme
 import com.android.farmist.model.location.Roomdata
+import com.android.farmist.model.getUserInfo.getUserModel2
+import com.android.farmist.model.profileImgResponse.LatestPic
 
 @Dao
 interface NewsDao {
@@ -33,6 +35,29 @@ interface NewsDao {
     fun deleteAllPrice()
 
     // PriceFragment by mrinall ji
+    //account Fragment
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAccountInfo(latestPic: List<LatestPic>)
+
+    @Query("SELECT *From `user account info`")
+    fun getAccountInfo():LiveData<List<LatestPic>>
+
+    @Query("DELETE FROM `user Account Info`")
+    fun deeletAccountInfo()
+
+    //Personal Information
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertPersonalInfo(getUserModel2: getUserModel2)
+
+    @Query("SELECT *From personalInfo")
+    fun getPersonalInfo():LiveData<getUserModel2>
+
+    @Query("DELETE FROM personalInfo")
+    fun deletPersonalInfo()
+
+
+
+
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertMyPrice(cropprice:List<Data>)

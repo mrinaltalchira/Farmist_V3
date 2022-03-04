@@ -39,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_20sdp"
                     android:drawablePadding="@dimen/_5sdp"
-                    android:text="My Farms"
+                    android:text="@string/my_farms"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />
@@ -50,7 +50,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="Add new farm"
+                    android:text="@string/add_new_farm"
                     android:textColor="@color/green_selected"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />

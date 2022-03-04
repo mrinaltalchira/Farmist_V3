@@ -85,7 +85,7 @@
                 android:layout_marginBottom="@dimen/_3sdp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Edit"
+                android:text="@string/edit"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_14sdp"
                 android:textStyle="normal" />
@@ -99,7 +99,7 @@
                 android:layout_marginBottom="@dimen/_3sdp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Delete"
+                android:text="@string/delete"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_14sdp"
                 android:textStyle="normal" />

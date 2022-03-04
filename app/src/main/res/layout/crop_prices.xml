@@ -22,17 +22,15 @@
             android:orientation="horizontal">
 
 
-
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Crop Prices "
-                android:textStyle="normal"
-                android:textSize="@dimen/_14sdp"
-                android:textColor="@color/black"
                 android:drawableLeft="@drawable/back"
-                android:drawablePadding="@dimen/_5sdp" />
+                android:drawablePadding="@dimen/_5sdp"
+                android:text="@string/crop_prices"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="normal" />
 
 
 

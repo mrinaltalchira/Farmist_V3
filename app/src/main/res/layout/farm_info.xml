@@ -47,7 +47,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Delete"
+                android:text="@string/delete"
                 android:textStyle="normal"
                 android:textColor="@color/white"
 
@@ -80,7 +80,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Edit"
+                android:text="@string/edit"
                 android:textStyle="normal"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_12sdp"/>
@@ -131,36 +131,36 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_below="@+id/rl_img"
-        android:layout_marginTop="@dimen/_25sdp"
         android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_10sdp">
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:orientation="vertical">
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Crops Sown"
-            android:textStyle="bold"
+            android:text="@string/crops_sown"
             android:textColor="@color/black"
-            android:textSize="@dimen/_16sdp"/>
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
 
 
         <androidx.cardview.widget.CardView
             android:layout_width="@dimen/_100sdp"
             android:layout_height="wrap_content"
-            app:cardElevation="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             app:cardCornerRadius="@dimen/_5sdp"
-            android:layout_marginTop="@dimen/_10sdp">
+            app:cardElevation="@dimen/_5sdp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
                 android:layout_marginTop="@dimen/_15sdp"
-                android:layout_marginBottom="@dimen/_15sdp">
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="@dimen/_35sdp"
@@ -170,12 +170,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/_14sdp"
+                    android:text="Corn"
                     android:textColor="@color/black"
-                    android:textStyle="normal"
-                    android:text="Corn"/>
-
-
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="normal" />
 
 
             </LinearLayout>
@@ -193,40 +191,39 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tehsil"
-            android:textStyle="bold"
             android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/tehsil"
             android:textColor="@color/black"
-            android:textSize="@dimen/_16sdp"/>
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
             android:text="Sardar"
-            android:textStyle="normal"
-            android:layout_marginTop="@dimen/_5sdp"
             android:textColor="@color/grey"
-            android:textSize="@dimen/_16sdp"/>
-
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="normal" />
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Survey Number"
-            android:textStyle="bold"
             android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/survey_number"
             android:textColor="@color/black"
-            android:textSize="@dimen/_16sdp"/>
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="25598"
-            android:textStyle="normal"
             android:layout_marginTop="@dimen/_5sdp"
+            android:text="25598"
             android:textColor="@color/grey"
-            android:textSize="@dimen/_16sdp"/>
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="normal" />
 
 
     </LinearLayout>

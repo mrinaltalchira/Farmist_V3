@@ -29,7 +29,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Personal Information"
+                    android:text="@string/personal_information"
                     android:textStyle="normal"
                     android:textSize="@dimen/_14sdp"
                     android:textColor="@color/black"
@@ -61,7 +61,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Name"
+                    android:text="@string/name"
                     android:textColor="@color/light_grey"
                     android:textSize="@dimen/_12sdp" />
 
@@ -81,7 +81,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Phone number"
+                    android:text="@string/phone_number"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:textColor="@color/grey"
                     android:textSize="@dimen/_12sdp" />
@@ -104,7 +104,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pincode"
+                    android:text="@string/pincode"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:textColor="@color/grey"
                     android:textSize="@dimen/_12sdp" />
@@ -125,7 +125,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Village"
+                    android:text="@string/village"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:textColor="@color/grey"
                     android:textSize="@dimen/_12sdp" />
@@ -146,7 +146,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tehsil"
+                    android:text="@string/tehsil"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:textColor="@color/grey"
                     android:textSize="@dimen/_12sdp" />
@@ -167,7 +167,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="District"
+                    android:text="@string/district"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:textColor="@color/grey"
                     android:textSize="@dimen/_12sdp" />
@@ -188,7 +188,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Number of accers"
+                    android:text="@string/number_of_accers"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:textColor="@color/grey"
                     android:textSize="@dimen/_12sdp" />
@@ -212,7 +212,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:padding="@dimen/_12sdp"
-                    android:text="Save Profile"
+                    android:text="@string/save_profile"
                     android:textSize="@dimen/_14sdp"
                     android:textColor="@color/white"
                     android:textStyle="normal"

@@ -31,7 +31,7 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/back"
                     android:drawablePadding="@dimen/_10sdp"
-                    android:text="Farm Stats"
+                    android:text="@string/farm_stats"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />
@@ -82,7 +82,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_7sdp"
-                        android:text="#income"
+                        android:text="@string/Hashincome"
                         android:textColor="@color/brown_light"
                         android:textSize="@dimen/_13sdp" />
 
@@ -91,7 +91,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_4sdp"
-                        android:text="in 365 days"
+                        android:text="@string/in_365_days"
                         android:textColor="@color/brown_light"
                         android:textSize="@dimen/_13sdp" />
 
@@ -134,7 +134,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_7sdp"
-                        android:text="#Quant Sold"
+                        android:text="@string/quant_sold"
                         android:textColor="@color/brown_light"
                         android:textSize="@dimen/_13sdp" />
 
@@ -143,7 +143,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_4sdp"
-                        android:text="in 365 days"
+                        android:text="@string/in_365_days"
                         android:textColor="@color/brown_light"
                         android:textSize="@dimen/_13sdp" />
 
@@ -194,7 +194,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_7sdp"
-                        android:text="#Farming"
+                        android:text="@string/farming"
                         android:textColor="@color/brown_light"
                         android:textSize="@dimen/_13sdp" />
 
@@ -246,7 +246,7 @@ android:id="@+id/numofcrops"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_7sdp"
-                        android:text="#Crops"
+                        android:text="@string/crops"
                         android:textColor="@color/brown_light"
                         android:textSize="@dimen/_13sdp" />
 
@@ -255,7 +255,7 @@ android:id="@+id/numofcrops"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_4sdp"
-                        android:text="Farming"
+                        android:text="@string/farming"
                         android:textColor="@color/brown_light"
                         android:textSize="@dimen/_13sdp"/>
 
@@ -306,7 +306,7 @@ android:id="@+id/numofcrops"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_7sdp"
-                        android:text="#Crops"
+                        android:text="@string/crops"
                         android:textColor="@color/brown_light"
                         android:textSize="@dimen/_13sdp" />
 
@@ -315,7 +315,7 @@ android:id="@+id/numofcrops"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_4sdp"
-                        android:text="Varieties"
+                        android:text="@string/varieties"
                         android:textColor="@color/brown_light"
                         android:textSize="@dimen/_13sdp" />
 
@@ -358,7 +358,7 @@ android:id="@+id/numofcrops"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_7sdp"
-                        android:text="#Harvested"
+                        android:text="@string/harvested"
                         android:textColor="@color/brown_light"
                         android:textSize="@dimen/_13sdp" />
 
@@ -367,7 +367,7 @@ android:id="@+id/numofcrops"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_4sdp"
-                        android:text="Till Date"
+                        android:text="@string/till_date"
                         android:textColor="@color/brown_light"
                         android:textSize="@dimen/_13sdp" />
 
@@ -418,7 +418,7 @@ android:id="@+id/numofcrops"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_7sdp"
-                        android:text="#Expenses"
+                        android:text="@string/expenses_"
                         android:textColor="@color/brown_light"
                         android:textSize="@dimen/_13sdp" />
 
@@ -427,7 +427,7 @@ android:id="@+id/numofcrops"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_4sdp"
-                        android:text="Tracked"
+                        android:text="@string/tracked"
                         android:textColor="@color/brown_light"
                         android:textSize="@dimen/_13sdp" />
 
@@ -470,7 +470,7 @@ android:id="@+id/numofcrops"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_7sdp"
-                        android:text="#Area"
+                        android:text="@string/area_"
                         android:textColor="@color/brown_light"
                         android:textSize="@dimen/_13sdp" />
 
@@ -479,7 +479,7 @@ android:id="@+id/numofcrops"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_4sdp"
-                        android:text="Sowed"
+                        android:text="@string/sowed"
                         android:textColor="@color/brown_light"
                         android:textSize="@dimen/_13sdp" />
 

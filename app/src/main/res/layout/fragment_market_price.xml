@@ -37,7 +37,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Market Price"
+                        android:text="@string/market_price"
                         android:textStyle="normal"
                         android:textSize="@dimen/_14sdp"
                         android:textColor="@color/black"
@@ -75,7 +75,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_toEndOf="@+id/ivdp"
-                        android:text="SunFlower"
+                        android:text="@string/sunflower"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="bold" />
@@ -87,7 +87,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Current Market Price"
+                    android:text="@string/current_market_price"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:textStyle="bold"
                     android:textColor="@color/black"
@@ -108,7 +108,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Market Price Trend"
+                    android:text="@string/market_price_trend"
                     android:layout_marginTop="@dimen/_15sdp"
                     android:textStyle="bold"
                     android:textColor="@color/black"
@@ -116,7 +116,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Price"
+                    android:text="@string/price"
                     android:layout_gravity="left"
                     android:layout_marginTop="@dimen/_15sdp"
                     android:textColor="@color/black"

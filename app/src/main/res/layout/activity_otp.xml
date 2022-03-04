@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:text="Enter Verification Code"
+                android:text="Enter verification code"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_18sdp"
                 android:textStyle="bold" />
@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:text="Enter the verification code sent to your mobile number"
+                android:text="@string/enter_the_verification_code_sent_to_your_mobile_number"
                 android:textColor="@color/light_grey"
                 android:textSize="@dimen/_14sdp"
                 android:textStyle="normal" />
@@ -77,8 +77,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
                 android:weightSum="1">
 
                 <RelativeLayout
@@ -89,12 +89,12 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:elevation="@dimen/_5sdp"
-                        app:cardCornerRadius="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_12sdp"
-                        android:layout_marginEnd="@dimen/_12sdp">
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:elevation="@dimen/_5sdp"
+                        app:cardCornerRadius="@dimen/_5sdp">
 
 
                         <EditText
@@ -103,77 +103,10 @@
                             android:layout_height="wrap_content"
                             android:background="@null"
                             android:gravity="center"
+                            android:hint="5"
                             android:inputType="number"
                             android:maxLength="1"
                             android:maxLines="1"
-                            android:padding="@dimen/_10sdp"
-                            android:hint="5"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_16sdp"
-                            android:textStyle="bold" />
-
-                    </androidx.cardview.widget.CardView>
-                </RelativeLayout>
-
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.25">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:elevation="@dimen/_5sdp"
-                        app:cardCornerRadius="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        android:layout_marginStart="@dimen/_12sdp"
-                        android:layout_marginEnd="@dimen/_12sdp">
-
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@null"
-                            android:inputType="number"
-                            android:maxLength="1"
-                            android:maxLines="1"
-                            android:hint="5"
-                            android:gravity="center"
-                            android:padding="@dimen/_10sdp"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_16sdp"
-                            android:textStyle="bold" />
-
-                    </androidx.cardview.widget.CardView>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.25">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:elevation="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        app:cardCornerRadius="@dimen/_5sdp"
-                        android:layout_marginStart="@dimen/_12sdp"
-                        android:layout_marginEnd="@dimen/_12sdp">
-
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@null"
-                            android:inputType="number"
-                            android:maxLength="1"
-                            android:maxLines="1"
-                            android:hint="5"
-                            android:gravity="center"
                             android:padding="@dimen/_10sdp"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_16sdp"
@@ -191,12 +124,79 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:elevation="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        app:cardCornerRadius="@dimen/_5sdp"
                         android:layout_marginStart="@dimen/_12sdp"
-                        android:layout_marginEnd="@dimen/_12sdp">
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:elevation="@dimen/_5sdp"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:hint="5"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            android:maxLines="1"
+                            android:padding="@dimen/_10sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_16sdp"
+                            android:textStyle="bold" />
+
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:elevation="@dimen/_5sdp"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:hint="5"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            android:maxLines="1"
+                            android:padding="@dimen/_10sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_16sdp"
+                            android:textStyle="bold" />
+
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:elevation="@dimen/_5sdp"
+                        app:cardCornerRadius="@dimen/_5sdp">
 
 
                         <EditText
@@ -204,11 +204,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@null"
+                            android:gravity="center"
+                            android:hint="5"
                             android:inputType="number"
                             android:maxLength="1"
                             android:maxLines="1"
-                            android:hint="5"
-                            android:gravity="center"
                             android:padding="@dimen/_10sdp"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_16sdp"
@@ -229,7 +229,7 @@
                 android:layout_marginRight="@dimen/_15sdp"
                 android:background="@drawable/login_btn_background"
                 android:padding="@dimen/_10sdp"
-                android:text="Log in"
+                android:text="@string/log_in"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_16sdp"

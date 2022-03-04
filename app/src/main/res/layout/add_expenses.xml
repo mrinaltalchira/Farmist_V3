@@ -15,8 +15,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_80sdp"
-            android:orientation="vertical"
-            android:background="@color/green_selected">
+            android:background="@color/green_selected"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
                 android:drawableLeft="@drawable/back"
                 android:drawablePadding="@dimen/_10sdp"
                 android:drawableTint="@color/white"
-                android:text="Add expense"
+                android:text="@string/add_expenses"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_14sdp" />
 
@@ -59,7 +59,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_15sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
-                    android:text="Expense Type"
+                    android:text="@string/expense_type"
                     android:textColor="@color/light_grey"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />
@@ -105,7 +105,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
-                    android:text="Date"
+                    android:text="@string/date"
                     android:textColor="@color/light_grey"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />
@@ -157,7 +157,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
-                    android:text="Amount"
+                    android:text="@string/amount"
                     android:textColor="@color/light_grey"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />
@@ -201,7 +201,7 @@
                     android:background="@drawable/login_btn_background"
                     android:padding="@dimen/_12sdp"
                     android:textAllCaps="false"
-                    android:text="Add expense"
+                    android:text="@string/add_expenses"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />
@@ -233,7 +233,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Expense"
+                                android:text="@string/expense"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_16sdp"
                                 android:textStyle="bold" />
@@ -241,11 +241,11 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Date Sowed"
-                                android:textStyle="bold"
                                 android:layout_alignParentEnd="true"
+                                android:text="@string/date_sowed"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/_16sdp" />
+                                android:textSize="@dimen/_16sdp"
+                                android:textStyle="bold" />
 
 
                         </RelativeLayout>
@@ -286,19 +286,19 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Breakdown"
-                                android:textStyle="bold"
+                                android:text="@string/breakdown"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/_16sdp" />
+                                android:textSize="@dimen/_16sdp"
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="View full log"
-                                android:textStyle="normal"
                                 android:layout_alignParentEnd="true"
+                                android:text="@string/view_full_log"
                                 android:textColor="@color/green_selected"
-                                android:textSize="@dimen/_14sdp" />
+                                android:textSize="@dimen/_14sdp"
+                                android:textStyle="normal" />
 
 
                         </RelativeLayout>
@@ -311,7 +311,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Seeds"
+                                android:text="@string/seeds"
                                 android:textColor="@color/light_grey"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="normal" />
@@ -337,7 +337,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Fertilizer"
+                                android:text="@string/fertilizer"
                                 android:textColor="@color/light_grey"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="normal" />
@@ -363,7 +363,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Labour"
+                                android:text="@string/labour"
                                 android:textColor="@color/light_grey"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="normal" />
@@ -389,7 +389,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Tractor"
+                                android:text="@string/tractor"
                                 android:textColor="@color/light_grey"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="normal" />

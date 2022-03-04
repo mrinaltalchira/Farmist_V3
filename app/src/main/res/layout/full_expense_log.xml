@@ -187,7 +187,7 @@
                                 android:id="@+id/tv_exp_log_nameSeeds"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Seeds"
+                                android:text="@string/seeds"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold" />
@@ -268,7 +268,7 @@
                                 android:id="@+id/tv_exp_log_nameFerti"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Fertilizer"
+                                android:text="@string/fertilizer"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold" />
@@ -348,7 +348,7 @@
                                 android:id="@+id/tv_exp_log_nameLabour"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Labour"
+                                android:text="@string/labour"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold" />
@@ -429,7 +429,7 @@
                                 android:id="@+id/tv_exp_log_nameTractor"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Tractor"
+                                android:text="@string/tractor"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold" />
@@ -510,7 +510,7 @@
                                 android:id="@+id/tv_exp_log_nameSubsidy"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Subsidy"
+                                android:text="@string/subsidy"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold" />
@@ -592,7 +592,7 @@
                                 android:id="@+id/tv_exp_log_nameIncome"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Income(Harvest)"
+                                android:text="@string/income_harvest"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold" />
@@ -647,7 +647,7 @@
                                 android:id="@+id/tv_exp_log_total"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Total"
+                                android:text="@string/total"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_16sdp"
                                 android:textStyle="bold" />
@@ -716,7 +716,7 @@
                                 android:layout_centerInParent="true"
                                 android:layout_marginStart="@dimen/_10sdp"
                                 android:layout_toEndOf="@+id/llgraphseeds"
-                                android:text="Seeds"
+                                android:text="@string/seeds"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
                                 android:textStyle="normal" />
@@ -778,7 +778,7 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginStart="@dimen/_10sdp"
                                 android:layout_toEndOf="@+id/llgraphLabour"
-                                android:text="Labour"
+                                android:text="@string/labour"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
                                 android:textStyle="normal" />
@@ -809,7 +809,7 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginStart="@dimen/_10sdp"
                                 android:layout_toEndOf="@+id/llgraphTractor"
-                                android:text="Tractor"
+                                android:text="@string/tractor"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
                                 android:textStyle="normal" />
@@ -839,7 +839,7 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginStart="@dimen/_10sdp"
                                 android:layout_toEndOf="@+id/llgraphIncome"
-                                android:text="Income"
+                                android:text="@string/income"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
                                 android:textStyle="normal" />
@@ -870,7 +870,7 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginStart="@dimen/_10sdp"
                                 android:layout_toEndOf="@+id/llgraphSubsidy"
-                                android:text="Subsidy"
+                                android:text="@string/subsidy"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
                                 android:textStyle="normal" />

@@ -8,12 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.android.farmist.R
+
 import com.android.farmist.RoomDatabase.appDatabase
 import com.android.farmist.adapter.*
 import com.android.farmist.api.Api_Controller
@@ -38,8 +40,15 @@ class Alerts_Fragment : Fragment() {
 
 
     private lateinit var binding: FragmentAlertsBinding
-     private var createGroupList: ArrayList<String> = ArrayList()
+    lateinit var adapterAlertsNews: Adapter_Alerts_News
+//    private val adapterAlertsGovermentSchemes by lazy { Adapter_Alerts_Goverment_Schemes() }
+private val adapterNewsAll by lazy { Adapter_Alerts_News() }
+    private var createGroupList: ArrayList<String> = ArrayList()
     private var croppricelist: ArrayList<String> = ArrayList()
+    lateinit var appDatabaseObj: appDatabase
+//    lateinit var newsViewModel: NewsViewModel
+//    lateinit var newsList:List<New>
+//    lateinit var repository: Repository
     lateinit var bdRoom:appDatabase
 
 
@@ -55,6 +64,11 @@ bdRoom = appDatabase.getAppDBInstance(requireActivity())
             DataBindingUtil.inflate(layoutInflater, R.layout.fragment_alerts, container, false)
          getGovScheme()
         getNewsAlert()
+//        getNewsAlert()
+        appDatabaseObj= appDatabase.getAppDBInstance(requireContext())
+//        binding.rvalertsnews.adapter = adapterAlertsNews
+//        binding.rvalertsnews.layoutManager = LinearLayoutManager(activity?.applicationContext)
+
 
         val list2 = bdRoom.getAppDao().getGov()
             .observe(viewLifecycleOwner, androidx.lifecycle.Observer {
@@ -71,6 +85,26 @@ bdRoom = appDatabase.getAppDBInstance(requireActivity())
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        getNewsAlert()
+        val list =appDatabaseObj.getAppDao().getnews().observe(requireActivity(), Observer<List<New>>{
+
+            activity?.let { it1 -> adapterNewsAll.setList(it,it1.applicationContext)}
+            binding.rvalertsnews.adapter = adapterNewsAll
+            adapterNewsAll.notifyDataSetChanged()
+        })
+        getGovScheme()
+
+
+
+//        repository=Repository(activity?.application)
+//        newsList=ArrayList<New>()
+//        newsViewModel=ViewModelProvider(requireActivity()).get(NewsViewModel::class.java)
+
+
+
+
+
+
 
     }
 
@@ -80,14 +114,17 @@ bdRoom = appDatabase.getAppDBInstance(requireActivity())
         call.enqueue(object :Callback<GetNewsAlert>{
             override fun onResponse(call: Call<GetNewsAlert>, response: Response<GetNewsAlert>) {
 
-                val   adapterAlertsNews=
-                    response.body()?.let { activity?.applicationContext?.let { it1 ->
-                        Adapter_Alerts_News(
-                            it1, it.news)
-                    } }
-               binding.rvalertsnews.adapter = adapterAlertsNews
-                binding.rvalertsnews.layoutManager = LinearLayoutManager(activity?.applicationContext)
-             }
+
+
+
+                val dataRespo= response.body()?.news
+                appDatabaseObj.getAppDao().deleteAllRecords()
+                appDatabaseObj.getAppDao().insertAll(dataRespo!!)
+
+//                binding.rvalertsnews.adapter = adapterAlertsNews
+//                binding.rvalertsnews.layoutManager = LinearLayoutManager(activity?.applicationContext)
+
+            }
 
             override fun onFailure(call: Call<GetNewsAlert>, t: Throwable) {
               Log.d("getNewsError",t.toString())

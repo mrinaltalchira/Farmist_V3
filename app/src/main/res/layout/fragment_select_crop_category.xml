@@ -35,7 +35,7 @@
                 android:layout_marginStart="@dimen/_34sdp"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:drawableTint="@color/white"
-                android:text="Add new Crop"
+                android:text="@string/add_new_crop"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_14sdp" />
 
@@ -64,7 +64,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_15sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
-                    android:text="Select Category"
+                    android:text="@string/select_category"
                     android:textColor="@color/light_grey"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="bold" />
@@ -118,7 +118,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
-                    android:text="Fruits"
+                    android:text="@string/fruits"
                     android:textColor="@color/light_grey"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />
@@ -152,7 +152,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
-                    android:text="Vegetables"
+                    android:text="@string/vegetables"
                     android:textColor="@color/light_grey"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />

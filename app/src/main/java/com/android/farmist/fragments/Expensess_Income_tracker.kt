@@ -32,6 +32,7 @@ import android.view.MotionEvent
 
 import android.view.View.OnTouchListener
 import com.android.farmist.model.ExpensesIncomeTrackerResponse.ExpensesTrackerResponse.GetExpensesTracker
+import com.android.farmist.util.SweetAlert
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -47,7 +48,7 @@ lateinit var exp:String
     lateinit var adapterExpIncomeTracker: Adapter_Exp_Income_Tracker
     lateinit var preferences: SharedPreferences
     lateinit var userId: String
-    lateinit var progressbarsDialog: progressbars
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -67,11 +68,9 @@ lateinit var exp:String
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        SweetAlert.showDialog(requireActivity())
         preferences = requireActivity().getSharedPreferences("userMassage", Context.MODE_PRIVATE)
         userId = preferences.getString("message", "").toString()
-        progressbarsDialog = progressbars(requireActivity())
-        progressbarsDialog.showDialog()
 
         GetExpensesincomeTracker()
         binding.tvArchived.setOnClickListener {
@@ -112,17 +111,36 @@ lateinit var exp:String
     private fun getObserver(getExpensesIncomeTracker: GetExpensesIncomeTracker) {
         if (getExpensesIncomeTracker != null) {
             val getExpensesIncomeTrackerList = getExpensesIncomeTracker.data
-
-
-            progressbarsDialog.hidediloag()
             adapterExpIncomeTracker.setList(getExpensesIncomeTrackerList)
+            SweetAlert.hidediloag()
         }
 
     }
 
     private fun onFailure(t: Throwable) {
-        progressbarsDialog.hidediloag()
+        SweetAlert.hidediloag()
         Log.d("Main", "OnFailure: " + t.message)
+    }
+
+    fun getExpenses()
+    {
+
+//            var call: Call<GetExpensesTracker> = Api_Controller.apiInterface.getExpenses(data[position].cropId)
+//            call.enqueue(object : Callback<GetExpensesTracker> {
+//                override fun onResponse(
+//                    call: Call<GetExpensesTracker>,
+//                    response: Response<GetExpensesTracker>
+//                ) {
+//
+//                   holder.expen.setText("Rs. "+response.body()?.data?.userExpense)
+//
+//                }
+//
+//                override fun onFailure(call: Call<GetExpensesTracker>, t: Throwable) {
+//
+//
+//                }
+//            })
     }
 
 

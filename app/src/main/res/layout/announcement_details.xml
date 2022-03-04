@@ -31,7 +31,7 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/back"
                     android:drawablePadding="@dimen/_5sdp"
-                    android:text="Announcement detail"
+                    android:text="@string/announcement_detail"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />

@@ -32,7 +32,7 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/back"
                     android:drawablePadding="@dimen/_5sdp"
-                    android:text="Crop Prices "
+                    android:text="@string/crop_prices"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />

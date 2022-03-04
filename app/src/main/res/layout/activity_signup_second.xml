@@ -77,7 +77,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_5sdp"
-                            android:text="Sign up"
+                            android:text="@string/sign_up"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_18sdp"
                             android:textStyle="bold" />
@@ -86,7 +86,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_5sdp"
-                            android:text="Create an account with Farm app and enjoy all the features"
+                            android:text="@string/create_an_account_with_farm_app_and_enjoy_all_the_features"
                             android:textColor="@color/light_grey"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="normal" />
@@ -96,7 +96,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_10sdp"
-                            android:text="Pincode"
+                            android:text="@string/pincode"
                             android:textColor="@color/light_grey"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="normal" />
@@ -105,11 +105,11 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_3sdp"
-                            android:elevation="@dimen/_5sdp"
-                            app:cardCornerRadius="@dimen/_5sdp"
                             android:layout_marginStart="@dimen/_1sdp"
-                            android:layout_marginEnd="@dimen/_1sdp">
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:layout_marginEnd="@dimen/_1sdp"
+                            android:elevation="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_5sdp">
 
                             <EditText
                                 android:id="@+id/et_name"
@@ -117,11 +117,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:background="@null"
+                                android:hint="202020"
                                 android:inputType="number"
                                 android:maxLength="6"
                                 android:maxLines="1"
                                 android:padding="@dimen/_12sdp"
-                                android:hint="202020"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="normal" />
@@ -133,7 +133,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_10sdp"
-                            android:text="Village"
+                            android:text="@string/village"
                             android:textColor="@color/light_grey"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="normal" />
@@ -142,11 +142,11 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_3sdp"
-                            android:elevation="@dimen/_5sdp"
-                            app:cardCornerRadius="@dimen/_5sdp"
                             android:layout_marginStart="@dimen/_1sdp"
-                            android:layout_marginEnd="@dimen/_1sdp">
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:layout_marginEnd="@dimen/_1sdp"
+                            android:elevation="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_5sdp">
 
                             <EditText
                                 android:id="@+id/et_mobilenumber"
@@ -154,11 +154,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:background="@null"
+                                android:hint="@string/amer"
                                 android:inputType="text"
                                 android:maxLength="20"
                                 android:maxLines="1"
                                 android:padding="@dimen/_12sdp"
-                                android:hint="amer"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="normal" />
@@ -169,7 +169,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_10sdp"
-                            android:text="Tehsil"
+                            android:text="@string/tehsil"
                             android:textColor="@color/light_grey"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="normal" />
@@ -178,11 +178,11 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_3sdp"
-                            android:elevation="@dimen/_5sdp"
-                            app:cardCornerRadius="@dimen/_5sdp"
                             android:layout_marginStart="@dimen/_1sdp"
-                            android:layout_marginEnd="@dimen/_1sdp">
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:layout_marginEnd="@dimen/_1sdp"
+                            android:elevation="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_5sdp">
 
                             <EditText
                                 android:id="@+id/et_tehsil"
@@ -190,11 +190,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:background="@null"
+                                android:hint="@string/jaipur"
                                 android:inputType="text"
                                 android:maxLength="20"
                                 android:maxLines="1"
                                 android:padding="@dimen/_12sdp"
-                                android:hint="Jaipur"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_16sdp"
                                 android:textStyle="normal" />
@@ -206,7 +206,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_10sdp"
-                            android:text="District"
+                            android:text="@string/district"
                             android:textColor="@color/light_grey"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="normal" />
@@ -225,11 +225,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:background="@null"
+                                android:hint="Rajasthan"
                                 android:inputType="text"
                                 android:maxLength="10"
                                 android:maxLines="1"
                                 android:padding="@dimen/_5sdp"
-                                android:hint="Rajasthan"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_16sdp"
                                 android:textStyle="normal" />
@@ -241,7 +241,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_10sdp"
-                            android:text="Number of acers"
+                            android:text="@string/number_of_acers"
                             android:textColor="@color/light_grey"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="normal" />
@@ -260,11 +260,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:background="@null"
+                                android:hint="203"
                                 android:inputType="number"
                                 android:maxLength="20"
                                 android:maxLines="1"
                                 android:padding="@dimen/_5sdp"
-                                android:hint="203"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_16sdp"
                                 android:textStyle="normal" />
@@ -276,7 +276,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_10sdp"
-                            android:text="Preferred Seed Brand"
+                            android:text="@string/preferred_seed_brand"
                             android:textColor="@color/light_grey"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="normal" />
@@ -285,11 +285,11 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_3sdp"
-                            android:elevation="@dimen/_5sdp"
-                            app:cardCornerRadius="@dimen/_5sdp"
                             android:layout_marginStart="@dimen/_1sdp"
-                            android:layout_marginEnd="@dimen/_1sdp">
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:layout_marginEnd="@dimen/_1sdp"
+                            android:elevation="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_5sdp">
 
                             <EditText
                                 android:id="@+id/et_brand"
@@ -297,11 +297,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:background="@null"
+                                android:hint="Abc brand"
                                 android:inputType="text"
                                 android:maxLength="20"
                                 android:maxLines="1"
                                 android:padding="@dimen/_12sdp"
-                                android:hint="Abc brand"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_16sdp"
                                 android:textStyle="normal" />
@@ -313,7 +313,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_10sdp"
-                            android:text="Preferred Chemical Company"
+                            android:text="@string/preferred_chemical_company"
                             android:textColor="@color/light_grey"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="normal" />
@@ -322,11 +322,11 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_3sdp"
-                            android:elevation="@dimen/_5sdp"
-                            app:cardCornerRadius="@dimen/_5sdp"
                             android:layout_marginStart="@dimen/_1sdp"
-                            android:layout_marginEnd="@dimen/_1sdp">
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:layout_marginEnd="@dimen/_1sdp"
+                            android:elevation="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_5sdp">
 
                             <EditText
                                 android:id="@+id/et_compny"
@@ -334,11 +334,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:background="@null"
+                                android:hint="Xyz Ltd."
                                 android:inputType="text"
                                 android:maxLength="50"
                                 android:maxLines="1"
                                 android:padding="@dimen/_12sdp"
-                                android:hint="Xyz Ltd."
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="normal" />
@@ -357,7 +357,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerVertical="true"
-                                android:text="Back"
+                                android:text="@string/back"
                                 android:textAllCaps="false"
                                 android:textColor="@color/green_selected"
                                 android:textSize="@dimen/_16sdp"
@@ -370,10 +370,10 @@
                                 android:layout_alignParentEnd="true"
                                 android:layout_marginStart="@dimen/_50sdp"
                                 android:layout_toRightOf="@+id/tc_back"
-                                android:backgroundTint="@color/green_selected"
                                 android:background="@drawable/login_btn_background"
+                                android:backgroundTint="@color/green_selected"
                                 android:padding="@dimen/_5sdp"
-                                android:text="Sign up"
+                                android:text="@string/sign_up"
                                 android:textAllCaps="false"
                                 android:textColor="@color/white"
                                 android:textSize="@dimen/_14sdp"

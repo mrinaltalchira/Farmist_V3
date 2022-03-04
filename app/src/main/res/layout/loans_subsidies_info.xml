@@ -55,7 +55,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Region"
+                android:text="@string/region"
                 android:textColor="@color/grey"
                 android:textSize="@dimen/_14sdp" />
 
@@ -100,7 +100,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name"
+                android:text="@string/name"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:textColor="@color/grey"
                 android:textSize="@dimen/_14sdp" />
@@ -123,7 +123,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Area"
+                android:text="@string/area"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:textColor="@color/grey"
                 android:textSize="@dimen/_14sdp" />

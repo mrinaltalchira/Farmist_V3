@@ -33,11 +33,12 @@
                     android:drawableLeft="@drawable/back"
                     android:drawablePadding="@dimen/_10sdp"
                     android:textColor="@color/black"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_30sdp"
-                    android:text="My Crops"
+                    android:text="@string/my_crops"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />
@@ -48,7 +49,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="Add new crops"
+                    android:text="@string/add_new_crop"
                     android:textColor="@color/green_selected"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />

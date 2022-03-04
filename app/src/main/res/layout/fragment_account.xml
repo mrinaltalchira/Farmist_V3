@@ -50,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:text="Account"
+                    android:text="@string/account"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_18sdp"
                     android:textStyle="bold" />
@@ -134,7 +134,7 @@
                         android:drawableLeft="@drawable/user_icon"
                         android:drawablePadding="@dimen/_5sdp"
                         android:padding="@dimen/_12sdp"
-                        android:text="Personal Information"
+                        android:text="@string/personal_information"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_16sdp"
                         android:textStyle="normal" />
@@ -160,7 +160,7 @@
                         android:drawableLeft="@drawable/language"
                         android:drawablePadding="@dimen/_5sdp"
                         android:padding="@dimen/_12sdp"
-                        android:text="Choose Language"
+                        android:text="@string/choose_language"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_16sdp"
                         android:textStyle="normal" />
@@ -177,7 +177,7 @@
                     android:layout_marginRight="@dimen/_10sdp"
                     android:background="@drawable/login_btn_background"
                     android:padding="@dimen/_10sdp"
-                    android:text="Log out"
+                    android:text="@string/log_out"
                     android:textAllCaps="false"
 
                     android:textColor="@color/white"

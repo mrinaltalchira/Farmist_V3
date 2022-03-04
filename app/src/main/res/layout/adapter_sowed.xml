@@ -28,7 +28,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="@dimen/_10sdp"
-                android:text="More Details"
+                android:text="@string/more_details"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_12sdp" />
 
@@ -97,7 +97,7 @@
             android:layout_toEndOf="@+id/ivsowed"
             android:drawableStart="@drawable/ic_fertilizer"
             android:drawablePadding="@dimen/_10sdp"
-            android:text="Add fertilizer in 20 days"
+            android:text="@string/add_fertilizer_in"
             android:textColor="@color/black"
             android:textSize="@dimen/_12sdp"
             android:textStyle="normal" />
@@ -113,7 +113,7 @@
             android:layout_toEndOf="@+id/ivsowed"
             android:drawableStart="@drawable/ic_harvest"
             android:drawablePadding="@dimen/_10sdp"
-            android:text="60 days left for harvest"
+            android:text="@string/days_left_for_harvest"
             android:textColor="@color/black"
             android:textSize="@dimen/_12sdp"
             android:textStyle="normal" />

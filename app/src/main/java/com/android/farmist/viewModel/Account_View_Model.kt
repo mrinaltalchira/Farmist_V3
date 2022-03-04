@@ -16,7 +16,7 @@ import retrofit2.Response
 
 class Account_View_Model:ViewModel() {
     var imageUrl: String = ""
-    var nameStr: String = ""
+    var nameStr: String = "hi"
     lateinit var userId: String
     lateinit var preferences: SharedPreferences
 
@@ -46,7 +46,7 @@ class Account_View_Model:ViewModel() {
                                 imageUrl = data.latestPic[0].image
 
                             }
-                           // nameStr = data.name
+                            nameStr = data.latestPic[0].name
                         }
                     }
                 }

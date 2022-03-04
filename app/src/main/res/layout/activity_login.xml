@@ -33,74 +33,74 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_below="@+id/leaf"
+            android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginRight="@dimen/_10sdp"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_below="@+id/leaf">
+            android:orientation="vertical">
 
 
             <ImageView
                 android:id="@+id/logo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/leaf"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/leaf" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:text="@string/login"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:textSize="@dimen/_18sdp" />
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:text="@string/enter_your_mobile_number_and_we_will_send_the_verification_code"
                 android:textColor="@color/light_grey"
-                android:textStyle="normal"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:textSize="@dimen/_14sdp" />
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="normal" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Phone number"
-                android:textColor="@color/light_grey"
-                android:textStyle="normal"
                 android:layout_marginTop="@dimen/_15sdp"
-                android:textSize="@dimen/_14sdp" />
+                android:text="@string/phone_number"
+                android:textColor="@color/light_grey"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="normal" />
 
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:elevation="@dimen/_5sdp"
                 android:layout_marginStart="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_1sdp"
-                app:cardCornerRadius="@dimen/_5sdp"
-                android:layout_marginTop="@dimen/_5sdp">
+                android:elevation="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_5sdp">
 
                 <EditText
                     android:id="@+id/et_mobilenumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@null"
                     android:layout_gravity="center"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:inputType="number"
-                    android:maxLines="1"
-                    android:hint="9988556655"
-                    android:maxLength="10"
+                    android:background="@null"
                     android:drawablePadding="@dimen/_10sdp"
+                    android:hint="9988556655"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:padding="@dimen/_12sdp"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/_16sdp"
-                    android:padding="@dimen/_12sdp" />
+                    android:textStyle="bold" />
 
             </androidx.cardview.widget.CardView>
 
@@ -109,43 +109,43 @@
                 android:id="@+id/btnloginnext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:padding="@dimen/_10sdp"
-                android:text="Next"
-                android:textSize="@dimen/_14sdp"
-                android:textColor="@color/white"
-                android:textStyle="normal"
-                android:textAllCaps="false"
-                android:layout_marginRight="@dimen/_15sdp"
                 android:layout_marginLeft="@dimen/_15sdp"
-                android:background="@drawable/login_btn_background" />
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:background="@drawable/login_btn_background"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/next"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="normal" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/_20sdp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@string/don_t_have_account"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_16sdp"
-                    android:textStyle="normal"
-                    android:text="@string/don_t_have_account" />
+                    android:textStyle="normal" />
 
 
                 <TextView
                     android:id="@+id/tvsignup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/_16sdp"
-                    android:textStyle="bold"
+                    android:text="@string/sign_up"
                     android:textColor="@color/green_selected"
-                    android:text="@string/sign_up" />
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>

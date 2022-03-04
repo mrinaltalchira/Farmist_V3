@@ -129,7 +129,7 @@ class MarketPriceFragment : Fragment() {
                     val line = Line(values)
                     val max = respo.crop.price.maxOrNull()?.toFloat() ?: 0
                     val Min = respo.crop.price.minOrNull()?.toFloat() ?: 0
-                    line.setColor(ChartUtils.COLOR_GREEN).isCubic = true
+                    line.setColor(ChartUtils.COLOR_GREEN).isFilled = true
 
                     val lines: MutableList<Line> = ArrayList()
                     lines.add(line)
@@ -141,8 +141,9 @@ class MarketPriceFragment : Fragment() {
 
                     chartTop.lineChartData = lineData
                     chartTop.isViewportCalculationEnabled = false
+                    val maxDiv=max.toFloat()/10
 
-                    val v = Viewport(0F, max.toFloat(), respo.crop.month.size.toFloat(), 0F)
+                    val v = Viewport(0F, max.toFloat()+maxDiv, respo.crop.month.size.toFloat(), 0F)
                     chartTop.maximumViewport = v
                     chartTop.currentViewport = v
 

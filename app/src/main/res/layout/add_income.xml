@@ -26,7 +26,7 @@
                 android:drawableLeft="@drawable/back"
                 android:drawablePadding="@dimen/_10sdp"
                 android:drawableTint="@color/white"
-                android:text="Add income"
+                android:text="@string/add_income"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_14sdp" />
 
@@ -52,7 +52,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_15sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
-                    android:text="Quantity"
+                    android:text="@string/quantity"
                     android:textColor="@color/light_grey"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />
@@ -162,9 +162,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
-                            android:text="Kg"
-                            android:textSize="@dimen/_14sdp"
                             android:checked="true"
+                            android:text="@string/kg"
+                            android:textSize="@dimen/_14sdp"
 
                             />
 
@@ -173,7 +173,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
-                            android:text="Quintal"
+                            android:text="@string/quintal"
                             android:textSize="@dimen/_14sdp" />
 
                         <RadioButton
@@ -181,7 +181,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="3.33"
-                            android:text="Ton"
+                            android:text="@string/ton"
                             android:textSize="@dimen/_14sdp" />
 
                     </RadioGroup>
@@ -194,7 +194,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_15sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
-                    android:text="Income (per quantity)"
+                    android:text="@string/income_per_quantity"
                     android:textColor="@color/light_grey"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />
@@ -234,7 +234,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
-                    android:text="Date"
+                    android:text="@string/date"
                     android:textColor="@color/light_grey"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />
@@ -290,7 +290,7 @@
                     android:layout_marginRight="@dimen/_10sdp"
                     android:background="@drawable/login_btn_background"
                     android:padding="@dimen/_10sdp"
-                    android:text="Add income"
+                    android:text="@string/add_income"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_14sdp"

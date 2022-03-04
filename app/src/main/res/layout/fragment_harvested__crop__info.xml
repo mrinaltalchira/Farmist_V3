@@ -36,11 +36,11 @@
 
 
                 <ImageView
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
                     android:id="@+id/harvested_image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
                     android:src="@drawable/cow" />
 
 
@@ -63,7 +63,7 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:drawableTop="@drawable/ic_delete"
-                    android:text="Delete"
+                    android:text="@string/delete"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_14sdp" />
 
@@ -360,7 +360,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Crop Yield"
+                        android:text="@string/crop_yield"
                         android:textSize="@dimen/_16sdp"
                         android:textColor="@color/black"
                         android:textStyle="bold"/>
@@ -392,7 +392,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Crop Sold"
+                        android:text="@string/crop_sold"
                         android:layout_gravity="center"
                         android:textSize="@dimen/_16sdp"
                         android:textColor="@color/black"
@@ -426,7 +426,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_15sdp"
-                android:text="Profit &amp; Loss"
+                android:text="@string/profit_amp_loss"
                 android:textStyle="bold"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:textColor="@color/black"
@@ -490,7 +490,7 @@
                         android:textSize="@dimen/_16sdp"
                         android:textColor="@color/white"
                         android:textStyle="normal"
-                        android:text="Profit"
+                        android:text="@string/profit"
                         android:layout_marginBottom="@dimen/_5sdp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/_3sdp"/>
@@ -540,7 +540,7 @@
                         android:textSize="@dimen/_16sdp"
                         android:textColor="@color/white"
                         android:textStyle="normal"
-                        android:text="Loos"
+                        android:text="@string/loss"
                         android:layout_marginBottom="@dimen/_5sdp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/_3sdp"/>
@@ -581,7 +581,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Expense Chart"
+                    android:text="@string/expense_chart"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="bold" />
@@ -592,7 +592,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="View full log"
+                    android:text="@string/view_full_log"
                     android:textColor="@color/green_selected"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="normal" />
@@ -650,7 +650,7 @@
                             android:layout_centerInParent="true"
                             android:layout_marginStart="@dimen/_10sdp"
                             android:layout_toEndOf="@+id/llgraphseeds"
-                            android:text="Seeds"
+                            android:text="@string/seeds"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12sdp"
                             android:textStyle="normal" />
@@ -679,10 +679,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
                             android:layout_marginStart="@dimen/_10sdp"
                             android:layout_toEndOf="@+id/llgraphFertilizer"
-                            android:text="Fertilizer"
+                            android:text="@string/fertilizer"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12sdp"
                             android:textStyle="normal" />
@@ -710,13 +709,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
                             android:layout_toEndOf="@+id/llgraphLabour"
-                            android:text="Labour"
-                            android:textStyle="normal"
+                            android:text="@string/labour"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12sdp"
-                            android:layout_centerVertical="true"
-                            android:layout_marginStart="@dimen/_10sdp"/>
+                            android:textStyle="normal" />
 
 
                     </RelativeLayout>
@@ -741,13 +739,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
                             android:layout_toEndOf="@+id/llgraphTractor"
-                            android:text="Tractor"
-                            android:textStyle="normal"
+                            android:text="@string/tractor"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12sdp"
-                            android:layout_centerVertical="true"
-                            android:layout_marginStart="@dimen/_10sdp"/>
+                            android:textStyle="normal" />
 
 
                     </RelativeLayout>
@@ -771,7 +768,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@+id/llgraphIncome"
-                            android:text="Income"
+                            android:text="@string/income"
                             android:textStyle="normal"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12sdp"
@@ -800,13 +797,13 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_10sdp"
                             android:layout_toEndOf="@+id/llgraphSubsidy"
-                            android:text="Subsidy"
-                            android:textStyle="normal"
+                            android:text="@string/fertilizer"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12sdp"
-                            android:layout_centerVertical="true"
-                            android:layout_marginStart="@dimen/_10sdp"/>
+                            android:textStyle="normal" />
 
 
                     </RelativeLayout>
@@ -836,21 +833,20 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fertilizer Info"
+                    android:text="@string/fertilizer_info"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="bold" />
 
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="View more"
-                    android:textStyle="normal"
                     android:layout_alignParentEnd="true"
+                    android:text="@string/view_more"
                     android:textColor="@color/green_selected"
-                    android:textSize="@dimen/_14sdp"/>
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="normal" />
 
 
 
@@ -884,21 +880,20 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pest Info"
+                    android:text="@string/pest_info"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="bold" />
 
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="View more"
-                    android:textStyle="normal"
                     android:layout_alignParentEnd="true"
+                    android:text="@string/view_more"
                     android:textColor="@color/green_selected"
-                    android:textSize="@dimen/_14sdp"/>
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="normal" />
 
 
 
@@ -930,21 +925,20 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Insecticides Info"
+                    android:text="@string/insecticides_info"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdp"
                     android:textStyle="bold" />
 
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="View more"
-                    android:textStyle="normal"
                     android:layout_alignParentEnd="true"
+                    android:text="@string/view_more"
                     android:textColor="@color/green_selected"
-                    android:textSize="@dimen/_14sdp"/>
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="normal" />
 
 
 

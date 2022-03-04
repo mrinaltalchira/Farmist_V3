@@ -62,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:text="Sign up"
+                android:text="@string/sign_up"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_18sdp"
                 android:textStyle="bold" />
@@ -71,7 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:text="Create an account with Farm app and enjoy all the features"
+                android:text="@string/create_an_account_with_farm_app_and_enjoy_all_the_features"
                 android:textColor="@color/light_grey"
                 android:textSize="@dimen/_14sdp"
                 android:textStyle="normal" />
@@ -81,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:text="Name"
+                android:text="@string/name"
                 android:textColor="@color/light_grey"
                 android:textSize="@dimen/_14sdp"
                 android:textStyle="normal" />
@@ -118,7 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:text="Phone number"
+                android:text="@string/phone_number"
                 android:textColor="@color/light_grey"
                 android:textSize="@dimen/_14sdp"
                 android:textStyle="normal" />
@@ -160,7 +160,7 @@
                 android:layout_marginRight="@dimen/_15sdp"
                 android:background="@drawable/login_btn_background"
                 android:padding="@dimen/_10sdp"
-                android:text="Next"
+                android:text="@string/next"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_14sdp"

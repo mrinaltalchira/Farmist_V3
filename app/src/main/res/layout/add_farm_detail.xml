@@ -32,11 +32,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart = "@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_40sdp"
                 android:layout_marginTop="@dimen/_15sdp"
-                 android:drawablePadding="@dimen/_10sdp"
+                android:drawablePadding="@dimen/_10sdp"
                 android:drawableTint="@color/white"
-                android:text="Add farm details"
+                android:text="@string/add_farm_details"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_14sdp" />
 
@@ -75,7 +75,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/_3sdp"
-                        android:text="Change photo"
+                        android:text="@string/change_photo"
                         android:textColor="@color/green_selected"
                         android:textSize="@dimen/_12sdp" />
 
@@ -86,7 +86,7 @@
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_marginTop="@dimen/_15sdp"
                         android:layout_marginEnd="@dimen/_10sdp"
-                        android:text="Name"
+                        android:text="@string/name"
                         android:textColor="@color/light_grey"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="normal" />
@@ -126,7 +126,7 @@
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginEnd="@dimen/_10sdp"
-                        android:text="Area"
+                        android:text="@string/area"
                         android:textColor="@color/light_grey"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="normal" />
@@ -180,7 +180,7 @@
                                 android:id="@+id/r_b_Acers_addFarm"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Acers"
+                                android:text="@string/acres"
                                 android:layout_weight="3"
                                 android:textSize="@dimen/_14sdp"
                                 android:checked="true"
@@ -191,7 +191,7 @@
                                 android:id="@+id/r_b_Guntas_addFarm"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Guntas"
+                                android:text="@string/guntas"
                                 android:layout_weight="3"
                                 android:textSize="@dimen/_14sdp"
                                 />
@@ -200,7 +200,7 @@
                                 android:id="@+id/r_b_Bhigas_addFarm"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Bhigas"
+                                android:text="@string/bhigas"
                                 android:layout_weight="3.33"
                                 android:textSize="@dimen/_14sdp"/>
 
@@ -282,7 +282,7 @@
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginEnd="@dimen/_10sdp"
-                        android:text="Tehsil"
+                        android:text="@string/tehsil"
                         android:textColor="@color/light_grey"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="normal" />
@@ -322,7 +322,7 @@
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginEnd="@dimen/_10sdp"
-                        android:text="Survey Number"
+                        android:text="@string/survey_number"
                         android:textColor="@color/light_grey"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="normal" />
@@ -366,7 +366,7 @@
                         android:layout_marginBottom="@dimen/_15sdp"
                         android:background="@drawable/login_btn_background"
                         android:padding="@dimen/_12sdp"
-                        android:text="Save"
+                        android:text="@string/save"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_16sdp"
