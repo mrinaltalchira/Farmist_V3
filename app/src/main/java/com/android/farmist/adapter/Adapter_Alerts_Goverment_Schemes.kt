@@ -15,14 +15,6 @@ import com.android.farmist.model.alertsResponse.Scheme
 import com.bumptech.glide.Glide
 
 class Adapter_Alerts_Goverment_Schemes(val context: Context, val data: List<Scheme>)  : RecyclerView.Adapter<Adapter_Alerts_Goverment_Schemes.ViewHolder>() {
-//
-//    val incomeTrackerList: ArrayList<String> = ArrayList()
-//
-//    fun setList(productDataList: ArrayList<String>) {
-//        incomeTrackerList.clear()
-//        incomeTrackerList.addAll(productDataList)
-//        notifyDataSetChanged()
-//    }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -39,7 +31,7 @@ class Adapter_Alerts_Goverment_Schemes(val context: Context, val data: List<Sche
 //        val list = incomeTrackerList[position]
         holder.itemView.setOnClickListener(View.OnClickListener {
             var bundle = bundleOf(
-                "newsId" to data[position]._id,
+              //  "newsId" to data[position]._id,
                 "newsImage" to data[position].image,
                 "newsTime" to data[position].createdAt,
                 "newsDec" to data[position].desc,

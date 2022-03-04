@@ -7,11 +7,9 @@ import android.content.Context
 import android.util.Log
 import androidx.annotation.NonNull
 import androidx.lifecycle.ViewModel
-import com.android.farmist.RoomDatabase.Repository
 import com.android.farmist.RoomDatabase.appDatabase
 import com.android.farmist.adapter.Adapter_Alerts_News
 import com.android.farmist.api.Api_Controller
-import com.android.farmist.api.RetroRepository
 import com.android.farmist.model.alertsResponse.GetNewsAlert
 import com.android.farmist.model.alertsResponse.New
 import retrofit2.Call

@@ -17,6 +17,8 @@ import com.android.farmist.model.alertsResponse.New
 import com.bumptech.glide.Glide
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.adaapter_exp_income_tracker.view.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -73,14 +75,14 @@ class Adapter_Exp_Income_Tracker(val context: Context, var data: List<Data>)  : 
 
         })
 
-            var call: Call<GetExpensesTracker> = Api_Controller.apiInterface.getExpenses(data[position].cropId)
+                   var call: Call<GetExpensesTracker> = Api_Controller.apiInterface.getExpenses(data[position].cropId)
             call.enqueue(object : Callback<GetExpensesTracker> {
                 override fun onResponse(
                     call: Call<GetExpensesTracker>,
                     response: Response<GetExpensesTracker>
                 ) {
 
-                   holder.expen.setText("Rs. "+response.body()?.data?.userExpense)
+                    holder.expen.setText("Rs. "+response.body()?.data?.userExpense)
 
                 }
 
@@ -89,6 +91,7 @@ class Adapter_Exp_Income_Tracker(val context: Context, var data: List<Data>)  : 
 
                 }
             })
+
         }
 
 

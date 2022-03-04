@@ -8,9 +8,13 @@ import com.android.farmist.model.alertsResponse.New
 import androidx.room.Room
 import androidx.sqlite.db.SupportSQLiteDatabase
 import android.os.AsyncTask
+import com.android.farmist.model.CropPriceResponse.Crop
+import com.android.farmist.model.CropPriceResponse.Data
+import com.android.farmist.model.alertsResponse.Scheme
+import com.android.farmist.model.location.Roomdata
 
 
-@Database(entities = [New::class], version = 3, exportSchema = false)
+@Database(entities = [New::class,Crop::class,Data::class, Scheme::class,Roomdata::class], version = 10, exportSchema = false)
 abstract class appDatabase : RoomDatabase() {
     abstract fun getAppDao(): NewsDao
 

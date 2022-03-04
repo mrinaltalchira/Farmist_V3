@@ -46,7 +46,7 @@ class Account_View_Model:ViewModel() {
                                 imageUrl = data.latestPic[0].image
 
                             }
-                            nameStr = data.name
+                           // nameStr = data.name
                         }
                     }
                 }

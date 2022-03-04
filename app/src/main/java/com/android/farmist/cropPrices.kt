@@ -1,5 +1,7 @@
 package com.android.farmist
 
+import android.content.Context
+import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,6 +11,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
+import com.android.farmist.RoomDatabase.NewsDao
+import com.android.farmist.RoomDatabase.appDatabase
 import com.android.farmist.adapter.Adapter_Crop_Prices
 import com.android.farmist.adapter.Adapter_Crop_Prices_singleRow
 import com.android.farmist.adapter.Adapter_Other_Market_Crop_Prices
@@ -28,18 +32,27 @@ class cropPrices : Fragment() {
 
     private lateinit var binding : FragmentCropPricesBinding
     lateinit var adapterCropPricesSinglerow: Adapter_Crop_Prices_singleRow
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(layoutInflater,R.layout.fragment_crop_prices,container,false)
-        Toast.makeText(requireActivity(), "cropPrice", Toast.LENGTH_SHORT).show()
+
+
         getPriceCrop()
+
+
+
+
+
+
 
         return binding.root
 
     }
+
+
+
     private fun getPriceCrop() {
 
         adapterCropPricesSinglerow=activity?.let {
@@ -57,7 +70,6 @@ class cropPrices : Fragment() {
                 .subscribe({ response -> getObserver(response as getCropPrice) },
                     { t -> onFailure(t) })
         )
-
     }
 
     private fun getObservable(): Observable<getCropPrice> {

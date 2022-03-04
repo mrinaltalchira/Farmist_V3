@@ -36,6 +36,7 @@ import com.android.farmist.model.selectCategoryResponse.GetFruitsList
 import com.android.farmist.model.selectCategoryResponse.GetVagList
 import com.android.farmist.model.setFarm.*
 import com.android.farmist.model.signUp.signUpModel
+import com.android.farmist.model.upcommingAction.Upcomingrespo
 import io.reactivex.rxjava3.core.Observable
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -352,5 +353,8 @@ fun getHarvested(@Query("userId")userId:String):Call<GetHarvestedCrop>
     //get news alert
     @GET("alerts")
     fun getNewsAlertRoomDb(): Call<GetNewsAlert>
+
+    @GET("upcoming/actions")
+    fun UpcomingFun(@Query("userId")userId:String):Call<Upcomingrespo>
 
 }

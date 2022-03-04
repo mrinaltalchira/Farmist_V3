@@ -64,14 +64,6 @@ class News_All : Fragment() {
 //        initMainViewModel()
     }
 
-    private fun bindUIViews(dataRespo: List<New>?) {
-
-
-
-
-
-    }
-
     private fun getNewsAlert() {
         val call: Call<GetNewsAlert>
         call= Api_Controller().getInstacneAdmin().getNewsAlert()

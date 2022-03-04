@@ -371,6 +371,17 @@
                                 android:text="Next 3 days forecast"
                                 android:textColor="@color/white" />
 
+                            <ImageView
+                                android:id="@+id/locationbtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:src="@drawable/ic_location"
+                                android:textColor="@color/white"
+                                />
+
 
                             <RelativeLayout
                                 android:id="@+id/rlweather"

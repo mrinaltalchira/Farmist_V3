@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import com.android.farmist.R
+import com.android.farmist.RoomDatabase.appDatabase
 import com.android.farmist.adapter.Adapter_Market_Crop_Prices
 import com.android.farmist.adapter.Adapter_Other_Market_Crop_Prices
 import com.android.farmist.api.Api_Controller
@@ -37,9 +38,10 @@ class Prices_Fragment : Fragment() {
     lateinit var adapterOtherMarketCropPrices : Adapter_Other_Market_Crop_Prices
     private var createGroupList: ArrayList<String> = ArrayList()
     private var otherGroupList: ArrayList<String> = ArrayList()
+    lateinit var appDatabaseObj: appDatabase
     lateinit var userId: String
     lateinit var preferences: SharedPreferences
-
+    val adapterMarketCropPrices=Adapter_Market_Crop_Prices()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,6 +51,27 @@ class Prices_Fragment : Fragment() {
         preferences =
             requireActivity().getSharedPreferences("userMassage", Context.MODE_PRIVATE)
         userId = preferences.getString("message", "").toString()
+        appDatabaseObj = appDatabase.getAppDBInstance(requireContext())
+        val list2 = appDatabaseObj.getAppDao().gelAllPrice()
+            .observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+                if (it != null){
+                    adapterOtherMarketCropPrices.setList(it)
+                    binding.rvothermarketcropprice.adapter = adapterOtherMarketCropPrices
+                    adapterOtherMarketCropPrices.notifyDataSetChanged()
+                }
+
+            })
+
+        val list1 = appDatabaseObj.getAppDao().getAllMyPrice()
+            .observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+                if (it != null){
+                    adapterMarketCropPrices.setList(it,requireActivity())
+                    binding.rvmarketcropprice.adapter = adapterMarketCropPrices
+                    adapterMarketCropPrices.notifyDataSetChanged()
+                }
+
+            })
+
 
         binding =
             DataBindingUtil.inflate(layoutInflater, R.layout.fragment_prices, container, false)
@@ -70,14 +93,16 @@ class Prices_Fragment : Fragment() {
                 var respo = response.body()
                 if (respo != null) {
                     val cropList=respo.data
-                    val adapterMarketCropPrices=Adapter_Market_Crop_Prices()
+
+
                     binding.rvmarketcropprice.setHasFixedSize(true)
                     binding.rvmarketcropprice.adapter=adapterMarketCropPrices
                     val activity: Activity? = activity
                     if (activity != null) {
 
+                        appDatabaseObj.getAppDao().deleteAllmyPrice()
+                        appDatabaseObj.getAppDao().insertMyPrice(cropList)
                     adapterMarketCropPrices.setList(cropList,requireActivity())
-                        // etc ...
                     }
 
                 }
@@ -117,7 +142,11 @@ class Prices_Fragment : Fragment() {
         if (priceData != null) {
             val CropPriceList = priceData.crops
 
-            adapterOtherMarketCropPrices.setList(CropPriceList)
+             appDatabaseObj.getAppDao().deleteAllPrice()
+            appDatabaseObj.getAppDao().insertPrice(CropPriceList)
+
+         adapterOtherMarketCropPrices.setList(CropPriceList)
+
         }
 
 
