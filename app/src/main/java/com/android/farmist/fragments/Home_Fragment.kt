@@ -53,6 +53,7 @@ import android.app.Activity
 import android.content.res.Configuration
 import android.content.res.Resources
 import android.util.DisplayMetrics
+import java.time.LocalDateTime
 
 
 class Home_Fragment : Fragment() {
@@ -239,6 +240,7 @@ class Home_Fragment : Fragment() {
                         val responses = response.body()
                         if (responses != null) {
 
+
                             var abc: Roomdata = Roomdata(
                                 1,"https://" +responses.forecast!!.forecastday[0].day?.condition?.icon.toString(),
                                 "https://" + responses.forecast!!.forecastday[0].day?.condition?.icon.toString(),
@@ -249,8 +251,8 @@ class Home_Fragment : Fragment() {
                                 responses.forecast!!.forecastday[2].date.toString(),
                                 responses.current?.tempC.toString() + "°",
                                 responses.current?.tempC.toString() + "°",
-                                responses.forecast!!.forecastday[1].hour[12].tempC.toString() + "°",
-                                responses.forecast!!.forecastday[2].hour[14].tempC.toString() + "°"
+                                responses.forecast!!.forecastday[1].hour[13].tempC.toString() + "°",
+                                responses.forecast!!.forecastday[2].hour[11].tempC.toString() + "°"
                             )
 
                             appDatabaseObj.getAppDao().deleteLocation()

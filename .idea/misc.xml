@@ -47,15 +47,14 @@
         <entry key="..\:/FarmistV.2/app/src/main/res/layout/news_details.xml" value="0.209375" />
         <entry key="..\:/FarmistV.2/app/src/main/res/menu/menu_bar.xml" value="0.18518518518518517" />
         <entry key="..\:/FarmistV.2/app/src/main/res/menu/search_menu.xml" value="0.18518518518518517" />
-        <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/activity_add_crop_details.xml" value="0.19166666666666668" />
-        <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/activity_login.xml" value="0.19166666666666668" />
-        <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/activity_main.xml" value="0.18871794871794872" />
-        <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/activity_otp.xml" value="0.19166666666666668" />
-        <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/activity_signup.xml" value="0.19166666666666668" />
-        <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/activity_signup_second.xml" value="0.19166666666666668" />
-        <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/activity_splash.xml" value="0.19166666666666668" />
         <entry key="..\:/Farmist_V3/app/src/main/res/drawable/ic__weather.xml" value="0.24871794871794872" />
         <entry key="..\:/Farmist_V3/app/src/main/res/drawable/ic_location.xml" value="0.24871794871794872" />
+        <entry key="..\:/Farmist_V3/app/src/main/res/drawable/login_btn_background.xml" value="0.2526041666666667" />
+        <entry key="..\:/Farmist_V3/app/src/main/res/layout/activity_main.xml" value="0.18385416666666668" />
+        <entry key="..\:/Farmist_V3/app/src/main/res/layout/activity_otp.xml" value="0.35823170731707316" />
+        <entry key="..\:/Farmist_V3/app/src/main/res/layout/activity_otplogin.xml" value="0.23645833333333333" />
+        <entry key="..\:/Farmist_V3/app/src/main/res/layout/activity_signup.xml" value="0.18385416666666668" />
+        <entry key="..\:/Farmist_V3/app/src/main/res/layout/activity_signup_second.xml" value="0.18385416666666668" />
         <entry key="..\:/Farmist_V3/app/src/main/res/layout/adaapter_exp_income_tracker.xml" value="0.72" />
         <entry key="..\:/Farmist_V3/app/src/main/res/layout/adapt_file_for_upcomimg_action.xml" value="0.264" />
         <entry key="..\:/Farmist_V3/app/src/main/res/layout/adapter_other_market_crop_prices.xml" value="0.23645833333333333" />
@@ -65,7 +64,14 @@
         <entry key="..\:/Farmist_V3/app/src/main/res/layout/fragment_expensess__income_tracker.xml" value="0.19270833333333334" />
         <entry key="..\:/Farmist_V3/app/src/main/res/layout/fragment_harvested__crop__info.xml" value="0.19270833333333334" />
         <entry key="..\:/Farmist_V3/app/src/main/res/layout/fragment_home.xml" value="0.42173112338858193" />
-        <entry key="..\:/Farmist_V3/app/src/main/res/layout/fragment_upcoming_action.xml" value="0.16203703703703703" />
+        <entry key="..\:/Farmist_V3/app/src/main/res/layout/fragment_upcoming_action.xml" value="0.2" />
+        <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/activity_add_crop_details.xml" value="0.19166666666666668" />
+        <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/activity_login.xml" value="0.19166666666666668" />
+        <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/activity_main.xml" value="0.18871794871794872" />
+        <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/activity_otp.xml" value="0.19166666666666668" />
+        <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/activity_signup.xml" value="0.19166666666666668" />
+        <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/activity_signup_second.xml" value="0.19166666666666668" />
+        <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/activity_splash.xml" value="0.19166666666666668" />
         <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/adaapter_exp_income_tracker.xml" value="0.209375" />
         <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/adapt_file_for_upcomimg_action.xml" value="0.19166666666666668" />
         <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/adapter_alerts_govermentnews.xml" value="0.19166666666666668" />
@@ -123,7 +129,7 @@
         <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/fragment_news__announcement_all_.xml" value="0.19166666666666668" />
         <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/fragment_news_all.xml" value="0.19166666666666668" />
         <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/fragment_prices.xml" value="0.19166666666666668" />
-        <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/fragment_select_crop_category.xml" value="0.22" />
+        <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/fragment_select_crop_category.xml" value="0.1" />
         <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/fragment_sowed.xml" value="0.19166666666666668" />
         <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/fragment_upcoming_action.xml" value="0.19166666666666668" />
         <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/full_exp_log.xml" value="0.19166666666666668" />
@@ -132,7 +138,6 @@
         <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/news_details.xml" value="0.19166666666666668" />
         <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/personal_information.xml" value="0.19166666666666668" />
         <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/menu/menu_bar.xml" value="0.18871794871794872" />
-        <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/fragment_select_crop_category.xml" value="0.1" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/drawable-v24/add_crop_background.xml" value="0.22552083333333334" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/drawable/ic_noun_fruits_2103787.xml" value="0.1" />
         <entry key="..\:/project backup/07-02-22/Farmist/app/src/main/res/drawable/loan_form_background.xml" value="0.22552083333333334" />
@@ -196,7 +201,6 @@
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
-<!--  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="16" project-jdk-type="JavaSDK">-->
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

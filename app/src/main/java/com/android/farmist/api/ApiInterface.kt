@@ -11,6 +11,8 @@ import com.android.farmist.model.ExpensesIncomeTrackerResponse.addSubsidy
 import com.android.farmist.model.FullExpenseLog.Pie
 import com.android.farmist.model.FullExpenseLog.Root
 import com.android.farmist.model.MarketPriceResponse.marketPriceResponse
+import com.android.farmist.model.OTP.CheckOTPRespo
+import com.android.farmist.model.OTP.SignupOTPRespo
 import com.android.farmist.model.adapterGetFarm.AdeptDataResponce
 import com.android.farmist.model.addCropResponse.AddCropResponse
 import com.android.farmist.model.alertsResponse.GetGovtScheme
@@ -36,6 +38,7 @@ import com.android.farmist.model.selectCategoryResponse.GetFruitsList
 import com.android.farmist.model.selectCategoryResponse.GetVagList
 import com.android.farmist.model.setFarm.*
 import com.android.farmist.model.signUp.signUpModel
+import com.android.farmist.model.upcommingAction.UpcomingDates
 import com.android.farmist.model.upcommingAction.Upcomingrespo
 import io.reactivex.rxjava3.core.Observable
 import okhttp3.MultipartBody
@@ -357,4 +360,16 @@ fun getHarvested(@Query("userId")userId:String):Call<GetHarvestedCrop>
     @GET("upcoming/actions")
     fun UpcomingFun(@Query("userId")userId:String):Call<Upcomingrespo>
 
+
+    @GET("upcoming/actions/dates")
+    fun UpcomingFunDate(@Query("userId")userId:String):Call<UpcomingDates>
+
+
+    @GET("{api_key}/SMS/{users_phone_no}/AUTOGEN")
+    fun GetOTP(@Path("api_key")api_key:String,@Path("users_phone_no")users_phone_no:String):Call<SignupOTPRespo>
+
+//    https://2factor.in/API/V1/{api_key}/SMS/+91{user's_phone_no}/AUTOGEN
+//    https://2factor.in/API/V1/{api_key}/SMS/VERIFY/{session_id}/{otp_entered_by_user}
+    @POST("{api_key}/SMS/VERIFY/{session_id}/{otp_entered_by_user}")
+    fun checkOTP(@Path("api_key")api_key:String,@Path("session_id")session_id:String,@Path("otp_entered_by_user")otp_entered_by_user:String):Call<CheckOTPRespo>
 }

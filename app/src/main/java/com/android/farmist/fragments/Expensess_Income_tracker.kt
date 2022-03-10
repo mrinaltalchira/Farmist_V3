@@ -65,13 +65,11 @@ lateinit var exp:String
 
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         SweetAlert.showDialog(requireActivity())
         preferences = requireActivity().getSharedPreferences("userMassage", Context.MODE_PRIVATE)
         userId = preferences.getString("message", "").toString()
-
         GetExpensesincomeTracker()
         binding.tvArchived.setOnClickListener {
             Toast.makeText(requireActivity(), "archivie", Toast.LENGTH_SHORT).show()
@@ -79,10 +77,7 @@ lateinit var exp:String
                 R.id.action_expensess_Income_tracker_to_archived_crop,
                 null
             )
-
         }
-
-
     }
 
 
@@ -122,26 +117,6 @@ lateinit var exp:String
         Log.d("Main", "OnFailure: " + t.message)
     }
 
-    fun getExpenses()
-    {
-
-//            var call: Call<GetExpensesTracker> = Api_Controller.apiInterface.getExpenses(data[position].cropId)
-//            call.enqueue(object : Callback<GetExpensesTracker> {
-//                override fun onResponse(
-//                    call: Call<GetExpensesTracker>,
-//                    response: Response<GetExpensesTracker>
-//                ) {
-//
-//                   holder.expen.setText("Rs. "+response.body()?.data?.userExpense)
-//
-//                }
-//
-//                override fun onFailure(call: Call<GetExpensesTracker>, t: Throwable) {
-//
-//
-//                }
-//            })
-    }
 
 
 }

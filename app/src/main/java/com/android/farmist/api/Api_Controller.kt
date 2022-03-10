@@ -35,6 +35,15 @@ class Api_Controller {
             .build()
         val apiInterface2: ApiInterface = retrofit2.create(ApiInterface::class.java)
 
+var burl = "https://2factor.in/API/V1/"
+        private val OTP = Retrofit.Builder()
+            .baseUrl(burl)
+            .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+            .build()
+        val OtpInterFace:ApiInterface = OTP.create(ApiInterface::class.java)
+
+
 
 
     }
