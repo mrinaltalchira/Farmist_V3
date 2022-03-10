@@ -49,6 +49,7 @@ import retrofit2.http.*
 
 interface ApiInterface {
 
+    /*  Register  */
     @FormUrlEncoded
     @POST("register")
     fun UserRegister(
@@ -63,24 +64,20 @@ interface ApiInterface {
         @Field("chemicalCompany") userChemicalCompany: String
     ): Call<signUpModel>
 
-//
-//    @GET("me/:61ee75518c7deb5673cbe7da")
-//    fun getUserData(
-////        @Path("_id")UserId:String
-//    ):Call<getUserModel>
-
+    /* Get user Profile and User name */
     @GET("me/{id}")
     fun getUser(
         @Path("id") UserId: String
     ): Call<getUserModel>
 
+    /* Api for login  */
     @FormUrlEncoded
     @POST("login")
     fun loginUser(
         @Field("phone") PhoneNumber: String
     ): Call<signUpModel>
 
-    //upadate user profile
+    /*  upadate user profile */
     @FormUrlEncoded
     @PUT("me/update/{id}")
     fun updateUserData(
@@ -94,8 +91,8 @@ interface ApiInterface {
         @Field("numOfAcers") userNoOfAcers: String
     ): Call<signUpModel>
 
+    /*   Add new Farm  */
     @Multipart
-
     @POST("farm")
     fun addNewFarmInter(
         @Part("userId") userId: RequestBody,
@@ -109,26 +106,25 @@ interface ApiInterface {
     ): Call<setFarm>
 
 
+    /* Get Farm  */
     @GET("farms")
     fun getFarm(
         @Query("userId") UserId: String
     ): Call<getFarms>
 
-    //get all farm in spinner
+    /* get all farm in spinner */
     @GET("allfarms")
     fun getSpinnerFarm(
         @Query("userId") userId: String
     ): Call<FarmsSpinner>
 
-
-    //Get user profile and data
+    /*Get user profile and data*/
     @GET("myprofilepic")
     fun getUserProfile(
         @Query("userId") userId: String
     ): Call<GetUserImagResponse>
 
-
-    //update Profile Image user
+    /* update Profile Image user */
     @Multipart
     @POST("profile")
     fun uploadImage(
@@ -137,12 +133,11 @@ interface ApiInterface {
         @Query("userId") userId: String
     ): Call<SetProfileResponse>
 
-    //Add crop
-
+    /* Add new crop */
     @Multipart
     @POST("newcrop")
     fun addCrop(
-        @Part("cropName") cropName:RequestBody,
+        @Part("cropName") cropName: RequestBody,
 
         @Part image: MultipartBody.Part,
         @Part("image") desc: RequestBody,
@@ -152,21 +147,17 @@ interface ApiInterface {
         @Part("sowedArea") sowedArea: RequestBody,
         @Part("areaType") areaType: RequestBody,
         @Part("sowedDate") sowedDate: RequestBody,
+    ): Call<AddCropResponse>
 
-        ): Call<AddCropResponse>
-
-
-    // mrinal code marge //
-
-
+    /* Get Farm List*/
     @GET("farms")
     fun getFarmsForAdaper(@Query("userId") userId: String): Call<AdeptDataResponce>
 
-
+    /* APi For Delete Farm */
     @DELETE("farm/delete/{id}")
     fun deleteFarm(@Path("id") id: String): Call<DeleteFarmRespo>
 
-
+    /* Update Farm */
     @Multipart
     @PUT("farm/update/{id}")
     fun updateFarm(
@@ -180,12 +171,13 @@ interface ApiInterface {
         @Part("surveyNum") surveyNum: RequestBody
     ): Call<updateDataRespo>
 
-
+    /*Get Farm info for update  */
     @GET("farm/details/{id}")
     fun getFarmForEdit(
         @Path("id") userId: String
     ): Call<GetFarmEditResponce>
 
+    /* Weather forecast api */
     @GET("forecast.json")
     fun getTemp(
         @Query("key") key: String,
@@ -193,47 +185,49 @@ interface ApiInterface {
         @Query("days") days: String
     ): Call<Report>
 
+    /* Get Expenses Log*/
     @GET("expense/get/full-log")
     fun fullExpenceLogData(
         @Query("cropId") cropId: String
     ): Call<Root>
 
+    /* Get crop Pie chart Data */
     @GET("expense/chart")
     fun getPie(
         @Query("cropId") cropId: String
     ): Call<Pie>
 
-    //get sowed crop
+    /* Get sowed crop */
     @GET("crops")
     fun getSwoedCrop(@Query("userId") userId: String): Call<GetSowedCrop>
 
-    //get news alert
+    /* Get news alert*/
     @GET("alerts")
     fun getNewsAlert(): Call<GetNewsAlert>
 
-    //get govtScheme alert
+    /* Get govtScheme alert */
     @GET("schemes")
     fun getGovtscheme(): Call<GetGovtScheme>
 
-    //Get  crop price
+    /* Get  crop price */
     @GET("admin/get/crops")
     fun getCropPrice(): Observable<getCropPrice>
 
-    //get select category friuts
+    /* Get select category friuts */
     @GET("admin/fruits/list")
     fun getcategoryFriuts(): Observable<GetFruitsList>
 
-    //get select category friuts
+    /* Get select category friuts */
     @GET("admin/vegs/list")
     fun getcategoryVeg(): Observable<GetVagList>
 
-    //get Expenses Income tracker data
+    /* get Expenses Income tracker data */
     @GET("income/tracker")
     fun getExpensesIncomeTracker(
         @Query("userId") userId: String
     ): Observable<GetExpensesIncomeTracker>
 
-    //Add expenese in crop
+    /* Add expenese in crop */
     @FormUrlEncoded
     @POST("expense")
     fun addExpenses(
@@ -244,7 +238,7 @@ interface ApiInterface {
         @Field("amount") amount: String,
     ): Observable<AddExpesesResponse>
 
-    //add subsidy
+    /* Add subsidy */
     @FormUrlEncoded
     @POST("subsidy")
     fun addsubsidy(
@@ -255,7 +249,7 @@ interface ApiInterface {
         @Field("amount") amount: String,
     ): Observable<addSubsidy>
 
-    //  add income
+    /* Add income */
     @FormUrlEncoded
     @POST("income/create")
     fun addincome(
@@ -265,100 +259,95 @@ interface ApiInterface {
         @Field("date") date: String,
         @Field("income") income: String,
         @Field("quantityType") radiovalue: String,
-    ): Observable<addSubsidy>
+    ):Observable<addSubsidy>
 
-// get expenses tracker
-
+    /* Get expenses tracker */
     @GET("expense/expense-tracker")
     fun getExpensesTracker(
         @Query("cropId") cropId: String
     ): Observable<GetExpensesTracker>
 
-    // get chart data
+    /* Get chart data  */
     @GET("expense/chart")
     fun getchartData(
         @Query("cropId") cropId: String
     ): Observable<GetPiChartResponse>
 
-
-    // get crop expense data in add Expenses Fragment
+    /* Get crop expense data in add Expenses Fragment */
     @GET("expenses/details/total-date-type")
     fun getExpenseData(
         @Query("cropId") cropId: String
     ): Observable<ExpenesData>
 
-
-    ///add in archive
-
+    /* Add in archive */
     @PUT("crop/archieve/{cropId}")
     fun setArchieve(
         @Path("cropId") cropId: String
     ): Call<SetArchiveResponse>
 
-
+    /* Delete crop Expenses */
     @DELETE("crop/delete/{id}")
     fun deleteCropExpence(@Path("id") id: String): Call<DeleteFarmRespo>
 
-    //Get Archive crop
+    /* Get Archive crop */
     @GET("crops/get/archieved")
     fun getArchiveCrop(
         @Query("userId") userId: String
     ): Observable<GetExpensesIncomeTracker>
 
-
+    /* Get Crop Details */
     @GET("crop/")
     fun getCropDetails(@Query("id") id: String): Call<CropName>
 
+    /* Crop remove from archive  */
     @PUT("crop/remove/archieve/{id}")
     fun removeIt(@Path("id") id: String): Call<RemoveFromAchiv>
 
-@PUT("crop/harvest/{id}")
-fun makeHarvested(@Path("id")id:String):Call<MakeHarvest>
+    /* Make crop harvvested */
+    @PUT("crop/harvest/{id}")
+    fun makeHarvested(@Path("id") id: String): Call<MakeHarvest>
 
-@GET("crops/get/harvested/")
-fun getHarvested(@Query("userId")userId:String):Call<GetHarvestedCrop>
+    /* Get Harvested crop */
+    @GET("crops/get/harvested/")
+    fun getHarvested(@Query("userId") userId: String): Call<GetHarvestedCrop>
 
+    /* Get Crop market prices */
     @GET("admin/get/graph/price-month")
     fun getCropMarketPrices(@Query("id") CropPriceId: String): Call<marketPriceResponse>
 
-// harvested profit loss
+    /* Harvested profit loss */
     @GET("expense/expense-tracker")
     fun getHarvestedProfit(
         @Query("cropId") cropId: String
     ): Call<ProfitLoss>
 
-    // get sowed crop progress
-
+    /* Get sowed crop progress */
     @GET("crop")
-    fun getProgress(@Query("id")id: String):Call<ProgressTracker>
+    fun getProgress(@Query("id") id: String): Call<ProgressTracker>
 
-    // search
-    @GET("admin/crop/search")
-    fun searchData(@Query("name")name:String):Call<ResponceSearch>
-
+    /* Get Farm stats */
     @GET("farms/stats")
-    fun getFarmstats(@Query("userId")userId:String):Call<StatsData>
+    fun getFarmstats(@Query("userId") userId: String): Call<StatsData>
 
+    /* Get My crops Prices*/
     @GET("my/crops/price")
-    fun getMycropPrices(@Query("userId")cropId:String
-    ):Call<GetMyCropPrices>
+    fun getMycropPrices(
+        @Query("userId") cropId: String
+    ): Call<GetMyCropPrices>
 
+    /* Get Crop expenses */
     @GET("expense/expense-tracker")
     fun getExpenses(
         @Query("cropId") cropId: String
     ): Call<GetExpensesTracker>
 
+    /* Get Farm info */
     @GET("crop/name-image")
-    fun farmscroop(@Query("userId")userId:String,@Query("id")id:String):Call<Farmcroprespo>
-//    ):Call<GetMyCropPrices>
+    fun farmscroop(@Query("userId") userId: String, @Query("id") id: String): Call<Farmcroprespo>
 
-
-    //get news alert
-    @GET("alerts")
-    fun getNewsAlertRoomDb(): Call<GetNewsAlert>
-
+    /* Get Upcoming Action */
     @GET("upcoming/actions")
-    fun UpcomingFun(@Query("userId")userId:String):Call<Upcomingrespo>
+    fun UpcomingFun(@Query("userId") userId: String): Call<Upcomingrespo>
 
 
     @GET("upcoming/actions/dates")

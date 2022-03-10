@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "913450122188",
+    "project_id": "farmist-f8165",
+    "storage_bucket": "farmist-f8165.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913450122188:android:40fc7fcc1477c76a733b69",
+        "android_client_info": {
+          "package_name": "com.android.farmist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "913450122188-06kkq3fmkj2b0ooau077ti8vc42qipg8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo0Jn7nOhbk0Dwbj2FM06tZqLQBKsbh38"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "913450122188-06kkq3fmkj2b0ooau077ti8vc42qipg8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

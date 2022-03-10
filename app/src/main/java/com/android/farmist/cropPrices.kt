@@ -37,18 +37,8 @@ class cropPrices : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(layoutInflater,R.layout.fragment_crop_prices,container,false)
-
-
         getPriceCrop()
-
-
-
-
-
-
-
         return binding.root
-
     }
 
 

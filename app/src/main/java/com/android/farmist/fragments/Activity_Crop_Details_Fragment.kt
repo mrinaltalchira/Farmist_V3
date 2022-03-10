@@ -160,6 +160,10 @@ class Activity_Crop_Details_Fragment : Fragment() {
             openImageChooser()
 
         }
+        binding.imgAddCrop.setOnClickListener {
+            openImageChooser()
+
+        }
 
 
         return binding.root

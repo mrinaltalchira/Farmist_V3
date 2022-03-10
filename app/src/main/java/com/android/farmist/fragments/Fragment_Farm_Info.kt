@@ -34,7 +34,7 @@ import retrofit2.Response
 
 class Fragment_Farm_Info : Fragment() {
 
-    var userId:String =""
+    var userId: String = ""
     var farmID: String? = ""
     var farmName: String? = ""
     var farmArea: String? = ""
@@ -43,9 +43,9 @@ class Fragment_Farm_Info : Fragment() {
     var farmSurvey: String? = ""
     var farmImage: String? = ""
 
-lateinit var cropList:List<farmsccrop>
+    lateinit var cropList: List<farmsccrop>
     lateinit var progress: progressbars
-    lateinit var adapt:FarmsCropAdapter
+    lateinit var adapt: FarmsCropAdapter
     lateinit var binding: FragmentFarmInfoBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -78,10 +78,10 @@ lateinit var cropList:List<farmsccrop>
             )
         }
 
-binding.backbtn.setOnClickListener {
-    findNavController().navigate(R.id.action_fragment_Farm_Info_to_myFarm_Fragment2)
+        binding.backbtn.setOnClickListener {
+            findNavController().navigate(R.id.action_fragment_Farm_Info_to_myFarm_Fragment2)
 
-}
+        }
 
 
         return binding.root
@@ -153,40 +153,36 @@ binding.backbtn.setOnClickListener {
     }
 
 
-    fun setCrop(){
+    fun setCrop() {
 
-        var call: Call<Farmcroprespo> = Api_Controller().getInstacne().farmscroop(userId,farmID.toString())
-call.enqueue(object :Callback<Farmcroprespo>{
-    override fun onResponse(call: Call<Farmcroprespo>, response: Response<Farmcroprespo>) {
-    var respo  = response.body()
+        var call: Call<Farmcroprespo> =
+            Api_Controller().getInstacne().farmscroop(userId, farmID.toString())
+        call.enqueue(object : Callback<Farmcroprespo> {
+            override fun onResponse(call: Call<Farmcroprespo>, response: Response<Farmcroprespo>) {
+                var respo = response.body()
 
-    if (respo?.data != null){
+                if (respo?.data != null) {
 
-        val activity: Activity? = activity
-        if (activity != null) {
-//context used code
+                    val activity: Activity? = activity
+                    if (activity != null) {
+                        adapt = FarmsCropAdapter(requireContext(), respo.data)
+                        adapt.notifyDataSetChanged()
+                        rvfarmsCrop.adapter = adapt
+                        rvfarmsCrop.layoutManager = LinearLayoutManager(
+                            requireActivity(),
+                            LinearLayoutManager.HORIZONTAL, false
+                        )
 
-            adapt= FarmsCropAdapter(requireContext(),respo.data)
-            adapt.notifyDataSetChanged()
-            rvfarmsCrop.adapter = adapt
-            rvfarmsCrop.layoutManager = LinearLayoutManager(
-                requireActivity(),
-                LinearLayoutManager.HORIZONTAL,false
-            )
+                    }
 
-        }
-//        try {
-//        }catch (e:Exception){Log.d(",","")}
+                }
 
+            }
 
-    }
-
-    }
-
-    override fun onFailure(call: Call<Farmcroprespo>, t: Throwable) {
-        Toast.makeText(requireContext(), "$t", Toast.LENGTH_SHORT).show()
-    }
-})
+            override fun onFailure(call: Call<Farmcroprespo>, t: Throwable) {
+                Toast.makeText(requireContext(), "$t", Toast.LENGTH_SHORT).show()
+            }
+        })
 
     }
 

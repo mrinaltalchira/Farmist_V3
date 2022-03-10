@@ -195,5 +195,6 @@
     <string name="income_per_quantity">आय (प्रति मात्रा)</string>
     <string name="announcement_detail">घोषणा विवरण</string>
     <string name="continue_">जारी रखना</string>
+    <string name="enter_verification_code">सत्यापन कोड दर्ज करें</string>
 
 </resources>

@@ -203,6 +203,7 @@
     <string name="income_per_quantity">Income (per quantity)</string>
     <string name="announcement_detail">Announcement detail</string>
     <string name="continue_">Continue</string>
+    <string name="enter_verification_code">Enter verification code</string>
     <!--    <string name="enter_verification_code">Enter Verification Code</string>-->
 <!--    <string name="farming">#Farming</string>-->
 </resources>

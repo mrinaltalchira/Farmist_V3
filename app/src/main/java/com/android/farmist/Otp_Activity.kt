@@ -12,6 +12,7 @@ import com.android.farmist.databinding.ActivityOtpBinding
 import com.android.farmist.model.OTP.CheckOTPRespo
 import com.android.farmist.util.SmsBroadcastReciver
 import com.google.android.gms.auth.api.phone.SmsRetriever
+
 import kotlinx.android.synthetic.main.activity_otp.*
 import retrofit2.Call
 import retrofit2.Callback

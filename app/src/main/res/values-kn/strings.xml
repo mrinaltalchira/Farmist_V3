@@ -195,5 +195,6 @@
     <string name="income_per_quantity">ಆದಾಯ (ಪ್ರತಿ ಪ್ರಮಾಣ)</string>
     <string name="announcement_detail">ಪ್ರಕಟಣೆಯ ವಿವರ</string>
     <string name="continue_">ಮುಂದುವರಿಸಿ</string>
+    <string name="enter_verification_code">Enter verification code</string>
 
 </resources>

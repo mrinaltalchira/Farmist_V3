@@ -21,6 +21,11 @@ import com.android.farmist.fragments.Account_Fragment
 import com.android.farmist.fragments.Alerts_Fragment
 import com.android.farmist.fragments.Home_Fragment
 import com.android.farmist.fragments.Prices_Fragment
+import com.google.firebase.iid.internal.FirebaseInstanceIdInternal
+import com.google.firebase.messaging.FirebaseMessaging
+import com.google.firebase.messaging.FirebaseMessaging.getInstance
+import com.google.firebase.messaging.FirebaseMessagingService
+import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,6 +35,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+
 
 //        val firstFragment = Home_Fragment()
 //        val secondFragment = Alerts_Fragment()
@@ -48,6 +56,8 @@ class MainActivity : AppCompatActivity() {
 //            }
 //            true
 //        }
+
+
 
 //
         val navHostFragment = supportFragmentManager.findFragmentById(
@@ -85,6 +95,8 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp() || super.onSupportNavigateUp()
 
     }
+
+
 
 
 }

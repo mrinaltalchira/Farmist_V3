@@ -35,9 +35,7 @@ class Account_View_Model:ViewModel() {
             ) {
                 Toast.makeText(context, imageUrl, Toast.LENGTH_SHORT).show()
 
-
                 context?.let {
-
                     if (response != null) {
                         val data = response.body()
                         if (data != null) {

@@ -205,14 +205,7 @@
     <string name="income_per_quantity">Income (per quantity)</string>
     <string name="announcement_detail">Announcement detail</string>
     <string name="continue_">Continue</string>
-
-
-    <string-array name="Languages">
-        <item>Java</item>
-        <item>Kotlin</item>
-        <item>Swift</item>
-        <item>Python</item>
-        <item>Scala</item>
-        <item>Perl</item>
-    </string-array>
+    <string name="channel_id" translatable="false">hardik-channel</string>
+    <string name="channel_name" translatable="false">hardik</string>
+    <string name="enter_verification_code">Enter verification code</string>
 </resources>

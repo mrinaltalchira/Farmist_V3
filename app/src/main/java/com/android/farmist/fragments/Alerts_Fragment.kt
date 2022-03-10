@@ -24,6 +24,7 @@ import com.android.farmist.model.alertsResponse.GetGovtScheme
 import com.android.farmist.model.alertsResponse.GetNewsAlert
 import com.android.farmist.model.alertsResponse.New
 import com.android.farmist.viewModel.NewsViewModel
+import com.google.firebase.messaging.FirebaseMessaging
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
@@ -62,6 +63,7 @@ bdRoom = appDatabase.getAppDBInstance(requireActivity())
 
         binding =
             DataBindingUtil.inflate(layoutInflater, R.layout.fragment_alerts, container, false)
+        FirebaseMessaging.getInstance().subscribeToTopic("farmist")
          getGovScheme()
         getNewsAlert()
 //        getNewsAlert()

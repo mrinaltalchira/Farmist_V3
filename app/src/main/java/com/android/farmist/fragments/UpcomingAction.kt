@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CalendarView.OnDateChangeListener
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
@@ -23,7 +24,15 @@ import kotlinx.android.synthetic.main.fragment_upcoming_action.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import com.applandeo.materialcalendarview.listeners.OnDayClickListener
 import java.util.*
+import kotlin.collections.ArrayList
+import com.applandeo.materialcalendarview.EventDay
+
+import com.applandeo.materialcalendarview.listeners.OnDayLongClickListener
+
+
+
 
 
 class UpcomingAction : Fragment() {
@@ -89,6 +98,15 @@ class UpcomingAction : Fragment() {
     }
 
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.calendarExp.markDate(2022,3,14)
+//        getdate()
+
+    }
+
+
+
     fun getItem() {
 
         var call: Call<Upcomingrespo> = Api_Controller().getInstacne().UpcomingFun(userId)
@@ -103,6 +121,8 @@ class UpcomingAction : Fragment() {
                     adap.notifyDataSetChanged()
                     binding.upcomingActionRecyclerView.layoutManager =
                         LinearLayoutManager(requireActivity())
+
+
                 }
             }
 

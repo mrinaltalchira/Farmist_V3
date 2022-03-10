@@ -57,8 +57,6 @@ class Adapter_Alerts_News() :
                 R.id.action_nav_alerts_to_newsDetail_Fragment,
                 bundle
             ).onClick(holder.itemView)
-
-
         })
 
 
@@ -67,8 +65,6 @@ class Adapter_Alerts_News() :
     override fun getItemCount(): Int {
         return data.size
     }
-
-
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvNewstitle: TextView = itemView.findViewById(R.id.newsAlertTitle)
         var tvTime: TextView = itemView.findViewById(R.id.newsTimeDuration)

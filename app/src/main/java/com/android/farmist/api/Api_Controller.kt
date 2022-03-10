@@ -17,8 +17,6 @@ class Api_Controller {
     }
 
     companion object {
-        //    var retrofitAdmin: Retrofit
-
         val BASE_URL = "https://myfarmapp1.herokuapp.com/api/v1/"
         private val retrofitAdmin = Retrofit.Builder()
             .baseUrl(BASE_URL)

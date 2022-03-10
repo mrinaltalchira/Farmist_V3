@@ -196,5 +196,6 @@
     <string name="income_per_quantity">ఆదాయం (పరిమాణం)</string>
     <string name="announcement_detail">ప్రచురణ వివరాలు</string>
     <string name="continue_">కొనసాగించు</string>
+    <string name="enter_verification_code">Enter verification code</string>
 
 </resources>
