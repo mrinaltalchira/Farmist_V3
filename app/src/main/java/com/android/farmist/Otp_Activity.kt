@@ -40,6 +40,7 @@ class Otp_Activity : AppCompatActivity() {
         binding.btnotpSignup.setOnClickListener {
 
 
+
             var otp =
                 et_Ot1.text.toString() + et_Ot2.text.toString() + et_Ot3.text.toString() + et_Ot4.text.toString() + et_Ot5.text.toString() + et_Ot6.text.toString()
             var apiKey = "01ab6561-9f6e-11ec-a4c2-0200cd936042"

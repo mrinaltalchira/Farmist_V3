@@ -131,10 +131,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="@dimen/_15sdp"
                     android:layout_marginStart="@dimen/_5sdp"
-                    android:layout_toRightOf="@+id/img">
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_toRightOf="@+id/img"
+                    android:orientation="vertical">
 
 
                     <TextView
@@ -142,9 +142,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sunflower"
-                        android:textStyle="bold"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_14sdp" />
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tv_exp_log_acers"
@@ -589,7 +589,7 @@
                     android:textSize="@dimen/_14sdp"
                     android:textColor="@color/black"
                     android:textStyle="normal"
-                    android:text="21-02-2021 : " />
+                    android:text="Date : " />
 
                 <TextView
                     android:id="@+id/tvIncome"
@@ -635,7 +635,7 @@
                     android:textSize="@dimen/_14sdp"
                     android:textColor="@color/light_grey"
                     android:textStyle="normal"
-                    android:text="NABARD" />
+                    android:text="_" />
 
             </LinearLayout>
 
@@ -661,7 +661,7 @@
                     android:textSize="@dimen/_14sdp"
                     android:textColor="@color/light_grey"
                     android:textStyle="normal"
-                    android:text="1000" />
+                    android:text="_" />
 
             </LinearLayout>
 
@@ -688,7 +688,7 @@
                     android:textSize="@dimen/_14sdp"
                     android:textColor="@color/light_grey"
                     android:textStyle="normal"
-                    android:text="19-04-2021" />
+                    android:text="_" />
 
             </LinearLayout>
 

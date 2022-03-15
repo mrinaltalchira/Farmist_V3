@@ -74,9 +74,14 @@ class SelectCropCategory : Fragment(), Adapter_Select_category.SelectItem,
             )
 
 
-        binding.backbtn.setOnClickListener {
-            findNavController().navigate(R.id.action_selectCropCategory_to_crops_Fragment)
-        }
+
+
+
+
+//        setOnClickListener {
+////            findNavController().navigate(R.id.action_selectCropCategory_to_crops_Fragment2)
+//            Toast.makeText(requireActivity(), "ass", Toast.LENGTH_SHORT).show()
+//        }
         return binding.root
 
     }
@@ -90,10 +95,11 @@ class SelectCropCategory : Fragment(), Adapter_Select_category.SelectItem,
         getfruitCrop()
         getVegCrop()
 
-
+       backbtsasan.setOnClickListener { findNavController().navigate(R.id.action_selectCropCategory_to_crops_Fragment2)
+            Toast.makeText(requireActivity(), "ass", Toast.LENGTH_SHORT).show()
+        }
         binding.cropSearch.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-//                adapterSelectCategory.getFilter().filter(query)
                 adapterSelectCategory.filter.filter(query)
                 adapterSelectCategoryVeg.filter.filter(query)
 

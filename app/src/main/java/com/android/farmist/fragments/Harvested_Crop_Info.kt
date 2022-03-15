@@ -98,8 +98,8 @@ class Harvested_Crop_Info : Fragment() {
 
                         if (respo.harvestAt != "") {
                             val animation =
-                                ObjectAnimator.ofInt(progressbarOne, "progress", 1000)
-                            animation.duration = 62500
+                                ObjectAnimator.ofInt(progressbarTwo, "progress", 1000)
+                            animation.duration = 67500
                             animation.interpolator = DecelerateInterpolator()
                             animation.start()
                             binding.harvestCropDate.setText("Harvest  \n" + respo.harvestAt.toString())
@@ -107,6 +107,29 @@ class Harvested_Crop_Info : Fragment() {
                         }
 
                     }
+
+
+//                    if (respo.fertilizeAt != "") {
+//
+//                        val animation =
+//                            ObjectAnimator.ofInt(progressbarOne, "progress", 1000)
+//                        animation.duration = 32500
+//                        animation.interpolator = DecelerateInterpolator()
+//                        animation.start()
+//                        binding.addFertilizerData.setText("Add fertilizer \n" + respo.fertilizeAt.toString())
+//
+//
+//                        if (respo.harvestAt != "") {
+//                            val animation =
+//                                ObjectAnimator.ofInt(progressbarOne, "progress", 1000)
+//                            animation.duration = 62500
+//                            animation.interpolator = DecelerateInterpolator()
+//                            animation.start()
+//                            binding.harvestCropDate.setText("Harvest  \n" + respo.harvestAt.toString())
+//
+//                        }
+//
+//                    }
 
 
                 }

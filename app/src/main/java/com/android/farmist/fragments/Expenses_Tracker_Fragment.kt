@@ -150,12 +150,7 @@ class Expenses_Tracker_Fragment : Fragment() {
 
         }
 
-
-
-
         return binding.root
-
-
     }
 
 
@@ -192,9 +187,7 @@ class Expenses_Tracker_Fragment : Fragment() {
             .subscribe({ response -> getObserver(response as GetExpensesTracker) },
                 { t -> onFailure(t) }
             ))
-
-
-    }
+}
 
     private fun getObservable(): Observable<GetExpensesTracker> {
         return Api_Controller.apiInterface2.getExpensesTracker(cropId)
@@ -213,9 +206,13 @@ class Expenses_Tracker_Fragment : Fragment() {
 
 
 
+         try {
             Glide.with(requireActivity()).load(getExpensesTrackerList.image).into(binding.img)
+
             binding.tvExpLogName.setText(getExpensesTrackerList.cropName)
-//        binding.tvExpLogAcers.setText(getExpensesTrackerList.)
+         }catch (e:Exception){Log.d("","")}
+Log.d("cropname","$cropId")
+        binding.tvExpLogAcers.setText(getExpensesTrackerList.area + " " + getExpensesTrackerList.areaType)
             binding.tvexpeses.setText("Rs." + getExpensesTrackerList.userExpense)
             binding.Tvsowed.setText(getExpensesTrackerList.dateSowed)
             binding.tvProfit.setText("Rs." + getExpensesTrackerList.userProfit)
@@ -225,8 +222,9 @@ class Expenses_Tracker_Fragment : Fragment() {
             binding.tvSubsidyName.setText(getExpensesTrackerList.subName[0])
             binding.tvSubsidyamount.setText(getExpensesTrackerList.subAmount[0])
             binding.tvSubsidydate.setText(getExpensesTrackerList.subDate[0])
+            binding.TvincomeDate.setText(getExpensesTrackerList.incomeDate.toString())
 
-
+//            Toast.makeText(requireActivity(), "${getExpensesTrackerList.incomeDate[0] + " : "}", Toast.LENGTH_SHORT).show()
 
             progressbarsDialog.hidediloag()
         }

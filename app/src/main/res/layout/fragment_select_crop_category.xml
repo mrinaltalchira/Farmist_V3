@@ -19,11 +19,12 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/backbtn"
+                android:id="@+id/backbtsasan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_15sdp"
+                android:clickable="true"
                 android:drawableLeft="@drawable/back"
                 android:drawablePadding="@dimen/_10sdp"
                 android:drawableTint="@color/white" />
@@ -86,10 +87,10 @@
                         android:background="@drawable/searchview_bg"
                         android:inputType="text"
                         android:textCursorDrawable="@null"
+                        app:closeIcon="@null"
                         app:iconifiedByDefault="false"
                         app:queryBackground="@null"
                         app:queryHint="Search catgory"
-                        app:closeIcon="@null"
 
 
                         />

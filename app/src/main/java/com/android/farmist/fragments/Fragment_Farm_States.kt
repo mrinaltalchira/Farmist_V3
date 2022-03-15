@@ -2,6 +2,7 @@ package com.android.farmist.fragments
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -50,15 +51,17 @@ lateinit var userId:String
                 var respo = response.body()
                 if (respo != null){
 
-                    incometotal.setText("Rs. "+respo.incomeTotal)
-                    quantitytotal.setText(respo.quantityTotal)
-                    numofland.setText(respo.numOfLand)
-                    numofcrops.setText(respo.numOfCrops)
-                    varities.setText(respo.varities)
-                    numofharvest.setText(respo.numOfHarvested)
-                    expenseTotal.setText(respo.expenseTotal)
-                    areaSowed.setText(respo.areaSowed +" "+ respo.areaType[0])
-
+               try {
+                   incometotal.setText("Rs. "+respo.incomeTotal)
+                   quantitytotal.setText(respo.quantityTotal)
+                   numofland.setText(respo.numOfLand)
+                   numofcrops.setText(respo.numOfCrops)
+                   varities.setText(respo.varities)
+                   numofharvest.setText(respo.numOfHarvested)
+                   expenseTotal.setText(respo.expenseTotal)
+                   areaSowed.setText(respo.areaSowed +" "+ respo.areaType[0])
+               }catch (e:Exception){
+                   Log.d("buld","$e")}
                 }
 
             }

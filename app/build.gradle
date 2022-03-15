@@ -131,8 +131,8 @@ dependencies {
     implementation 'sun.bob:mcalendarview:1.0.0'
 
     // otp read
-    implementation 'com.google.android.gms:play-services-auth-api-phone:17.5.0'
-    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+    implementation 'com.google.android.gms:play-services-auth-api-phone:18.0.1'
+    implementation 'com.google.android.gms:play-services-auth:20.1.0'
 
 
 }

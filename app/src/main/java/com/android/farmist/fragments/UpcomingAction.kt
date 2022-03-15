@@ -66,15 +66,12 @@ class UpcomingAction : Fragment() {
         userId = preferences.getString("message", "").toString()
         getItem()
 
-//         val sdf = SimpleDateFormat("dd/M/yyyy")
-//         val currentDate = sdf.format(Date())
-//         Toast.makeText(requireActivity(), "$currentDate", Toast.LENGTH_SHORT).show()
 
+// 1646905289738L
 
-        getdate()
-
-
-
+        binding.calendarView.date = 1647617337000L
+        binding.calendarView.date = 1647530937000L
+        getItem()
         return binding.root
     }
 
@@ -100,8 +97,6 @@ class UpcomingAction : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.calendarExp.markDate(2022,3,14)
-//        getdate()
 
     }
 
@@ -116,11 +111,14 @@ class UpcomingAction : Fragment() {
                 var respo = response.body()
                 if (respo != null) {
                     Log.d("userId", userId)
+                 try {
+
                     var adap = AdapterUpcommingAction(requireActivity(), respo.cropData)
                     binding.upcomingActionRecyclerView.adapter = adap
                     adap.notifyDataSetChanged()
                     binding.upcomingActionRecyclerView.layoutManager =
                         LinearLayoutManager(requireActivity())
+                 }catch (e:Exception){}
 
 
                 }
@@ -160,9 +158,7 @@ class UpcomingAction : Fragment() {
                     finalHarYear = "20" + date[8].toString() + date[9].toString()
                     var respo = response.body()
                     if (respo != null) {
-                        binding.calendarExp.markDate(
-                            finalHarDate.toInt(), finalHarmonth.toInt(), finalHarYear.toInt()
-                        )
+
                         Toast.makeText(
                             requireActivity(),
                             "${
@@ -191,9 +187,7 @@ class UpcomingAction : Fragment() {
                         finalHarYear = "20" + date[8].toString() + date[9].toString()
                         var respo = response.body()
                         if (respo != null) {
-                            binding.calendarExp.markDate(
-                                finalHarDate.toInt(), finalHarmonth.toInt(), finalHarYear.toInt()
-                            )
+
                             Toast.makeText(
                                 requireActivity(),
                                 "${

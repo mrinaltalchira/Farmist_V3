@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.farmist.adapter.Adapter_Archived_Crop
 import com.android.farmist.api.Api_Controller
@@ -56,6 +57,9 @@ lateinit var cropId:String
             container,
             false
         )
+        binding.backBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_archived_crop_to_expensess_Income_tracker2)
+        }
         return binding.root
     }
 

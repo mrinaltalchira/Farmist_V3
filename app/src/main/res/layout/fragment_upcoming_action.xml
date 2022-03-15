@@ -50,8 +50,8 @@
         </androidx.cardview.widget.CardView>
 
 
-        <sun.bob.mcalendarview.views.ExpCalendarView
-            android:id="@+id/calendar_exp"
+        <CalendarView
+            android:id="@+id/calendar_view"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_320sdp"
             />

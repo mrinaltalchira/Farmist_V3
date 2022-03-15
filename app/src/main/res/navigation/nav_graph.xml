@@ -94,6 +94,10 @@
         <action
             android:id="@+id/action_expensess_Income_tracker_to_archived_crop"
             app:destination="@id/archived_crop" />
+        <action
+            android:id="@+id/action_expensess_Income_tracker_to_nav_home"
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/nav_home" />
     </fragment>
     <fragment
         android:id="@+id/myFarm_Fragment"
@@ -297,6 +301,10 @@
             android:id="@+id/action_selectCropCategory_to_crops_Fragment"
             app:destination="@id/crops_Fragment"
             app:popUpTo="@id/nav_graph" />
+        <action
+            android:id="@+id/action_selectCropCategory_to_crops_Fragment2"
+            app:destination="@id/crops_Fragment"
+            app:popUpTo="@id/nav_graph" />
     </fragment>
 
     <fragment
@@ -355,6 +363,10 @@
             android:id="@+id/action_archived_crop_self"
             app:destination="@id/archived_crop"
             app:popUpTo="@id/nav_home" />
+        <action
+            android:id="@+id/action_archived_crop_to_expensess_Income_tracker2"
+            app:destination="@id/expensess_Income_tracker"
+            app:popUpTo="@id/expensess_Income_tracker" />
     </fragment>
     <fragment
         android:id="@+id/harvestedFragment"

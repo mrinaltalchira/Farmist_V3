@@ -60,6 +60,13 @@ lateinit var exp:String
             container,
             false
         )
+
+        binding.back.setOnClickListener {
+
+            findNavController().navigate(R.id.action_expensess_Income_tracker_to_nav_home)
+
+
+        }
         return binding.root
 
 

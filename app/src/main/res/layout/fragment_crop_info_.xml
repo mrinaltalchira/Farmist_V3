@@ -42,7 +42,6 @@
                         android:scaleType="fitCenter"
                         android:src="@drawable/cow" />
 
-
                     <ImageView
                         android:id="@+id/backbtn"
                         android:layout_width="wrap_content"
@@ -64,7 +63,11 @@
                         android:drawableTop="@drawable/ic_delete"
                         android:text="@string/delete"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/_14sdp" />
+                        android:textSize="@dimen/_14sdp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="0"
+                        android:shadowDy="0"
+                        android:shadowRadius="50"/>
 
                     <TextView
                         android:id="@+id/tv_Harvest"
@@ -74,6 +77,8 @@
                         android:layout_marginEnd="@dimen/_10sdp"
                         android:layout_toStartOf="@+id/tv_delete"
                         android:drawableTop="@drawable/ic_baseline_content_cut_24"
+                        android:shadowColor="@color/black"
+                        android:shadowRadius="50"
                         android:text="@string/harvest"
                         android:textColor="@color/white"
                         android:textSize="@dimen/_14sdp" />

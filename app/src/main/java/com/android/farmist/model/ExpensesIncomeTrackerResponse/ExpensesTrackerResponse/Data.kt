@@ -1,19 +1,25 @@
 package com.android.farmist.model.ExpensesIncomeTrackerResponse.ExpensesTrackerResponse
 
+import com.google.gson.annotations.SerializedName
+
 data class Data(
-    val cropName: String,
-    val dateSowed: String,
-    val image: String,
-    val incomeDate: List<String>,
-    val incomeList: List<String>,
-    val subAmount: List<String>,
-    val subDate: List<String>,
-    val subName: List<String>,
-    val userExpense: String,
-    val userIncome: String,
-    val userLoss: String,
-    val userProfit: String,
-    val archieve: String
+
+    @SerializedName("image"       ) var image       : String?           ,
+    @SerializedName("cropName"    ) var cropName       : String?        ,
+    @SerializedName("area"        ) var area        : String?           ,
+    @SerializedName("areaType"    ) var areaType    : String?           ,
+    @SerializedName("archieve"    ) var archieve    : String?           ,
+    @SerializedName("userExpense" ) var userExpense : String?           ,
+    @SerializedName("dateSowed"   ) var dateSowed   : String?           ,
+    @SerializedName("subName"     ) var subName     : ArrayList<String> ,
+    @SerializedName("subAmount"   ) var subAmount   : ArrayList<String> ,
+    @SerializedName("subDate"     ) var subDate     : ArrayList<String>,
+    @SerializedName("userIncome"  ) var userIncome  : String?          ,
+    @SerializedName("incomeDate"  ) var incomeDate  : ArrayList<String>,
+    @SerializedName("incomeList"  ) var incomeList  : ArrayList<String>,
+    @SerializedName("userProfit"  ) var userProfit  : String,
+    @SerializedName("userLoss"    ) var userLoss    : String
+
 
 
 

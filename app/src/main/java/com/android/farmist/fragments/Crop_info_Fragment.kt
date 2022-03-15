@@ -303,9 +303,7 @@ class Crop_info_Fragment : Fragment() {
 
     fun getDetails() {
 
-        Toast.makeText(requireContext(), "$cropId", Toast.LENGTH_SHORT).show()
-
-        var call: Call<CropName> = Api_Controller().getInstacne().getCropDetails(cropId)
+       var call: Call<CropName> = Api_Controller().getInstacne().getCropDetails(cropId)
         call.enqueue(object : Callback<CropName> {
             override fun onResponse(call: Call<CropName>, response: Response<CropName>) {
                 var respo = response.body()

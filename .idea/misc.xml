@@ -49,15 +49,18 @@
         <entry key="..\:/FarmistV.2/app/src/main/res/menu/search_menu.xml" value="0.18518518518518517" />
         <entry key="..\:/Farmist_V3/app/src/main/res/drawable/ic__weather.xml" value="0.24871794871794872" />
         <entry key="..\:/Farmist_V3/app/src/main/res/drawable/ic_location.xml" value="0.24871794871794872" />
-        <entry key="..\:/Farmist_V3/app/src/main/res/layout/adaapter_exp_income_tracker.xml" value="0.72" />
+        <entry key="..\:/Farmist_V3/app/src/main/res/layout/adaapter_exp_income_tracker.xml" value="0.2" />
         <entry key="..\:/Farmist_V3/app/src/main/res/layout/adapt_file_for_upcomimg_action.xml" value="0.264" />
         <entry key="..\:/Farmist_V3/app/src/main/res/layout/adapter_other_market_crop_prices.xml" value="0.23645833333333333" />
-        <entry key="..\:/Farmist_V3/app/src/main/res/layout/expense_tracker.xml" value="0.19270833333333334" />
+        <entry key="..\:/Farmist_V3/app/src/main/res/layout/expense_tracker.xml" value="0.3231316725978648" />
         <entry key="..\:/Farmist_V3/app/src/main/res/layout/fragment_alerts.xml" value="0.13489583333333333" />
+        <entry key="..\:/Farmist_V3/app/src/main/res/layout/fragment_archived_crop.xml" value="0.49187432286023836" />
+        <entry key="..\:/Farmist_V3/app/src/main/res/layout/fragment_crop_info_.xml" value="0.49942062572421786" />
         <entry key="..\:/Farmist_V3/app/src/main/res/layout/fragment_crop_prices.xml" value="0.23645833333333333" />
         <entry key="..\:/Farmist_V3/app/src/main/res/layout/fragment_expensess__income_tracker.xml" value="0.19270833333333334" />
         <entry key="..\:/Farmist_V3/app/src/main/res/layout/fragment_harvested__crop__info.xml" value="0.19270833333333334" />
-        <entry key="..\:/Farmist_V3/app/src/main/res/layout/fragment_home.xml" value="0.42173112338858193" />
+        <entry key="..\:/Farmist_V3/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Farmist_V3/app/src/main/res/layout/fragment_select_crop_category.xml" value="0.264" />
         <entry key="..\:/Farmist_V3/app/src/main/res/layout/fragment_upcoming_action.xml" value="0.16203703703703703" />
         <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/activity_add_crop_details.xml" value="0.19166666666666668" />
         <entry key="..\:/iskylar projects/Mrinal Farmist branch/app/src/main/res/layout/activity_login.xml" value="0.19166666666666668" />

@@ -17,7 +17,6 @@ import com.android.farmist.model.adapterGetFarm.AdeptDataResponce
 import com.android.farmist.model.addCropResponse.AddCropResponse
 import com.android.farmist.model.alertsResponse.GetGovtScheme
 import com.android.farmist.model.alertsResponse.GetNewsAlert
-import com.android.farmist.model.harvested.MakeHarvest
 import com.android.farmist.model.archive.RemoveFromAchiv
 import com.android.farmist.model.archive.SetArchiveResponse
 import com.android.farmist.model.cropDetailsFragment.CropName
@@ -29,17 +28,21 @@ import com.android.farmist.model.getSowedCrop.GetSowedCrop
 import com.android.farmist.model.getSowedCrop.ProgressTracker
 import com.android.farmist.model.getUserInfo.getUserModel
 import com.android.farmist.model.harvested.GetHarvestedCrop
+import com.android.farmist.model.harvested.MakeHarvest
 import com.android.farmist.model.harvested.profitloss.ProfitLoss
 import com.android.farmist.model.location.Report
 import com.android.farmist.model.profileImgResponse.GetUserImagResponse
 import com.android.farmist.model.profileImgResponse.SetProfileResponse
-import com.android.farmist.model.search.ResponceSearch
 import com.android.farmist.model.selectCategoryResponse.GetFruitsList
 import com.android.farmist.model.selectCategoryResponse.GetVagList
-import com.android.farmist.model.setFarm.*
+import com.android.farmist.model.setFarm.DeleteFarmRespo
+import com.android.farmist.model.setFarm.GetFarmEditResponce
+import com.android.farmist.model.setFarm.setFarm
+import com.android.farmist.model.setFarm.updateDataRespo
 import com.android.farmist.model.signUp.signUpModel
 import com.android.farmist.model.upcommingAction.UpcomingDates
 import com.android.farmist.model.upcommingAction.Upcomingrespo
+import com.android.farmist.model.userExistOrNot.ExistOrNot
 import io.reactivex.rxjava3.core.Observable
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -259,7 +262,7 @@ interface ApiInterface {
         @Field("date") date: String,
         @Field("income") income: String,
         @Field("quantityType") radiovalue: String,
-    ):Observable<addSubsidy>
+    ): Observable<addSubsidy>
 
     /* Get expenses tracker */
     @GET("expense/expense-tracker")
@@ -349,16 +352,30 @@ interface ApiInterface {
     @GET("upcoming/actions")
     fun UpcomingFun(@Query("userId") userId: String): Call<Upcomingrespo>
 
-
+    // Upcoming action calender dates
     @GET("upcoming/actions/dates")
-    fun UpcomingFunDate(@Query("userId")userId:String):Call<UpcomingDates>
+    fun UpcomingFunDate(@Query("userId") userId: String): Call<UpcomingDates>
 
-
+    // OTP get
     @GET("{api_key}/SMS/{users_phone_no}/AUTOGEN")
-    fun GetOTP(@Path("api_key")api_key:String,@Path("users_phone_no")users_phone_no:String):Call<SignupOTPRespo>
+    fun GetOTP(
+        @Path("api_key") api_key: String,
+        @Path("users_phone_no") users_phone_no: String
+    ): Call<SignupOTPRespo>
 
-//    https://2factor.in/API/V1/{api_key}/SMS/+91{user's_phone_no}/AUTOGEN
-//    https://2factor.in/API/V1/{api_key}/SMS/VERIFY/{session_id}/{otp_entered_by_user}
+    // OTP check
     @POST("{api_key}/SMS/VERIFY/{session_id}/{otp_entered_by_user}")
-    fun checkOTP(@Path("api_key")api_key:String,@Path("session_id")session_id:String,@Path("otp_entered_by_user")otp_entered_by_user:String):Call<CheckOTPRespo>
+    fun checkOTP(
+        @Path("api_key") api_key: String,
+        @Path("session_id") session_id: String,
+        @Path("otp_entered_by_user") otp_entered_by_user: String
+    ): Call<CheckOTPRespo>
+
+    // check user is exist or not
+    @FormUrlEncoded
+    @POST("verify/user")
+    fun verifyFirst(
+        @Field("phone") phone: String,
+    ): Call<ExistOrNot>
+
 }
