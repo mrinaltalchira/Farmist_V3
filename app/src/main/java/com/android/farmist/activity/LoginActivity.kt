@@ -2,31 +2,40 @@ package com.android.farmist.activity
 
 import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Message
 import android.telecom.Call
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import com.android.farmist.OTPactivityLogin
 import com.android.farmist.Otp_Activity
 import com.android.farmist.R
 import com.android.farmist.Signup
 import com.android.farmist.api.Api_Controller
 import com.android.farmist.databinding.ActivityLoginBinding
+import com.android.farmist.model.OTP.SignupOTPRespo
 import com.android.farmist.model.signUp.signUpModel
+import com.android.farmist.util.SmsBroadcastReciver
 import com.android.farmist.util.SweetAlert
+import com.google.android.gms.auth.api.phone.SmsRetriever
+import kotlinx.android.synthetic.main.activity_otp.*
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.regex.Pattern
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding : ActivityLoginBinding
-
+    var token:String = ""
+    lateinit var userIdStr:String
+    lateinit var message:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
-
 
         val sharedPreferences = getSharedPreferences("userMassage", Context.MODE_PRIVATE)
         val message = sharedPreferences.getString("check", "")
@@ -38,7 +47,15 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.btnloginnext.setOnClickListener(View.OnClickListener {
-            loginUser()
+          var numstr=  binding.etMobilenumber.text
+            if (numstr.length!=10)
+            {
+                binding.etMobilenumber.setError("Please Enter valid Number")
+                return@OnClickListener
+            }
+            else {
+                loginUser()
+            }
 
         })
 
@@ -64,26 +81,31 @@ class LoginActivity : AppCompatActivity() {
                 {
 
                     val idStr: String = loginData?.user?._id.toString()
+                    userIdStr=idStr
 
-                        val sharedPreferences =
-                            getSharedPreferences("userMassage", Context.MODE_PRIVATE)
-                        val editor = sharedPreferences.edit()
 
-                        editor.putString("message", idStr)
+//                        val sharedPreferences =
+//                            getSharedPreferences("userMassage", Context.MODE_PRIVATE)
+//                        val editor = sharedPreferences.edit()
+//
+//                        editor.putString("message", idStr)
                     if (loginData != null) {
-                        editor.putString("check", loginData.message.toString())
+//                        editor.putString("check", loginData.message.toString())
+                        message= loginData.message
                     }
-                        editor.apply()
+//                        editor.apply()
 
-
-                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    sendOtp()
+//                    val intent = Intent(this@LoginActivity, OTPactivityLogin::class.java)
+//                    intent.putExtra("phoneNumber",numberUser)
                     SweetAlert.hidediloag()
-                    startActivity(intent)
-                    finish()
-                    Toast.makeText(this@LoginActivity , "Login sucessful", Toast.LENGTH_SHORT).show()
+//                    startActivity(intent)
+//                    finish()
+//                    Toast.makeText(this@LoginActivity , "Login sucessful", Toast.LENGTH_SHORT).show()
                 }
                 else{
                     SweetAlert.hidediloag()
+                    SweetAlert.failedShowDialog(this@LoginActivity,"Login Failed! Please check number")
                     Toast.makeText(this@LoginActivity , "Login Failed", Toast.LENGTH_SHORT).show()
 
                 }
@@ -99,4 +121,35 @@ class LoginActivity : AppCompatActivity() {
 
 
     }
+
+    private fun sendOtp() {
+        if (userIdStr==null)
+        {
+            return
+        }
+       var  phoneNumber=binding.etMobilenumber.text.toString()
+        var apiKey = "01ab6561-9f6e-11ec-a4c2-0200cd936042"
+        var call: retrofit2.Call<SignupOTPRespo> = Api_Controller.OtpInterFace.GetOTP(apiKey,phoneNumber)
+        call.enqueue(object:Callback<SignupOTPRespo>{
+            override fun onResponse(
+                call: retrofit2.Call<SignupOTPRespo>,
+                response: Response<SignupOTPRespo>
+            ) {
+                token = response.body()?.Details.toString()
+                val intent = Intent(this@LoginActivity, OTPactivityLogin::class.java)
+                intent.putExtra("token",token)
+                intent.putExtra("phoneNumber", phoneNumber)
+                intent.putExtra("userId", userIdStr)
+                intent.putExtra("message",message )
+                startActivity(intent)
+                finish()
+            }
+            override fun onFailure(call: retrofit2.Call<SignupOTPRespo>, t: Throwable) {
+                Toast.makeText(this@LoginActivity, "Please enter correct number", Toast.LENGTH_SHORT).show()
+
+
+            }
+        })
+    }
+
 }

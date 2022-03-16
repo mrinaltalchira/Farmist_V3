@@ -262,7 +262,7 @@ interface ApiInterface {
         @Field("date") date: String,
         @Field("income") income: String,
         @Field("quantityType") radiovalue: String,
-    ): Observable<addSubsidy>
+    ):Observable<addSubsidy>
 
     /* Get expenses tracker */
     @GET("expense/expense-tracker")
@@ -352,7 +352,7 @@ interface ApiInterface {
     @GET("upcoming/actions")
     fun UpcomingFun(@Query("userId") userId: String): Call<Upcomingrespo>
 
-    // Upcoming action calender dates
+
     @GET("upcoming/actions/dates")
     fun UpcomingFunDate(@Query("userId") userId: String): Call<UpcomingDates>
 
@@ -363,7 +363,8 @@ interface ApiInterface {
         @Path("users_phone_no") users_phone_no: String
     ): Call<SignupOTPRespo>
 
-    // OTP check
+//    https://2factor.in/API/V1/{api_key}/SMS/+91{user's_phone_no}/AUTOGEN
+//    https://2factor.in/API/V1/{api_key}/SMS/VERIFY/{session_id}/{otp_entered_by_user}
     @POST("{api_key}/SMS/VERIFY/{session_id}/{otp_entered_by_user}")
     fun checkOTP(
         @Path("api_key") api_key: String,

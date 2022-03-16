@@ -22,6 +22,14 @@ object SweetAlert {
         pDialog.show()
 
 
+    }  public fun failedShowDialog(context: Context,errorStr:String) {
+        pDialog= SweetAlertDialog(context,SweetAlertDialog.ERROR_TYPE)
+        pDialog.progressHelper.barColor = Color.parseColor("#A5DC86")
+        pDialog.confirmButtonBackgroundColor=Color.RED
+        pDialog.titleText=errorStr
+        pDialog.show()
+
+
     }
 
     public fun hidediloag() {
